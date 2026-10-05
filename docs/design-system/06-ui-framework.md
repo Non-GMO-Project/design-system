@@ -267,11 +267,9 @@ Page gutters: 16px mobile, 24px tablet, 32px desktop.
 
 ## Writing in the interface
 
-- Name things the way the people using them do. "Products", not "SKU records".
-- Buttons say exactly what happens: "Submit for review", not "Submit". The same verb carries through: "Publish" leads to "Published".
-- Errors explain what happened and how to fix it. They do not apologize and they are never vague.
-- Empty states invite the next action.
-- Sentence case, plain verbs, no filler. Never "FIP" in user-facing text.
+All interface copy follows `10-writing.md` (voice, tone, UI copy patterns, word list). The short version: buttons say exactly what happens, toasts use the past tense, errors say what happened and how to fix it, and empty states invite the next action.
+
+Flows, states and the UX definition of done live in `11-ux.md`.
 
 ## Rules for Claude Code
 

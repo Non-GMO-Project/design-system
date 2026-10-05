@@ -286,6 +286,13 @@
     if (toVerified && !reduced()) { void wrap.offsetWidth; wrap.classList.add("sig-play"); }
   });
 
+  // ---------- UX definition of done checklist ----------
+  document.addEventListener("change", (e) => {
+    if (!e.target.matches("[data-dod]")) return;
+    const boxes = $$("[data-dod]");
+    $("[data-dod-count]").textContent = `${boxes.filter((b) => b.checked).length} of ${boxes.length} done`;
+  });
+
   // ---------- Side navigation: current section ----------
   const links = new Map($$(".sidenav a").map((a) => [a.getAttribute("href").slice(1), a]));
   const spy = new IntersectionObserver((entries) => {

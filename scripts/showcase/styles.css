@@ -397,3 +397,9 @@ blockquote { margin: 0 0 1rem; padding: 0.75rem 1rem; border-left: 4px solid var
 .do-dont .dont { background: var(--status-danger-bg); border-color: var(--status-danger-border); color: var(--status-danger-fg); }
 .do-dont h5 { margin-top: 0; display: flex; gap: 0.5rem; align-items: center; }
 .do-dont ul { margin: 0; padding-left: 1.25rem; }
+
+/* ---------- Writing and UX ---------- */
+.copy-pair { display: grid; grid-template-columns: 72px 1fr; gap: 0.5rem; align-items: center; }
+.flow { list-style: none; counter-reset: flow; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.flow li { counter-increment: flow; display: grid; grid-template-columns: 28px 1fr; gap: 0.75rem; align-items: start; font-size: 0.9375rem; }
+.flow li::before { content: counter(flow); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: var(--brand-subtle); border: 1px solid var(--brand-border); font-family: var(--font-accent); font-weight: 700; font-size: 0.8125rem; }

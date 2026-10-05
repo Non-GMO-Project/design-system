@@ -849,6 +849,100 @@ export function createRenderer(ctx) {
     return `<section id="brands" aria-labelledby="brands-h"><div class="ds-section" style="border:0;padding-bottom:0"><p class="eyebrow">Brand profiles</p><h2 id="brands-h">The four brands</h2><p class="prose">Each profile renders inside its own <code>data-brand</code> context, whatever the brand switch says.</p></div>${out.join("")}</section>`;
   }
 
+  // ---------- 10 Writing ----------
+  function writing() {
+    const f = "10-writing.md";
+    const d = docs[f];
+    if (!d) { check("error", "Writing", "10-writing.md not found", f); return ""; }
+    const byName = Object.fromEntries(Object.entries(brandNames).map(([k, v]) => [v.toLowerCase(), k]));
+    const voices = rowsOf(d.section(/^Voice by brand$/)?.table("Brand", "Voice"))
+      .map((r) => {
+        const b = byName[plain(r.brand).toLowerCase()];
+        if (!b) check("warn", "Writing", `Voice table brand "${plain(r.brand)}" does not match a brand in 01-brand-architecture.md`, f);
+        return `<article class="card ctx" ${b ? `data-brand="${b}"` : ""} style="display:grid;gap:0.5rem;align-content:start"><p class="eyebrow" style="margin:0">${esc(plain(r.brand))}</p><p class="t-h3" style="margin:0">${inline(r.voice)}</p><hr class="signature-rule" style="margin:0.25rem 0"><p class="small" style="margin:0"><strong>Sounds like:</strong> ${inline(r["sounds like"])}</p><p class="small muted" style="margin:0"><strong>Avoid:</strong> ${inline(r.avoid)}</p></article>`;
+      })
+      .join("");
+    const toneKind = (s) => (/error/i.test(s) ? "danger" : /lapsed|expir/i.test(s) ? "warning" : /waiting/i.test(s) ? "info" : /granted|success/i.test(s) ? "success" : null);
+    const tones = rowsOf(d.section(/^Tone by situation$/)?.table("Situation", "Tone", "Example"))
+      .map((r) => {
+        const kind = toneKind(plain(r.situation));
+        const ex = plain(r.example).replace(/^"|"$/g, "");
+        const sample = kind
+          ? `<div class="alert alert--${kind}">${icon(kind === "danger" ? "status.error" : kind === "success" ? "status.verified" : `status.${kind === "warning" ? "expiring" : "info"}`)}<p style="grid-column:2">${esc(ex)}</p></div>`
+          : `<blockquote style="margin:0">${esc(ex)}</blockquote>`;
+        return `<div class="card" style="display:grid;gap:0.75rem;align-content:start"><div><strong>${esc(plain(r.situation))}</strong><br><span class="small muted">${inline(r.tone)}</span></div>${sample}</div>`;
+      })
+      .join("");
+    const sample = (pattern, text) => {
+      const p = pattern.toLowerCase();
+      const s = esc(plain(text));
+      if (/destructive/.test(p)) return `<button class="btn btn--destructive btn--sm" type="button">${s}</button>`;
+      if (/button|cancel/.test(p)) return `<button class="btn ${/cancel/.test(p) ? "btn--outline" : "btn--default"} btn--sm" type="button">${s}</button>`;
+      if (/toast/.test(p)) return `<span class="toast" style="animation:none;min-width:0;box-shadow:none">${icon("status.success")}<span class="small">${s}</span></span>`;
+      if (/field error/.test(p)) return `<p class="error" style="animation:none">${icon("status.error")}${s}</p>`;
+      if (/link/.test(p)) return `<a href="#writing">${s}</a>`;
+      if (/status/.test(p)) return `<span class="badge badge--warning">${icon("status.expiring")}${s}</span>`;
+      if (/page title/.test(p)) return `<span class="t-h4" style="font-family:var(--font-serif);font-weight:500">${s}</span>`;
+      return `<span class="small">${s}</span>`;
+    };
+    const patterns = rowsOf(d.section(/^UI copy patterns$/)?.table("Pattern", "Do", "Don't"))
+      .map((r) => `<div class="card" style="display:grid;gap:0.75rem;align-content:start"><strong>${esc(plain(r.pattern))}</strong>
+        <div class="copy-pair"><span class="verdict verdict--pass">${icon("status.success")}Do</span><div>${sample(plain(r.pattern), r.do)}</div></div>
+        <div class="copy-pair"><span class="verdict verdict--fail">${icon("status.error")}Don't</span><div class="small" style="text-decoration:line-through;text-decoration-color:var(--status-danger-icon)">${inline(r["don't"])}</div></div>
+        ${r.why ? `<p class="small muted" style="margin:0">${inline(r.why)}</p>` : ""}</div>`)
+      .join("");
+    const block = (re) => { const s = d.section(re); return s ? render(s.blocks) : ""; };
+    return section(
+      "writing", "10 · Writing and copy", "How we sound", f,
+      `<h3>Principles</h3><div class="prose">${block(/^Principles$/)}</div>
+      <h3>Voice by brand</h3><p class="prose small">Each card renders in its own brand context.</p><div class="grid" style="--min:240px">${voices}</div>
+      <h3>Tone by situation</h3><div class="grid" style="--min:300px">${tones}</div>
+      <h3>UI copy patterns</h3><div class="grid" style="--min:280px">${patterns}</div>
+      <h3>Word list</h3>${tableOrWarn(d.section(/^Word list$/)?.tables()[0], f, "Writing")}
+      <h3>Names and claims</h3><div class="prose">${block(/^Names and claims$/)}</div>
+      <h3>Grammar and mechanics</h3>${tableOrWarn(d.section(/^Grammar and mechanics$/)?.tables()[0], f, "Writing")}
+      <div class="split"><div><h3>Inclusive language</h3>${block(/^Inclusive language$/)}</div><div><h3>Accessible copy</h3>${block(/^Accessible copy$/)}</div></div>`,
+      `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
+    );
+  }
+
+  // ---------- 11 UX ----------
+  function ux() {
+    const f = "11-ux.md";
+    const d = docs[f];
+    if (!d) { check("error", "UX", "11-ux.md not found", f); return ""; }
+    const principles = (d.section(/^UX principles$/)?.lists()[0]?.items ?? [])
+      .map((it, i) => {
+        const m = it.match(/^\*\*(.+?)\*\*\s*(.*)$/);
+        return `<article class="card"><p class="eyebrow">Principle ${i + 1}</p><h4 style="margin:0 0 0.5rem;font-family:var(--font-serif);font-weight:500">${inline(m ? m[1] : it)}</h4><p class="small" style="margin:0">${inline(m ? m[2] : "")}</p></article>`;
+      })
+      .join("");
+    const flows = (d.section(/^Core flows$/)?.subsections(3) ?? [])
+      .map(({ title, doc }) => {
+        const steps = doc.lists().find((l) => l.ordered)?.items ?? [];
+        if (!steps.length) check("warn", "UX", `Flow "${title}" has no numbered steps`, f);
+        const rules = doc.paragraphs().find((p) => /^Rules:/.test(p));
+        return `<article class="card"><h4 style="margin-top:0">${esc(title)}</h4><ol class="flow">${steps.map((s) => `<li><span>${inline(s)}</span></li>`).join("")}</ol>${rules ? `<p class="small muted" style="margin:0.75rem 0 0">${inline(rules)}</p>` : ""}</article>`;
+      })
+      .join("");
+    const dod = d.section(/^UX definition of done$/)?.lists()[0]?.items ?? [];
+    const checklist = `<fieldset class="card"><legend class="sr-only">UX definition of done</legend>${dod.map((it, i) => `<label class="check" style="align-items:flex-start;padding:0.25rem 0"><input type="checkbox" data-dod="${i}" style="margin-top:4px"> <span>${inline(it)}</span></label>`).join("")}<p class="small muted" style="margin:0.75rem 0 0" aria-live="polite" data-dod-count>0 of ${dod.length} done</p></fieldset>`;
+    const block = (re) => { const s = d.section(re); return s ? render(s.blocks) : ""; };
+    return section(
+      "ux", "11 · UX", "How it should work", f,
+      `<h3>Principles</h3><div class="grid" style="--min:260px">${principles}</div>
+      <h3>Who we design for</h3>${tableOrWarn(d.section(/^Who we design for$/)?.tables()[0], f, "UX")}
+      <h3>Information architecture</h3><div class="prose">${block(/^Information architecture$/)}</div>
+      <h3>Core flows</h3><div class="grid" style="--min:320px">${flows}</div>
+      <h3>Speed and feedback</h3>${block(/^Speed and feedback$/)}
+      <div class="split"><div><h3>Trust and verification</h3>${block(/^Trust and verification$/)}</div><div><h3>Mobile and in-store</h3>${block(/^Mobile and in-store$/)}</div></div>
+      <h3>Notifications and email</h3>${block(/^Notifications and email$/)}
+      <h3>Research and measurement</h3>${block(/^Research and measurement$/)}
+      <h3>UX definition of done</h3><p class="prose small">Use it as a checklist for a flow. Checks are not saved.</p>${checklist}`,
+      `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
+    );
+  }
+
   // ---------- TODOs and source ----------
   function todos() {
     const items = [];
@@ -869,5 +963,5 @@ export function createRenderer(ctx) {
     return `<section class="ds-section" id="source" aria-labelledby="source-h"><p class="eyebrow">Reference</p><h2 id="source-h">Source documents</h2><p class="prose">The full text of every file the showcase was built from.</p>${files}</section>`;
   }
 
-  return { overview, architecture, logos, color, audit, typography, typeCss, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
+  return { writing, ux, overview, architecture, logos, color, audit, typography, typeCss, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
 }

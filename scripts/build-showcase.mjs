@@ -184,6 +184,8 @@ function build() {
     ["components", "Components", r.components()],
     ["motion", "Motion", r.motion()],
     ["accessibility", "Accessibility", r.accessibility(audit.html)],
+    ["writing", "Writing and copy", r.writing()],
+    ["ux", "UX", r.ux()],
     ["tokens", "Tokens", r.tokens()],
     ["brands", "Brands", r.brands()],
   ];
