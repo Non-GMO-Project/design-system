@@ -186,6 +186,7 @@ function build() {
     ["accessibility", "Accessibility", r.accessibility(audit.html)],
     ["writing", "Writing and copy", r.writing()],
     ["ux", "UX", r.ux()],
+    ["responsive", "Responsive", r.responsive()],
     ["tokens", "Tokens", r.tokens()],
     ["brands", "Brands", r.brands()],
   ];
@@ -224,6 +225,7 @@ function build() {
     .join("");
 
   const brandRadios = ["fip", "nongmo", "nonupf", "collective"].map((b) => `<label><input type="radio" name="brand" value="${b}"${b === "fip" ? " checked" : ""}><span>${esc(r.brandName(b))}</span></label>`).join("");
+  const brandOptions = ["fip", "nongmo", "nonupf", "collective"].map((b) => `<option value="${b}">${esc(r.brandName(b))}</option>`).join("");
   const fipLogo = assets.find((a) => a.brand === "fip" && a.kind === "logo" && a.exists);
 
   const html = `<!doctype html>
@@ -231,7 +233,7 @@ function build() {
 <html lang="en" data-brand="fip">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <title>Design system | Food Integrity Project</title>
 <link rel="icon" href="public/brand/nonupf/nonupf-mark-color.png" media="(prefers-color-scheme: no-preference)">
@@ -246,10 +248,18 @@ ${showcaseCss}
 <a class="btn btn--default skip" href="#main">Skip to main content</a>
 <header class="topbar">
   <p class="topbar__title">${fipLogo ? `<img src="${esc(fipLogo.path)}" alt="">` : ""}<span>Design system <span class="muted small">v${esc(version.split(" ")[0])}</span></span></p>
-  <fieldset class="segmented" style="display:inline-flex"><legend class="sr-only">Brand context</legend>${brandRadios}</fieldset>
-  <label class="switch"><input type="checkbox" role="switch" data-toggle-dark> Dark</label>
-  <label class="switch"><input type="checkbox" role="switch" data-toggle-reduce> Reduce motion</label>
+  <button class="btn btn--outline btn--sm nav-toggle" type="button" data-open="mobile-nav" aria-haspopup="dialog">${r.icon("nav.menu", "icon icon--sm")}Sections</button>
+  <fieldset class="segmented brand-seg"><legend class="sr-only">Brand context</legend>${brandRadios}</fieldset>
+  <label class="brand-select"><span class="sr-only">Brand context</span><span class="select-wrap"><select class="select" name="brand">${brandOptions}</select>${r.icon("nav.expand", "icon icon--sm")}</span></label>
+  <div class="topbar__toggles">
+    <label class="switch"><input type="checkbox" role="switch" data-toggle-dark> Dark</label>
+    <label class="switch"><input type="checkbox" role="switch" data-toggle-reduce> Reduce motion</label>
+  </div>
 </header>
+<dialog id="mobile-nav" class="sheet sheet--left" aria-labelledby="mobile-nav-h">
+  <div class="row" style="justify-content:space-between;margin-bottom:0.5rem"><h4 id="mobile-nav-h" style="margin:0">Sections</h4><button class="btn btn--ghost btn--icon" type="button" aria-label="Close sections" data-close>${r.icon("action.close")}</button></div>
+  <nav aria-label="Sections menu" class="mnav"><ol>${nav}</ol></nav>
+</dialog>
 <div class="layout">
   <nav class="sidenav" aria-label="Sections"><ol>${nav}</ol></nav>
   <main id="main" tabindex="-1">

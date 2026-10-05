@@ -19,6 +19,7 @@
     root.classList.toggle("dark", !!saved.dark);
     root.classList.toggle("reduce-motion", !!saved.reduce);
     $$('input[name="brand"]').forEach((i) => (i.checked = i.value === root.dataset.brand));
+    $$('select[name="brand"]').forEach((s) => (s.value = root.dataset.brand));
     $$("[data-toggle-dark]").forEach((i) => (i.checked = !!saved.dark));
     $$("[data-toggle-reduce]").forEach((i) => (i.checked = !!saved.reduce));
     requestAnimationFrame(() => { updateLiveTokens(); $$("[data-tabs]").forEach(placeIndicator); });
@@ -97,6 +98,7 @@
     const close = e.target.closest("[data-close]");
     if (close) close.closest("dialog").close();
     if (e.target.tagName === "DIALOG") e.target.close();
+    if (e.target.closest("#mobile-nav a")) $("#mobile-nav").close();
     const menu = e.target.closest('[data-demo="menu"]');
     $$('[data-demo="menu"]').forEach((m) => {
       if (m !== menu) { m.setAttribute("aria-expanded", "false"); m.nextElementSibling.hidden = true; }
@@ -292,6 +294,52 @@
     const boxes = $$("[data-dod]");
     $("[data-dod-count]").textContent = `${boxes.filter((b) => b.checked).length} of ${boxes.length} done`;
   });
+
+  // ---------- Responsive section ----------
+  const bpSection = $("[data-bps]");
+  if (bpSection) {
+    const bps = JSON.parse(bpSection.dataset.bps);
+    const readout = $("[data-bp-readout]");
+    const dot = $("[data-bp-indicator]");
+    const update = () => {
+      const w = root.clientWidth;
+      const cur = [...bps].reverse().find((b) => w >= b.min) ?? bps[0];
+      readout.textContent = `This window is ${w}px wide, so the ${cur.name} breakpoint applies: ${cur.layout}.`;
+      dot.style.left = Math.min(100, (w / 1600) * 100) + "%";
+      $$("[data-bp]").forEach((m) => m.classList.toggle("is-current", m.dataset.bp === cur.name));
+      $$("[data-bp-card]").forEach((c) => c.classList.toggle("is-current", c.dataset.bpCard === cur.name));
+    };
+    addEventListener("resize", update);
+    update();
+    const range = $("[data-cq-range]"), frame = $("[data-cq-frame]"), out = $("[data-cq-out]");
+    const fit = () => (range.max = Math.max(320, frame.parentElement.clientWidth));
+    range?.addEventListener("input", () => { frame.style.width = range.value + "px"; out.textContent = range.value + "px"; });
+    addEventListener("resize", fit);
+    fit();
+    range.value = range.max;
+  }
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-preview]");
+    if (!b) return;
+    const w = +b.dataset.preview, h = 760;
+    const box = $("[data-previews]");
+    box.innerHTML = "";
+    const wrap = document.createElement("div");
+    wrap.className = "preview";
+    const iframe = document.createElement("iframe");
+    iframe.src = location.href.split("#")[0].split("?")[0] + "?frame=1#components";
+    iframe.width = w;
+    iframe.height = h;
+    iframe.title = `This showcase at ${w}px wide`;
+    iframe.loading = "lazy";
+    const s = Math.min(1, box.clientWidth / w);
+    iframe.style.transform = `scale(${s})`;
+    wrap.style.width = w * s + "px";
+    wrap.style.height = h * s + "px";
+    wrap.append(iframe);
+    box.append(wrap);
+  });
+  if (new URLSearchParams(location.search).has("frame")) $$("[data-preview]").forEach((b) => (b.disabled = true));
 
   // ---------- Side navigation: current section ----------
   const links = new Map($$(".sidenav a").map((a) => [a.getAttribute("href").slice(1), a]));

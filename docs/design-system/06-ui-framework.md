@@ -227,7 +227,7 @@ Radius follows hierarchy rather than one value everywhere:
 
 ### Breakpoints and containers
 
-Tailwind defaults: `sm` 640, `md` 768, `lg` 1024, `xl` 1280, `2xl` 1536. Design mobile first.
+Tailwind defaults: `sm` 640, `md` 768, `lg` 1024, `xl` 1280, `2xl` 1536. Design mobile first. How every layout and component adapts at each breakpoint is in `12-responsive.md`.
 
 | Container | Max width | Use |
 |---|---|---|

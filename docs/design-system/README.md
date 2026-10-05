@@ -1,6 +1,6 @@
 # Food Integrity Project Design System
 
-**Version:** 0.3 (draft for review)
+**Version:** 0.4 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -25,6 +25,7 @@ Values marked `TODO(...)` still need a decision. Everything else is a working de
 | `09-tokens.md` | The CSS variables and Tailwind wiring that implement all of the above | Setting up a project, adding a token |
 | `10-writing.md` | Voice by brand, tone by situation, UI copy patterns, word list, claims, grammar and mechanics | Writing any interface text, page, email or campaign |
 | `11-ux.md` | UX principles, audiences and jobs, information architecture, core flows, feedback timing, UX definition of done | Designing or building any flow or screen |
+| `12-responsive.md` | Breakpoints, layout behavior per screen size, container queries, touch and input, safe areas, performance budgets, device testing | Any layout, any component that changes with screen size |
 | `brands/*.md` | One profile per brand: role, color roles, ratio, logos, imagery, voice, do and don't | Work scoped to one brand |
 
 ## The model in one paragraph
@@ -46,7 +47,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 
 ## The showcase
 
-`index.html` at the repository root is a visual reference of the whole system: logos and seals, color and contrast, type, icons, components, motion, accessibility, writing, UX and each brand profile, with switches for brand and dark mode.
+`index.html` at the repository root is a visual reference of the whole system: logos and seals, color and contrast, type, icons, components, motion, accessibility, writing, UX, responsive behavior and each brand profile, with switches for brand and dark mode.
 
 It is **generated from these Markdown files** by `scripts/build-showcase.mjs`. Do not edit `index.html` by hand. The build reads the tables and CSS blocks on these pages, so changing a value here changes the showcase. It also checks the docs as it goes: contrast ratios, asset files, icon names, token references. Problems show in a "Build checks" panel at the top of the page.
 
@@ -93,7 +94,7 @@ Before writing or changing UI:
 - Identify the brand context for the work (see docs/design-system/01-brand-architecture.md).
 - Read the topic files the task touches: 02-color, 03-typography, 04-logos-and-marks,
   05-iconography, 06-ui-framework, 07-motion, 08-accessibility, 09-tokens,
-  10-writing (any copy), 11-ux (any flow or screen).
+  10-writing (any copy), 11-ux (any flow or screen), 12-responsive (any layout).
 - For work scoped to one program, also read docs/design-system/brands/<brand>.md.
 
 Hard rules:
@@ -126,6 +127,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.4 | 2026-10-05 | Added `12-responsive.md` (breakpoints, layout behavior, container queries, touch, safe areas, performance, testing). The showcase now works on phones: mobile navigation, brand select, stacked tables, bottom drawers, no sideways scrolling at 320px |
 | 0.3 | 2026-10-05 | Added `10-writing.md` (voice, tone, UI copy, word list, claims, mechanics) and `11-ux.md` (principles, audiences, core flows, feedback timing, definition of done). Interface-writing rules in `06` now point to `10` |
 | 0.2 | 2026-10-05 | Adopted the Food Integrity Project Style Guide: Birch ground, one dark per brand, official palettes (Cacao, Loam, Milkweed Leaf; Forest, Seafoam, Monarch; Dark Matter, Almond, Dragon Fruit; Corn Flower, Romanesco), Lora + Avenir/Nunito Sans + Quicksand, endorsement lockups. Removed template colors (Furrow, Grain, Leaf, Beet, Radish, Borage, Heirloom). Renamed `--brand-secondary` to `--brand-signature`; added `--brand-dark`, `--brand-support`, `--field`; removed `--house-accent`. Added generated showcase and color scripts |
 | 0.1 | 2026-10-05 | Example template created for design team review |

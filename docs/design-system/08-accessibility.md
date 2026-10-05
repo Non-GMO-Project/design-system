@@ -15,6 +15,7 @@ This file wins any conflict with the rest of the design system, including the br
 | Visible focus | 2px ring with offset on every interactive element, never removed |
 | Reduced motion | Token durations collapse to 0; see `07-motion.md` |
 | Text resize to 200% | rem-based type scale; no fixed-height text containers |
+| Reflow at 320 CSS px (1.4.10) | Mobile-first layouts and the layout behavior table in `12-responsive.md`; only data tables and code scroll sideways |
 | Minimum text size | Body never below 16px on the web (also a brand guide rule) |
 | Consistent navigation and identification | Shared components and icon registry across brands |
 

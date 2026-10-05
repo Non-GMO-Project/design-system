@@ -155,7 +155,8 @@ export function render(blocks, { headingOffset = 0, idPrefix = "" } = {}) {
   return html;
 }
 
-export const renderTable = (t, cls = "") =>
-  `<div class="table-wrap"><table class="${cls}"><thead><tr>${t.headers.map((h) => `<th scope="col">${inline(h)}</th>`).join("")}</tr></thead><tbody>${t.rows
-    .map((r) => `<tr>${t.headers.map((_, i) => `<td>${inline(r[i] ?? "")}</td>`).join("")}</tr>`)
+// Tables carry data-label on each cell so they can stack into cards in narrow containers (12-responsive.md).
+export const renderTable = (t, cls = "stack-table") =>
+  `<div class="table-wrap cq"><table class="${cls}"><thead><tr>${t.headers.map((h) => `<th scope="col">${inline(h)}</th>`).join("")}</tr></thead><tbody>${t.rows
+    .map((r) => `<tr>${t.headers.map((h, i) => `<td data-label="${esc(plain(h))}">${inline(r[i] ?? "")}</td>`).join("")}</tr>`)
     .join("")}</tbody></table></div>`;

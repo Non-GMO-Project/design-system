@@ -257,9 +257,9 @@ export function createRenderer(ctx) {
         const total = parts.reduce((s, p) => s + p.pct, 0);
         if (total !== 100) check("warn", "Color", `Usage ratio for ${plain(r.brand)} adds up to ${total}, not 100`, f);
         const b = brandByName[plain(r.brand).toLowerCase()] ?? "fip";
-        return `<div class="ctx" data-brand="${b}" style="display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:1rem;align-items:center;margin-bottom:0.75rem">
+        return `<div class="ctx ratio-row" data-brand="${b}">
           <strong class="small">${esc(plain(r.brand))}</strong>
-          <div class="ratio-bar" role="img" aria-label="${esc(parts.map((p) => `${p.pct}% ${p.label}`).join(", "))}">${parts.map((p) => `<div style="flex:${p.pct};background:${p.hex};color:${readable(p.hex)}">${p.pct} ${esc(p.label)}</div>`).join("")}</div>
+          <div><div class="ratio-bar" role="img" aria-label="${esc(parts.map((p) => `${p.pct}% ${p.label}`).join(", "))}">${parts.map((p) => `<div style="flex:${p.pct};background:${p.hex};color:${readable(p.hex)}">${p.pct} ${esc(p.label)}</div>`).join("")}</div><p class="ratio-legend small muted" aria-hidden="true">${esc(parts.map((p) => `${p.pct} ${p.label}`).join(" · "))}</p></div>
         </div>`;
       })
       .join("");
@@ -342,7 +342,7 @@ export function createRenderer(ctx) {
           const textOk = /birch/i.test(plain(r["text allowed"]));
           if (textOk && weakest < 4.5) check("error", "Color", `${token} (${brandName(b)}) allows Birch text but its weakest stop is ${weakest.toFixed(1)}:1`, f);
           return `<div class="gradient-tile" data-brand="${b}" style="background:var(${token});color:var(--birch)">
-            ${textOk ? `<strong>${esc(brandName(b))}</strong><span class="small">Birch text, weakest stop ${weakest.toFixed(1)}:1</span>` : `<span class="small" style="background:var(--birch);color:var(--stone-950);padding:0.125rem 0.5rem;border-radius:4px;justify-self:start;width:max-content">${esc(brandName(b))} · decorative, no text</span>`}
+            ${textOk ? `<strong>${esc(brandName(b))}</strong><span class="small">Birch text, weakest stop ${weakest.toFixed(1)}:1</span>` : `<span class="small" style="background:var(--birch);color:var(--stone-950);padding:0.125rem 0.5rem;border-radius:4px;justify-self:start;max-width:100%">${esc(brandName(b))} · decorative, no text</span>`}
             <code style="background:none;color:inherit">${esc(token)}</code></div>`;
         });
       })
@@ -559,7 +559,7 @@ export function createRenderer(ctx) {
       ["Wildflower Honey", "nongmo", "in progress", "Hive & Hollow"],
     ];
     const tableRows = products
-      .map(([name, prog, st, brand], i) => `<tr ${i === 1 ? 'aria-selected="true"' : ""}><td><input type="checkbox" aria-label="Select ${esc(name)}" ${i === 1 ? "checked" : ""}></td><td><strong>${esc(name)}</strong><br><span class="small muted">${esc(brand)}</span></td><td><span class="chip" data-brand="${prog}">${esc(brandName(prog))}</span></td><td>${badge(cert(st))}</td><td class="num">${(1200 + i * 317).toLocaleString("en-US")}</td><td class="num"><button type="button" class="btn btn--ghost btn--sm">${icon("action.edit", "icon icon--sm")}Edit</button> <button type="button" class="btn btn--ghost btn--sm btn--icon" aria-label="More actions for ${esc(name)}">${icon("action.more", "icon icon--sm")}</button></td></tr>`)
+      .map(([name, prog, st, brand], i) => `<tr ${i === 1 ? 'aria-selected="true"' : ""}><td data-label="Select"><input type="checkbox" aria-label="Select ${esc(name)}" ${i === 1 ? "checked" : ""}></td><td data-label="Product"><strong>${esc(name)}</strong><br><span class="small muted">${esc(brand)}</span></td><td data-label="Program"><span class="chip" data-brand="${prog}">${esc(brandName(prog))}</span></td><td data-label="Status">${badge(cert(st))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td><td class="num" data-label="Actions"><button type="button" class="btn btn--ghost btn--sm">${icon("action.edit", "icon icon--sm")}Edit</button> <button type="button" class="btn btn--ghost btn--sm btn--icon" aria-label="More actions for ${esc(name)}">${icon("action.more", "icon icon--sm")}</button></td></tr>`)
       .join("");
     const alerts = [
       ["info", "status.info", "Review in progress", "The Verification team is reviewing 3 ingredients. We will email you when it is done."],
@@ -575,7 +575,7 @@ export function createRenderer(ctx) {
     const spacing = rowsOf(d.section(/^Spacing$/)?.table("Token", "px"))
       .map((r) => {
         const px = parseInt(plain(r.px), 10);
-        return `<div style="display:grid;grid-template-columns:80px 1fr 1fr;gap:1rem;align-items:center;margin-bottom:0.5rem"><code>${esc(plain(r.token))}</code><div class="space-bar" style="width:${px}px"></div><span class="small muted">${esc(plain(r.px))}px · ${inline(r["typical use"])}</span></div>`;
+        return `<div class="space-row"><code>${esc(plain(r.token))}</code><div class="space-bar" style="width:${px}px;max-width:100%"></div><span class="small muted">${esc(plain(r.px))}px · ${inline(r["typical use"])}</span></div>`;
       })
       .join("");
     const radius = rowsOf(d.section(/^Shape and elevation$/)?.table("Token", "Value"))
@@ -644,9 +644,9 @@ export function createRenderer(ctx) {
       <h3 id="c-feedback">Alerts</h3><div class="stack">${alerts}</div>
 
       <h3 id="c-table">Data table</h3>
-      <div class="row" style="margin-bottom:0.75rem"><div class="field" style="flex:1;min-width:220px"><label class="label sr-only" for="t-search">Search products</label><input class="input" id="t-search" type="search" placeholder="Search products" data-demo="search"></div><button class="btn btn--outline" type="button">${icon("action.filter")}Filter</button><button class="btn btn--default" type="button" data-demo="add-row">${icon("action.add")}Add product</button></div>
+      <div class="row" style="margin-bottom:0.75rem"><div class="field" style="flex:1;min-width:min(220px,100%)"><label class="label sr-only" for="t-search">Search products</label><input class="input" id="t-search" type="search" placeholder="Search products" data-demo="search"></div><button class="btn btn--outline" type="button">${icon("action.filter")}Filter</button><button class="btn btn--default" type="button" data-demo="add-row">${icon("action.add")}Add product</button></div>
       <p class="small muted" aria-live="polite" id="t-count">${products.length} products</p>
-      <div class="table-wrap"><table class="data-table" id="demo-table"><thead><tr><th scope="col"><span class="sr-only">Select</span></th><th scope="col">Product</th><th scope="col">Program</th><th scope="col">Status</th><th scope="col" class="num">Units</th><th scope="col" class="num"><span class="sr-only">Actions</span></th></tr></thead><tbody>${tableRows}</tbody></table></div>
+      <div class="table-wrap cq"><table class="data-table stack-table" id="demo-table"><thead><tr><th scope="col"><span class="sr-only">Select</span></th><th scope="col">Product</th><th scope="col">Program</th><th scope="col">Status</th><th scope="col" class="num">Units</th><th scope="col" class="num"><span class="sr-only">Actions</span></th></tr></thead><tbody>${tableRows}</tbody></table></div>
       <nav class="pagination" aria-label="Pagination"><button class="btn btn--ghost btn--sm" type="button" aria-label="Previous page">${icon("nav.previous", "icon icon--sm")}</button><button class="btn btn--outline btn--sm" type="button" aria-current="page">1</button><button class="btn btn--ghost btn--sm" type="button">2</button><button class="btn btn--ghost btn--sm" type="button">3</button><button class="btn btn--ghost btn--sm" type="button" aria-label="Next page">${icon("nav.next", "icon icon--sm")}</button><span class="small muted">Showing 1 to 5 of 42</span></nav>
 
       <h3 id="c-reveal">Tabs, accordion and menus</h3>
@@ -943,6 +943,48 @@ export function createRenderer(ctx) {
     );
   }
 
+  // ---------- 12 Responsive ----------
+  function responsive() {
+    const f = "12-responsive.md";
+    const d = docs[f];
+    if (!d) { check("error", "Responsive", "12-responsive.md not found", f); return ""; }
+    const bps = rowsOf(d.section(/^Breakpoints$/)?.table("Name", "Min width")).map((r) => ({ name: plain(r.name), min: parseInt(plain(r["min width"]), 10) || 0, devices: plain(r["typical devices"]), layout: plain(r.layout) }));
+    if (!bps.length) check("error", "Responsive", "Breakpoints table not found", f);
+    const max = 1600;
+    const ruler = `<div class="bp-ruler" aria-hidden="true">${bps.map((b) => `<span class="bp-mark${b.min / max > 0.6 ? " bp-mark--end" : ""}" data-bp="${esc(b.name)}" style="left:${(b.min / max) * 100}%"><b>${esc(b.name)}</b>${b.min}px</span>`).join("")}<span class="bp-now" data-bp-indicator></span></div>`;
+    const bpCards = bps.map((b) => `<div class="card bp-card" data-bp-card="${esc(b.name)}"><p class="eyebrow" style="margin:0">${esc(b.name)} · ${b.min}px and up</p><p class="small" style="margin:0.25rem 0"><strong>${esc(b.devices)}</strong></p><p class="small muted" style="margin:0">${esc(b.layout)}</p></div>`).join("");
+    const testWidths = rowsOf(d.section(/^Testing$/)?.table("Width", "Represents")).map((r) => parseInt(plain(r.width), 10)).filter(Boolean);
+    const previewWidths = [...new Set([320, ...testWidths.filter((w) => w > 320 && w <= 1024).map((w) => (w === 375 ? 393 : w))])].slice(0, 4);
+    const products = [["Heritage Rolled Oats", "nongmo", "verified"], ["Stone-Ground Corn Tortillas", "nonupf", "pending"], ["Sprouted Lentil Pasta", "nongmo", "expiring"]];
+    const cqTable = `<div class="table-wrap cq"><table class="stack-table data-table"><thead><tr><th scope="col">Product</th><th scope="col">Program</th><th scope="col">Status</th><th scope="col" class="num">Units</th></tr></thead><tbody>${products
+      .map(([n, p, s], i) => `<tr><td data-label="Product"><strong>${esc(n)}</strong></td><td data-label="Program"><span class="chip" data-brand="${p}">${esc(brandName(p))}</span></td><td data-label="Status">${badge(cert(s))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td></tr>`)
+      .join("")}</tbody></table></div>`;
+    const cqCards = `<div class="cq"><div class="cq-cards">${products.map(([n, p, s]) => `<article class="card cq-card"><div class="cq-card__img" aria-hidden="true">${icon("domain.product", "icon")}</div><div><h4 style="margin:0 0 0.25rem">${esc(n)}</h4><span class="chip" data-brand="${p}">${esc(brandName(p))}</span> ${badge(cert(s))}</div></article>`).join("")}</div></div>`;
+    const block = (re) => { const s = d.section(re); return s ? render(s.blocks) : ""; };
+    return `<section class="ds-section" id="responsive" aria-labelledby="responsive-h" data-bps='${esc(JSON.stringify(bps))}'>
+      <p class="eyebrow">12 · Responsive</p><h2 id="responsive-h">From 320px to wide screens</h2>${source(f)}
+      <div class="prose"><p>${inline(d.paragraphs()[0] ?? "")}</p></div>
+      <p class="bp-readout" aria-live="polite" data-bp-readout></p>
+      <h3>Principles</h3><div class="prose">${block(/^Principles$/)}</div>
+      <h3>Breakpoints</h3>${ruler}<div class="grid" style="--min:200px;margin-top:1rem">${bpCards}</div>
+      <h3>Container queries in action</h3>
+      <p class="prose">The same table and cards, given less room. Drag the slider (or the corner of the frame): the table becomes stacked cards below 560px and the card grid drops columns, without any viewport breakpoint.</p>
+      <div class="field" style="max-width:none"><label class="label" for="cq-range">Container width: <output data-cq-out for="cq-range">100%</output></label><input id="cq-range" type="range" min="280" max="1100" value="1100" step="10" data-cq-range></div>
+      <div class="cq-frame" data-cq-frame><div class="stack">${cqTable}${cqCards}</div></div>
+      ${block(/^Container queries$/)}
+      <h3>Layout behavior by screen size</h3>${block(/^Layout behavior$/)}
+      <h3>Touch and input</h3>
+      <div class="row tt-demo"><div><button type="button" class="btn btn--outline tt tt--24" aria-label="24 pixel target">${icon("action.edit", "icon icon--sm")}</button><p class="small muted">24px: the absolute floor</p></div><div><button type="button" class="btn btn--outline tt tt--44" aria-label="44 pixel target">${icon("action.edit", "icon icon--sm")}</button><p class="small muted">44px: the touch minimum</p></div></div>
+      ${block(/^Touch and input$/)}
+      <div class="split"><div><h3>Type and images</h3>${block(/^Type and images$/)}</div><div><h3>Viewport and safe areas</h3>${block(/^Viewport and safe areas$/)}</div></div>
+      <h3>Performance budgets</h3>${block(/^Performance budgets$/)}
+      <h3>Testing</h3>${block(/^Testing$/)}
+      <h4>Preview this showcase at device widths</h4>
+      <div class="row">${previewWidths.map((w) => `<button type="button" class="btn btn--outline btn--sm" data-preview="${w}">${w}px</button>`).join("")}</div>
+      <div class="previews" data-previews></div>
+    </section>`;
+  }
+
   // ---------- TODOs and source ----------
   function todos() {
     const items = [];
@@ -963,5 +1005,5 @@ export function createRenderer(ctx) {
     return `<section class="ds-section" id="source" aria-labelledby="source-h"><p class="eyebrow">Reference</p><h2 id="source-h">Source documents</h2><p class="prose">The full text of every file the showcase was built from.</p>${files}</section>`;
   }
 
-  return { writing, ux, overview, architecture, logos, color, audit, typography, typeCss, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
+  return { responsive, writing, ux, overview, architecture, logos, color, audit, typography, typeCss, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
 }
