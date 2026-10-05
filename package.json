@@ -1,0 +1,25 @@
+{
+  "name": "fip-design-system",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Food Integrity Project design system: docs, tokens and a generated visual showcase (index.html).",
+  "type": "module",
+  "scripts": {
+    "colors": "node scripts/generate-color-scales.mjs",
+    "build": "node scripts/build-showcase.mjs",
+    "watch": "node scripts/build-showcase.mjs --watch",
+    "dev": "node scripts/build-showcase.mjs --watch --serve",
+    "check": "node scripts/generate-color-scales.mjs --check && node scripts/build-showcase.mjs --check",
+    "todos": "grep -rn \"TODO(\" docs/design-system",
+    "prepare": "git config core.hooksPath .githooks || true"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@fontsource-variable/lora": "^5.3.0",
+    "@fontsource-variable/nunito-sans": "^5.3.0",
+    "@fontsource-variable/quicksand": "^5.3.0",
+    "lucide-static": "^1.52.0"
+  }
+}

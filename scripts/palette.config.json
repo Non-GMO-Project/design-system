@@ -1,0 +1,383 @@
+{
+  "$comment": "Base colors for every tonal scale. Edit a hex here, then run `npm run colors`. Each base is placed at the step whose target lightness it is closest to, and kept exact. `pins` are other official values kept exact at their closest step. Source: Food Integrity Project Style Guide (draft for review), pages 5-9 and 18.",
+  "steps": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    950
+  ],
+  "targets": [
+    0.975,
+    0.945,
+    0.89,
+    0.82,
+    0.73,
+    0.64,
+    0.555,
+    0.475,
+    0.395,
+    0.315,
+    0.24
+  ],
+  "singles": [
+    {
+      "name": "birch",
+      "label": "Birch",
+      "hex": "#FFFDEB",
+      "owner": "House (shared)",
+      "purpose": "Default background for every brand, print and digital. Never substitute pure white.",
+      "official": true
+    },
+    {
+      "name": "frost",
+      "label": "Frost",
+      "hex": "#F3F4F2",
+      "owner": "House (shared)",
+      "purpose": "Utility neutral: table stripes, form fields, disabled states, data panels, image wells. Never a page ground.",
+      "official": true
+    }
+  ],
+  "scales": [
+    {
+      "name": "stone",
+      "label": "Stone",
+      "hex": "#6B746F",
+      "owner": "House (shared)",
+      "purpose": "Interface neutral for borders, help text and disabled states. Frost is its 50 step.",
+      "pins": [
+        "#F3F4F2"
+      ],
+      "official": false
+    },
+    {
+      "name": "cacao",
+      "label": "Cacao",
+      "hex": "#241A15",
+      "owner": "Food Integrity Project",
+      "purpose": "The parent's one dark. Sets all type and inverted panels. Warm near-black from the logo.",
+      "official": true
+    },
+    {
+      "name": "loam",
+      "label": "Loam",
+      "hex": "#6B5644",
+      "owner": "Food Integrity Project",
+      "purpose": "Supporting tone. The brown of turned soil, a lighter tone of Cacao.",
+      "official": true
+    },
+    {
+      "name": "milkweed",
+      "label": "Milkweed Leaf",
+      "hex": "#5F7A52",
+      "owner": "Food Integrity Project",
+      "purpose": "The parent's signature. Grey-green of the plant the monarch cannot breed without.",
+      "official": true
+    },
+    {
+      "name": "forest",
+      "label": "Forest",
+      "hex": "#053220",
+      "owner": "Non-GMO Project, Food Integrity Collective",
+      "purpose": "One dark for Non-GMO Project and the Collective. Sets all type and inverted panels.",
+      "official": true
+    },
+    {
+      "name": "seafoam",
+      "label": "Seafoam",
+      "hex": "#DDEED6",
+      "owner": "Non-GMO Project",
+      "purpose": "Supporting tint. Fills panels and cards where Birch alone is too flat.",
+      "official": true
+    },
+    {
+      "name": "monarch",
+      "label": "Monarch",
+      "hex": "#F18A00",
+      "owner": "Non-GMO Project",
+      "purpose": "Non-GMO Project signature. One point of emphasis per view. Never small text.",
+      "official": true
+    },
+    {
+      "name": "dark-matter",
+      "label": "Dark Matter",
+      "hex": "#0A2041",
+      "owner": "Non-UPF Verified",
+      "purpose": "Non-UPF Verified one dark. Keeps the program separate from Non-GMO Project at shelf distance.",
+      "official": true
+    },
+    {
+      "name": "almond",
+      "label": "Almond",
+      "hex": "#F5DFCE",
+      "owner": "Non-UPF Verified",
+      "purpose": "Supporting tint. Does the warming work underneath Dragon Fruit.",
+      "official": true
+    },
+    {
+      "name": "dragonfruit",
+      "label": "Dragon Fruit",
+      "hex": "#CE1B6A",
+      "owner": "Non-UPF Verified",
+      "purpose": "Non-UPF Verified signature and seal color. The mark, headlines and single emphasis elements.",
+      "official": true
+    },
+    {
+      "name": "cornflower",
+      "label": "Corn Flower",
+      "hex": "#9EB6DE",
+      "owner": "Food Integrity Collective",
+      "purpose": "Collective supporting accent. Shapes, charts and panels. Never small text.",
+      "official": true
+    },
+    {
+      "name": "romanesco",
+      "label": "Romanesco",
+      "hex": "#D3D95E",
+      "owner": "Food Integrity Collective",
+      "purpose": "Collective signature. Shapes, charts and panels. Never small text.",
+      "official": true
+    },
+    {
+      "name": "success",
+      "label": "Success",
+      "hex": "#2F7D4A",
+      "owner": "Status (shared)",
+      "purpose": "Status: success, verified, complete.",
+      "official": false
+    },
+    {
+      "name": "warning",
+      "label": "Warning",
+      "hex": "#B7791F",
+      "owner": "Status (shared)",
+      "purpose": "Status: warning, needs attention, expiring soon.",
+      "official": false
+    },
+    {
+      "name": "danger",
+      "label": "Danger",
+      "hex": "#B4372F",
+      "owner": "Status (shared)",
+      "purpose": "Status: error, destructive, lapsed.",
+      "official": false
+    },
+    {
+      "name": "info",
+      "label": "Info",
+      "hex": "#2F6DA3",
+      "owner": "Status (shared)",
+      "purpose": "Status: informational, in review, neutral notices.",
+      "official": false
+    }
+  ],
+  "pairings": [
+    [
+      "cacao-950",
+      "birch"
+    ],
+    [
+      "loam-700",
+      "birch"
+    ],
+    [
+      "cacao-950",
+      "loam-100"
+    ],
+    [
+      "birch",
+      "milkweed-600"
+    ],
+    [
+      "birch",
+      "milkweed-700"
+    ],
+    [
+      "birch",
+      "loam-700"
+    ],
+    [
+      "birch",
+      "cacao-950"
+    ],
+    [
+      "birch",
+      "loam-800"
+    ],
+    [
+      "cacao-200",
+      "cacao-950"
+    ],
+    [
+      "cacao-200",
+      "cacao-900"
+    ],
+    [
+      "forest-900",
+      "birch"
+    ],
+    [
+      "forest-700",
+      "birch"
+    ],
+    [
+      "forest-900",
+      "seafoam-100"
+    ],
+    [
+      "forest-700",
+      "seafoam-100"
+    ],
+    [
+      "forest-900",
+      "monarch-400"
+    ],
+    [
+      "forest-900",
+      "monarch-300"
+    ],
+    [
+      "birch",
+      "forest-900"
+    ],
+    [
+      "birch",
+      "forest-800"
+    ],
+    [
+      "forest-200",
+      "forest-900"
+    ],
+    [
+      "forest-200",
+      "forest-800"
+    ],
+    [
+      "dark-matter-950",
+      "birch"
+    ],
+    [
+      "dark-matter-700",
+      "birch"
+    ],
+    [
+      "dark-matter-950",
+      "almond-200"
+    ],
+    [
+      "dark-matter-700",
+      "almond-200"
+    ],
+    [
+      "birch",
+      "dragonfruit-600"
+    ],
+    [
+      "birch",
+      "dragonfruit-700"
+    ],
+    [
+      "dragonfruit-600",
+      "birch"
+    ],
+    [
+      "birch",
+      "dark-matter-950"
+    ],
+    [
+      "birch",
+      "dark-matter-900"
+    ],
+    [
+      "dark-matter-200",
+      "dark-matter-950"
+    ],
+    [
+      "forest-900",
+      "romanesco-200"
+    ],
+    [
+      "forest-900",
+      "romanesco-300"
+    ],
+    [
+      "forest-900",
+      "cornflower-400"
+    ],
+    [
+      "forest-900",
+      "cornflower-200"
+    ],
+    [
+      "forest-700",
+      "cornflower-200"
+    ],
+    [
+      "forest-700",
+      "cornflower-50"
+    ],
+    [
+      "success-800",
+      "success-50"
+    ],
+    [
+      "warning-800",
+      "warning-50"
+    ],
+    [
+      "danger-800",
+      "danger-50"
+    ],
+    [
+      "info-800",
+      "info-50"
+    ],
+    [
+      "stone-800",
+      "frost"
+    ],
+    [
+      "birch",
+      "danger-600"
+    ],
+    [
+      "monarch-400",
+      "birch"
+    ],
+    [
+      "cornflower-400",
+      "birch"
+    ],
+    [
+      "romanesco-200",
+      "birch"
+    ],
+    [
+      "monarch-500",
+      "birch"
+    ],
+    [
+      "cornflower-600",
+      "birch"
+    ],
+    [
+      "loam-600",
+      "frost"
+    ],
+    [
+      "forest-600",
+      "frost"
+    ],
+    [
+      "dark-matter-600",
+      "frost"
+    ]
+  ],
+  "$pairings": "Text-on-background pairs listed in 02-color.md 'Approved text pairings'. Ratios are computed, never typed."
+}

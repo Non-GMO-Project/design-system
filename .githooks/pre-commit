@@ -1,0 +1,22 @@
+#!/bin/sh
+# Rebuild the showcase when design-system sources are part of the commit,
+# and stage the generated files so index.html never lags behind the docs.
+# Enabled by `npm install` (git config core.hooksPath .githooks). Skip with --no-verify.
+
+changed=$(git diff --cached --name-only --diff-filter=ACMRD | grep -E '^(docs/design-system/|scripts/|public/brand/)' || true)
+[ -z "$changed" ] && exit 0
+
+if echo "$changed" | grep -q '^scripts/palette.config.json$'; then
+  node scripts/generate-color-scales.mjs || exit 1
+  git add docs/design-system/02-color.md docs/design-system/09-tokens.md
+fi
+
+out=$(node scripts/build-showcase.mjs) || { echo "$out"; echo "Showcase build failed. Commit stopped."; exit 1; }
+echo "$out" | head -1
+git add index.html styles/tokens.css public/fonts
+
+if echo "$out" | grep -q '✗'; then
+  echo "$out" | grep '✗'
+  echo "The design-system build checks found errors (see above). Fix them, or commit with --no-verify to override."
+  exit 1
+fi
