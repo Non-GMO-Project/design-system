@@ -22,20 +22,24 @@ To show verification status inside an interface (a table, a search result), use 
 | Food Integrity Project | Parent mark (butterfly + "food integrity project") | Cacao on Birch, or reversed to Birch on Cacao. Other single-color pairings only for special design considerations |
 | Non-GMO Project | Organizational logo (butterfly + wordmark, Monarch) | Supplied colors only |
 | Non-GMO Project Verified | Certification seal | Artwork is fixed by the standard. Never recolored, cropped or redrawn. Full color or the supplied one-color file |
+| Non-UPF Verified logo | Organizational logo (circle icon + "NON UPF VERIFIED") | Dragon Fruit. Not a seal: it identifies the program, not a verified product |
 | Non-UPF Verified | Certification seal, rectangular (primary) and circular (secondary) | Dragon Fruit, or single-color Dark Matter for one-color printing. White reversed file for dark grounds |
 | Food Integrity Collective | Mark (hand, sprout and butterfly) | Supplied green, black or white files |
 
 ## Asset inventory
 
-What is in `public/brand/` today. The showcase build checks this table against the folder and flags missing or unlisted files.
+What is in `public/brand/` today. The showcase build checks this table against the folder and flags missing or unlisted files. Files marked "media library" were taken from the program website's WordPress media library on 2026-10-06, at the largest size published there.
 
 | File | Brand | Asset | Tone | Status |
 |---|---|---|---|---|
 | `fip/fip-logo-horizontal-color.png` | fip | logo | color | Raster pulled from the style guide PDF. Replace with SVG in Cacao |
-| `nongmo/nongmo-logo-horizontal-color.png` | nongmo | logo | color | Raster, 300px wide |
-| `nongmo/nongmo-seal-verified-color.jpg` | nongmo | seal | color | Official full-color seal |
+| `nongmo/nongmo-logo-horizontal-color.png` | nongmo | logo | color | Corporate logo in orange, 913 x 432, transparent. nongmoproject.org media library (`NGP_corp_logo_new.png`) |
+| `nongmo/nongmo-logo-horizontal-reversed.png` | nongmo | logo | reversed | White corporate logo for Forest and other dark grounds, 913 x 432, transparent. Media library (`NGP_corp_logo_new_white.png`) |
+| `nongmo/nongmo-mark-color.svg` | nongmo | mark | color | The Butterfly, vector. Media library (`butterfly-logo.svg`). Its orange is `#F18C20`, slightly off Monarch `#F18A00` |
+| `nongmo/nongmo-seal-verified-color.png` | nongmo | seal | color | Official full-color Verification Mark, 1205 x 882, lossless. Media library (`NGPV_full_color-1.png`) |
 | `nongmo/nongmo-seal-verified-mono-dark.jpg` | nongmo | seal | mono-dark | Official one-color seal |
-| `nonupf/nonupf-seal-verified-color.png` | nonupf | seal | color | Primary rectangular mark, Dragon Fruit |
+| `nonupf/nonupf-logo-horizontal-color.svg` | nonupf | logo | color | Organizational logo (circle icon + NON UPF VERIFIED), Dragon Fruit, vector. Taken from nonultraprocessed.org, where it is labeled "Non-UPF Verified corporate logo" |
+| `nonupf/nonupf-seal-verified-color.svg` | nonupf | seal | color | Primary rectangular mark, Dragon Fruit, vector. nonultraprocessed.org media library (`non-upf-package-logo.svg`) |
 | `nonupf/nonupf-seal-verified-mono-dark.png` | nonupf | seal | mono-dark | Primary mark, Dark Matter |
 | `nonupf/nonupf-seal-verified-mono-light.png` | nonupf | seal | mono-light | Primary mark, white, for dark grounds |
 | `nonupf/nonupf-seal-circular-color.png` | nonupf | seal | color | Secondary circular mark. Only when the primary cannot fit |
@@ -48,12 +52,17 @@ What is in `public/brand/` today. The showcase build checks this table against t
 
 Still needed:
 
-- `TODO(design): SVG versions of every file above. PNG and JPG are stand-ins.`
+- `TODO(design): SVG versions of the remaining PNG and JPG files. Vector files exist for the Non-UPF Verified logo and primary seal and the Non-GMO Project Butterfly.`
 - `TODO(design): Food Integrity Project logo in Cacao and reversed Birch, plus the mark alone (butterfly) for favicons.`
-- `TODO(design): Non-GMO Project reversed logo and butterfly avatar.`
-- `TODO(design): a Non-UPF Verified organizational logo. Today only the seal exists, and a seal is not a logo.`
+- `TODO(design): Non-GMO Project butterfly avatar (butterfly on blue circle) and a vector corporate logo. Confirm whether the Butterfly's #F18C20 should become Monarch #F18A00.`
+- `TODO(design): Non-UPF Verified logo in reversed (Birch) and one-color Dark Matter versions. Only the Dragon Fruit color version exists.`
 - `TODO(design): a Food Integrity Collective wordmark or lockup. Today only the symbol exists. The older guide called this the umbrella mark; confirm it now belongs to the Collective.`
 - `TODO(design): endorsement lockup files (horizontal and stacked) for each program.`
+
+Program trademark guides (the rules for seal use on pack and in marketing):
+
+- Non-GMO Project Trademark Use Guide v2.2: https://www.nongmoproject.org/wp-content/uploads/NGP-trademark-use-guide-v2.2.pdf
+- Non-UPF Verified Trademark Use Guide (December 2025): https://nonultraprocessed.org/wp-content/uploads/2026/06/non-upf-verified-trademark-use-guide-v1.pdf
 
 ## Naming
 

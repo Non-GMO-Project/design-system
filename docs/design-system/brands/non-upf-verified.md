@@ -28,9 +28,9 @@ Dark Matter replaces Forest as the type and structure color, which is what keeps
 
 ## Logos and seal
 
-`nonupf-seal-*`. Primary mark (rectangular) is preferred; the secondary circular mark only where the primary cannot fit. Every mark keeps all four parts: icon, wordmark, URL and keyline. Available in Dragon Fruit and single-color Dark Matter for one-color printing. The mark is for verified products only, never companies. It may not appear on a product with a bioengineered food disclosure. Minimum 72px wide on screen (60px for the circular mark).
+`nonupf-logo-horizontal-color` is the organizational logo for headers, footers and endorsements. `nonupf-seal-*` are the certification marks. Primary mark (rectangular) is preferred; the secondary circular mark only where the primary cannot fit. Every mark keeps all four parts: icon, wordmark, URL and keyline. Available in Dragon Fruit and single-color Dark Matter for one-color printing. The mark is for verified products only, never companies. It may not appear on a product with a bioengineered food disclosure. Minimum 72px wide on screen (60px for the circular mark).
 
-`TODO(design): Non-UPF Verified has no organizational logo yet, only the seal. Program headers use a text wordmark placeholder until one exists.`
+The organizational logo and the circular secondary seal look alike: the logo reads "NON UPF VERIFIED" beside the icon, while the seal carries the URL and a keyline. Use the logo to name the program and the seal only on verified products. `TODO(design): reversed and one-color versions of the logo.`
 
 ## Typography
 
