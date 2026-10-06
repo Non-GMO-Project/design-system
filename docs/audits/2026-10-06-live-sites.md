@@ -86,6 +86,19 @@ Both sites expose their WordPress media library, which holds larger and vector v
 
 Not taken: watermarked marks (FSIS, bilingual, French, English) because they carry watermarks; small size variants; files the system already has at equal or better quality. The libraries also hold each program's Trademark Use Guide PDF, now linked from `04-logos-and-marks.md`.
 
+## foodintegritycollective.org (added later the same day)
+
+Checked for logo files; a light visual review only, not the full measurement run above. The site is on Squarespace.
+
+| Finding | System says | Note |
+|---|---|---|
+| Header is clay pink (about `#E3A084`) with a cream logo; body ground is Birch-like cream; footer is lime | Collective is Birch ground, Forest dark, Corn Flower support, Romanesco signature | The site still uses the Collective's earlier palette. Clay is not in the new palette, and Corn Flower does not appear |
+| Buttons are lime with Forest-green text ("Join Us!", "Learn More") | Primary is Romanesco with Forest text | Same idea, earlier lime (`#E2E98D`) instead of Romanesco (`#D3D95E`) |
+| Headings and body are a serif that is not Lora | Lora headings, sans body | Typography predates the style guide |
+| Artwork greens are `#22532D` to `#255330` | Forest `#053220` | Older Collective green |
+
+Logo files taken: the full horizontal lockup in cream (`collective-logo-horizontal-mono-light.png`, 1501 x 509), the "Food should nourish life" badge in two versions, and three petals illustrations. Not taken: five petals colorways in teal, gold, clay and grey (off-palette), the favicon (smaller than the existing mark file), third-party podcast logos.
+
 ## Suggested order
 
 1. Accessibility fixes A1 to A5. These are small and remove real barriers.

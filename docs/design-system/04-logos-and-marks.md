@@ -46,6 +46,7 @@ What is in `public/brand/` today. The showcase build checks this table against t
 | `nonupf/nonupf-seal-circular-mono-dark.png` | nonupf | seal | mono-dark | Secondary circular mark, Dark Matter |
 | `nonupf/nonupf-seal-circular-mono-light.png` | nonupf | seal | mono-light | Secondary circular mark, white |
 | `nonupf/nonupf-mark-color.png` | nonupf | mark | color | Icon in circle. Favicon and app icon only; the icon alone needs approval elsewhere |
+| `collective/collective-logo-horizontal-mono-light.png` | collective | logo | mono-light | Full lockup (mark + "Food Integrity Collective" in serif), cream `#FEFDF0` on transparent, 1501 x 509. foodintegritycollective.org header (`food_integrity_cream.png`) |
 | `collective/collective-mark-color.png` | collective | mark | color | Green mark |
 | `collective/collective-mark-mono-dark.png` | collective | mark | mono-dark | Black mark |
 | `collective/collective-mark-mono-light.png` | collective | mark | mono-light | White mark |
@@ -56,8 +57,10 @@ Still needed:
 - `TODO(design): Food Integrity Project logo in Cacao and reversed Birch, plus the mark alone (butterfly) for favicons.`
 - `TODO(design): Non-GMO Project butterfly avatar (butterfly on blue circle) and a vector corporate logo. Confirm whether the Butterfly's #F18C20 should become Monarch #F18A00.`
 - `TODO(design): Non-UPF Verified logo in reversed (Birch) and one-color Dark Matter versions. Only the Dragon Fruit color version exists.`
-- `TODO(design): a Food Integrity Collective wordmark or lockup. Today only the symbol exists. The older guide called this the umbrella mark; confirm it now belongs to the Collective.`
+- `TODO(design): Food Integrity Collective lockup in color (Forest) for Birch backgrounds. Only the light version exists. The older guide called the symbol the umbrella mark; confirm it now belongs to the Collective.`
 - `TODO(design): endorsement lockup files (horizontal and stacked) for each program.`
+
+Other Collective artwork in `public/brand/collective/` (not logos, so not in the inventory above): `campaign/collective-campaign-nourish-life-badge.png` and `-light.png` (the "Food should nourish life" badge), and `illustrations/collective-petals-*.png` (the petals motif). All use the Collective's earlier colors, green `#255330` and lime `#E2E98D`, not Forest and Romanesco. `TODO(design): recolor to Forest and Romanesco, or confirm the earlier colors stay for Collective artwork.`
 
 Program trademark guides (the rules for seal use on pack and in marketing):
 

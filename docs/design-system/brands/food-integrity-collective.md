@@ -30,9 +30,9 @@ The Collective shares Forest with Non-GMO Project but pairs it with two mid-tone
 
 ## Logos
 
-`collective-mark-*`: the hand, sprout and butterfly symbol in green, black and white. No certification seal; the Collective does not verify products.
+`collective-mark-*`: the hand, sprout and butterfly symbol in green, black and white. `collective-logo-horizontal-mono-light`: the full lockup with "Food Integrity Collective" set in serif, in cream, for dark grounds. No certification seal; the Collective does not verify products.
 
-`TODO(design): supply a Collective wordmark or lockup. Today only the symbol exists.`
+`TODO(design): the lockup in color (Forest) for Birch backgrounds.`
 
 ## Typography
 
@@ -40,7 +40,7 @@ Campaign and member pairing (Quicksand + Avenir) for events and member communica
 
 ## Imagery
 
-People together: markets, events, farms open to visitors, shared meals, community work, supply chains seen as systems. Natural, neutral tones without strong orange or magenta casts. Faces and activity over landscapes.
+The Collective has its own graphic motifs: the petals (`illustrations/collective-petals-*`) and the "Food should nourish life" badge (`campaign/`). Use them as decoration with restraint, never as a logo. People together: markets, events, farms open to visitors, shared meals, community work, supply chains seen as systems. Natural, neutral tones without strong orange or magenta casts. Faces and activity over landscapes.
 
 ## Voice
 
