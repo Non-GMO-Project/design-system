@@ -1,6 +1,6 @@
-# Food Integrity Project Design System
+# Food Integrity Project Digital Design System
 
-**Version:** 0.4 (draft for review)
+**Version:** 0.5 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -127,6 +127,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.5 | 2026-10-08 | Renamed the system to "Food Integrity Project Digital Design System" to make clear it covers digital applications, not print (#1). The showcase title, top bar and eyebrow now say "Digital design system" |
 | 0.4 | 2026-10-05 | Added `12-responsive.md` (breakpoints, layout behavior, container queries, touch, safe areas, performance, testing). The showcase now works on phones: mobile navigation, brand select, stacked tables, bottom drawers, no sideways scrolling at 320px |
 | 0.3 | 2026-10-05 | Added `10-writing.md` (voice, tone, UI copy, word list, claims, mechanics) and `11-ux.md` (principles, audiences, core flows, feedback timing, definition of done). Interface-writing rules in `06` now point to `10` |
 | 0.2 | 2026-10-05 | Adopted the Food Integrity Project Style Guide: Birch ground, one dark per brand, official palettes (Cacao, Loam, Milkweed Leaf; Forest, Seafoam, Monarch; Dark Matter, Almond, Dragon Fruit; Corn Flower, Romanesco), Lora + Avenir/Nunito Sans + Quicksand, endorsement lockups. Removed template colors (Furrow, Grain, Leaf, Beet, Radish, Borage, Heirloom). Renamed `--brand-secondary` to `--brand-signature`; added `--brand-dark`, `--brand-support`, `--field`; removed `--house-accent`. Added generated showcase and color scripts |

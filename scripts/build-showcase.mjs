@@ -235,7 +235,7 @@ function build() {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>Design system | Food Integrity Project</title>
+<title>Digital design system | Food Integrity Project</title>
 <link rel="icon" href="public/brand/nonupf/nonupf-mark-color.png" media="(prefers-color-scheme: no-preference)">
 <style>
 ${fontCss}
@@ -247,7 +247,7 @@ ${showcaseCss}
 <body>
 <a class="btn btn--default skip" href="#main">Skip to main content</a>
 <header class="topbar">
-  <p class="topbar__title">${fipLogo ? `<img src="${esc(fipLogo.path)}" alt="">` : ""}<span>Design system <span class="muted small">v${esc(version.split(" ")[0])}</span></span></p>
+  <p class="topbar__title">${fipLogo ? `<img src="${esc(fipLogo.path)}" alt="">` : ""}<span>Digital design system <span class="muted small">v${esc(version.split(" ")[0])}</span></span></p>
   <button class="btn btn--outline btn--sm nav-toggle" type="button" data-open="mobile-nav" aria-haspopup="dialog">${r.icon("nav.menu", "icon icon--sm")}Sections</button>
   <fieldset class="segmented brand-seg"><legend class="sr-only">Brand context</legend>${brandRadios}</fieldset>
   <label class="brand-select"><span class="sr-only">Brand context</span><span class="select-wrap"><select class="select" name="brand">${brandOptions}</select>${r.icon("nav.expand", "icon icon--sm")}</span></label>
