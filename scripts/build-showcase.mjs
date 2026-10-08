@@ -187,6 +187,7 @@ function build() {
     ["writing", "Writing and copy", r.writing()],
     ["ux", "UX", r.ux()],
     ["responsive", "Responsive", r.responsive()],
+    ["email", "Email", r.email()],
     ["tokens", "Tokens", r.tokens()],
     ["brands", "Brands", r.brands()],
   ];

@@ -985,6 +985,44 @@ export function createRenderer(ctx) {
     </section>`;
   }
 
+  // ---------- 13 Email ----------
+  function email() {
+    const f = "13-email.md";
+    const d = docs[f];
+    if (!d) { check("error", "Email", "13-email.md not found", f); return ""; }
+    const block = (re) => { const s = need(d, re, f, "Email"); return s ? render(s.blocks) : ""; };
+    // One sample per brand, each in its own data-brand context. Dark header band only where a reversed logo exists.
+    const mock = (b) => {
+      const light = asset(b, "logo-horizontal-reversed", "logo-horizontal-mono-light");
+      const header = light
+        ? `<div class="email-mock__header email-mock__header--dark">${logoImg(b, { height: 32, tone: "light" })}<span class="small">October 2026</span></div>`
+        : `<div class="email-mock__header">${logoImg(b, { height: 32 })}<span class="small muted">October 2026</span></div>`;
+      return `<article class="email-mock" data-brand="${b}" aria-label="Sample ${esc(brandName(b))} email">${header}
+        <div class="email-mock__body"><p class="email-mock__masthead">Newsletter name</p><p class="small muted" style="margin:0 0 1rem">Updates from ${esc(brandName(b))}</p>
+        <div class="email-mock__hero" aria-hidden="true">${icon("domain.product", "icon")}</div>
+        <h4 class="email-mock__headline">A headline in Lora, left-aligned</h4><p class="small">Body text in Avenir at 16px, on Birch, in the brand dark. <a href="#email">Links say where they go</a>.</p>
+        <p><span class="btn btn--default btn--sm">Register for the webinar</span></p><hr class="email-mock__rule">
+        <div class="panel-support small" style="padding:1rem">One appeal per email, on the support tint.</div></div>
+        <div class="email-mock__footer small"><strong>${esc(brandName(b))}</strong><br>Mailing address · Website<br><a href="#email">Manage preferences</a> · <a href="#email">Unsubscribe</a></div></article>`;
+    };
+    return section(
+      "email", "13 · Email", "Brand in the inbox", f,
+      `<h3>Principles</h3><div class="prose">${block(/^Principles$/)}</div>
+      <h3>One email per brand</h3><p class="prose small">Each sample renders in its own brand context with the official logo files. Bands use a reversed logo where one exists; otherwise the header stays on Birch.</p>
+      <div class="grid" style="--min:260px">${BRANDS.map(mock).join("")}</div>
+      <h3>Email types</h3>${block(/^Email types$/)}
+      <h3>Anatomy</h3>${block(/^Anatomy$/)}
+      <h3>Color in email</h3>${block(/^Color in email$/)}
+      <h3>Type in email</h3>${block(/^Type in email$/)}
+      <div class="split"><div><h3>Layout and images</h3>${block(/^Layout and images$/)}</div><div><h3>Logos and seals</h3>${block(/^Logos and seals$/)}</div></div>
+      <div class="split"><div><h3>Buttons and links</h3>${block(/^Buttons and links$/)}</div><div><h3>Accessibility</h3>${block(/^Accessibility$/)}</div></div>
+      <h3>Footer content</h3>${block(/^Footer content$/)}
+      <h3>What to change from recent sends</h3>${block(/^What to change from recent sends$/)}
+      <h3>Before sending</h3>${block(/^Before sending$/)}`,
+      `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
+    );
+  }
+
   // ---------- TODOs and source ----------
   function todos() {
     const items = [];
@@ -1005,5 +1043,5 @@ export function createRenderer(ctx) {
     return `<section class="ds-section" id="source" aria-labelledby="source-h"><p class="eyebrow">Reference</p><h2 id="source-h">Source documents</h2><p class="prose">The full text of every file the showcase was built from.</p>${files}</section>`;
   }
 
-  return { responsive, writing, ux, overview, architecture, logos, color, audit, typography, typeCss, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
+  return { responsive, email, writing, ux, overview, architecture, logos, color, audit, typography, typeCss, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
 }
