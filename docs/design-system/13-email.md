@@ -79,7 +79,7 @@ Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. E
 
 - **Header:** the brand's horizontal logo (`04-logos-and-marks.md`, "Email header"). Collective emails use the full lockup on a Forest band until a Forest-colored lockup exists.
 - **Footer:** the logo or mark again at a smaller size, plus the endorsement line in program emails. Use the text line ("A program of the Food Integrity Project") until endorsement lockup files exist.
-- **Seals:** only in a story about a verified product, next to that product, at 72px wide or more. Never on a hero photo, never as a section ornament, never from another program.
+- **Seals:** only in a story about a verified product, next to that product, at or above its screen minimum in `04-logos-and-marks.md` (72px wide; 80px for the Non-UPF Verified primary seal). Never on a hero photo, never as a section ornament, never from another program.
 - Badges and campaign artwork (for example the Collective's "Food should nourish life" badge) belong to their brand and can sit in the footer or support band of that brand's email.
 
 ## Buttons and links

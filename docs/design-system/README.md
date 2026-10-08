@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.6 (draft for review)
+**Version:** 0.7 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -27,6 +27,7 @@ Values marked `TODO(...)` still need a decision. Everything else is a working de
 | `11-ux.md` | UX principles, audiences and jobs, information architecture, core flows, feedback timing, UX definition of done | Designing or building any flow or screen |
 | `12-responsive.md` | Breakpoints, layout behavior per screen size, container queries, touch and input, safe areas, performance budgets, device testing | Any layout, any component that changes with screen size |
 | `13-email.md` | Email types, anatomy, color and type that survive email clients, logos and seals, buttons, footer content, send checklist | Any email template, newsletter or campaign |
+| `trademark/*.md` | One trademark usage guide per certification program (Non-GMO Project Verified, Non-UPF Verified), written for participants. Each is also published as a standalone page in `trademark/` | Anything showing a certification seal, any material for licensees |
 | `brands/*.md` | One profile per brand: role, color roles, ratio, logos, imagery, voice, do and don't | Work scoped to one brand |
 
 ## The model in one paragraph
@@ -48,7 +49,9 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 
 ## The showcase
 
-`index.html` at the repository root is a visual reference of the whole system: logos and seals, color and contrast, type, icons, components, motion, accessibility, writing, UX, responsive behavior, email and each brand profile, with switches for brand and dark mode.
+`index.html` at the repository root is a visual reference of the whole system: logos and seals, color and contrast, type, icons, components, motion, accessibility, writing, UX, responsive behavior, email, trademark usage and each brand profile, with switches for brand and dark mode.
+
+The build also writes one standalone page per program trademark doc, `trademark/non-gmo-project.html` and `trademark/non-upf-verified.html`. Each is a single file with its fonts, styles and mark images inlined and internal TODOs left out, so it can be sent to participants on its own.
 
 It is **generated from these Markdown files** by `scripts/build-showcase.mjs`. Do not edit `index.html` by hand. The build reads the tables and CSS blocks on these pages, so changing a value here changes the showcase. It also checks the docs as it goes: contrast ratios, asset files, icon names, token references. Problems show in a "Build checks" panel at the top of the page.
 
@@ -96,7 +99,8 @@ Before writing or changing UI:
 - Read the topic files the task touches: 02-color, 03-typography, 04-logos-and-marks,
   05-iconography, 06-ui-framework, 07-motion, 08-accessibility, 09-tokens,
   10-writing (any copy), 11-ux (any flow or screen), 12-responsive (any layout),
-  13-email (any email template or campaign).
+  13-email (any email template or campaign), trademark/<program> (anything showing a
+  certification seal).
 - For work scoped to one program, also read docs/design-system/brands/<brand>.md.
 
 Hard rules:
@@ -129,6 +133,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.7 | 2026-10-08 | Added verified products trademark usage (#9): `trademark/non-gmo-project.md` (from Trademark Use Guide v2.2) and `trademark/non-upf-verified.md` (from Trademark Use Guide v1.0), each also generated as a standalone participant page in `trademark/`. Added the official white and bilingual Non-GMO Project Verified Marks and replaced the Non-UPF Verified seal files with the 900px originals from the program kit. Seal minimum sizes and clear space in `04` now follow each program's guide (Non-UPF Verified primary seal: 80px on screen) |
 | 0.6 | 2026-10-08 | Added `13-email.md` (email types, anatomy, color and type for email clients, logos and seals, buttons, footer, send checklist, and what to change from recent sends) (#7). The showcase has a new Email section with a sample email per brand |
 | 0.5 | 2026-10-08 | Renamed the system to "Food Integrity Project Digital Design System" to make clear it covers digital applications, not print (#1). The showcase title, top bar and eyebrow now say "Digital design system" |
 | 0.4 | 2026-10-05 | Added `12-responsive.md` (breakpoints, layout behavior, container queries, touch, safe areas, performance, testing). The showcase now works on phones: mobile navigation, brand select, stacked tables, bottom drawers, no sideways scrolling at 320px |

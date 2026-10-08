@@ -16,6 +16,7 @@ import { dirname, join, extname, relative } from "node:path";
 import { parse, esc, plain, rowsOf } from "./lib/markdown.mjs";
 import { extractCss, resolver } from "./lib/tokens.mjs";
 import { createRenderer } from "./showcase/render.mjs";
+import { trademarkPage } from "./showcase/trademark.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DOCS = join(root, "docs/design-system");
@@ -30,6 +31,8 @@ function readDocs() {
     const rank = (f) => (order.indexOf(f.replace(/\.md$/, "")) + 1 || 99);
     files.push(...readdirSync(join(DOCS, "brands")).filter((f) => f.endsWith(".md")).sort((a, b) => rank(a) - rank(b) || a.localeCompare(b)).map((f) => `brands/${f}`));
   }
+  // Program trademark usage docs, each also published as a standalone page (see scripts/showcase/trademark.mjs).
+  if (existsSync(join(DOCS, "trademark"))) files.push(...readdirSync(join(DOCS, "trademark")).filter((f) => f.endsWith(".md")).sort().map((f) => `trademark/${f}`));
   return Object.fromEntries(files.map((f) => [f, parse(readFileSync(join(DOCS, f), "utf8"), f)]));
 }
 
@@ -178,6 +181,7 @@ function build() {
     ["overview", "Overview", r.overview()],
     ["architecture", "Brand architecture", r.architecture()],
     ["logos", "Logos and marks", r.logos()],
+    ["trademark", "Trademark usage", r.trademark()],
     ["color", "Color", r.color()],
     ["typography", "Typography", r.typography()],
     ["icons", "Iconography", r.icons()],
@@ -194,6 +198,21 @@ function build() {
   const todo = r.todos();
   sections.push(["todos", `Open TODOs (${todo.count})`, todo.html], ["source", "Source documents", r.sources()]);
 
+  const showcaseCss = readFileSync(join(root, "scripts/showcase/styles.css"), "utf8");
+  const appJs = readFileSync(join(root, "scripts/showcase/app.js"), "utf8");
+  const tokensCss = `/* Generated from docs/design-system/09-tokens.md by scripts/build-showcase.mjs. Do not edit. */\n\n${paletteCss.replace(/\/\* palette:(start|end) \*\/\n?/g, "")}\n\n${themeRoot}\n\n${semantic}\n`;
+
+  // Standalone participant pages, one per trademark doc. Path comes from the doc's **Page:** field.
+  const pages = Object.entries(docs)
+    .filter(([f]) => f.startsWith("trademark/"))
+    .map(([f, d]) => {
+      const path = plain(d.field("Page") ?? "");
+      if (!/^trademark\/[a-z0-9-]+\.html$/.test(path)) { checks.push({ level: "error", area: "Trademark", message: "**Page:** must be trademark/<name>.html", file: f }); return null; }
+      return [path, trademarkPage({ file: f, doc: d, root, assets, brandName: r.brandName, fontCss, tokensCss, typeCss: r.typeCss(), showcaseCss, check: (level, area, message, file) => checks.push({ level, area, message, file }) })];
+    })
+    .filter(Boolean);
+
+
   // De-duplicate checks (the same issue can be found from several places).
   const seen = new Set();
   const unique = checks.filter((c) => { const k = `${c.level}|${c.message}`; if (seen.has(k)) return false; seen.add(k); return true; });
@@ -203,7 +222,7 @@ function build() {
   const hash = createHash("sha256");
   for (const d of Object.values(docs)) hash.update(d.raw);
   hash.update(JSON.stringify(config));
-  for (const f of ["render.mjs", "styles.css", "app.js"]) hash.update(readFileSync(join(root, "scripts/showcase", f)));
+  for (const f of ["render.mjs", "styles.css", "app.js", "trademark.mjs"]) hash.update(readFileSync(join(root, "scripts/showcase", f)));
   const sourceHash = hash.digest("hex").slice(0, 10);
   const version = plain(docs["README.md"].field("Version") ?? "");
 
@@ -214,9 +233,6 @@ function build() {
       ${unique.length ? `<ul>${unique.map((c) => `<li><strong>${esc(c.area)}:</strong> ${esc(c.message).replace(/`([^`]+)`/g, "<code>$1</code>")} <span class="muted small">${esc(c.file ?? "")}</span></li>`).join("")}</ul>` : `<p class="small" style="margin:1rem 0 0">Everything the build checks is passing.</p>`}
     </details>`;
 
-  const showcaseCss = readFileSync(join(root, "scripts/showcase/styles.css"), "utf8");
-  const appJs = readFileSync(join(root, "scripts/showcase/app.js"), "utf8");
-  const tokensCss = `/* Generated from docs/design-system/09-tokens.md by scripts/build-showcase.mjs. Do not edit. */\n\n${paletteCss.replace(/\/\* palette:(start|end) \*\/\n?/g, "")}\n\n${themeRoot}\n\n${semantic}\n`;
 
   const nav = sections
     .map(([id, label]) => {
@@ -277,17 +293,18 @@ ${appJs}
 </body>
 </html>
 `;
-  return { html, tokensCss, errors, warns };
+  return { html, tokensCss, pages, errors, warns };
 }
 
 // ---------- outputs ----------
 function writeOutputs() {
   const t0 = Date.now();
-  const { html, tokensCss, errors, warns } = build();
+  const { html, tokensCss, pages, errors, warns } = build();
   mkdirSync(join(root, "styles"), { recursive: true });
   const changed = [];
-  for (const [p, body] of [["index.html", html], ["styles/tokens.css", tokensCss]]) {
+  for (const [p, body] of [["index.html", html], ["styles/tokens.css", tokensCss], ...pages]) {
     const abs = join(root, p);
+    mkdirSync(dirname(abs), { recursive: true });
     if (!existsSync(abs) || readFileSync(abs, "utf8") !== body) { writeFileSync(abs, body); changed.push(p); }
   }
   const status = `${errors.length} errors, ${warns.length} warnings`;
@@ -297,8 +314,8 @@ function writeOutputs() {
 }
 
 if (args.has("--check")) {
-  const { html, tokensCss, errors } = build();
-  const stale = [["index.html", html], ["styles/tokens.css", tokensCss]].filter(([p, body]) => !existsSync(join(root, p)) || readFileSync(join(root, p), "utf8") !== body).map(([p]) => p);
+  const { html, tokensCss, pages, errors } = build();
+  const stale = [["index.html", html], ["styles/tokens.css", tokensCss], ...pages].filter(([p, body]) => !existsSync(join(root, p)) || readFileSync(join(root, p), "utf8") !== body).map(([p]) => p);
   if (stale.length) console.error(`Out of date: ${stale.join(", ")}. Run npm run build.`);
   for (const e of errors) console.error(`✗ ${e.area}: ${e.message.replace(/`/g, "")} (${e.file})`);
   process.exit(stale.length || errors.length ? 1 : 0);
