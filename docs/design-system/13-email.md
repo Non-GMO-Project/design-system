@@ -1,6 +1,6 @@
 # Email
 
-How the brand elements carry into email: newsletters, campaigns and service messages. Email is the one place the system cannot rely on its own code. Most clients ignore CSS variables and web fonts, strip `<style>` blocks or force their own dark mode, so every rule here is written to survive that. Sources: the brand profiles, `11-ux.md` (what to send and when) and recent sends from all three programs, reviewed for issue #7.
+How the brand elements carry into email: newsletters, campaigns and service messages. Email is the one place the system cannot rely on its own code. Most clients ignore CSS variables and web fonts, strip `<style>` blocks or force their own dark mode, so every rule here is written to survive that. Sources: the brand profiles, `11-ux.md` (what to send and when) and example sends from all three programs.
 
 ## Principles
 
@@ -111,26 +111,8 @@ Optional: social row, the endorsement line, a forward or share link, a "Did some
 - Real headings (`<h1>` for the masthead or main headline, `<h2>` for stories) so screen readers can jump between stories.
 - Contrast follows `08-accessibility.md`: 4.5:1 for body text, 3:1 for large text and button boundaries.
 - The email still makes sense with images off: every headline, date and action is text.
-- No information in color alone, no animated GIFs that flash more than three times a second. Motion in email follows `07-motion.md`. `TODO(design): decide whether animated GIFs are allowed in campaigns (see issue #5).`
-
-## What to change from recent sends
-
-From the recent sends reviewed for issue #7. Use this when updating existing templates.
-
-| Seen in recent sends | Change to |
-|---|---|
-| White body backgrounds | Birch `#FFFDEB` |
-| Retired colors: the old Non-GMO Project orange on links and bands, brown and teal header bands | The brand's dark for bands and links, support tint for panels (Color in email, above) |
-| Black buttons in a Non-UPF Verified email | Dragon Fruit with Birch text |
-| Dark green buttons in Non-GMO Project emails | Monarch with Forest text |
-| Certification seals dropped onto hero photos | Seals only beside a verified product; heroes carry no marks |
-| A Non-UPF Verified seal in a Non-GMO Project newsletter | Name the program in text and link to it; no other program's marks or colors |
-| Logos placed over photography | The logo lives in the header, not on the hero |
-| "Register Here" and "Register Now" for the same link | One label, used both times: "Register for the webinar" |
-| Links that say "here" | Link text that says where it goes |
-| Long paragraphs centered | Body text left-aligned; center only short lines |
-| Georgia and Arial as the only fonts | The email stacks above, which fall back to Georgia and Arial only when Lora and Nunito Sans cannot load |
-| Emoji as icons in the footer | Text, or an icon from the system's set with alt text |
+- No information in color alone, no animated GIFs that flash more than three times a second.
+- No emoji as icons. Use text, or an icon from the system's set with alt text. Motion in email follows `07-motion.md`. `TODO(design): decide whether animated GIFs are allowed in campaigns (see issue #5).`
 
 ## Before sending
 
