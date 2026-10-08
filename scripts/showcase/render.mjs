@@ -95,7 +95,7 @@ export function createRenderer(ctx) {
     const src = readme.field("Brand source");
     return `<section class="ds-section" id="overview" aria-labelledby="overview-h">
       <div class="hero" data-brand-follow>
-        <p class="eyebrow">Design system${ver ? " · version " + esc(plain(ver)) : ""}</p>
+        <p class="eyebrow">Digital design system${ver ? " · version " + esc(plain(ver)) : ""}</p>
         <h1 id="overview-h" class="t-display" style="margin:0">${esc(readme.title)}</h1>
         <hr class="signature-rule">
         <p class="prose" style="margin:0">${model ? inline(model.paragraphs()[0] ?? "") : ""}</p>

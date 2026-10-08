@@ -1,4 +1,4 @@
-# Food Integrity Project design system
+# Food Integrity Project digital design system
 
 This repository is the design system itself: Markdown docs, generated tokens, brand assets and a generated visual showcase.
 
