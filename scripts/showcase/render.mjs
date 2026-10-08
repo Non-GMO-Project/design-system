@@ -1017,7 +1017,6 @@ export function createRenderer(ctx) {
       <div class="split"><div><h3>Layout and images</h3>${block(/^Layout and images$/)}</div><div><h3>Logos and seals</h3>${block(/^Logos and seals$/)}</div></div>
       <div class="split"><div><h3>Buttons and links</h3>${block(/^Buttons and links$/)}</div><div><h3>Accessibility</h3>${block(/^Accessibility$/)}</div></div>
       <h3>Footer content</h3>${block(/^Footer content$/)}
-      <h3>What to change from recent sends</h3>${block(/^What to change from recent sends$/)}
       <h3>Before sending</h3>${block(/^Before sending$/)}`,
       `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
     );
