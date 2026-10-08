@@ -13,7 +13,7 @@ fi
 
 out=$(node scripts/build-showcase.mjs) || { echo "$out"; echo "Showcase build failed. Commit stopped."; exit 1; }
 echo "$out" | head -1
-git add index.html styles/tokens.css public/fonts
+git add index.html styles/tokens.css public/fonts trademark
 
 if echo "$out" | grep -q '✗'; then
   echo "$out" | grep '✗'

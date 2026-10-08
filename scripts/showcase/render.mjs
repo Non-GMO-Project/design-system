@@ -1023,6 +1023,41 @@ export function createRenderer(ctx) {
     );
   }
 
+  // ---------- Trademark usage (docs/design-system/trademark/*.md) ----------
+  function trademark() {
+    const files = Object.keys(docs).filter((f) => f.startsWith("trademark/"));
+    if (!files.length) { check("warn", "Trademark", "No trademark usage docs found in docs/design-system/trademark/", "04-logos-and-marks.md"); return ""; }
+    const cards = files
+      .map((f) => {
+        const d = docs[f];
+        const b = d.field("Brand context")?.match(/data-brand="(\w+)"/)?.[1];
+        const page = plain(d.field("Page") ?? "");
+        const marks = d.tables().filter((t) => t.headers.some((h) => plain(h).toLowerCase() === "file")).flatMap((t) => rowsOf(t).map((r) => plain(r.file)));
+        const thumbs = marks
+          .map((m) => assets.find((a) => a.file === m && a.exists))
+          .filter(Boolean)
+          .map((a) => `<div class="asset__art${/mono-light|reversed/.test(a.tone) ? " on-dark" : ""}" style="border:1px solid var(--border);border-radius:var(--radius-md);min-height:96px;padding:0.75rem"><img src="${esc(a.path)}" alt="${esc(a.file)}" loading="lazy" style="max-height:72px;width:auto"></div>`)
+          .join("");
+        const intro = d.paragraphs().find((p) => !/^\*\*\w[\w ]*:\*\*/.test(p)) ?? "";
+        const heads = d.blocks.filter((x) => x.type === "heading" && x.level === 2).map((x) => plain(x.text));
+        return `<article class="card ctx" ${b ? `data-brand="${b}"` : ""} style="display:grid;gap:0.75rem;align-content:start">
+          <p class="eyebrow" style="margin:0">${esc(brandName(b))} · <code>${esc(f)}</code></p>
+          <h3 style="margin:0">${esc(d.title)}</h3>
+          <p class="small" style="margin:0">${inline(intro)}</p>
+          <p class="small muted" style="margin:0"><strong>For:</strong> ${inline(d.field("For") ?? "")}<br><strong>Source:</strong> ${inline(d.field("Source") ?? "")}</p>
+          <div class="grid" style="--min:120px">${thumbs}</div>
+          <p class="small muted" style="margin:0">${heads.map(esc).join(" · ")}</p>
+          <p style="margin:0"><a class="btn btn--default btn--sm" href="${esc(page)}">Open the participant page</a></p>
+        </article>`;
+      })
+      .join("");
+    return section(
+      "trademark", "Trademark usage", "Verified products trademark usage", files[0],
+      `<p class="prose">One doc per program, so each can be used on its own. The build turns each one into a standalone page in <code>trademark/</code> with its fonts, styles and mark images inlined, for sharing with participants who don't need the rest of this system. Internal TODOs are left off those pages.</p>
+      <div class="grid" style="--min:320px">${cards}</div>`
+    );
+  }
+
   // ---------- TODOs and source ----------
   function todos() {
     const items = [];
@@ -1043,5 +1078,5 @@ export function createRenderer(ctx) {
     return `<section class="ds-section" id="source" aria-labelledby="source-h"><p class="eyebrow">Reference</p><h2 id="source-h">Source documents</h2><p class="prose">The full text of every file the showcase was built from.</p>${files}</section>`;
   }
 
-  return { responsive, email, writing, ux, overview, architecture, logos, color, audit, typography, typeCss, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
+  return { responsive, email, trademark, writing, ux, overview, architecture, logos, color, audit, typography, typeCss, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
 }

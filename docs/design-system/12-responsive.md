@@ -88,7 +88,7 @@ Use viewport breakpoints for page structure (navigation, gutters, columns of the
 - Prose keeps its 66ch maximum; on phones the screen width is the limit.
 - Images use `srcset` and `sizes` (or `next/image`) and always reserve their space with `width`, `height` or `aspect-ratio`, so nothing jumps as they load.
 - Crop or swap images for small screens when the subject would become too small to read (art direction with `<picture>`).
-- Logos follow `04-logos-and-marks.md`: under 400px of header space, use the mark with the brand name in its accessible label. Seals never go below 72px wide.
+- Logos follow `04-logos-and-marks.md`: under 400px of header space, use the mark with the brand name in its accessible label. Seals never go below their screen minimums in `04-logos-and-marks.md` (72px wide; 80px for the Non-UPF Verified primary seal).
 
 ## Viewport and safe areas
 
