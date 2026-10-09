@@ -48,12 +48,30 @@ Program seals keep their own color, artwork and standards. The parent does not r
 | Components | All behavior, structure, states, spacing | Colors only, through tokens |
 | Motion | All durations, easing, named animations | One optional variation of the signature moment |
 | Accessibility | Everything | Nothing |
-| Imagery | Photography principles | Subjects and mood (see brand files) |
+| Imagery | Photography principles and sourcing rules (below) | Subjects, mood and photo libraries (see brand files) |
 | Voice | Plain language, UI writing rules | Personality (see brand files) |
 
 The principle: **brands change how things look, not how things work.** A person moving from the Non-GMO Project product search to the Collective member portal should never have to relearn a control.
 
 **Birch is the family resemblance.** Any layout that starts on Birch already belongs to the group, whichever program fills it.
+
+### Photography sourcing
+
+Where photographs come from, for every brand. This covers photography only; illustrations and graphic motifs are brand assets (see each brand file). What a photo should show is set in each brand file under Imagery.
+
+| Source | When to use it | Rights and credit |
+|---|---|---|
+| The brand's own photo library | First choice where one exists (see the brand file) | Covered by the commissioning contract |
+| Commissioned shoots | Hero imagery and campaigns that need real people, places and products | A signed contract with the photographer that covers the intended uses |
+| Adobe Stock | When no library image fits | Use within the terms of the organization's Adobe license |
+| Unsplash, Kaboompics, Death to Stock | When no library or Adobe image fits | Check each image's license before use. Credit the photographer when the license asks for it |
+
+- **Direction.** The social team keeps curated [moodboards on Pinterest](https://www.pinterest.com/foodintegritycollective/). Use them for mood and subject, not as a source of images.
+- **Know where every image came from.** Keep the license, download record or contract with the project, so the source and terms can be found later.
+- **Credits** appear only when the license or contract requires them.
+- **Real products must be verified.** If a photo shows an actual, identifiable product, that product must be verified by the program the piece speaks for.
+- **AI-generated images** may be used for ideation and creative brainstorming only, not in published work. `TODO(brand): confirm whether AI-generated imagery is allowed in published work, and under what limits.`
+- **No formal sign-off.** There is no required approval step for imagery. The brand and creative team can review images on request.
 
 ## Choosing the brand context
 

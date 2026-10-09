@@ -42,6 +42,8 @@ Campaign and member pairing (Quicksand + Avenir) for events and member communica
 
 The Collective has its own graphic motifs: the petals (`illustrations/collective-petals-*`) and the "Food should nourish life" badge (`campaign/`). Use them as decoration with restraint, never as a logo. People together: markets, events, farms open to visitors, shared meals, community work, supply chains seen as systems. Natural, neutral tones without strong orange or magenta casts. Faces and activity over landscapes.
 
+**Photo library.** Use the shared sources in `01-brand-architecture.md`, "Photography sourcing". The social team's Pinterest moodboards set the mood. `TODO(brand): link a Collective photo library, if one exists.`
+
 ## Voice
 
 Collegial and specific. Uses "you" and "together". Specific about what joining means and what members get. Systems-minded: food integrity across the whole supply chain, not one product.
