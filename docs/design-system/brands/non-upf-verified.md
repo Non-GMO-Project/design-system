@@ -40,6 +40,8 @@ Shared system. Standards pages use the default Lora + Avenir pairing; consumer c
 
 Kitchens, whole ingredients, short ingredient lists, real meals, grocery aisles. Vibrant, close macro shots of whole foods in natural light. A Dragon Fruit tint over photography is allowed for campaign sections, if text on it still passes 4.5:1. Avoid images that shame processed food or the people who eat it. No botanical illustration (that is Non-GMO Project's).
 
+**Photo library.** Start with the commissioned Non-UPF Verified photo library (Google Drive; ask the Non-UPF Verified marketing team for access), then the shared sources in `01-brand-architecture.md`, "Photography sourcing".
+
 ## Voice
 
 Practical and concrete: "Five ingredients you would recognize." Defines ultra-processed food clearly the first time. Stat-driven where evidence exists. Never moralizes. No exclusivity claims ("first", "only").

@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.8 (draft for review)
+**Version:** 0.9 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -133,6 +133,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.9 | 2026-10-09 | Added photography sourcing (#13): shared sources, rights, credits, verified products and AI rules in `01-brand-architecture.md`, and a photo library line in each brand profile's Imagery section |
 | 0.8 | 2026-10-08 | Removed "What to change from recent sends" from `13-email.md` so the guide only describes how to work going forward (#11). Its one rule not covered elsewhere, no emoji as icons, moved to the email Accessibility section |
 | 0.7 | 2026-10-08 | Added verified products trademark usage (#9): `trademark/non-gmo-project.md` (from Trademark Use Guide v2.2) and `trademark/non-upf-verified.md` (from Trademark Use Guide v1.0), each also generated as a standalone participant page in `trademark/`. Added the official white and bilingual Non-GMO Project Verified Marks and replaced the Non-UPF Verified seal files with the 900px originals from the program kit. Seal minimum sizes and clear space in `04` now follow each program's guide (Non-UPF Verified primary seal: 80px on screen) |
 | 0.6 | 2026-10-08 | Added `13-email.md` (email types, anatomy, color and type for email clients, logos and seals, buttons, footer, send checklist, and what to change from recent sends) (#7). The showcase has a new Email section with a sample email per brand |
