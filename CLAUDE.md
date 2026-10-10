@@ -15,6 +15,10 @@ This repository is the design system itself: Markdown docs, generated tokens, br
 - Brand values come from the *Food Integrity Project Style Guide* (draft for review). Where it is silent, leave a `TODO(design)` or `TODO(brand)` rather than inventing a value.
 - Logos and seals in `public/brand/` are official files. Never redraw, recolor or generate artwork. Add new files to the asset inventory in `04-logos-and-marks.md`.
 
+## Maintenance loop
+
+`.claude/skills/issue-review-loop/SKILL.md` defines how issues and direct commits to `main` are handled: clear issues from org members and collaborators are implemented and merged, unclear ones get questions, and direct edits that skipped the build are regenerated and followed up. Start it with `/loop 1h /issue-review-loop`; run one pass with `/issue-review-loop`.
+
 ## Commands
 
 - `npm run dev`: watch and serve at http://localhost:4321 with live reload
