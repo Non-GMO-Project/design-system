@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.9 (draft for review)
+**Version:** 0.10 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -53,11 +53,13 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 
 The build also writes one standalone page per program trademark doc, `trademark/non-gmo-project.html` and `trademark/non-upf-verified.html`. Each is a single file with its fonts, styles and mark images inlined and internal TODOs left out, so it can be sent to participants on its own.
 
+The build also writes `styles/tokens.css`, `styles/tailwind.css` and `styles/fonts.css`, which apps import instead of copying CSS out of the docs (see `09-tokens.md`).
+
 It is **generated from these Markdown files** by `scripts/build-showcase.mjs`. Do not edit `index.html` by hand. The build reads the tables and CSS blocks on these pages, so changing a value here changes the showcase. It also checks the docs as it goes: contrast ratios, asset files, icon names, token references. Problems show in a "Build checks" panel at the top of the page.
 
 | Command | What it does |
 |---|---|
-| `npm run build` | Rebuild `index.html` and `styles/tokens.css` once |
+| `npm run build` | Rebuild `index.html`, the `styles/` files and the trademark pages once |
 | `npm run dev` | Rebuild on every change to `docs/`, `public/brand/` or the scripts, and serve at http://localhost:4321 with live reload |
 | `npm run watch` | Rebuild on every change, without the server |
 | `npm run colors` | Regenerate color scales and pairings from `scripts/palette.config.json` |
@@ -68,7 +70,7 @@ It is **generated from these Markdown files** by `scripts/build-showcase.mjs`. D
 
 1. **While you work:** `npm run dev` watches the docs and rebuilds within a moment of saving. The open page reloads itself.
 2. **When Claude Code edits a doc:** a `PostToolUse` hook in `.claude/settings.json` rebuilds after every edit to a file in `docs/design-system/`.
-3. **On commit:** the pre-commit hook in `.githooks/` rebuilds and stages `index.html` and `styles/tokens.css` whenever a doc is part of the commit. `npm install` turns the hook on.
+3. **On commit:** the pre-commit hook in `.githooks/` rebuilds and stages `index.html`, `styles/` and the trademark pages whenever a doc is part of the commit. `npm install` turns the hook on.
 4. **In CI:** `npm run check` fails the build if someone committed docs without rebuilding.
 
 ## Placeholder convention
@@ -133,6 +135,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.10 | 2026-10-13 | The build now also generates `styles/tailwind.css` (the Tailwind CSS v4 wiring from `09-tokens.md`) and `styles/fonts.css` (`@font-face` rules for the self-hosted fonts in `public/fonts/`), so apps import them with `styles/tokens.css` instead of copying code blocks (#16). `npm run check` flags them when stale and the pre-commit hook stages them. `09-tokens.md` and `03-typography.md` now tell consumers to import the generated files |
 | 0.9 | 2026-10-09 | Added photography sourcing (#13): shared sources, rights, credits, verified products and AI rules in `01-brand-architecture.md`, and a photo library line in each brand profile's Imagery section |
 | 0.8 | 2026-10-08 | Removed "What to change from recent sends" from `13-email.md` so the guide only describes how to work going forward (#11). Its one rule not covered elsewhere, no emoji as icons, moved to the email Accessibility section |
 | 0.7 | 2026-10-08 | Added verified products trademark usage (#9): `trademark/non-gmo-project.md` (from Trademark Use Guide v2.2) and `trademark/non-upf-verified.md` (from Trademark Use Guide v1.0), each also generated as a standalone participant page in `trademark/`. Added the official white and bilingual Non-GMO Project Verified Marks and replaced the Non-UPF Verified seal files with the 900px originals from the program kit. Seal minimum sizes and clear space in `04` now follow each program's guide (Non-UPF Verified primary seal: 80px on screen) |

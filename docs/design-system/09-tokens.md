@@ -2,9 +2,25 @@
 
 This is the single source the code reads. Everything in files 02 to 07 lands here as CSS custom properties, wired into Tailwind CSS v4 and shadcn/ui.
 
-The showcase build (`npm run build`) extracts the CSS blocks on this page into `styles/tokens.css` and uses them to render `index.html`. Change a value here and the showcase changes with it.
+The showcase build (`npm run build`) extracts the CSS blocks on this page into generated files and uses them to render `index.html`. Change a value here and the showcase and the generated files change with it. The blocks on this page stay the source of truth; the generated files are never edited by hand.
 
-Put the CSS in `app/globals.css`, or import the generated `styles/tokens.css`. The palette block is generated from `scripts/palette.config.json` by `npm run colors`. Do not edit it by hand.
+| Generated file | What it holds |
+|---|---|
+| `styles/tokens.css` | The palette, the static values from `@theme` as plain `:root` variables, and the semantic tokens for every brand and mode |
+| `styles/tailwind.css` | The Tailwind CSS v4 wiring below (`@custom-variant dark`, `@theme inline`, `@theme`), without the `tailwindcss` and `tw-animate-css` imports |
+| `styles/fonts.css` | `@font-face` rules for the self-hosted Lora, Nunito Sans and Quicksand files in `public/fonts/`, with `font-display: swap` (see `03-typography.md`) |
+
+**Import the generated files instead of copying the blocks.** An app's global stylesheet becomes:
+
+```css
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "<design-system>/styles/fonts.css";
+@import "<design-system>/styles/tokens.css";
+@import "<design-system>/styles/tailwind.css";
+```
+
+`<design-system>` is the path to this repository in the app (for example a vendored copy pinned to a commit). A design-system update then restyles the app with no hand-copied code. Skip `fonts.css` in a Next.js app that loads the fonts with `next/font` (see Tailwind wiring below). The palette block is generated from `scripts/palette.config.json` by `npm run colors`. Do not edit it by hand.
 
 ## How brand switching works
 
@@ -635,7 +651,7 @@ Tailwind v4 reads tokens from CSS with `@theme`. `inline` makes the utilities re
 
 Tailwind emits the `@theme` values as CSS variables too, so `--font-serif` and `--ease-standard` are available in plain CSS and in Motion code, under the names used in `03-typography.md` and `07-motion.md`.
 
-In Next.js, load Lora, Nunito Sans and Quicksand with `next/font/google` (self-hosted at build time) and put the `next/font` variable first in each stack, for example `--font-serif: var(--font-lora), "Lora", Charter, ...`. The showcase self-hosts the same three families from `public/fonts/`.
+In Next.js, load Lora, Nunito Sans and Quicksand with `next/font/google` (self-hosted at build time) and put the `next/font` variable first in each stack, for example `--font-serif: var(--font-lora), "Lora", Charter, ...`. Apps that don't use `next/font` (and static or email pages) import `styles/fonts.css` instead, which self-hosts the same three families from `public/fonts/`, as the showcase does.
 
 This produces utilities such as `bg-primary`, `text-brand-text`, `bg-brand-support`, `bg-status-warning-bg`, `border-status-danger-border`, `shadow-2`, `rounded-lg`, `font-serif`, `font-accent`, `ease-standard`.
 
