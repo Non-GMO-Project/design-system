@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// Builds index.html (the visual showcase) and styles/tokens.css from the
-// Markdown in docs/design-system. Nothing in index.html is written by hand.
+// Builds index.html (the visual showcase), styles/tokens.css, styles/tailwind.css,
+// styles/fonts.css and the trademark/*.html participant pages from the Markdown in
+// docs/design-system. Nothing in index.html is written by hand.
 //
 //   node scripts/build-showcase.mjs            build once
 //   node scripts/build-showcase.mjs --watch    rebuild when docs, assets or scripts change
@@ -201,6 +202,13 @@ function build() {
   const showcaseCss = readFileSync(join(root, "scripts/showcase/styles.css"), "utf8");
   const appJs = readFileSync(join(root, "scripts/showcase/app.js"), "utf8");
   const tokensCss = `/* Generated from docs/design-system/09-tokens.md by scripts/build-showcase.mjs. Do not edit. */\n\n${paletteCss.replace(/\/\* palette:(start|end) \*\/\n?/g, "")}\n\n${themeRoot}\n\n${semantic}\n`;
+  // Tailwind v4 wiring for apps to import after tokens.css. The app imports tailwindcss and
+  // tw-animate-css itself, so those two @import lines stay in the doc only.
+  const tailwindBody = tailwind.replace(/^@import\s+"(tailwindcss|tw-animate-css)";\n/gm, "").trim();
+  if (!tailwindBody.includes("@theme inline")) checks.push({ level: "error", area: "Tokens", message: 'No CSS block containing "@theme inline" found', file: "09-tokens.md" });
+  const tailwindCss = `/* Generated from docs/design-system/09-tokens.md ("Tailwind CSS v4 wiring") by scripts/build-showcase.mjs. Do not edit. */\n/* Import after tailwindcss, tw-animate-css and styles/tokens.css. */\n\n${tailwindBody}\n`;
+  // Self-hosted @font-face rules with paths relative to styles/, for apps that don't use next/font.
+  const fontsCss = `/* Generated from the @fontsource-variable packages (see docs/design-system/03-typography.md) by scripts/build-showcase.mjs. Do not edit. */\n/* Font files live in public/fonts/. */\n\n${fontCss.replace(/url\(public\/fonts\//g, "url(../public/fonts/")}`;
 
   // Standalone participant pages, one per trademark doc. Path comes from the doc's **Page:** field.
   const pages = Object.entries(docs)
@@ -293,16 +301,16 @@ ${appJs}
 </body>
 </html>
 `;
-  return { html, tokensCss, pages, errors, warns };
+  return { html, outputs: [["index.html", html], ["styles/tokens.css", tokensCss], ["styles/tailwind.css", tailwindCss], ["styles/fonts.css", fontsCss], ...pages], errors, warns };
 }
 
 // ---------- outputs ----------
 function writeOutputs() {
   const t0 = Date.now();
-  const { html, tokensCss, pages, errors, warns } = build();
+  const { outputs, errors, warns } = build();
   mkdirSync(join(root, "styles"), { recursive: true });
   const changed = [];
-  for (const [p, body] of [["index.html", html], ["styles/tokens.css", tokensCss], ...pages]) {
+  for (const [p, body] of outputs) {
     const abs = join(root, p);
     mkdirSync(dirname(abs), { recursive: true });
     if (!existsSync(abs) || readFileSync(abs, "utf8") !== body) { writeFileSync(abs, body); changed.push(p); }
@@ -314,8 +322,8 @@ function writeOutputs() {
 }
 
 if (args.has("--check")) {
-  const { html, tokensCss, pages, errors } = build();
-  const stale = [["index.html", html], ["styles/tokens.css", tokensCss], ...pages].filter(([p, body]) => !existsSync(join(root, p)) || readFileSync(join(root, p), "utf8") !== body).map(([p]) => p);
+  const { outputs, errors } = build();
+  const stale = outputs.filter(([p, body]) => !existsSync(join(root, p)) || readFileSync(join(root, p), "utf8") !== body).map(([p]) => p);
   if (stale.length) console.error(`Out of date: ${stale.join(", ")}. Run npm run build.`);
   for (const e of errors) console.error(`✗ ${e.area}: ${e.message.replace(/`/g, "")} (${e.file})`);
   process.exit(stale.length || errors.length ? 1 : 0);

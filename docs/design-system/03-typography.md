@@ -13,7 +13,7 @@ One set of typefaces serves every brand. Color and logos tell the brands apart; 
 
 **Avenir on screens.** Avenir is a licensed desktop face. Nunito Sans is the approved substitute where it cannot be embedded, which includes every website and app until a web license exists. The sans stack puts Nunito Sans first so every device renders the same face. `TODO(design): decide whether to buy an Avenir web license. If so, put "Avenir Next" first in --font-sans.`
 
-All three web families are open-licensed (SIL Open Font License) and self-hosted. In Next.js, load them with `next/font/google`, which self-hosts at build time and adjusts fallback metrics to avoid layout shift. Each stack keeps system fallbacks after the hosted face.
+All three web families are open-licensed (SIL Open Font License) and self-hosted. In Next.js, load them with `next/font/google`, which self-hosts at build time and adjusts fallback metrics to avoid layout shift. Everywhere else, import the generated `styles/fonts.css`, which serves the same files from `public/fonts/` with `font-display: swap` (see `09-tokens.md`). Each stack keeps system fallbacks after the hosted face.
 
 | Token | Stack |
 |---|---|
