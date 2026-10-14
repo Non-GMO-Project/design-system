@@ -146,6 +146,8 @@ Always paired with a text label.
 | `domain.standard` | `FileCheck` | The Standard and standards documents (Non-GMO Project's long-standing "document with a check" motif) |
 | `domain.compliance` | `ShieldCheck` | Compliance, policy |
 | `domain.review` | `ClipboardCheck` | Evaluation, audit, checklist |
+| `domain.task` | `ListTodo` | A to-do or follow-up task for a person, such as a staff to-do or call follow-up. Not for evaluations or checklists (`domain.review`) |
+| `domain.history` | `History` | Activity history, a timeline of events, and its empty state ("No activity recorded yet") |
 | `domain.supply-chain` | `Truck` | Supply chain, shipping |
 | `domain.relationship` | `Network` | Supplier and facility relationships |
 | `domain.scan` | `ScanBarcode` | Scan a product barcode |
@@ -161,6 +163,8 @@ Always paired with a text label.
 | `domain.learning` | `GraduationCap` | Courses, education |
 | `domain.document` | `FileText` | Generic document |
 | `domain.ai` | `Sparkles` | AI-generated or AI-assisted content (always disclose) |
+
+`TODO(design): confirm the icons for domain.task (ListTodo; SquareCheck was the alternative) and domain.history (History), added for activity timelines (#19).`
 
 ### People and contact
 

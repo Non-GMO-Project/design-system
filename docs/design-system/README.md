@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.10 (draft for review)
+**Version:** 0.11 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -135,6 +135,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.11 | 2026-10-14 | Added two icons to the registry in `05-iconography.md` for activity timelines (#19): `domain.task` (`ListTodo`) for a person's to-dos and follow-ups, kept separate from `domain.review`, and `domain.history` (`History`) for activity history and its empty state. The design team still needs to confirm both picks |
 | 0.10 | 2026-10-13 | The build now also generates `styles/tailwind.css` (the Tailwind CSS v4 wiring from `09-tokens.md`) and `styles/fonts.css` (`@font-face` rules for the self-hosted fonts in `public/fonts/`), so apps import them with `styles/tokens.css` instead of copying code blocks (#16). `npm run check` flags them when stale and the pre-commit hook stages them. `09-tokens.md` and `03-typography.md` now tell consumers to import the generated files |
 | 0.9 | 2026-10-09 | Added photography sourcing (#13): shared sources, rights, credits, verified products and AI rules in `01-brand-architecture.md`, and a photo library line in each brand profile's Imagery section |
 | 0.8 | 2026-10-08 | Removed "What to change from recent sends" from `13-email.md` so the guide only describes how to work going forward (#11). Its one rule not covered elsewhere, no emoji as icons, moved to the email Accessibility section |
