@@ -32,7 +32,9 @@ What is in `public/brand/` today. The showcase build checks this table against t
 
 | File | Brand | Asset | Tone | Status |
 |---|---|---|---|---|
-| `fip/fip-logo-horizontal-color.png` | fip | logo | color | Raster pulled from the style guide PDF. Replace with SVG in Cacao |
+| `fip/fip-logo-horizontal-color.svg` | fip | logo | color | Interim vector with a transparent background, traced from the PNG below in its dark gray `#35363A`. The showcase uses it. Replace with the design team's source file in Cacao |
+| `fip/fip-mark-color.svg` | fip | mark | color | Interim butterfly mark alone, transparent, cut from the same trace. For favicons, avatars and tight spaces. Replace with the design team's source file |
+| `fip/fip-logo-horizontal-color.png` | fip | logo | color | Raster pulled from the style guide PDF, 500 x 237, on a white background (not transparent). Source for the traced SVGs above; use those instead |
 | `nongmo/nongmo-logo-horizontal-color.png` | nongmo | logo | color | Corporate logo in orange, 913 x 432, transparent. nongmoproject.org media library (`NGP_corp_logo_new.png`) |
 | `nongmo/nongmo-logo-horizontal-reversed.png` | nongmo | logo | reversed | White corporate logo for Forest and other dark grounds, 913 x 432, transparent. Media library (`NGP_corp_logo_new_white.png`) |
 | `nongmo/nongmo-mark-color.svg` | nongmo | mark | color | The Butterfly, vector. Media library (`butterfly-logo.svg`). Its orange is `#F18C20`, slightly off Monarch `#F18A00` |
@@ -58,7 +60,7 @@ What is in `public/brand/` today. The showcase build checks this table against t
 Still needed:
 
 - `TODO(design): SVG versions of the remaining PNG and JPG files. Vector files exist for the Non-UPF Verified logo and primary seal and the Non-GMO Project Butterfly.`
-- `TODO(design): Food Integrity Project logo in Cacao and reversed Birch, plus the mark alone (butterfly) for favicons.`
+- `TODO(design): Food Integrity Project logo and mark as source vector files, in Cacao and reversed Birch. The SVGs in fip/ are traces of a 500px raster, made as an interim exception to the rule against redrawing logos, and their edges are slightly uneven when enlarged.`
 - `TODO(design): Non-GMO Project butterfly avatar (butterfly on blue circle) and a vector corporate logo. Confirm whether the Butterfly's #F18C20 should become Monarch #F18A00.`
 - `TODO(design): Non-UPF Verified logo in reversed (Birch) and one-color Dark Matter versions. Only the Dragon Fruit color version exists.`
 - `TODO(design): Food Integrity Collective lockup in color (Forest) for Birch backgrounds. Only the light version exists. The older guide called the symbol the umbrella mark; confirm it now belongs to the Collective.`
