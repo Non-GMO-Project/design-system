@@ -158,7 +158,7 @@ Romanesco (Collective) and Monarch (Non-GMO Project) primary buttons are light f
 
 ```tsx
 <StatusBadge status="verified" />   // success colors, BadgeCheck icon, "Verified"
-<StatusBadge status="expiring" date="2026-12-01" />  // "Expires Dec 1, 2026"
+<StatusBadge status="expiring" date="2026-12-01" />  // "Expires December 1, 2026"
 ```
 
 Uses `--status-*` tokens. The label is always visible text. Same component in every brand.

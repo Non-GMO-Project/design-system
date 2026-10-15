@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.16 (draft for review)
+**Version:** 0.17 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -23,7 +23,7 @@ Values marked `TODO(...)` still need a decision. Everything else is a working de
 | `07-motion.md` | Durations, easing, named animations, signature moment, reduced motion | Anything that animates or transitions |
 | `08-accessibility.md` | WCAG 2.2 AA requirements and how this system meets them | Always. This file wins every conflict |
 | `09-tokens.md` | The CSS variables and Tailwind wiring that implement all of the above | Setting up a project, adding a token |
-| `10-writing.md` | Voice by brand, tone by situation, UI copy patterns, word list, claims, grammar and mechanics | Writing any interface text, page, email or campaign |
+| `10-writing.md` | Audiences, voice by brand, tone by situation, UI copy patterns, word list, claims and citations, grammar and mechanics (from the Writer's Guide) | Writing any interface text, page, email or campaign |
 | `11-ux.md` | UX principles, audiences and jobs, information architecture, core flows, feedback timing, UX definition of done | Designing or building any flow or screen |
 | `12-responsive.md` | Breakpoints, layout behavior per screen size, container queries, touch and input, safe areas, performance budgets, device testing | Any layout, any component that changes with screen size |
 | `13-email.md` | Email types, anatomy, color and type that survive email clients, logos and seals, buttons, footer content, send checklist | Any email template, newsletter or campaign |
@@ -160,6 +160,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.17 | 2026-10-16 | Updated `10-writing.md` to the *Writer's Guide* (Sixth Edition, September 2025) (#29): new Audiences section (general, business, technical) with AP Style for public material and Chicago for technical; 8th to 10th grade reading level; a second reader before anything public is published; the word list now carries the guide's terms (GMO vs GM, "the Project", "the Standard", Verified vs verified, the Butterfly, participant, Technical Administrator, ultraprocessed, wellbeing and others); no serial comma, which settles the open TODO; dates spelled out ("December 1, 2026"), times as "3 pm Pacific", date ranges with a hyphen; bulleted list punctuation, compound modifiers, species names and citation rules. "Ultra-processed" is now "ultraprocessed" in `01`, `08` and the Non-UPF Verified profile, and status dates in `02`, `06` and `11` spell out the month. The showcase shows the Audiences table. Brand fonts and colors still follow the Food Integrity Project Style Guide |
 | 0.16 | 2026-10-15 | Added "Use it with AI" to `README.md` (#27): brief steps for Claude Code, coding assistants and chat assistants, a sample prompt and the GitHub link. The showcase Overview shows it, with a button to copy the prompt |
 | 0.15 | 2026-10-15 | The showcase has a floating Feedback button that opens a new GitHub issue in a new tab. Toasts in the showcase now sit above it |
 | 0.14 | 2026-10-15 | Added Non-GMO Project vector files (#24): the full-color and black Verification Mark, the black corporate logo, the black Butterfly, a filled two-color Butterfly and the butterfly avatar for social profiles. New lockup names `avatar` and `filled` in the naming scheme. The seal SVGs also appear on the Non-GMO Project participant page |

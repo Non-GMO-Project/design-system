@@ -61,7 +61,7 @@ This file wins any conflict with the rest of the design system, including the br
 
 ### Language
 - Plain language. Aim for a reading level around grade 8 on public pages.
-- Expand an abbreviation the first time it appears on a page (Non-UPF: non-ultra-processed food; TA: Technical Administrator; GMO: genetically modified organism).
+- Expand an abbreviation the first time it appears on a page (Non-UPF: non-ultraprocessed food; TA: Technical Administrator; GMO: genetically modified organism).
 
 ## Brand-specific risks
 

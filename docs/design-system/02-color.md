@@ -278,7 +278,7 @@ Verification has its own vocabulary. These map onto the status sets so the UI st
 | Verified | success | `status.verified` | Verified |
 | Enrolled, in progress | info | `status.in-progress` | In progress |
 | Pending review | info | `status.pending` | Pending review |
-| Expiring soon | warning | `status.expiring` | Expires Dec 1, 2026 |
+| Expiring soon | warning | `status.expiring` | Expires December 1, 2026 |
 | Lapsed | danger | `status.lapsed` | Lapsed |
 | Not eligible | neutral | `status.not-eligible` | Not eligible |
 | Withdrawn | neutral | `status.withdrawn` | Withdrawn |
