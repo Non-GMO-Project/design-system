@@ -133,7 +133,7 @@ export function createRenderer(ctx) {
         return `<article class="card ctx" data-brand="${esc(b)}" style="display:grid;gap:0.75rem;align-content:start">
           <div style="min-height:56px;display:flex;align-items:center">${logoImg(b, { height: 48 })}</div>
           <h4 style="margin:0">${esc(plain(r.brand))}</h4>
-          <span class="chip">${esc(plain(r.brand))}</span>
+          <span class="chip chip--program">${esc(plain(r.brand))}</span>
           <p class="small" style="margin:0">${inline(r.role)}</p>
           <p class="small muted" style="margin:0"><strong>Speaks to:</strong> ${inline(r["speaks to"])}</p>
           <code>data-brand="${esc(b)}"</code>
@@ -154,7 +154,7 @@ export function createRenderer(ctx) {
         </div>`
       )
       .join("");
-    const chips = BRANDS.map((b) => `<span class="chip" data-brand="${b}">${esc(brandName(b))}</span>`).join("");
+    const chips = BRANDS.map((b) => `<span class="chip chip--program" data-brand="${b}">${esc(brandName(b))}</span>`).join("");
     return section(
       "architecture", "01 · Brand architecture", "The canopy over three programs", f,
       `<div class="grid" style="--min:230px">${cards}</div>
@@ -162,7 +162,7 @@ export function createRenderer(ctx) {
       ${written ? `<h4>Written reference</h4>${render(written.blocks)}` : ""}
       <h3>What is shared and what varies</h3>${shared ? render(shared.blocks.filter((b) => b.type !== "p" || !/^The principle/.test(b.text))) : ""}
       <h3>Choosing the brand context</h3>${choosing ? render(choosing.blocks) : ""}
-      <h3>Program chips</h3><p class="prose">Records in multi-program views carry a chip that sets its own <code>data-brand</code>. Chips use the subtle tint and the dark, never the signature color.</p>
+      <h3>Program chips</h3><p class="prose">Records in multi-program views carry a chip that sets its own <code>data-brand</code>. Each chip is filled with its program's signature color, with the matching foreground color for text, so programs are easy to tell apart at a glance. Program chips are the one place two program signatures may share a layout.</p>
       <div class="row">${chips}</div>
       <h3>Endorsement line</h3><p class="prose">Every program surface carries the endorsement once, usually in the footer: <strong>${esc(line)}</strong>.</p>
       <div class="stack">${footers}</div>`,
@@ -565,7 +565,7 @@ export function createRenderer(ctx) {
       .join("");
 
     const certAll = certRows.map(badge).join("");
-    const chips = BRANDS.map((b) => `<span class="chip" data-brand="${b}">${esc(brandName(b))}</span>`).join("");
+    const chips = BRANDS.map((b) => `<span class="chip chip--program" data-brand="${b}">${esc(brandName(b))}</span>`).join("");
     const products = [
       ["Heritage Rolled Oats", "nongmo", "verified", "Brightfield Mills"],
       ["Stone-Ground Corn Tortillas", "nonupf", "pending", "Casa Maíz"],
@@ -574,7 +574,7 @@ export function createRenderer(ctx) {
       ["Wildflower Honey", "nongmo", "in progress", "Hive & Hollow"],
     ];
     const tableRows = products
-      .map(([name, prog, st, brand], i) => `<tr ${i === 1 ? 'aria-selected="true"' : ""}><td data-label="Select"><input type="checkbox" aria-label="Select ${esc(name)}" ${i === 1 ? "checked" : ""}></td><td data-label="Product"><strong>${esc(name)}</strong><br><span class="small muted">${esc(brand)}</span></td><td data-label="Program"><span class="chip" data-brand="${prog}">${esc(brandName(prog))}</span></td><td data-label="Status">${badge(cert(st))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td><td class="num" data-label="Actions"><button type="button" class="btn btn--ghost btn--sm">${icon("action.edit", "icon icon--sm")}Edit</button> <button type="button" class="btn btn--ghost btn--sm btn--icon" aria-label="More actions for ${esc(name)}">${icon("action.more", "icon icon--sm")}</button></td></tr>`)
+      .map(([name, prog, st, brand], i) => `<tr ${i === 1 ? 'aria-selected="true"' : ""}><td data-label="Select"><input type="checkbox" aria-label="Select ${esc(name)}" ${i === 1 ? "checked" : ""}></td><td data-label="Product"><strong>${esc(name)}</strong><br><span class="small muted">${esc(brand)}</span></td><td data-label="Program"><span class="chip chip--program" data-brand="${prog}">${esc(brandName(prog))}</span></td><td data-label="Status">${badge(cert(st))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td><td class="num" data-label="Actions"><button type="button" class="btn btn--ghost btn--sm">${icon("action.edit", "icon icon--sm")}Edit</button> <button type="button" class="btn btn--ghost btn--sm btn--icon" aria-label="More actions for ${esc(name)}">${icon("action.more", "icon icon--sm")}</button></td></tr>`)
       .join("");
     const alerts = [
       ["info", "status.info", "Review in progress", "The Verification team is reviewing 3 ingredients. We will email you when it is done."],
@@ -641,7 +641,7 @@ export function createRenderer(ctx) {
       </form>
 
       <h3 id="c-status">Status badges and program chips</h3><div class="row">${certAll}</div><div class="row" style="margin-top:1rem">${chips}</div>
-      <h4>Filter chips</h4><div class="row" data-demo="chips"><span class="chip chip--removable" data-brand="nongmo">Non-GMO Project<button type="button" aria-label="Remove filter Non-GMO Project">${icon("action.close", "icon icon--xs")}</button></span><span class="chip chip--removable" data-brand="fip">Expiring this quarter<button type="button" aria-label="Remove filter Expiring this quarter">${icon("action.close", "icon icon--xs")}</button></span></div>
+      <h4>Filter chips</h4><div class="row" data-demo="chips"><span class="chip chip--program chip--removable" data-brand="nongmo">Non-GMO Project<button type="button" aria-label="Remove filter Non-GMO Project">${icon("action.close", "icon icon--xs")}</button></span><span class="chip chip--removable" data-brand="fip">Expiring this quarter<button type="button" aria-label="Remove filter Expiring this quarter">${icon("action.close", "icon icon--xs")}</button></span></div>
 
       <h3 id="c-cards">Cards and panels</h3>
       <div class="grid" style="--min:250px">
@@ -849,7 +849,7 @@ export function createRenderer(ctx) {
           ${quote ? `<blockquote>${inline(quote.text)}</blockquote>` : ""}
           <div class="split">
             <div><h3 style="margin-top:0">Who it speaks to</h3>${text(/^Who it speaks to$/)}<h3>Personality</h3>${text(/^Personality$/)}</div>
-            <div class="panel-support"><p class="eyebrow" style="color:inherit">In use</p><h3 style="margin-top:0">Sample card</h3><p>Text on the supporting color, with the status badge and program chip that appear in this context.</p>${badge(cert("verified"))} <span class="chip">${esc(d.title)}</span><p style="margin:1rem 0 0"><a href="#brand-${b}" style="color:inherit">A link in this context</a></p></div>
+            <div class="panel-support"><p class="eyebrow" style="color:inherit">In use</p><h3 style="margin-top:0">Sample card</h3><p>Text on the supporting color, with the status badge and program chip that appear in this context.</p>${badge(cert("verified"))} <span class="chip chip--program">${esc(d.title)}</span><p style="margin:1rem 0 0"><a href="#brand-${b}" style="color:inherit">A link in this context</a></p></div>
           </div>
           <h3>Color roles</h3><div class="grid" style="--min:170px">${roleSw}</div>
           ${ratioLine ? `<p class="small" style="margin-top:1rem">${inline(ratioLine)}</p>` : ""}
@@ -973,9 +973,9 @@ export function createRenderer(ctx) {
     const previewWidths = [...new Set([320, ...testWidths.filter((w) => w > 320 && w <= 1024).map((w) => (w === 375 ? 393 : w))])].slice(0, 4);
     const products = [["Heritage Rolled Oats", "nongmo", "verified"], ["Stone-Ground Corn Tortillas", "nonupf", "pending"], ["Sprouted Lentil Pasta", "nongmo", "expiring"]];
     const cqTable = `<div class="table-wrap cq"><table class="stack-table data-table"><thead><tr><th scope="col">Product</th><th scope="col">Program</th><th scope="col">Status</th><th scope="col" class="num">Units</th></tr></thead><tbody>${products
-      .map(([n, p, s], i) => `<tr><td data-label="Product"><strong>${esc(n)}</strong></td><td data-label="Program"><span class="chip" data-brand="${p}">${esc(brandName(p))}</span></td><td data-label="Status">${badge(cert(s))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td></tr>`)
+      .map(([n, p, s], i) => `<tr><td data-label="Product"><strong>${esc(n)}</strong></td><td data-label="Program"><span class="chip chip--program" data-brand="${p}">${esc(brandName(p))}</span></td><td data-label="Status">${badge(cert(s))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td></tr>`)
       .join("")}</tbody></table></div>`;
-    const cqCards = `<div class="cq"><div class="cq-cards">${products.map(([n, p, s]) => `<article class="card cq-card"><div class="cq-card__img" aria-hidden="true">${icon("domain.product", "icon")}</div><div><h4 style="margin:0 0 0.25rem">${esc(n)}</h4><span class="chip" data-brand="${p}">${esc(brandName(p))}</span> ${badge(cert(s))}</div></article>`).join("")}</div></div>`;
+    const cqCards = `<div class="cq"><div class="cq-cards">${products.map(([n, p, s]) => `<article class="card cq-card"><div class="cq-card__img" aria-hidden="true">${icon("domain.product", "icon")}</div><div><h4 style="margin:0 0 0.25rem">${esc(n)}</h4><span class="chip chip--program" data-brand="${p}">${esc(brandName(p))}</span> ${badge(cert(s))}</div></article>`).join("")}</div></div>`;
     const block = (re) => { const s = d.section(re); return s ? render(s.blocks) : ""; };
     return `<section class="ds-section" id="responsive" aria-labelledby="responsive-h" data-bps='${esc(JSON.stringify(bps))}'>
       <p class="eyebrow">12 · Responsive</p><h2 id="responsive-h">From 320px to wide screens</h2>${source(f)}

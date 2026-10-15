@@ -166,10 +166,10 @@ Uses `--status-*` tokens. The label is always visible text. Same component in ev
 ### ProgramChip
 
 ```tsx
-<ProgramChip program="nongmo" />  // Seafoam chip, Forest dot, "Non-GMO Project"
+<ProgramChip program="nongmo" />  // Monarch chip, Forest dot, "Non-GMO Project"
 ```
 
-Sets its own `data-brand`, uses `--brand-subtle`, `--brand-border` and `--brand-dark`. Never uses the signature color.
+Sets its own `data-brand`. The fill is `--brand-signature` and the text and dot are `--brand-signature-foreground`, so each program is recognizable at a glance in a multi-program table. This is the one component where two program signatures may share a layout. Generic filter chips that are not about a program keep the subtle chip: `--brand-subtle`, `--brand-border` and a `--brand-dark` dot.
 
 ### Cards
 
