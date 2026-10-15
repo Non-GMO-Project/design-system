@@ -1,12 +1,12 @@
 # Non-UPF Verified
 
 **Brand context:** `data-brand="nonupf"`
-**Role:** Consumer-facing seal. The newer standard, for foods that are not ultra-processed. Deliberately distinct so the two seals never read as one.
+**Role:** Consumer-facing seal. The newer standard, for foods that are not ultraprocessed. Deliberately distinct so the two seals never read as one.
 **Voice:** Direct, current, standard-setting.
 
 ## Who it speaks to
 
-Shoppers trying to cook and eat less ultra-processed food, brands making whole-food products, retailers, researchers. Participants in consumer campaigns and research.
+Shoppers trying to cook and eat less ultraprocessed food, brands making whole-food products, retailers, researchers. Participants in consumer campaigns and research.
 
 ## Personality
 
@@ -44,7 +44,7 @@ Kitchens, whole ingredients, short ingredient lists, real meals, grocery aisles.
 
 ## Voice
 
-Practical and concrete: "Five ingredients you would recognize." Defines ultra-processed food clearly the first time. Stat-driven where evidence exists. Never moralizes. No exclusivity claims ("first", "only").
+Practical and concrete: "Five ingredients you would recognize." Defines ultraprocessed food clearly the first time. Stat-driven where evidence exists. Never moralizes. No exclusivity claims ("first", "only").
 
 ## Motion
 

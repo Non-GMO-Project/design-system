@@ -579,7 +579,7 @@ export function createRenderer(ctx) {
     const alerts = [
       ["info", "status.info", "Review in progress", "The Verification team is reviewing 3 ingredients. We will email you when it is done."],
       ["success", "status.success", "Product submitted", "Heritage Rolled Oats is now in review."],
-      ["warning", "status.warning", "Verification expires Dec 1, 2026", "Renew before then to keep the seal on pack."],
+      ["warning", "status.warning", "Verification expires December 1, 2026", "Renew before then to keep the mark on pack."],
       ["danger", "status.error", "We could not upload the spec sheet", "The file is larger than 20 MB. Compress it or upload a PDF instead."],
     ]
       .map(([s, i, t, b]) => `<div class="alert alert--${s}" role="${s === "danger" ? "alert" : "status"}">${icon(i)}<strong>${t}</strong><p>${b}</p></div>`)
@@ -909,7 +909,8 @@ export function createRenderer(ctx) {
     const block = (re) => { const s = d.section(re); return s ? render(s.blocks) : ""; };
     return section(
       "writing", "10 · Writing and copy", "How we sound", f,
-      `<h3>Principles</h3><div class="prose">${block(/^Principles$/)}</div>
+      `<h3>Audiences</h3>${tableOrWarn(d.section(/^Audiences$/)?.tables()[0], f, "Writing")}
+      <h3>Principles</h3><div class="prose">${block(/^Principles$/)}</div>
       <h3>Voice by brand</h3><p class="prose small">Each card renders in its own brand context.</p><div class="grid" style="--min:240px">${voices}</div>
       <h3>Tone by situation</h3><div class="grid" style="--min:300px">${tones}</div>
       <h3>UI copy patterns</h3><div class="grid" style="--min:280px">${patterns}</div>

@@ -8,13 +8,13 @@ The Food Integrity Project is the canopy over three symbiotic programs, each wit
 |---|---|---|---|
 | Food Integrity Project | Parent organization, institutional voice. Governance, funding, policy, employer brand | Funders, partners, press, policy audiences, staff, job seekers | `fip` |
 | Non-GMO Project | Consumer-facing seal. The established mark, with the highest recognition; leads on pack and in retail | Shoppers, brands seeking verification, retailers, Technical Administrators | `nongmo` |
-| Non-UPF Verified | Consumer-facing seal. The newer standard, deliberately distinct so the two seals never read as one | Shoppers avoiding ultra-processed food, whole-food brands, retailers, researchers | `nonupf` |
+| Non-UPF Verified | Consumer-facing seal. The newer standard, deliberately distinct so the two seals never read as one | Shoppers avoiding ultraprocessed food, whole-food brands, retailers, researchers | `nonupf` |
 | Food Integrity Collective | Membership and advocacy. Speaks to industry and members rather than shoppers. Softer, editorial | Members, industry partners, advocates, event attendees | `collective` |
 
 ```
 Food Integrity Project                    parent, institutional voice
 ├── Non-GMO Project                       consumer-facing seal (Non-GMO Project Verified)
-├── Non-UPF Verified                      consumer-facing seal (non-ultra-processed food)
+├── Non-UPF Verified                      consumer-facing seal (non-ultraprocessed food)
 └── Food Integrity Collective             membership and advocacy
 ```
 
@@ -30,7 +30,7 @@ Food Integrity Project                    parent, institutional voice
 
 - On first mention: "Non-GMO Project, a program of the Food Integrity Project." Afterwards, the program name alone.
 - Never hyphenate or abbreviate the parent to "FIP" in external copy. (`fip` is fine as an internal code name.)
-- Write "Non-GMO Project" and "Non-UPF Verified" exactly; expand "Non-UPF" (non-ultra-processed food) the first time it appears on a page.
+- Write "Non-GMO Project" and "Non-UPF Verified" exactly; expand "Non-UPF" (non-ultraprocessed food) the first time it appears on a page.
 
 ### What stays separate
 
