@@ -30,6 +30,8 @@ How to use the Non-GMO Project Verified Mark and the other Non-GMO Project trade
 | File | Version | Who uses it | Where |
 |---|---|---|---|
 | `nongmo/nongmo-seal-verified-color.png` | English, full color (recommended) | Participants with verified products | Packages of verified products, marketing materials, websites, approved corporate materials |
+| `nongmo/nongmo-seal-verified-color.svg` | English, full color, vector | Participants with verified products | Same as the full-color file above. Scales to any size on screen |
+| `nongmo/nongmo-seal-verified-mono-dark.svg` | English, single color black, vector | Participants with verified products | Same as the black file below. Scales to any size on screen |
 | `nongmo/nongmo-seal-verified-mono-dark.jpg` | English, single color black | Participants with verified products | When full-color printing is not possible |
 | `nongmo/nongmo-seal-verified-mono-light.png` | English, single color white | Participants with verified products | When full-color printing is not possible, on dark packaging |
 | `nongmo/nongmo-seal-bilingual-color.jpg` | Bilingual English and French, full color | Participants with verified products | Packages of verified products typically sold in Canada, plus marketing, websites and approved corporate materials |

@@ -37,8 +37,14 @@ What is in `public/brand/` today. The showcase build checks this table against t
 | `fip/fip-logo-horizontal-color.png` | fip | logo | color | Raster pulled from the style guide PDF, 500 x 237, on a white background (not transparent). Source for the traced SVGs above; use those instead |
 | `nongmo/nongmo-logo-horizontal-color.png` | nongmo | logo | color | Corporate logo in orange, 913 x 432, transparent. nongmoproject.org media library (`NGP_corp_logo_new.png`) |
 | `nongmo/nongmo-logo-horizontal-reversed.png` | nongmo | logo | reversed | White corporate logo for Forest and other dark grounds, 913 x 432, transparent. Media library (`NGP_corp_logo_new_white.png`) |
+| `nongmo/nongmo-logo-horizontal-mono-dark.svg` | nongmo | logo | mono-dark | Corporate logo, one-color black `#231F20`, vector. Supplied in #24 |
 | `nongmo/nongmo-mark-color.svg` | nongmo | mark | color | The Butterfly, vector. Media library (`butterfly-logo.svg`). Its orange is `#F18C20`, slightly off Monarch `#F18A00` |
+| `nongmo/nongmo-mark-mono-dark.svg` | nongmo | mark | mono-dark | The Butterfly, one-color black `#231F20`, vector. Supplied in #24 |
+| `nongmo/nongmo-mark-filled-color.svg` | nongmo | mark | color | The Butterfly with Monarch `#F18A00` wings and a black `#231F20` outline, as drawn in the Verification Mark, vector. Supplied in #24 |
+| `nongmo/nongmo-mark-avatar-color.svg` | nongmo | mark | color | Butterfly avatar: the filled Butterfly on a green check, in a light blue circle with a white ring. For social profiles. Vector. Supplied in #24 |
+| `nongmo/nongmo-seal-verified-color.svg` | nongmo | seal | color | Official full-color Verification Mark, vector. Supplied in #24 |
 | `nongmo/nongmo-seal-verified-color.png` | nongmo | seal | color | Official full-color Verification Mark, 1205 x 882, lossless. Media library (`NGPV_full_color-1.png`) |
+| `nongmo/nongmo-seal-verified-mono-dark.svg` | nongmo | seal | mono-dark | Official single-color black Verification Mark with keyline, `#231F20`, vector. Supplied in #24 |
 | `nongmo/nongmo-seal-verified-mono-dark.jpg` | nongmo | seal | mono-dark | Official single-color black Verification Mark with keyline, 4706 x 3503. Program trademark kit (`NGPV_single_color_black.jpg`) |
 | `nongmo/nongmo-seal-verified-mono-light.png` | nongmo | seal | mono-light | Official single-color white Verification Mark, 2163 x 1593, transparent. Program trademark kit (`NGPV_single_color_white.png`) |
 | `nongmo/nongmo-seal-bilingual-color.jpg` | nongmo | seal | color | Official bilingual (English and French) Verification Mark, full color, 595 x 298. For products sold in Canada. Program trademark kit (`NGPV_Bilingual_full_color.jpg`) |
@@ -65,7 +71,7 @@ Still needed:
 
 - `TODO(design): SVG versions of the remaining PNG and JPG files. Vector files exist for the Non-UPF Verified logo and primary seal and the Non-GMO Project Butterfly.`
 - `TODO(design): Food Integrity Project logo and mark as source vector files, in Cacao and reversed Birch. The SVGs in fip/ are traces of a 500px raster, made as an interim exception to the rule against redrawing logos, and their edges are slightly uneven when enlarged.`
-- `TODO(design): Non-GMO Project butterfly avatar (butterfly on blue circle) and a vector corporate logo. Confirm whether the Butterfly's #F18C20 should become Monarch #F18A00.`
+- `TODO(design): vector corporate logo in color (Monarch) and reversed (white); only the one-color black logo is vector. Confirm whether the outline Butterfly's #F18C20 should become Monarch #F18A00 (the filled Butterfly and avatar from #24 already use #F18A00). Say when to use the filled Butterfly rather than the outline one.`
 - `TODO(design): Non-UPF Verified logo in reversed (Birch). Color (Dragon Fruit) and one-color black versions exist. Also vector Dragon Fruit and white versions of the circular seal and the mark, and a vector white primary seal.`
 - `TODO(design): Food Integrity Collective lockup in color (Forest) for Birch backgrounds. Only the light version exists. The older guide called the symbol the umbrella mark; confirm it now belongs to the Collective.`
 - `TODO(design): endorsement lockup files (horizontal and stacked) for each program.`
@@ -89,7 +95,7 @@ Program trademark guides (the rules for seal use on pack and in marketing). Each
 |---|---|
 | brand | `fip`, `nongmo`, `nonupf`, `collective` |
 | asset | `logo` (with wordmark), `mark` (symbol only), `seal` |
-| lockup | `horizontal`, `stacked`, `endorsed`, `verified` (seals), `circular` (secondary seal), `bilingual` (English and French seal) |
+| lockup | `horizontal`, `stacked`, `endorsed`, `verified` (seals), `circular` (secondary seal), `bilingual` (English and French seal), `avatar` (mark in a circle for social profiles), `filled` (a mark drawn with solid fills rather than outline) |
 | tone | `color`, `reversed` (for dark or brand grounds), `mono-dark` (one color, dark), `mono-light` (one color, light) |
 
 SVG for everything on screen once supplied. PNG only where a platform requires it (touch icons, social images, email clients that block SVG).
