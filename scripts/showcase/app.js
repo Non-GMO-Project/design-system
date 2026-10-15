@@ -55,7 +55,7 @@
     const c = e.target.closest("[data-copy]");
     if (!c) return;
     navigator.clipboard?.writeText(c.dataset.copy);
-    toast(`Copied ${c.dataset.copy}`, false);
+    toast(`Copied ${c.dataset.copyLabel ?? c.dataset.copy}`, false);
   });
 
   // ---------- Tabs ----------

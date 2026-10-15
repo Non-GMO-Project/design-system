@@ -104,8 +104,23 @@ export function createRenderer(ctx) {
       ${src ? `<p class="prose">${inline(src)}</p>` : ""}
       <h3>Rules that apply everywhere</h3>
       ${rules ? render(rules.blocks) : ""}
+      ${aiUse()}
       <div id="checks-slot"></div>
     </section>`;
+  }
+
+  // "Use it with AI": steps plus a sample prompt with a copy button.
+  function aiUse() {
+    const ai = docs["README.md"].section(/^Use it with AI$/);
+    if (!ai) { check("warn", "Overview", 'No "Use it with AI" section', "README.md"); return ""; }
+    const prompt = ai.code()[0]?.text ?? "";
+    const blocks = ai.blocks.filter((b) => b.type !== "code" && !(b.type === "p" && /^Sample prompt:?$/i.test(plain(b.text))));
+    return `<h3 id="use-with-ai">Use it with AI</h3>
+      <div class="prose">${render(blocks)}</div>
+      ${prompt ? `<div class="card" style="display:grid;gap:0.75rem">
+        <div class="row" style="justify-content:space-between;align-items:center;gap:0.5rem"><strong>Sample prompt</strong><button class="btn btn--outline btn--sm" type="button" data-copy="${esc(prompt)}" data-copy-label="the sample prompt">${icon("action.copy", "icon icon--sm")}Copy prompt</button></div>
+        <pre class="code" style="margin:0;white-space:pre-wrap"><code>${esc(prompt)}</code></pre>
+      </div>` : ""}`;
   }
 
   // ---------- 01 Brand architecture ----------
