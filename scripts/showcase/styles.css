@@ -246,7 +246,11 @@ dialog .actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-
 dialog.sheet { margin: 0 0 0 auto; height: 100vh; max-height: 100vh; width: min(420px, 100vw); border-radius: var(--radius-lg) 0 0 var(--radius-lg); box-shadow: var(--elevation-3); }
 dialog.sheet[open] { animation: sheet-in var(--duration-moderate) cubic-bezier(0.2, 0.9, 0.3, 1); }
 @keyframes sheet-in { from { transform: translateX(100%); } }
-.toasts { position: fixed; right: 1rem; bottom: 1rem; display: grid; gap: 0.5rem; z-index: 60; }
+.toasts { position: fixed; right: 1rem; bottom: calc(5rem + env(safe-area-inset-bottom)); display: grid; gap: 0.5rem; z-index: 60; }
+.feedback-fab { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 50; height: 48px; padding: 0 1.25rem; border-radius: 999px; box-shadow: var(--elevation-2); }
+.feedback-fab:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+#main > footer { padding-bottom: 5rem; }
+@media print { .feedback-fab { display: none; } }
 .toast { display: flex; gap: 0.75rem; align-items: center; min-width: 280px; padding: 0.875rem 1rem; background: var(--popover); color: var(--popover-foreground); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--elevation-3); animation: toast-in var(--duration-moderate) var(--ease-enter); }
 .toast .icon { color: var(--status-success-icon); }
 .toast .btn { margin-left: auto; }
@@ -502,7 +506,7 @@ dialog.sheet--left[open] { animation: sheet-left-in var(--duration-moderate) cub
   dialog.sheet:not(.sheet--left)[open] { animation: drawer-in var(--duration-moderate) cubic-bezier(0.2, 0.9, 0.3, 1); }
   dialog .actions { flex-direction: column-reverse; }
   dialog .actions .btn { width: 100%; height: 48px; }
-  .toasts { left: 1rem; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom)); }
+  .toasts { left: 1rem; right: 1rem; bottom: calc(5rem + env(safe-area-inset-bottom)); }
   .toast { min-width: 0; }
   .btn--default.btn--lg { width: 100%; }
   .specimen { padding: 0.75rem 0; }

@@ -292,6 +292,7 @@ ${sections.map(([id, , body]) => (id === "overview" ? body.replace('<div id="che
   <footer class="small muted" style="padding-top:2rem">Built from ${Object.keys(docs).length} documents in <code>docs/design-system</code> · source hash <code>${sourceHash}</code> · ${errors.length} errors, ${warns.length} warnings.</footer>
   </main>
 </div>
+<a class="btn btn--default feedback-fab" href="https://github.com/Non-GMO-Project/design-system/issues/new" target="_blank" rel="noopener">${r.icon("contact.message")}Feedback<span class="sr-only"> (opens a new GitHub issue in a new tab)</span></a>
 <template id="tpl-toast-icon">${r.icon("status.success")}</template>
 <template id="tpl-error-icon">${r.icon("status.error")}</template>
 <template id="tpl-spinner">${iconSvg(plain(rowsOf(docs["05-iconography.md"].section(/^Status and feedback$/)?.tables()[0]).find((x) => plain(x.name) === "status.loading")?.lucide ?? "LoaderCircle"), "icon spin")}</template>
