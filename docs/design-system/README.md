@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.14 (draft for review)
+**Version:** 0.15 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -49,7 +49,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 
 ## The showcase
 
-`index.html` at the repository root is a visual reference of the whole system: logos and seals, color and contrast, type, icons, components, motion, accessibility, writing, UX, responsive behavior, email, trademark usage and each brand profile, with switches for brand and dark mode.
+`index.html` at the repository root is a visual reference of the whole system: logos and seals, color and contrast, type, icons, components, motion, accessibility, writing, UX, responsive behavior, email, trademark usage and each brand profile, with switches for brand and dark mode. A floating **Feedback** button in the bottom corner opens a new issue on the repository's GitHub issues page, so anyone viewing the guide can report a problem or suggest a change.
 
 The build also writes one standalone page per program trademark doc, `trademark/non-gmo-project.html` and `trademark/non-upf-verified.html`. Each is a single file with its fonts, styles and mark images inlined and internal TODOs left out, so it can be sent to participants on its own.
 
@@ -135,6 +135,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.15 | 2026-10-15 | The showcase has a floating Feedback button that opens a new GitHub issue in a new tab. Toasts in the showcase now sit above it |
 | 0.14 | 2026-10-15 | Added Non-GMO Project vector files (#24): the full-color and black Verification Mark, the black corporate logo, the black Butterfly, a filled two-color Butterfly and the butterfly avatar for social profiles. New lockup names `avatar` and `filled` in the naming scheme. The seal SVGs also appear on the Non-GMO Project participant page |
 | 0.13 | 2026-10-15 | Added one-color black vector files for Non-UPF Verified (#22): the organizational logo, the primary and circular seals and the icon (`*-mono-dark.svg`), plus three URL graphics in `public/brand/nonupf/graphics/` whose usage is still to be defined. The seal SVGs also appear on the Non-UPF Verified participant page |
 | 0.12 | 2026-10-15 | Added interim SVGs of the Food Integrity Project logo (`fip-logo-horizontal-color.svg`) and, for the first time, its butterfly mark alone (`fip-mark-color.svg`), both on transparent backgrounds. They are traced from the style guide raster, an approved exception to the no-redraw rule until the design team supplies source files. The showcase now shows the transparent logo |
