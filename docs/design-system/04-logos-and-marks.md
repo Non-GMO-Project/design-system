@@ -44,14 +44,18 @@ What is in `public/brand/` today. The showcase build checks this table against t
 | `nongmo/nongmo-seal-bilingual-color.jpg` | nongmo | seal | color | Official bilingual (English and French) Verification Mark, full color, 595 x 298. For products sold in Canada. Program trademark kit (`NGPV_Bilingual_full_color.jpg`) |
 | `nongmo/nongmo-seal-bilingual-mono-dark.jpg` | nongmo | seal | mono-dark | Official bilingual Verification Mark, single-color black, 595 x 298. Program trademark kit (`NGPV_Bilingual_single_color_black.jpg`) |
 | `nonupf/nonupf-logo-horizontal-color.svg` | nonupf | logo | color | Organizational logo (circle icon + NON UPF VERIFIED), Dragon Fruit, vector. Taken from nonultraprocessed.org, where it is labeled "Non-UPF Verified corporate logo" |
+| `nonupf/nonupf-logo-horizontal-mono-dark.svg` | nonupf | logo | mono-dark | Organizational logo, one-color black `#231F20`, vector. Supplied in #22 |
 | `nonupf/nonupf-seal-verified-color.svg` | nonupf | seal | color | Primary rectangular mark, Dragon Fruit, vector. nonultraprocessed.org media library (`non-upf-package-logo.svg`) |
+| `nonupf/nonupf-seal-verified-mono-dark.svg` | nonupf | seal | mono-dark | Primary rectangular mark, one-color black `#231F20`, vector. Supplied in #22 |
 | `nonupf/nonupf-seal-verified-color.png` | nonupf | seal | color | Primary rectangular mark, pink (Pantone 214 C), 900 x 675, transparent. Program trademark kit (`Primary_Non-UPF_Verified_pink.png`). Use where SVG is not supported, such as email |
 | `nonupf/nonupf-seal-verified-mono-dark.png` | nonupf | seal | mono-dark | Primary mark, navy (Pantone 282 C), 900 x 675. Program trademark kit (`Primary_Non-UPF_Verified_navy.png`) |
 | `nonupf/nonupf-seal-verified-mono-light.png` | nonupf | seal | mono-light | Primary mark, white, for dark grounds, 900 x 675. Program trademark kit (`Primary_Non-UPF_Verified_white.png`) |
+| `nonupf/nonupf-seal-circular-mono-dark.svg` | nonupf | seal | mono-dark | Secondary circular mark, one-color black `#231F20`, vector. Only when the primary cannot fit. Supplied in #22 |
 | `nonupf/nonupf-seal-circular-color.png` | nonupf | seal | color | Secondary circular mark, pink, 900 x 900. Only when the primary cannot fit. Program trademark kit (`Secondary_Non-UPF_Verified_pink.png`) |
 | `nonupf/nonupf-seal-circular-mono-dark.png` | nonupf | seal | mono-dark | Secondary circular mark, navy, 900 x 900. Program trademark kit (`Secondary_Non-UPF_Verified_navy.png`) |
 | `nonupf/nonupf-seal-circular-mono-light.png` | nonupf | seal | mono-light | Secondary circular mark, white, 900 x 900. Program trademark kit (`Secondary_Non-UPF_Verified_white.png`) |
 | `nonupf/nonupf-mark-color.png` | nonupf | mark | color | Icon in circle. Favicon and app icon only; the icon alone needs approval elsewhere |
+| `nonupf/nonupf-mark-mono-dark.svg` | nonupf | mark | mono-dark | Icon in circle, one-color black `#231F20`, vector. Favicon and app icon only; the icon alone needs approval elsewhere. Supplied in #22 |
 | `collective/collective-logo-horizontal-mono-light.png` | collective | logo | mono-light | Full lockup (mark + "Food Integrity Collective" in serif), cream `#FEFDF0` on transparent, 1501 x 509. foodintegritycollective.org header (`food_integrity_cream.png`) |
 | `collective/collective-mark-color.png` | collective | mark | color | Green mark |
 | `collective/collective-mark-mono-dark.png` | collective | mark | mono-dark | Black mark |
@@ -62,9 +66,11 @@ Still needed:
 - `TODO(design): SVG versions of the remaining PNG and JPG files. Vector files exist for the Non-UPF Verified logo and primary seal and the Non-GMO Project Butterfly.`
 - `TODO(design): Food Integrity Project logo and mark as source vector files, in Cacao and reversed Birch. The SVGs in fip/ are traces of a 500px raster, made as an interim exception to the rule against redrawing logos, and their edges are slightly uneven when enlarged.`
 - `TODO(design): Non-GMO Project butterfly avatar (butterfly on blue circle) and a vector corporate logo. Confirm whether the Butterfly's #F18C20 should become Monarch #F18A00.`
-- `TODO(design): Non-UPF Verified logo in reversed (Birch) and one-color Dark Matter versions. Only the Dragon Fruit color version exists.`
+- `TODO(design): Non-UPF Verified logo in reversed (Birch). Color (Dragon Fruit) and one-color black versions exist. Also vector Dragon Fruit and white versions of the circular seal and the mark, and a vector white primary seal.`
 - `TODO(design): Food Integrity Collective lockup in color (Forest) for Birch backgrounds. Only the light version exists. The older guide called the symbol the umbrella mark; confirm it now belongs to the Collective.`
 - `TODO(design): endorsement lockup files (horizontal and stacked) for each program.`
+
+Other Non-UPF Verified artwork in `public/brand/nonupf/graphics/` (not logos, so not in the inventory above), one-color black `#231F20` vectors supplied in #22, all built around the program URL: `nonupf-graphic-url-vertical.svg` ("nonultraprocessed.org" set vertically with a small NON UPF), `nonupf-graphic-url-badge.svg` (the icon in a circle under an arc of "nonultraprocessed.org") and `nonupf-graphic-url-wave.svg` ("NONULTRAPROCESSED.ORG" on a wave with NON UPF). The badge includes the icon, so the rule on the icon alone applies to it. `TODO(design): say where these graphics may be used (social, merchandise, campaigns) and whether they need approval.`
 
 Other Collective artwork in `public/brand/collective/` (not logos, so not in the inventory above): `campaign/collective-campaign-nourish-life-badge.png` and `-light.png` (the "Food should nourish life" badge), and `illustrations/collective-petals-*.png` (the petals motif). All use the Collective's earlier colors, green `#255330` and lime `#E2E98D`, not Forest and Romanesco. `TODO(design): recolor to Forest and Romanesco, or confirm the earlier colors stay for Collective artwork.`
 

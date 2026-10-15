@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.12 (draft for review)
+**Version:** 0.13 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -135,6 +135,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.13 | 2026-10-15 | Added one-color black vector files for Non-UPF Verified (#22): the organizational logo, the primary and circular seals and the icon (`*-mono-dark.svg`), plus three URL graphics in `public/brand/nonupf/graphics/` whose usage is still to be defined. The seal SVGs also appear on the Non-UPF Verified participant page |
 | 0.12 | 2026-10-15 | Added interim SVGs of the Food Integrity Project logo (`fip-logo-horizontal-color.svg`) and, for the first time, its butterfly mark alone (`fip-mark-color.svg`), both on transparent backgrounds. They are traced from the style guide raster, an approved exception to the no-redraw rule until the design team supplies source files. The showcase now shows the transparent logo |
 | 0.11 | 2026-10-14 | Added two icons to the registry in `05-iconography.md` for activity timelines (#19): `domain.task` (`ListTodo`) for a person's to-dos and follow-ups, kept separate from `domain.review`, and `domain.history` (`History`) for activity history and its empty state. The design team still needs to confirm both picks |
 | 0.10 | 2026-10-13 | The build now also generates `styles/tailwind.css` (the Tailwind CSS v4 wiring from `09-tokens.md`) and `styles/fonts.css` (`@font-face` rules for the self-hosted fonts in `public/fonts/`), so apps import them with `styles/tokens.css` instead of copying code blocks (#16). `npm run check` flags them when stale and the pre-commit hook stages them. `09-tokens.md` and `03-typography.md` now tell consumers to import the generated files |
