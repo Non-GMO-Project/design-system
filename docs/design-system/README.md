@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.15 (draft for review)
+**Version:** 0.16 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -13,7 +13,7 @@ Values marked `TODO(...)` still need a decision. Everything else is a working de
 
 | File | What it covers | Read it when |
 |---|---|---|
-| `README.md` | This file. Rules that apply everywhere, file map, how Claude Code should use the system | Always, first |
+| `README.md` | This file. Rules that apply everywhere, file map, how to use the system with Claude and other AI assistants | Always, first |
 | `01-brand-architecture.md` | The canopy and its three programs, which name leads, written reference, endorsement, multi-program views | Any page that names a program, any multi-program view |
 | `02-color.md` | Birch, the one dark, the signature, usage ratios, tonal scales, semantic tokens, status, pairings, charts | Any styling work |
 | `03-typography.md` | Lora, Avenir (Nunito Sans on web), Quicksand; context pairings; type scale | Any text-heavy layout, any new page |
@@ -83,6 +83,31 @@ It is **generated from these Markdown files** by `scripts/build-showcase.mjs`. D
 
 Run `npm run todos` to see what is still open. The showcase lists them too.
 
+## Use it with AI
+
+Claude and other AI assistants can follow this system if they read it before they work. The whole system is public on GitHub: [github.com/Non-GMO-Project/design-system](https://github.com/Non-GMO-Project/design-system).
+
+1. **Claude Code, or any assistant working in a code repository:** copy `docs/design-system/` into the project and add the block from [Using this with Claude Code](https://github.com/Non-GMO-Project/design-system/blob/main/docs/design-system/README.md#using-this-with-claude-code) to its `CLAUDE.md` (or the tool's own instructions file, such as `AGENTS.md` or `.github/copilot-instructions.md`). The assistant then reads the system before any UI work.
+2. **Chat assistants (Claude, ChatGPT, Gemini and others):** give the assistant the GitHub link, or attach `README.md` and the topic files your task touches. Name the brand context.
+3. **Check what comes back** against the rules above and the showcase. When the system has no answer, the assistant should say so and leave a `TODO(design)` rather than invent a style.
+
+Sample prompt:
+
+```text
+Follow the Food Integrity Project Digital Design System:
+https://github.com/Non-GMO-Project/design-system
+
+Read docs/design-system/README.md first, then the topic files this task touches
+(for example 02-color, 06-ui-framework, 10-writing).
+
+Brand context: Non-GMO Project.
+Task: design a page that lists a company's verified products.
+
+Use Birch as the background, semantic tokens only, the official logo and seal
+files, and color + icon + label for every status. If the system has no answer,
+say so and leave a TODO(design) note instead of inventing a style.
+```
+
 ## Using this with Claude Code
 
 Place this folder at `docs/design-system/` in each repository (or in a shared package that repositories pull in). Then add the block below to the repository's `CLAUDE.md`.
@@ -135,6 +160,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.16 | 2026-10-15 | Added "Use it with AI" to `README.md` (#27): brief steps for Claude Code, coding assistants and chat assistants, a sample prompt and the GitHub link. The showcase Overview shows it, with a button to copy the prompt |
 | 0.15 | 2026-10-15 | The showcase has a floating Feedback button that opens a new GitHub issue in a new tab. Toasts in the showcase now sit above it |
 | 0.14 | 2026-10-15 | Added Non-GMO Project vector files (#24): the full-color and black Verification Mark, the black corporate logo, the black Butterfly, a filled two-color Butterfly and the butterfly avatar for social profiles. New lockup names `avatar` and `filled` in the naming scheme. The seal SVGs also appear on the Non-GMO Project participant page |
 | 0.13 | 2026-10-15 | Added one-color black vector files for Non-UPF Verified (#22): the organizational logo, the primary and circular seals and the icon (`*-mono-dark.svg`), plus three URL graphics in `public/brand/nonupf/graphics/` whose usage is still to be defined. The seal SVGs also appear on the Non-UPF Verified participant page |
