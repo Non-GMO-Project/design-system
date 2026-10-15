@@ -400,5 +400,5 @@ So the design team can tune a base hex and regenerate without guesswork:
 - Backgrounds are Birch, never `#FFFFFF`. Pure white is allowed only inside imagery and partner logos.
 - If a needed color has no semantic token, stop and add one to `09-tokens.md`, then use it. Do not inline it.
 - Status meaning always comes from status tokens, never brand tokens.
-- Monarch and Dragon Fruit never appear in the same layout. Never place two program signatures next to each other unless the page is a house-level page, and even then keep each inside its own `data-brand` container.
+- Monarch and Dragon Fruit never appear in the same layout. Never place two program signatures next to each other unless the page is a house-level page, and even then keep each inside its own `data-brand` container. The one exception is program chips, which use each program's signature fill (see `01-brand-architecture.md`).
 - Check contrast for any new pairing. If it is not in "Approved text pairings", compute it.

@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.17 (draft for review)
+**Version:** 0.18 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -39,7 +39,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 1. **Accessibility wins.** If a visual rule anywhere conflicts with `08-accessibility.md`, accessibility wins.
 2. **Start on Birch.** Every brand's background is Birch `#FFFDEB`. Never substitute pure white.
 3. **Semantic tokens only.** Components never contain hex values, raw palette variables or arbitrary Tailwind colors.
-4. **One brand context per surface.** A page or region speaks for one brand. One program, one accent: Monarch and Dragon Fruit never appear in the same layout.
+4. **One brand context per surface.** A page or region speaks for one brand. One program, one accent: Monarch and Dragon Fruit never appear in the same layout. The one exception is program chips in multi-program views (see `01-brand-architecture.md`).
 5. **Status is shared and never color alone.** Verified, lapsed and pending look the same in every brand and always pair color, icon and label.
 6. **Logos and seals are assets, never drawings.** Always use the official files. Never recreate a logo or certification seal in SVG, CSS, canvas or text.
 7. **Use the component library before building.** Check `06-ui-framework.md` for the component that fits the interaction type. Build custom only when nothing fits, and build on the same primitives.
@@ -134,7 +134,7 @@ Hard rules:
 - Start on Birch, never pure white. Use semantic tokens and existing components.
   No hex values or one-off colors in components.
 - Never draw or approximate a logo or certification seal. Use <BrandLogo /> and official assets.
-- Monarch and Dragon Fruit never share a layout.
+- Monarch and Dragon Fruit never share a layout, except in program chips.
 - Every status shows color + icon + text label.
 - Respect prefers-reduced-motion.
 - If the design system has no answer, say so, choose the closest existing pattern,
@@ -160,6 +160,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.18 | 2026-10-16 | Program chips now use each program's signature color (#6): a Milkweed Leaf, Monarch, Dragon Fruit or Romanesco fill with Birch or Forest text and dot (4.6:1 to 9.3:1), so programs are easy to tell apart in multi-program tables and filters. They are the one exception to "Monarch and Dragon Fruit never appear in the same layout", noted in rule 4, the Claude Code block, `01`, `02`, `06` and both program profiles. Generic filter chips keep the subtle tint |
 | 0.17 | 2026-10-16 | Updated `10-writing.md` to the *Writer's Guide* (Sixth Edition, September 2025) (#29): new Audiences section (general, business, technical) with AP Style for public material and Chicago for technical; 8th to 10th grade reading level; a second reader before anything public is published; the word list now carries the guide's terms (GMO vs GM, "the Project", "the Standard", Verified vs verified, the Butterfly, participant, Technical Administrator, ultraprocessed, wellbeing and others); no serial comma, which settles the open TODO; dates spelled out ("December 1, 2026"), times as "3 pm Pacific", date ranges with a hyphen; bulleted list punctuation, compound modifiers, species names and citation rules. "Ultra-processed" is now "ultraprocessed" in `01`, `08` and the Non-UPF Verified profile, and status dates in `02`, `06` and `11` spell out the month. The showcase shows the Audiences table. Brand fonts and colors still follow the Food Integrity Project Style Guide |
 | 0.16 | 2026-10-15 | Added "Use it with AI" to `README.md` (#27): brief steps for Claude Code, coding assistants and chat assistants, a sample prompt and the GitHub link. The showcase Overview shows it, with a button to copy the prompt |
 | 0.15 | 2026-10-15 | The showcase has a floating Feedback button that opens a new GitHub issue in a new tab. Toasts in the showcase now sit above it |
