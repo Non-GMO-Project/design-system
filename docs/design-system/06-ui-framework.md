@@ -171,7 +171,7 @@ Romanesco (Collective) and Monarch (Non-GMO Project) primary buttons are light f
 <ProgramChip program="nongmo" />  // Monarch chip, Forest dot, "Non-GMO Project"
 ```
 
-Sets its own `data-brand`. The fill is `--brand-signature` and the text and dot are `--brand-signature-foreground`, so each program is recognizable at a glance in a multi-program table. Along with program cards on house-level pages (see `01-brand-architecture.md`), this is the only place two program signatures may share a layout. Generic filter chips that are not about a program keep the subtle chip: `--brand-subtle`, `--brand-border` and a `--brand-dark` dot.
+Sets its own `data-brand`. The fill is `--brand-signature` and the text and dot are `--brand-signature-foreground`, so each program is recognizable at a glance in a multi-program table. Along with program cards on house-level pages (see `01-brand-architecture.md`), this is the only place two program signatures may share a layout. Text on every program chip is 4.6:1 or better, light and dark. When a program chip is removable, the remove button's focus ring sits on the fill, so it uses `--brand-signature-foreground`, drawn inside the chip; the usual `--ring` falls below 3:1 on Monarch and Romanesco in dark mode. Generic filter chips that are not about a program keep the subtle chip: `--brand-subtle`, `--brand-border` and a `--foreground` dot (the brand dark nearly disappears on the dark-mode chip).
 
 ### Cards
 
