@@ -42,6 +42,22 @@
       "owner": "House (shared)",
       "purpose": "Utility neutral: table stripes, form fields, disabled states, data panels, image wells. Never a page ground.",
       "official": true
+    },
+    {
+      "name": "white",
+      "label": "White",
+      "hex": "#FFFFFF",
+      "owner": "House (shared)",
+      "purpose": "Color of the white (reversed) logo and seal files. Not a background (start on Birch) and not a UI color.",
+      "official": false
+    },
+    {
+      "name": "black",
+      "label": "Black",
+      "hex": "#000000",
+      "owner": "House (shared)",
+      "purpose": "Color of the one-color black logo and seal files (mono-dark). Not for type or UI; each brand's dark does that.",
+      "official": false
     }
   ],
   "scales": [

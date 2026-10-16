@@ -34,6 +34,8 @@ Because components only use semantic tokens, a button written once renders as a 
 |---|---|---|---|---|
 | **Birch** | `#FFFDEB` | Ground | All (shared) | Default background everywhere |
 | **Frost** | `#F3F4F2` | Utility neutral | All (shared) | Fields, stripes, disabled, data panels |
+| **White** | `#FFFFFF` | Logo color | All (shared) | The color of the white (reversed) logo and seal files, such as the white Non-GMO Project Verified Mark. Never a background: start on Birch. Not a UI color |
+| **Black** | `#000000` | Logo color | All (shared) | The color of the one-color black logo and seal files (`*-mono-dark`), for one-color printing and partner materials. Never for type or UI: each brand's dark does that |
 | **Cacao** | `#241A15` | Dark | Food Integrity Project | From the logo. Warm near-black that matches Forest and Dark Matter in weight. Sets type. The guide says Cacao is never a fill, but also that each dark sets every inverted panel; this system allows it for inverted hero bands and footers only (see `brands/food-integrity-project.md`) |
 | **Loam** | `#6B5644` | Supporting tone | Food Integrity Project | Brown of turned soil, a lighter tone of Cacao |
 | **Milkweed Leaf** | `#5F7A52` | Signature | Food Integrity Project | Grey-green of the plant the monarch cannot breed without. Green is the one hue no program owns, and it sits opposite Monarch orange |
