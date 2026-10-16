@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.35 (draft for review)
+**Version:** 0.36 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -49,7 +49,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 
 ## The showcase
 
-`index.html` at the repository root is a visual reference of the whole system: logos and seals, color and contrast, type, icons, components, motion, accessibility, writing, UX, responsive behavior, email, trademark usage and each brand profile, with switches for brand and dark mode. A floating **Feedback** button in the bottom corner opens a new issue on the repository's GitHub issues page, so anyone viewing the guide can report a problem or suggest a change.
+`index.html` at the repository root is a visual reference of the whole system: logos and seals, color and contrast, type, icons, components, motion, accessibility, writing, UX, responsive behavior, email, trademark usage and each brand profile, with switches for dark mode and reduced motion. A floating **Feedback** button in the bottom corner opens a new issue on the repository's GitHub issues page, so anyone viewing the guide can report a problem or suggest a change.
 
 The build also writes one standalone page per program trademark doc, `trademark/non-gmo-project.html` and `trademark/non-upf-verified.html`. Each is a single file with its fonts, styles and mark images inlined and internal TODOs left out, so it can be sent to participants on its own.
 
@@ -168,6 +168,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.36 | 2026-10-16 | Removed the brand switcher from the showcase top bar and mobile header (#66). It recolored the components but not the content, which was confusing. The page now always uses the Food Integrity Project context; brand-specific examples (logos, color mappings, email samples, the signature moment demo, brand profiles) keep showing every brand side by side |
 | 0.35 | 2026-10-16 | The showcase's opening headline now says just "Food Integrity Project" (#60); the eyebrow above it already says "Digital design system". The system's full name is unchanged in the docs |
 | 0.34 | 2026-10-16 | House-level color (#38). The Food Integrity Project support panel (`--brand-support`) is now a light Loam 200 with Cacao text (12.1:1), like the other brands' support tints, instead of a dark Loam 700 panel; the brand dark stays the only inverted surface. Program cards on house-level pages may carry a primary button in their own signature, a second exception to "Monarch and Dragon Fruit never appear in the same layout" alongside program chips; nothing else on those pages takes a program signature. The confirm-this-reading TODO in `01` is closed. Rule 4, the Claude Code block, `01`, `02`, `06`, both program profiles and the showcase say the same |
 | 0.33 | 2026-10-16 | Email type and buttons now match the rest of the system (#37). The footer and masthead description are 16px (`body`), so email has no text under 16px besides eyebrows and button labels. Buttons use the 8px radius (`rounded-md`) and the 15px `label` style, like product buttons. The masthead name is `h1` and email never uses `display` sizes. Food Integrity Collective emails follow its Quicksand + Avenir pairing, with Quicksand mastheads and headlines; the showcase sample shows it |

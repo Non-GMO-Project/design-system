@@ -101,7 +101,7 @@ export function createRenderer(ctx) {
     const ver = readme.field("Version");
     const src = readme.field("Brand source");
     return `<section class="ds-section" id="overview" aria-labelledby="overview-h">
-      <div class="hero" data-brand-follow>
+      <div class="hero">
         <p class="eyebrow">Digital design system${ver ? " · version " + esc(plain(ver)) : ""}</p>
         <h1 id="overview-h" class="t-display" style="margin:0">${esc(readme.title.replace(/\s+Digital Design System$/i, ""))}</h1>
         <hr class="signature-rule">
@@ -395,7 +395,7 @@ export function createRenderer(ctx) {
     const dataviz = d.section(/^Data visualization$/);
     const chart = `<div class="split"><figure style="margin:0"><svg viewBox="0 0 400 200" role="img" aria-labelledby="chart-t" style="width:100%;height:auto"><title id="chart-t">Example categorical bar chart using chart-1 to chart-8</title>
       ${series.map((v, i) => `<rect x="${12 + i * 48}" y="${190 - v * 4}" width="36" height="${v * 4}" rx="3" fill="var(--chart-${i + 1})"/><text x="${30 + i * 48}" y="${184 - v * 4}" text-anchor="middle" font-size="11" fill="currentColor">${v}</text>`).join("")}
-      <line x1="0" y1="190" x2="400" y2="190" stroke="var(--border)"/></svg><figcaption class="small muted">Series 1 follows the brand. Switch brands to see it change.</figcaption></figure>
+      <line x1="0" y1="190" x2="400" y2="190" stroke="var(--border)"/></svg><figcaption class="small muted">Series 1 is the brand series, shown here in the Food Integrity Project context.</figcaption></figure>
       <div class="table-wrap"><table><thead><tr><th scope="col">Series</th><th scope="col">Color</th><th scope="col" class="num">Value</th></tr></thead><tbody>${series
         .map((v, i) => `<tr><td>Series ${i + 1}</td><td><span class="tok"><i style="background:var(--chart-${i + 1})"></i><code>--chart-${i + 1}</code></span></td><td class="num">${v}</td></tr>`)
         .join("")}</tbody></table></div></div>`;
@@ -841,7 +841,7 @@ export function createRenderer(ctx) {
       "tokens", "09 · Tokens", "The source the code reads", f,
       `${sw ? render(sw.blocks) : ""}
       <p class="row"><a class="btn btn--secondary" href="styles/tokens.css" download>${icon("action.download")}Download tokens.css</a><span class="small muted">Plain CSS, generated from 09-tokens.md. Works with or without Tailwind.</span></p>
-      <h3>Semantic tokens in the current brand and mode</h3><p class="small muted">Values are read live from the page, so they change with the brand and dark mode switches.</p>${live}
+      <h3>Semantic tokens in the current mode</h3><p class="small muted">Values are read live from the page, which uses the Food Integrity Project context, so they change with the dark mode switch. Each brand's values are in the brand token mapping under Color.</p>${live}
       <h3>Tailwind CSS v4 wiring</h3>${render(d.section(/^Tailwind CSS v4 wiring$/)?.blocks ?? [])}
       <h3>Naming rules</h3>${render(d.section(/^Token naming rules$/)?.blocks ?? [])}`
     );
@@ -902,7 +902,7 @@ export function createRenderer(ctx) {
           <div class="do-dont">${doL ? `<div class="do"><h4>${icon("status.success")}Do</h4>${render([doL])}</div>` : ""}${dontL ? `<div class="dont"><h4>${icon("status.terminated")}Don't</h4>${render([dontL])}</div>` : ""}</div>
         </article>`;
       });
-    return `<section id="brands" aria-labelledby="brands-h"><div class="ds-section" style="border:0;padding-bottom:0"><p class="eyebrow">Brand profiles</p><h2 id="brands-h">The four brands</h2><p class="prose">Each profile renders inside its own <code>data-brand</code> context, whatever the brand switch says.</p></div>${out.join("")}</section>`;
+    return `<section id="brands" aria-labelledby="brands-h"><div class="ds-section" style="border:0;padding-bottom:0"><p class="eyebrow">Brand profiles</p><h2 id="brands-h">The four brands</h2><p class="prose">Each profile renders inside its own <code>data-brand</code> context.</p></div>${out.join("")}</section>`;
   }
 
   // ---------- 10 Writing ----------

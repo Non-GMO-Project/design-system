@@ -1,4 +1,4 @@
-// Showcase behavior: brand and mode switches, demos, and motion players.
+// Showcase behavior: dark mode and reduced motion switches, demos, and motion players.
 // Motion demos read duration and easing tokens from CSS at play time.
 (() => {
   const root = document.documentElement;
@@ -12,17 +12,14 @@
   const reduced = () => root.classList.contains("reduce-motion") || matchMedia("(prefers-reduced-motion: reduce)").matches;
   const dur = (name) => (reduced() ? 0 : ms(name));
 
-  // ---------- Brand, mode, reduced motion ----------
+  // ---------- Dark mode, reduced motion ----------
   // Storage can be blocked or hold a bad value; the page must still work without it.
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem("fip-ds") || "{}") || {}; } catch { saved = {}; }
   const apply = () => {
-    root.dataset.brand = saved.brand || "fip";
     root.classList.toggle("dark", !!saved.dark);
     $('meta[name="color-scheme"]')?.setAttribute("content", saved.dark ? "dark" : "light");
     root.classList.toggle("reduce-motion", !!saved.reduce);
-    $$('input[name="brand"]').forEach((i) => (i.checked = i.value === root.dataset.brand));
-    $$('select[name="brand"]').forEach((s) => (s.value = root.dataset.brand));
     $$("[data-toggle-dark]").forEach((i) => (i.checked = !!saved.dark));
     $$("[data-toggle-reduce]").forEach((i) => (i.checked = !!saved.reduce));
     requestAnimationFrame(() => { updateLiveTokens(); $$("[data-tabs]").forEach(placeIndicator); });
@@ -30,7 +27,6 @@
   const persist = () => { try { localStorage.setItem("fip-ds", JSON.stringify(saved)); } catch { /* not saved; the switch still applies */ } };
   document.addEventListener("change", (e) => {
     const t = e.target;
-    if (t.name === "brand") { saved.brand = t.value; persist(); apply(); }
     if (t.matches("[data-toggle-dark]")) { saved.dark = t.checked; persist(); apply(); }
     if (t.matches("[data-toggle-reduce]")) { saved.reduce = t.checked; persist(); apply(); }
   });

@@ -260,8 +260,6 @@ function build() {
     })
     .join("");
 
-  const brandRadios = ["fip", "nongmo", "nonupf", "collective"].map((b) => `<label><input type="radio" name="brand" value="${b}"${b === "fip" ? " checked" : ""}><span>${esc(r.brandName(b))}</span></label>`).join("");
-  const brandOptions = ["fip", "nongmo", "nonupf", "collective"].map((b) => `<option value="${b}">${esc(r.brandName(b))}</option>`).join("");
   const fipLogo = assets.find((a) => a.brand === "fip" && a.kind === "logo" && a.exists);
 
   const html = `<!doctype html>
@@ -285,8 +283,6 @@ ${showcaseCss}
 <header class="topbar">
   <p class="topbar__title">${fipLogo ? `<img src="${esc(fipLogo.path)}" alt="Food Integrity Project">` : ""}<span>Digital design system <span class="muted small">v${esc(version.split(" ")[0])}</span></span></p>
   <button class="btn btn--outline btn--sm nav-toggle" type="button" data-open="mobile-nav" aria-haspopup="dialog">${r.icon("nav.menu", "icon icon--sm")}Sections</button>
-  <fieldset class="segmented brand-seg"><legend class="sr-only">Brand context</legend>${brandRadios}</fieldset>
-  <label class="brand-select"><span class="sr-only">Brand context</span><span class="select-wrap"><select class="select" name="brand">${brandOptions}</select>${r.icon("nav.expand", "icon icon--sm")}</span></label>
   <div class="topbar__toggles">
     <label class="switch"><input type="checkbox" role="switch" data-toggle-dark> Dark</label>
     <label class="switch"><input type="checkbox" role="switch" data-toggle-reduce> Reduce motion</label>
