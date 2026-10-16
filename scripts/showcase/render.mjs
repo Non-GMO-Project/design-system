@@ -153,14 +153,20 @@ export function createRenderer(ctx) {
     const choosing = d.section(/^Choosing the brand context$/);
     const endorsement = d.section(/^Endorsement line$/);
     const line = plain(endorsement?.blocks.find((b) => b.type === "quote")?.text ?? "A program of the Food Integrity Project");
+    // A dark footer needs a reversed program logo. Programs without one show the endorsement on Birch with their color logo.
+    const hasReversed = (b) => !!asset(b, "logo-horizontal-reversed", "logo-horizontal-mono-light", "mark-mono-light", "mark-reversed");
+    const onBirch = BRANDS.filter((b) => b !== "fip" && !hasReversed(b));
     const footers = BRANDS.filter((b) => b !== "fip")
-      .map(
-        (b) => `<div class="footer-demo ctx" data-brand="${b}" style="background:var(--brand-dark);color:var(--birch)">
-          ${logoImg(b, { height: 40, tone: "light" })}
-          <div class="endorse"><span class="lockup__rule" aria-hidden="true"></span>${logoImg("fip", { height: 20, tone: "light", alt: "" })}<span>${esc(line)}</span></div>
-        </div>`
-      )
+      .map((b) => {
+        const tone = onBirch.includes(b) ? "color" : "light";
+        const style = tone === "light" ? "background:var(--brand-dark);color:var(--birch)" : "background:var(--background);color:var(--foreground);border:1px solid var(--border)";
+        return `<div class="footer-demo ctx" data-brand="${b}" style="${style}">
+          ${logoImg(b, { height: 40, tone })}
+          <div class="endorse"><span class="lockup__rule" aria-hidden="true"></span>${logoImg("fip", { height: 20, tone, alt: "" })}<span>${esc(line)}</span></div>
+        </div>`;
+      })
       .join("");
+    const birchNote = onBirch.length ? ` ${onBirch.map(brandName).join(" and ")} ${onBirch.length > 1 ? "have" : "has"} no reversed logo yet, so ${onBirch.length > 1 ? "their examples sit" : "its example sits"} on Birch.` : "";
     const chips = BRANDS.map((b) => `<span class="chip chip--program" data-brand="${b}">${esc(brandName(b))}</span>`).join("");
     return section(
       "architecture", "01 · Brand architecture", "The canopy over three programs", f,
@@ -171,7 +177,7 @@ export function createRenderer(ctx) {
       <h3>Choosing the brand context</h3>${choosing ? render(choosing.blocks) : ""}
       <h3>Program chips</h3><p class="prose">Records in multi-program views carry a chip that sets its own <code>data-brand</code>. Each chip is filled with its program's signature color, with the matching foreground color for text, so programs are easy to tell apart at a glance. Program chips are the one place two program signatures may share a layout.</p>
       <div class="row">${chips}</div>
-      <h3>Endorsement line</h3><p class="prose">Every program surface carries the endorsement once, usually in the footer: <strong>${esc(line)}</strong>.</p>
+      <h3>Endorsement line</h3><p class="prose">Every program surface carries the endorsement once, usually in the footer: <strong>${esc(line)}</strong>.${esc(birchNote)}</p>
       <div class="stack">${footers}</div>`,
       d.paragraphs()[0] ? `<p>${inline(d.paragraphs()[0])}</p>` : ""
     );
