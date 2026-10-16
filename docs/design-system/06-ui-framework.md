@@ -171,11 +171,11 @@ Romanesco (Collective) and Monarch (Non-GMO Project) primary buttons are light f
 <ProgramChip program="nongmo" />  // Monarch chip, Forest dot, "Non-GMO Project"
 ```
 
-Sets its own `data-brand`. The fill is `--brand-signature` and the text and dot are `--brand-signature-foreground`, so each program is recognizable at a glance in a multi-program table. This is the one component where two program signatures may share a layout. Generic filter chips that are not about a program keep the subtle chip: `--brand-subtle`, `--brand-border` and a `--brand-dark` dot.
+Sets its own `data-brand`. The fill is `--brand-signature` and the text and dot are `--brand-signature-foreground`, so each program is recognizable at a glance in a multi-program table. Along with program cards on house-level pages (see `01-brand-architecture.md`), this is the only place two program signatures may share a layout. Generic filter chips that are not about a program keep the subtle chip: `--brand-subtle`, `--brand-border` and a `--brand-dark` dot.
 
 ### Cards
 
-Cards sit on Birch like the page and are separated by `--border` and elevation, not by white. Use `--brand-support` or `--brand-tint` fills for feature panels (Seafoam, Almond, Corn Flower). Do not wrap every section of a page in a card. Card hierarchy is shown by elevation and radius, not by putting cards in cards.
+Cards sit on Birch like the page and are separated by `--border` and elevation, not by white. Use `--brand-support` or `--brand-tint` fills for feature panels (Loam 200, Seafoam, Almond, Corn Flower), each with the brand dark for text. Do not wrap every section of a page in a card. Card hierarchy is shown by elevation and radius, not by putting cards in cards.
 
 ### Tables
 

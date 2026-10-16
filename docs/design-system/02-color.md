@@ -307,6 +307,7 @@ Use these combinations and you will pass WCAG 2.2 AA without needing to check. A
 | `cacao-950` | `birch` | 16.6:1 | All text |
 | `loam-700` | `birch` | 6.7:1 | All text |
 | `cacao-950` | `loam-100` | 14.4:1 | All text |
+| `cacao-950` | `loam-200` | 12.1:1 | All text |
 | `birch` | `milkweed-600` | 4.6:1 | All text |
 | `birch` | `milkweed-700` | 6.4:1 | All text |
 | `birch` | `loam-700` | 6.7:1 | All text |
@@ -421,5 +422,5 @@ So the design team can tune a base hex and regenerate without guesswork:
 - Backgrounds are Birch, never `#FFFFFF`. Pure white is allowed only inside imagery and partner logos.
 - If a needed color has no semantic token, stop and add one to `09-tokens.md`, then use it. Do not inline it.
 - Status meaning always comes from status tokens, never brand tokens.
-- Monarch and Dragon Fruit never appear in the same layout. On house-level pages each program sits in its own `data-brand` container showing its seal or logo, its dark and its supporting tint; the signature colors stay inside each program's own pages (see `01-brand-architecture.md`). The one exception is program chips, which use each program's signature fill.
+- Monarch and Dragon Fruit never appear in the same layout. On house-level pages each program sits in its own `data-brand` container showing its seal or logo, its dark and its supporting tint; the signature colors otherwise stay inside each program's own pages (see `01-brand-architecture.md`). Program cards may also carry a primary button in their own signature. The other exception is program chips, which use each program's signature fill.
 - Check contrast for any new pairing. If it is not in "Approved text pairings", compute it.

@@ -175,7 +175,7 @@ export function createRenderer(ctx) {
       ${written ? `<h4>Written reference</h4>${render(written.blocks)}` : ""}
       <h3>What is shared and what varies</h3>${shared ? render(shared.blocks.filter((b) => b.type !== "p" || !/^The principle/.test(b.text))) : ""}
       <h3>Choosing the brand context</h3>${choosing ? render(choosing.blocks) : ""}
-      <h3>Program chips</h3><p class="prose">Records in multi-program views carry a chip that sets its own <code>data-brand</code>. Each chip is filled with its program's signature color, with the matching foreground color for text, so programs are easy to tell apart at a glance. Program chips are the one place two program signatures may share a layout.</p>
+      <h3>Program chips</h3><p class="prose">Records in multi-program views carry a chip that sets its own <code>data-brand</code>. Each chip is filled with its program's signature color, with the matching foreground color for text, so programs are easy to tell apart at a glance. Program chips, and the buttons on program cards on house-level pages, are the only places two program signatures may share a layout.</p>
       <div class="row">${chips}</div>
       <h3>Endorsement line</h3><p class="prose">Every program surface carries the endorsement once, usually in the footer: <strong>${esc(line)}</strong>.${esc(birchNote)}</p>
       <div class="stack">${footers}</div>`,

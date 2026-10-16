@@ -348,8 +348,8 @@
   --brand-tint: var(--loam-50);
   --brand-subtle: var(--loam-100);
   --brand-border: var(--loam-300);
-  --brand-support: var(--loam-700);
-  --brand-support-foreground: var(--birch);
+  --brand-support: var(--loam-200);
+  --brand-support-foreground: var(--cacao-950);
   --brand-signature: var(--milkweed-600);
   --brand-signature-foreground: var(--birch);
   --ring: var(--cacao-950);
