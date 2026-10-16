@@ -53,7 +53,7 @@ Because components only use semantic tokens, a button written once renders as a 
 | **Danger** | `#B4372F` | Status | All (shared) | System addition |
 | **Info** | `#2F6DA3` | Status | All (shared) | System addition |
 
-Retired from the older guides: Non-GMO Project Orange `#DF7838`, Deep Eggplant `#221C35`, Pale Blush `#F6E0CF`, Deep Green `#2A5135`; Non-UPF Magenta `#CE0F69` and Navy `#041E42` (print Pantone equivalents of Dragon Fruit and Dark Matter); the earlier Collective greens `#3A6B35` and `#1A2E1A`. Use the digital palette above for all screen work.
+Retired from the older guides: Non-GMO Project Orange `#DF7838`, Deep Eggplant `#221C35`, Pale Blush `#F6E0CF`, Deep Green `#2A5135`; Non-UPF Magenta `#CE0F69` and Navy `#041E42` (the earlier trademark guide's values; Dragon Fruit and Dark Matter replace them, including in the Non-UPF Verified mark colors, and Pantone 214 C and 282 C stay their print equivalents); the earlier Collective greens `#3A6B35` and `#1A2E1A`. Use the digital palette above for all screen work.
 
 ## Usage ratios
 
