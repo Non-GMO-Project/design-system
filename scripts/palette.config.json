@@ -50,7 +50,7 @@
       "label": "Stone",
       "hex": "#6B746F",
       "owner": "House (shared)",
-      "purpose": "Interface neutral for borders, help text and disabled states. Frost is its 50 step.",
+      "purpose": "Interface neutral for neutral status, disabled states and comparison chart series. Frost is its 50 step.",
       "pins": [
         "#F3F4F2"
       ],

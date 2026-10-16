@@ -365,6 +365,8 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --gradient-ground: linear-gradient(120deg, var(--loam-700), var(--milkweed-600) 60%, var(--milkweed-400));
 }
 .dark, .dark [data-brand="fip"], [data-brand="fip"].dark {
+  --brand-dark: var(--cacao-900);
+  --gradient-hero: linear-gradient(135deg, var(--cacao-900), var(--cacao-800));
   --foreground: var(--birch);
   --card-foreground: var(--birch);
   --popover-foreground: var(--birch);
@@ -416,6 +418,8 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --gradient-flight: linear-gradient(120deg, var(--forest-900), var(--forest-700) 55%, var(--monarch-400));
 }
 .dark [data-brand="nongmo"], [data-brand="nongmo"].dark {
+  --brand-dark: var(--forest-800);
+  --gradient-hero: linear-gradient(135deg, var(--forest-800), var(--forest-700));
   --foreground: var(--birch);
   --card-foreground: var(--birch);
   --popover-foreground: var(--birch);
@@ -467,6 +471,8 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --gradient-harvest: linear-gradient(120deg, var(--dark-matter-950), var(--dragonfruit-700) 60%, var(--dragonfruit-500));
 }
 .dark [data-brand="nonupf"], [data-brand="nonupf"].dark {
+  --brand-dark: var(--dark-matter-900);
+  --gradient-hero: linear-gradient(135deg, var(--dark-matter-900), var(--dark-matter-800));
   --foreground: var(--birch);
   --card-foreground: var(--birch);
   --popover-foreground: var(--birch);
@@ -500,7 +506,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --input: var(--forest-600);
   --primary: var(--romanesco-200);
   --primary-foreground: var(--forest-900);
-  --primary-hover: var(--romanesco-300);
+  --primary-hover: var(--romanesco-100);
   --secondary: var(--cornflower-200);
   --secondary-foreground: var(--forest-900);
   --brand-dark: var(--forest-900);
@@ -518,6 +524,8 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --gradient-gather: linear-gradient(120deg, var(--cornflower-400), var(--cornflower-200) 50%, var(--romanesco-200));
 }
 .dark [data-brand="collective"], [data-brand="collective"].dark {
+  --brand-dark: var(--forest-800);
+  --gradient-hero: linear-gradient(135deg, var(--forest-800), var(--forest-700));
   --foreground: var(--birch);
   --card-foreground: var(--birch);
   --popover-foreground: var(--birch);

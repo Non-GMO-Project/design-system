@@ -30,7 +30,7 @@ Green is the one hue no program owns, and Milkweed Leaf sits opposite Monarch or
 
 ## Logos
 
-`fip-logo-*`. Parent mark in Cacao on Birch, or reversed to Birch on Cacao. In an endorsement the parent mark is Cacao or reversed Birch only, and 40 to 50% of the program seal's height. See `../04-logos-and-marks.md`.
+`fip-logo-*` and `fip-mark-color.svg`. Parent mark in Cacao on Birch, or reversed to Birch on Cacao. The current files are interim traces in dark gray `#35363A`, not Cacao, and there is no reversed file yet (see the TODO in `../04-logos-and-marks.md`). In an endorsement the parent mark is Cacao or reversed Birch only, and 40 to 50% of the program seal's height. See `../04-logos-and-marks.md`.
 
 ## Typography
 
