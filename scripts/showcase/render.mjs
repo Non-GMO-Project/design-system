@@ -977,7 +977,6 @@ export function createRenderer(ctx) {
       <h3>Speed and feedback</h3>${block(/^Speed and feedback$/)}
       <div class="split"><div><h3>Trust and verification</h3>${block(/^Trust and verification$/)}</div><div><h3>Mobile and in-store</h3>${block(/^Mobile and in-store$/)}</div></div>
       <h3>Notifications and email</h3>${block(/^Notifications and email$/)}
-      <h3>Research and measurement</h3>${block(/^Research and measurement$/)}
       <h3>UX definition of done</h3><p class="prose small">Use it as a checklist for a flow. Checks are not saved.</p>${checklist}`,
       `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
     );
