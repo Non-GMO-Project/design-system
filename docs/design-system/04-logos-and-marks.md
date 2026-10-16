@@ -118,6 +118,76 @@ SVG for everything on screen once supplied. PNG only where a platform requires i
 | Email header | Horizontal logo, PNG at 2x, with alt text |
 | On photography | A Birch (light) mark dropped onto a calm part of the image |
 
+## Logo by application
+
+Which artwork and which file to use for each application, by program. Sizes are what each platform asks for; the artwork follows "Choosing a variant" above and the minimum sizes below.
+
+| Application | Size and format | Artwork |
+|---|---|---|
+| Favicon | SVG, plus a 32 x 32px PNG fallback. Browsers draw it at 16 to 32px | Mark |
+| Apple touch icon | 180 x 180px PNG with no transparency | Mark centered on a Birch or brand-dark square |
+| Web app icon (manifest) | 192 x 192 and 512 x 512px PNG, plus a 512px maskable version with the mark inside the center 80% | Mark on a Birch or brand-dark square |
+| App store icon | 1024 x 1024px PNG, square, no transparency (the store rounds the corners) | Mark on a Birch or brand-dark square |
+| Social avatar (profile picture) | PNG, 400 x 400px or larger. Platforms crop it to a circle, so keep the artwork inside it | Mark, or the avatar file where one exists |
+| Social share image (Open Graph) | 1200 x 630px PNG or JPG | Horizontal logo on Birch or the brand dark. A seal only when the page is about one verified product |
+| Site or app header | SVG, at least 120px wide | Horizontal logo; the mark alone under 400px of space |
+| Footer | SVG | Program logo plus the endorsement line |
+| Email header | PNG at twice the display size, with alt text | Horizontal logo |
+| Watermark, embossing, one-color use | SVG | Mono-dark, or mono-light on dark grounds |
+| Product page seal | SVG, at least the seal's screen minimum | Certification seal, only on a currently verified product |
+| On photography | SVG | Light mark or logo on a calm part of the image, with a scrim if needed |
+
+Square icons and share images are made by placing the official file on a Birch or brand-dark background. That is layout, not redrawing: never change the artwork itself.
+
+`TODO(design): export the favicon, touch icon, app icon and share image PNGs for each brand, and confirm each mark still reads at 16px (favicons sit below the 24px mark minimum) or supply a simplified favicon.`
+
+`TODO(design): watermark opacity and placement.`
+
+### Food Integrity Project
+
+| Application | File |
+|---|---|
+| Favicon, touch and app icons, social avatar | `fip/fip-mark-color.svg` on Birch |
+| Header, share image | `fip/fip-logo-horizontal-color.svg`; `fip/fip-mark-color.svg` in narrow headers |
+| Footer and email | `fip/fip-logo-horizontal-color.svg` on Birch. `TODO(design): a transparent PNG for email; the PNG in fip/ has a white background` |
+| Dark grounds, photography, watermark | `TODO(design)`: no reversed or one-color files yet (see "Still needed") |
+
+### Non-GMO Project
+
+| Application | File |
+|---|---|
+| Favicon, touch and app icons | `nongmo/nongmo-mark-color.svg` on Birch |
+| Social avatar | `nongmo/nongmo-mark-avatar-color.svg` |
+| Header, share image | `nongmo/nongmo-logo-horizontal-color.png` on Birch, or `nongmo/nongmo-logo-horizontal-reversed.png` on Forest; `nongmo/nongmo-mark-color.svg` in narrow headers |
+| Footer | `nongmo/nongmo-logo-horizontal-reversed.png` on Forest |
+| Email header | `nongmo/nongmo-logo-horizontal-color.png` (913px wide, sharp up to 456px displayed) |
+| Watermark, one-color | `nongmo/nongmo-logo-horizontal-mono-dark.svg` or `nongmo/nongmo-mark-mono-dark.svg` |
+| Product page seal | `nongmo/nongmo-seal-verified-color.svg`; `nongmo/nongmo-seal-verified-mono-light.png` on dark grounds; `nongmo/nongmo-seal-bilingual-color.jpg` for products sold in Canada |
+| On photography | `nongmo/nongmo-logo-horizontal-reversed.png` |
+
+### Non-UPF Verified
+
+| Application | File |
+|---|---|
+| Favicon, touch and app icons | `nonupf/nonupf-mark-color.png`, or `nonupf/nonupf-mark-mono-dark.svg` for a one-color favicon. These are the only places the icon alone is approved |
+| Social avatar | `TODO(brand): approve the icon for social avatars, or name the file to use` |
+| Header, share image | `nonupf/nonupf-logo-horizontal-color.svg` on Birch. In narrow headers keep the logo at 120px or wider, since the icon alone needs approval |
+| Footer | `nonupf/nonupf-logo-horizontal-color.svg` on Birch, until a reversed logo exists |
+| Email header | `TODO(design): a PNG of the logo for email clients that block SVG` |
+| Watermark, one-color | `nonupf/nonupf-logo-horizontal-mono-dark.svg` |
+| Product page seal | `nonupf/nonupf-seal-verified-color.svg`; `nonupf/nonupf-seal-verified-mono-light.png` on dark grounds; `nonupf/nonupf-seal-circular-color.png` only where the primary cannot fit; `nonupf/nonupf-seal-verified-color.png` in email |
+| Dark grounds, photography | `TODO(design)`: no reversed logo yet (see "Still needed") |
+
+### Food Integrity Collective
+
+| Application | File |
+|---|---|
+| Favicon, touch and app icons, social avatar | `collective/collective-mark-color.png` on Birch, or `collective/collective-mark-mono-light.png` on Forest |
+| Header, share image | `collective/collective-logo-horizontal-mono-light.png` on Forest. On Birch, `TODO(design)`: no color lockup yet (see "Still needed") |
+| Footer and email header | `collective/collective-logo-horizontal-mono-light.png` on Forest (1501px wide) |
+| Watermark, one-color | `collective/collective-mark-mono-dark.png`, or `collective/collective-mark-mono-light.png` on dark grounds |
+| On photography | `collective/collective-mark-mono-light.png` |
+
 ## Endorsement lockups
 
 How a program shows it belongs to the Food Integrity Project.
@@ -206,6 +276,6 @@ Behavior:
 ## Rules for Claude Code
 
 - Use `<BrandLogo />`, `<CertificationSeal />` and `<EndorsementLockup />`. Never `<img>` a logo directly in feature code, and never draw one.
-- Pick the variant with the table in "Choosing a variant".
+- Pick the variant with the table in "Choosing a variant" and the file with "Logo by application".
 - Do not show `<CertificationSeal />` unless the data says the product is currently verified for that program.
 - If asked to "make a logo" or "mock up the seal", do not produce artwork. Use the placeholder and flag it for the design team.
