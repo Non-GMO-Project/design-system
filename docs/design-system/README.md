@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.23 (draft for review)
+**Version:** 0.24 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -90,6 +90,7 @@ Claude and other AI assistants can follow this system if they read it before the
 1. **Claude Code, or any assistant working in a code repository:** copy `docs/design-system/` into the project and add the block from [Using this with Claude Code](https://github.com/Non-GMO-Project/design-system/blob/main/docs/design-system/README.md#using-this-with-claude-code) to its `CLAUDE.md` (or the tool's own instructions file, such as `AGENTS.md` or `.github/copilot-instructions.md`). The assistant then reads the system before any UI work.
 2. **Chat assistants (Claude, ChatGPT, Gemini and others):** give the assistant the GitHub link, or attach `README.md` and the topic files your task touches. Name the brand context.
 3. **Check what comes back** against the rules above and the showcase. When the system has no answer, the assistant should say so and leave a `TODO(design)` rather than invent a style.
+4. **Report gaps as issues.** When the assistant finds something this system should cover, or a rule that is wrong, unclear or contradicts another, it opens a [new issue on the repository](https://github.com/Non-GMO-Project/design-system/issues/new) (Claude Code and other coding assistants can use the `gh` CLI), or drafts one for the person to file if it can't. One issue per gap: what the task needed, which file and section it checked, what it used instead and where it left the `TODO(design)`. The repository is public, so the issue describes only the design-system gap: no client or partner names, internal links, personal details or unreleased information.
 
 Sample prompt:
 
@@ -105,7 +106,9 @@ Task: design a page that lists a company's Verified products.
 
 Use Birch as the background, semantic tokens only, the official logo and seal
 files, and color + icon + label for every status. If the system has no answer,
-say so and leave a TODO(design) note instead of inventing a style.
+say so and leave a TODO(design) note instead of inventing a style, then open
+an issue at https://github.com/Non-GMO-Project/design-system/issues/new
+(or draft one for me) that describes the gap.
 ```
 
 ## Using this with Claude Code
@@ -139,13 +142,17 @@ Hard rules:
 - Respect prefers-reduced-motion.
 - If the design system has no answer, say so, choose the closest existing pattern,
   and leave a TODO(design) comment rather than inventing a new style silently.
+  Then open an issue at github.com/Non-GMO-Project/design-system describing the gap
+  (with `gh issue create`, or draft one for a person to file). The repository is
+  public: describe only the gap, never client names, internal links or unreleased work.
 ```
 
 ### What Claude Code should do when the system is silent
 
 1. Use the closest existing token, component or pattern.
 2. Leave a `TODO(design):` comment at that spot explaining the gap.
-3. Mention the gap in its summary of the work so a person can decide.
+3. Open an issue on [the design system repository](https://github.com/Non-GMO-Project/design-system/issues/new) with `gh issue create`, or draft one for a person to file if it has no GitHub access. Say what the task needed, what it used instead and where the `TODO(design)` is. Leave out anything private to the project: the repository is public.
+4. Mention the gap and the issue in its summary of the work so a person can decide.
 
 It should not invent new colors, fonts, icon styles or animation curves.
 
@@ -160,6 +167,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.24 | 2026-10-16 | AI assistants now report gaps as GitHub issues (#45). "Use it with AI" has a fourth step: when the system has no answer, or a rule is wrong or unclear, the assistant leaves a `TODO(design)` and opens an issue on the repository (or drafts one for a person to file), describing only the gap since the repository is public. The sample prompt, the Claude Code block and "What Claude Code should do when the system is silent" say the same |
 | 0.23 | 2026-10-16 | Icon spec gaps (#43): stroke width is 2 at 14px (`icon-xs`) as well as 16px, so small icons in badges and chips don't thin out. The icon-to-label gap is 4px (`gap-1`) with `icon-sm` and `icon-xs`, replacing 6px, which wasn't on the spacing scale; 8px (`gap-2`) stays for `icon-md` and larger. The showcase badges and chips use the 4px gap, and its empty-state icons use the 1.75 stroke the spec sets for 20px and above |
 | 0.22 | 2026-10-17 | Showcase and tooling pass. The showcase favicon is now the Food Integrity Project mark (it was the Non-UPF Verified icon, behind a media query browsers no longer match). The interim parent logo no longer uses a multiply blend and sits on a Birch plate in dark mode. The logo demo reads its minimum sizes from `04`. The showcase keeps working when browser storage is blocked, only confirms a copy that succeeded, and its Undo toasts stay 10 seconds and pause on hover and focus. Accessibility fixes in the generated markup: meaningful alt text for asset images and the top-bar logo, no skipped heading levels, no `aria-selected` on table rows, no focusable non-interactive card. The build now warns about any file in `public/brand/` that no doc mentions; the butterfly-wing photo is documented in `04` with a TODO for its source and rights. `04` lists which files are still raster only and notes that marks may leave out the lockup. The Non-UPF Verified participant page lists the vector color seal. Participant pages drop bare TODOs too and hide an empty contact line. Removed the October 2026 live-site audit (`docs/audits/`), which described the sites against v0.4 |
 | 0.21 | 2026-10-17 | Accessibility, motion and component consistency pass. Touch targets: `08` now says 44 x 44px minimum on touch and public pages (24px floor for dense desktop tools), matching `11` and `12`, and `06` button sizes point to it. Toasts with an action pause on hover and focus and stay at least 10 seconds; Undo is reachable elsewhere too. HoverCard is supplementary only. Collapsed sidebars open as a `Sheet` on touch instead of relying on tooltips. Button loading uses `aria-disabled` and `aria-busy` so focus stays. New success-state pattern in `06`; `StatusBadge` gains `program` and `date`. Reduced motion: `07` and `09` now agree; `animate-pulse` stops and `animate-spin` slows in `tokens.css`, and tw-animate classes need `motion-reduce:animate-none`. `07` pulse and spin timings match Tailwind, exits use the next shorter token, the 400ms limit covers transitions only and `status-change` uses standard easing. `12` layout columns follow the `md` breakpoint and h1 no longer claims to scale. Email: contrast rule matches `06` for light button fills, support band wording fixed, PNG logo TODO added. Seal minimums in `12` and `13` point to `04` instead of repeating numbers |
