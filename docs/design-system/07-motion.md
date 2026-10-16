@@ -9,7 +9,7 @@ The brand guide does not cover motion; everything here is a system decision. It 
 1. **Respond, then settle.** Most motion starts from a person's action and finishes quickly.
 2. **Show cause and effect.** Things enter from where they came from and leave toward where they went: a sheet slides from the edge it lives on, a deleted row collapses in place.
 3. **Fast in apps, calmer on public pages.** Staff tools should feel instant. Public pages may take a little more time for one orchestrated moment.
-4. **One signature moment.** Each product gets at most one moment of delight (see "Signature moment"). Everything else stays quiet.
+4. **One signature moment.** The system has one animation for delight (see "Signature moment"), saved for the events that deserve it. Everything else stays quiet.
 5. **Reduced motion is a first-class mode,** not an afterthought.
 
 ## Duration tokens
@@ -72,11 +72,17 @@ Shaking fields, bouncing icons, parallax, auto-playing carousels and scroll-jack
 
 ## Signature moment
 
-**"Verified."** When a verification turns to Verified while someone is watching (a reviewer approves, a brand sees the result), the status badge plays one short sequence: the badge-check icon draws its stroke, the badge settles from scale 0.94 to 1 with `--ease-emphasized`, and a glow in `--brand-signature` blooms once behind it and fades. Total 640ms. It plays once per event, never on page load, never in lists of many records.
+**A moment of delight for a milestone.** When something a person has worked toward completes while they are watching, the element that shows the new state (a status badge or a confirmation) plays one short sequence: its icon draws its stroke, it settles from scale 0.94 to 1 with `--ease-emphasized`, and a glow in `--brand-signature` blooms once behind it and fades. Total 640ms. It plays once per event, never on page load, never in lists of many records.
 
-This is the one place the system allows delight. The glow takes each brand's signature (a Monarch flutter for Non-GMO Project, Dragon Fruit for Non-UPF Verified), but the shape and timing stay the same. The badge itself keeps status colors. Seals are never animated.
+This is the one place the system allows delight. Use it for milestones, such as a product turning Verified, a member joining, a registration confirmed or a donation completed, not for routine saves or small confirmations, which use `status-change` or a toast. The glow takes each brand's signature (Milkweed Leaf, Monarch, Dragon Fruit or Romanesco), but the shape and timing stay the same. A status badge keeps its status colors. Seals are never animated.
 
-The Collective has no verification. Its equivalent is event registration and joining: the same shape with a "You're registered" or "Welcome, member" state. Non-UPF Verified scan results are information, not verification, so a scan result uses `status-change`, never the signature moment.
+| Example event | Brand | End state |
+|---|---|---|
+| A product turns Verified while a reviewer or brand is watching | Non-GMO Project, Non-UPF Verified | `Verified` badge |
+| Joining or registering for an event | Food Integrity Collective | "Welcome, member" or "You're registered" |
+| A donation completes | Food Integrity Project, or the program the campaign is for | "Donation received" |
+
+Information is not a milestone: a Non-UPF Verified scan result uses `status-change`, never the signature moment.
 
 `TODO(design): approve or replace the signature moment.`
 

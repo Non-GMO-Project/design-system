@@ -50,7 +50,7 @@ Collegial and specific. Uses "you" and "together". Specific about what joining m
 
 ## Motion
 
-Shared system. Event registration and joining may use the signature moment shape with a "You're registered" or "Welcome, member" state.
+Shared system. Event registration and joining may use the signature moment with a "You're registered" or "Welcome, member" state.
 
 ## Typical surfaces
 

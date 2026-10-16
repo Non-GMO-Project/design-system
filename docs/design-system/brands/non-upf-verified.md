@@ -48,7 +48,7 @@ Practical and concrete: "Five ingredients you would recognize." Defines ultrapro
 
 ## Motion
 
-Shared system. The scanning experience uses `status-change` when a scan result arrives; the signature moment is reserved for actual verification events, not scans.
+Shared system. The scanning experience uses `status-change` when a scan result arrives; the signature moment is for milestones, such as a product turning Verified, never for scans.
 
 ## Typical surfaces
 
