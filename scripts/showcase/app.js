@@ -362,5 +362,19 @@
   }, { rootMargin: "-20% 0px -70% 0px" });
   links.forEach((_, id) => { const el = document.getElementById(id); if (el) spy.observe(el); });
 
+  // ---------- Links into Source documents ----------
+  // Doc names link to #doc-… inside a closed <details>; open it so the target shows.
+  const reveal = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const el = id && document.getElementById(id);
+    const d = el && (el.matches("details") ? el : el.closest("details"));
+    if (!d || d.open) return;
+    d.open = true;
+    el.scrollIntoView();
+  };
+  addEventListener("hashchange", reveal);
+  document.addEventListener("click", (e) => { if (e.target.closest('a[href^="#doc-"]')) setTimeout(reveal); });
+  reveal();
+
   apply();
 })();

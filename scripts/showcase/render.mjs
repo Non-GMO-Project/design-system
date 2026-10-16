@@ -468,7 +468,7 @@ export function createRenderer(ctx) {
     const table = (dark) =>
       `<div class="table-wrap"><table>${head}<tbody>${AUDIT.map(([label, fg, bg, min]) => `<tr><td>${esc(label)}<br><code class="small">${fg} / ${bg}</code></td><td>${min}:1</td>${BRANDS.map((b) => cell(b, dark, fg, bg, min)).join("")}</tr>`).join("")}
       ${dark ? "" : `<tr><td>Birch text on hero gradient<br><code class="small">weakest stop</code></td><td>4.5:1</td>${heroRows.map((r) => `<td>${verdict(r, 4.5)}</td>`).join("")}</tr>`}</tbody></table></div>`;
-    const html = `<h3>Contrast audit</h3><p class="prose">Every semantic text and UI pairing, resolved from <code>09-tokens.md</code> for each brand and mode and measured against WCAG 2.2 AA. This runs on every build.</p>
+    const html = `<h3>Contrast audit</h3><p class="prose">Every semantic text and UI pairing, resolved from ${inline("`09-tokens.md`")} for each brand and mode and measured against WCAG 2.2 AA. This runs on every build.</p>
       <div class="tabs" data-tabs><div role="tablist" aria-label="Mode"><button role="tab" aria-selected="true" aria-controls="audit-light" id="audit-light-tab">Light</button><button role="tab" aria-selected="false" aria-controls="audit-dark" id="audit-dark-tab" tabindex="-1">Dark</button><span class="indicator" aria-hidden="true"></span></div>
       <div role="tabpanel" id="audit-light" aria-labelledby="audit-light-tab">${table(false)}</div><div role="tabpanel" id="audit-dark" aria-labelledby="audit-dark-tab" hidden>${table(true)}</div></div>`;
     heroRows.forEach((r, i) => r < 4.5 && check("error", "Contrast", `${brandName(BRANDS[i])}: Birch on --gradient-hero is ${r.toFixed(1)}:1`, "09-tokens.md"));
@@ -818,7 +818,7 @@ export function createRenderer(ctx) {
       <h3>Durations</h3><div class="grid" style="--min:200px">${durTiles}</div>
       <h3>Easing</h3><div class="grid" style="--min:200px">${easeTiles}</div>
       <h3>Springs</h3>${tableOrWarn(d.section(/^Easing tokens$/)?.table("Name", "Config"), f, "Motion")}
-      <h3>Named animations</h3><p class="prose small">Each demo reads its duration and easing tokens live, so changing them in <code>09-tokens.md</code> changes the demo.</p><div class="grid" style="--min:250px">${namedTiles}</div>
+      <h3>Named animations</h3><p class="prose small">Each demo reads its duration and easing tokens live, so changing them in ${inline("`09-tokens.md`")} changes the demo.</p><div class="grid" style="--min:250px">${namedTiles}</div>
       <h3>Signature moment</h3><div class="prose">${sig ? render(sig.blocks.filter((b) => b.type === "p").slice(0, 2)) : ""}</div>${tableOrWarn(sig?.table("Example event", "Brand"), f, "Motion")}<div class="grid" style="--min:220px;margin-top:1rem">${sigDemo}</div>
       <template id="tpl-verified">${badge(verified).replace("<span class=\"badge", "<span class=\"badge sig-badge")}</template><template id="tpl-pending">${badge(pending)}</template>
       <h3>Reduced motion</h3><div class="prose">${render(d.section(/^Reduced motion$/)?.blocks ?? [])}</div>`,
@@ -1112,7 +1112,7 @@ export function createRenderer(ctx) {
         const intro = d.paragraphs().find((p) => !/^\*\*\w[\w ]*:\*\*/.test(p)) ?? "";
         const heads = d.blocks.filter((x) => x.type === "heading" && x.level === 2).map((x) => plain(x.text));
         return `<article class="card ctx" ${b ? `data-brand="${b}"` : ""} style="display:grid;gap:0.75rem;align-content:start">
-          <p class="eyebrow" style="margin:0">${esc(brandName(b))} · <code>${esc(f)}</code></p>
+          <p class="eyebrow" style="margin:0">${esc(brandName(b))} · ${inline(`\`${f}\``)}</p>
           <h3 style="margin:0">${esc(d.title)}</h3>
           <p class="small" style="margin:0">${inline(intro)}</p>
           <p class="small muted" style="margin:0"><strong>For:</strong> ${inline(d.field("For") ?? "")}<br><strong>Source:</strong> ${inline(d.field("Source") ?? "")}</p>

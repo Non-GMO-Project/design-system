@@ -14,7 +14,7 @@ import { createServer } from "node:http";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join, extname, relative } from "node:path";
-import { parse, esc, plain, rowsOf } from "./lib/markdown.mjs";
+import { parse, esc, plain, rowsOf, slug, setDocLinks } from "./lib/markdown.mjs";
 import { extractCss, resolver } from "./lib/tokens.mjs";
 import { createRenderer } from "./showcase/render.mjs";
 import { trademarkPage } from "./showcase/trademark.mjs";
@@ -186,6 +186,8 @@ function build() {
 
   const assets = readAssets(docs["04-logos-and-marks.md"], checks, Object.values(docs).map((d) => d.raw).join("\n"));
   const fontCss = fonts(checks);
+  // In the showcase, inline code naming a doc file links to that doc's Source documents entry.
+  setDocLinks(new Map(Object.keys(docs).map((f) => [f, `#doc-${slug(f)}`])));
   const r = createRenderer({ docs, checks, palette, labelToName, official, tokenCtx, iconSvg, assets });
 
   const audit = r.audit();
@@ -222,6 +224,9 @@ function build() {
   const fontsCss = `/* Generated from the @fontsource-variable packages (see docs/design-system/03-typography.md) by scripts/build-showcase.mjs. Do not edit. */\n/* Font files live in public/fonts/. */\n\n${fontCss.replace(/url\(public\/fonts\//g, "url(../public/fonts/")}`;
 
   // Standalone participant pages, one per trademark doc. Path comes from the doc's **Page:** field.
+  // They stand alone, so doc names stay plain text there.
+  const showcaseLinks = new Map(Object.keys(docs).map((f) => [f, `#doc-${slug(f)}`]));
+  setDocLinks(null);
   const pages = Object.entries(docs)
     .filter(([f]) => f.startsWith("trademark/"))
     .map(([f, d]) => {
@@ -230,7 +235,7 @@ function build() {
       return [path, trademarkPage({ file: f, doc: d, root, assets, brandName: r.brandName, fontCss, tokensCss, typeCss: r.typeCss(), showcaseCss, check: (level, area, message, file) => checks.push({ level, area, message, file }) })];
     })
     .filter(Boolean);
-
+  setDocLinks(showcaseLinks);
 
   // De-duplicate checks (the same issue can be found from several places).
   const seen = new Set();
