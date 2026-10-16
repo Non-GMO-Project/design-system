@@ -556,6 +556,8 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
     --duration-slow: 0ms;
     --duration-deliberate: 0ms;
   }
+  .animate-pulse { animation: none; }
+  .animate-spin { animation-duration: 1.5s; }
 }
 ```
 

@@ -9,11 +9,11 @@ This file wins any conflict with the rest of the design system, including the br
 | Requirement | Where it is handled |
 |---|---|
 | Text contrast 4.5:1 (3:1 for large text) | Approved pairings in `02-color.md`, computed against Birch; the showcase audits every semantic pairing in every brand and mode |
-| Non-text contrast 3:1 (input borders, focus rings, icons that carry meaning) | `--input` is the brand dark family at 600 (4.2:1 or more on Frost); `--ring` is the brand dark, or Birch in dark mode |
+| Non-text contrast 3:1 (input borders, focus rings, icons that carry meaning) | `--input` is the 600 step of the brand's dark family (Loam for the Food Integrity Project), 4.2:1 or more on Frost; `--ring` is the brand dark, or Birch in dark mode |
 | Color is not the only signal | Status = color + icon + label (`StatusBadge`); links are underlined |
 | Keyboard access and focus management | Radix primitives under shadcn/ui |
 | Visible focus | 2px ring with offset on every interactive element, never removed |
-| Reduced motion | Token durations collapse to 0; see `07-motion.md` |
+| Reduced motion | Token durations collapse to 0, pulses stop and spinners slow; animation utilities and Motion need their own switch. See `07-motion.md` |
 | Text resize to 200% | rem-based type scale; no fixed-height text containers |
 | Reflow at 320 CSS px (1.4.10) | Mobile-first layouts and the layout behavior table in `12-responsive.md`; only data tables and code scroll sideways |
 | Minimum text size | Body never below 16px on the web (also a brand guide rule) |
@@ -35,7 +35,7 @@ This file wins any conflict with the rest of the design system, including the br
 - No keyboard traps. Escape closes overlays.
 
 ### Targets
-- Interactive targets at least 24 x 24px (the 2.2 AA minimum); aim for 44 x 44px on touch and public pages.
+- Interactive targets are at least 44 x 44px on touch screens and public pages. 24 x 24px (the WCAG 2.2 AA minimum) is the absolute floor, for dense desktop tools only. A target can be larger than the visible control: checkboxes, radios and switches count their label, and small icon buttons extend their hit area with padding.
 - `sm` buttons (32px) are for dense desktop tables only.
 
 ### Forms
@@ -51,7 +51,9 @@ This file wins any conflict with the rest of the design system, including the br
 
 ### Dynamic content
 - Toasts and live result counts use `aria-live="polite"`. Errors that block progress use `role="alert"`.
+- Toasts that carry an action (such as Undo) pause while hovered or focused, stay at least 10 seconds or until dismissed, and the same action is also reachable somewhere else (the record's menu, an activity log). Never put the only way to undo something in a toast that times out.
 - Content that appears on hover or focus can be dismissed, hovered and stays until dismissed (tooltips and hover cards).
+- Hover-only content is supplementary. Anything a hover card shows must also be reachable by following its link, by keyboard and on touch.
 - Sticky headers and footers must not hide the focused element (2.2 focus not obscured).
 
 ### Motion and time

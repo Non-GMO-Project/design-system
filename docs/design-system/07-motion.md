@@ -23,7 +23,7 @@ The brand guide does not cover motion; everything here is a system decision. It 
 | `--duration-slow` | 400ms | Page-level transitions, large layout changes |
 | `--duration-deliberate` | 640ms | The signature moment only |
 
-Exits run about 20% faster than entrances. Nothing in product UI runs longer than 400ms except the signature moment.
+Exits run about 20% faster than entrances: use the next shorter token for the exit (a `moderate` entrance exits at `base`). No transition in product UI runs longer than 400ms except the signature moment. Loops (`skeleton`, `spin`) and the `row-enter` highlight fade are not transitions and sit outside that limit.
 
 ## Easing tokens
 
@@ -62,9 +62,9 @@ Use these by name. Each lists what triggers it, so it is clear the motion answer
 | `press` | Scale to 0.98 | fast, standard | Pointer down on buttons and cards that act | CSS `active:scale-[0.98]` |
 | `hover-lift` | Shadow 1 to 2 | fast, standard | Hover on interactive cards only (not static cards) | CSS |
 | `focus-ring` | Ring appears | instant | Keyboard focus | CSS. Never animated slowly |
-| `skeleton` | Gentle opacity pulse 1 to 0.6 | 1.5s loop | Loading placeholders | `animate-pulse` |
-| `spin` | Rotation | 0.8s linear loop | `status.loading` icon in buttons | `animate-spin` |
-| `status-change` | Badge cross-fades to new status, icon scales 0.9 to 1 | moderate, emphasized | A record's status changes while on screen | Motion |
+| `skeleton` | Gentle opacity pulse 1 to 0.5 | 2s loop (Tailwind default) | Loading placeholders | `animate-pulse` |
+| `spin` | Rotation | 1s linear loop (Tailwind default) | `status.loading` icon in buttons | `animate-spin` |
+| `status-change` | Badge cross-fades to new status, icon scales 0.9 to 1 | moderate, standard (emphasized only when the new status is Verified) | A record's status changes while on screen | Motion |
 | `field-error` | Error message fades in under field; no shake | base, enter | Validation fails | CSS |
 | `page-enter` | Content fades in with 8px rise, one time | slow, enter | Route change on public pages only | Motion or View Transitions API |
 
@@ -88,10 +88,11 @@ A public landing page may have one orchestrated entrance: eyebrow, hero headline
 
 When `prefers-reduced-motion: reduce` is set:
 
-- Duration tokens collapse to 0 (already handled in `09-tokens.md`).
-- Movement (slide, scale, rise) is removed. Opacity fades of 120ms or less may stay, because they help orientation without motion.
-- `skeleton` pulse stops; skeletons show static.
-- `spin` keeps running, slowed, because a still spinner looks broken. Pair it with "Loading" text.
+- Duration tokens collapse to 0, so every CSS transition built on them becomes instant (handled in `09-tokens.md`).
+- Movement (slide, scale, rise) is removed.
+- `skeleton` pulse stops; skeletons show static (`animate-pulse` is switched off in `09-tokens.md`).
+- `spin` keeps running, slowed to 1.5s, because a still spinner looks broken. Pair it with "Loading" text.
+- tw-animate-css enter and exit classes (`animate-in`, `zoom-in-95` and the rest) do not read the duration tokens. Add `motion-reduce:animate-none` to them in the component file.
 - The signature moment becomes an instant state change.
 - In Motion, wrap the app in `<MotionConfig reducedMotion="user">`.
 

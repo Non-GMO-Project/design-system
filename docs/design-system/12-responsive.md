@@ -27,11 +27,11 @@ Container maximum widths live in `06-ui-framework.md` (prose 66ch, narrow 640px,
 
 ## Layout behavior
 
-| Element | Small (under 640px) | Medium (640 to 1023px) | Large (1024px and up) |
+| Element | Small (under 768px) | Medium (768 to 1023px) | Large (1024px and up) |
 |---|---|---|---|
 | Page gutters | 16px | 24px | 32px |
 | Public site navigation | Menu button opens a `Sheet` from the left | Same as small | `NavigationMenu` top bar |
-| App navigation | Hidden; menu button opens it as a `Sheet` | Sidebar collapsed to icons, labels in tooltips | Full sidebar |
+| App navigation | Hidden; menu button opens it as a `Sheet` | Sidebar collapsed to icons with a button that expands it; on touch screens, open the full sidebar as a `Sheet` instead, because tooltips need hover | Full sidebar |
 | Card grids | One column | Two columns | Three or four columns |
 | Forms | One column, full-width fields; long forms keep the primary action in a sticky bottom bar | One column, 640px maximum | Same as medium |
 | Data tables | Stacked cards (five columns or fewer), or horizontal scroll inside the table container with the first column sticky | Horizontal scroll if needed | Full table |
@@ -83,12 +83,12 @@ Use viewport breakpoints for page structure (navigation, gutters, columns of the
 
 ## Type and images
 
-- Display and h1 sizes scale with `clamp()`; everything from h3 down keeps its size.
+- The `display` size scales with `clamp()`; `h1` and everything below keep their size (see `03-typography.md`).
 - Body text is never below 16px. This also stops iOS from zooming into form fields.
 - Prose keeps its 66ch maximum; on phones the screen width is the limit.
 - Images use `srcset` and `sizes` (or `next/image`) and always reserve their space with `width`, `height` or `aspect-ratio`, so nothing jumps as they load.
 - Crop or swap images for small screens when the subject would become too small to read (art direction with `<picture>`).
-- Logos follow `04-logos-and-marks.md`: under 400px of header space, use the mark with the brand name in its accessible label. Seals never go below their screen minimums in `04-logos-and-marks.md` (72px wide; 80px for the Non-UPF Verified primary seal).
+- Logos follow `04-logos-and-marks.md`: under 400px of header space, use the mark with the brand name in its accessible label. Seals never go below their screen minimums in `04-logos-and-marks.md`.
 
 ## Viewport and safe areas
 

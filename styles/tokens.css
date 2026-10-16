@@ -523,4 +523,6 @@
     --duration-slow: 0ms;
     --duration-deliberate: 0ms;
   }
+  .animate-pulse { animation: none; }
+  .animate-spin { animation-duration: 1.5s; }
 }

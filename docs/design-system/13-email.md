@@ -26,12 +26,12 @@ Top to bottom. Skip any part a type above does not list.
 | Part | Holds | Rules |
 |---|---|---|
 | Preheader | One line of preview text, hidden in the body | Adds to the subject, never repeats it. 40 to 90 characters |
-| Header | Brand logo, issue date or "View in browser" | Horizontal logo, PNG at 2x, 120px wide minimum, linked to the brand site, alt text = brand name. On Birch, or on the brand dark with a reversed logo |
+| Header | Brand logo, issue date or "View in browser" | Horizontal logo, PNG at 2x, 120px wide minimum (`TODO(design): PNG exports of the Non-UPF Verified logo, which exists only as SVG, and a transparent Food Integrity Project logo PNG`), linked to the brand site, alt text = brand name. On Birch, or on the brand dark with a reversed logo |
 | Masthead | Newsletter name and a one-line description | Name in Lora (`h1` size), description in Avenir `body-sm` or `eyebrow`. Brand dark text on Birch. One masthead per email |
 | Hero | One photograph | Full column width. Calm subject, no text burned in, no seals or logos dropped on top. Meaningful alt text, or `alt=""` if purely mood |
 | Story block | Eyebrow (optional), headline, body, button | Headline in Lora `h2` or `h3`, body in Avenir `body`, left-aligned. Image beside the text on wide screens, stacked above it on phones |
 | Divider | A hairline between stories | 1px in the brand's support color, or `border` from the tokens. Never the signature color |
-| Support band | One appeal: donate, sign up, share | Full-width panel on the brand's support tint with brand-dark text, or the brand dark with Birch text. One per email, after the last story |
+| Support band | One appeal: donate, sign up, share | Full-width panel on the brand's support color with its paired text color (see the table below), or the brand dark with Birch text. One per email, after the last story |
 | Social row | Links to the brand's social accounts | Icons in the brand dark on Birch (or Birch on the brand dark), each with the platform name as alt text. `TODO(design): official social icon set. Lucide has no platform logos` |
 | Footer | Logo or mark, legal name, mailing address, website, preferences, unsubscribe | Plain text on Birch, Avenir `body-sm`. The endorsement line "A program of the Food Integrity Project" for program emails |
 
@@ -79,7 +79,7 @@ Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. E
 
 - **Header:** the brand's horizontal logo (`04-logos-and-marks.md`, "Email header"). Collective emails use the full lockup on a Forest band until a Forest-colored lockup exists.
 - **Footer:** the logo or mark again at a smaller size, plus the endorsement line in program emails. Use the text line ("A program of the Food Integrity Project") until endorsement lockup files exist.
-- **Seals:** only in a story about a verified product, next to that product, at or above its screen minimum in `04-logos-and-marks.md` (72px wide; 80px for the Non-UPF Verified primary seal). Never on a hero photo, never as a section ornament, never from another program.
+- **Seals:** only in a story about a verified product, next to that product, at or above its screen minimum in `04-logos-and-marks.md`. Never on a hero photo, never as a section ornament, never from another program.
 - Badges and campaign artwork (for example the Collective's "Food should nourish life" badge) belong to their brand and can sit in the footer or support band of that brand's email.
 
 ## Buttons and links
@@ -109,7 +109,7 @@ Optional: social row, the endorsement line, a forward or share link, a "Did some
 
 - Set `lang="en"` and a `<title>` that matches the subject.
 - Real headings (`<h1>` for the masthead or main headline, `<h2>` for stories) so screen readers can jump between stories.
-- Contrast follows `08-accessibility.md`: 4.5:1 for body text, 3:1 for large text and button boundaries.
+- Contrast follows `08-accessibility.md`: 4.5:1 for body text and for button labels on their fill, 3:1 for large text. Light button fills (Monarch, Romanesco) do not need 3:1 against Birch because the label carries the meaning, as in `06-ui-framework.md`; never make those buttons icon-only or image-only.
 - The email still makes sense with images off: every headline, date and action is text.
 - No information in color alone, no animated GIFs that flash more than three times a second.
 - No emoji as icons. Use text, or an icon from the system's set with alt text. Motion in email follows `07-motion.md`. `TODO(design): decide whether animated GIFs are allowed in campaigns (see issue #5).`
