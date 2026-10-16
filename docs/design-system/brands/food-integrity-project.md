@@ -20,7 +20,7 @@ Rigorous, calm, connective. It sounds like an organization that checks its work 
 |---|---|---|---|
 | Ground | Birch | `#FFFDEB` | `--background` |
 | Dark (all type, inverted panels) | Cacao | `#241A15` | `--foreground`, `--brand-dark` |
-| Supporting tone | Loam | `#6B5644` | `--brand-support`, `--muted-foreground` |
+| Supporting tone | Loam | `#6B5644` | `--muted-foreground`; Loam 200 for `--brand-support` panels, with Cacao text |
 | Signature | Milkweed Leaf | `#5F7A52` | `--primary`, `--brand-signature` |
 | Utility | Frost | `#F3F4F2` | `--muted`, `--field` |
 

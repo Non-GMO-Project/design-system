@@ -97,7 +97,7 @@ Staff and partner tools often show records from several programs on one screen. 
 
 - The app shell, navigation and primary actions use `fip`.
 - Each record that belongs to a program shows a **program chip**: the program name on a fill of that program's signature color (Monarch, Dragon Fruit or Romanesco; records that belong to the parent organization itself use the Food Integrity Project chip in Milkweed Leaf), with text and a dot in the paired signature foreground (Birch or Forest). The chip sets its own `data-brand` so its colors are correct, and every pairing passes 4.5:1 for text.
-- Program chips are the **one exception** to "Monarch and Dragon Fruit never appear in the same layout": the signature fill is what lets people tell programs apart at a glance, so Monarch and Dragon Fruit chips may sit in the same table or filter bar. Nothing else in the view takes a program's signature color.
+- Program chips are one of the **two exceptions** to "Monarch and Dragon Fruit never appear in the same layout" (the other is program cards on house-level pages, below): the signature fill is what lets people tell programs apart at a glance, so Monarch and Dragon Fruit chips may sit in the same table or filter bar. Nothing else in the view takes a program's signature color.
 - Filters by program use the same chip.
 - Detail views for a single program record may tint the page header with that program's `--brand-tint`. The rest of the page stays house level.
 
@@ -127,7 +127,7 @@ Only on house-level surfaces. Rules:
 - Each program appears in its own container with its own `data-brand`.
 - Programs get equal size, equal weight and a consistent order: Non-GMO Project, Non-UPF Verified, Food Integrity Collective. `TODO(brand): confirm order.`
 - Never blend two program colors in one element, gradient or chart series.
-- **Monarch and Dragon Fruit never appear in the same layout,** except in program chips (see "Multi-program views"). On house-level pages, program cards show their seal or logo, their dark and their supporting tint; the signature colors stay inside each program's own pages. `TODO(brand): confirm this reading of "one program, one accent" for house-level pages.`
+- **Monarch and Dragon Fruit never appear in the same layout,** except in program chips (see "Multi-program views") and program cards on house-level pages. A program card shows its seal or logo, its dark and its supporting tint, and may carry one primary button in its own signature so each card leads into its program. Because the card sets its own `data-brand`, the button takes that program's colors automatically. Nothing else on a house-level page takes a program signature: no signature headlines, fills or highlights outside the card's button.
 
 ### Partner brands (food companies, retailers)
 

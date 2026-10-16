@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.33 (draft for review)
+**Version:** 0.34 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -39,7 +39,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 1. **Accessibility wins.** If a visual rule anywhere conflicts with `08-accessibility.md`, accessibility wins.
 2. **Start on Birch.** Every brand's background is Birch `#FFFDEB`. Never substitute pure white.
 3. **Semantic tokens only.** Components never contain hex values, raw palette variables or arbitrary Tailwind colors.
-4. **One brand context per surface.** A page or region speaks for one brand. One program, one accent: Monarch and Dragon Fruit never appear in the same layout. The one exception is program chips in multi-program views (see `01-brand-architecture.md`).
+4. **One brand context per surface.** A page or region speaks for one brand. One program, one accent: Monarch and Dragon Fruit never appear in the same layout. The exceptions are program chips in multi-program views and the primary button on program cards on house-level pages (see `01-brand-architecture.md`).
 5. **Status is shared and never color alone.** Verified, on hold and terminated look the same in every brand and always pair color, icon and label.
 6. **Logos and seals are assets, never drawings.** Always use the official files. Never recreate a logo or certification seal in SVG, CSS, canvas or text.
 7. **Use the component library before building.** Check `06-ui-framework.md` for the component that fits the interaction type. Build custom only when nothing fits, and build on the same primitives.
@@ -137,7 +137,8 @@ Hard rules:
 - Start on Birch, never pure white. Use semantic tokens and existing components.
   No hex values or one-off colors in components.
 - Never draw or approximate a logo or certification seal. Use <BrandLogo /> and official assets.
-- Monarch and Dragon Fruit never share a layout, except in program chips.
+- Monarch and Dragon Fruit never share a layout, except in program chips and the buttons on
+  program cards on house-level pages.
 - Every status shows color + icon + text label.
 - Respect prefers-reduced-motion.
 - If the design system has no answer, say so, choose the closest existing pattern,
@@ -167,6 +168,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.34 | 2026-10-16 | House-level color (#38). The Food Integrity Project support panel (`--brand-support`) is now a light Loam 200 with Cacao text (12.1:1), like the other brands' support tints, instead of a dark Loam 700 panel; the brand dark stays the only inverted surface. Program cards on house-level pages may carry a primary button in their own signature, a second exception to "Monarch and Dragon Fruit never appear in the same layout" alongside program chips; nothing else on those pages takes a program signature. The confirm-this-reading TODO in `01` is closed. Rule 4, the Claude Code block, `01`, `02`, `06`, both program profiles and the showcase say the same |
 | 0.33 | 2026-10-16 | Email type and buttons now match the rest of the system (#37). The footer and masthead description are 16px (`body`), so email has no text under 16px besides eyebrows and button labels. Buttons use the 8px radius (`rounded-md`) and the 15px `label` style, like product buttons. The masthead name is `h1` and email never uses `display` sizes. Food Integrity Collective emails follow its Quicksand + Avenir pairing, with Quicksand mastheads and headlines; the showcase sample shows it |
 | 0.32 | 2026-10-16 | Chart colors pass 3:1 everywhere (#36). Orange, sky blue and reddish purple are darkened in light mode so they reach 3:1 on Birch and Frost, replacing the outline-or-pattern workaround. New dark-mode chart values: the published Okabe-Ito orange, sky blue and purple, lighter bluish green, blue and vermillion, Stone 400 for "other", and `--chart-1` one or two steps up each brand scale, so charts no longer have to sit on the page background. Chart colors are named tokens (`--chart-orange` and the rest) and `--chart-2` to `--chart-8` map onto them; Non-GMO Project charts move orange to the end of the order because it sits next to Monarch. The build now checks every chart token against the page and cards in every brand and mode. `02` documents both sets and the order; the dark-mode TODO is closed |
 | 0.31 | 2026-10-16 | New "Logo by application" section in `04` (#58): the platform size and format for each application (favicon, Apple touch icon, web app and app store icons, social avatar, share image, header, footer, email header, watermark, product page seal, on photography), then one table per brand naming the file to use for each. Gaps are TODOs: icon and share-image PNG exports, a 16px favicon check, watermark opacity, a Non-UPF Verified social avatar (the icon alone is approved only for favicons and app icons), a Non-UPF Verified email PNG, and a transparent parent PNG for email. The showcase Logos section shows it |

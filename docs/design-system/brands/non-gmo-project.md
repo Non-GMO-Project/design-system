@@ -62,6 +62,6 @@ Product and brand finder, mark education pages, brand enrollment and verificatio
 ## Don't
 
 - Use Monarch as text, or for anything that could mean "warning".
-- Put Monarch and Dragon Fruit in the same layout. Program chips in multi-program views are the one exception.
+- Put Monarch and Dragon Fruit in the same layout. Program chips in multi-program views and the buttons on program cards on house-level pages are the only exceptions.
 - Put the seal next to anything that is not currently Verified.
 - Use the retired colors in new work (orange `#DF7838`, eggplant `#221C35` and the others listed in `../02-color.md`).
