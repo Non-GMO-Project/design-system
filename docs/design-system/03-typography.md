@@ -7,7 +7,7 @@ One set of typefaces serves every brand. Color and logos tell the brands apart; 
 | Role | Token | Family | Job | Never |
 |---|---|---|---|---|
 | Serif | `--font-serif` | **Lora** | Headlines by default. May set running text wherever reading is sustained: donor reports, essays, standards documents. Italic for pull quotes | Labels, buttons, table cells |
-| Sans | `--font-sans` | **Avenir** (print and desktop), **Nunito Sans** (web and apps) | Running text, captions, tables and interface copy. May go large for statistics and pack callouts, with tracking tightened above 80px | |
+| Sans | `--font-sans` | **Avenir** (print and desktop), **Nunito Sans** (web and apps) | Running text, captions, tables and interface copy. May go large for statistics and pack callouts, with tracking tightened above 80px (print and slides; the web `display` size tops out at 72px) | |
 | Accent | `--font-accent` | **Quicksand** | Eyebrows, labels, buttons and seal wordmarks. May carry the headline where a piece needs warmth over authority | Paragraphs |
 | Mono | `--font-mono` | System monospace | Code, API keys, record IDs where character-level accuracy matters | Prose |
 
@@ -18,9 +18,9 @@ All three web families are open-licensed (SIL Open Font License) and self-hosted
 | Token | Stack |
 |---|---|
 | `--font-serif` | `"Lora", Charter, "Bitstream Charter", Cambria, Georgia, serif` |
-| `--font-sans` | `"Nunito Sans", "Avenir Next", Avenir, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif` |
+| `--font-sans` | `"Nunito Sans", "Avenir Next", Avenir, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"` |
 | `--font-accent` | `"Quicksand", "Nunito Sans", system-ui, sans-serif` |
-| `--font-mono` | `ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace` |
+| `--font-mono` | `ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace` |
 
 ## Pair by context, not by habit
 
@@ -88,7 +88,7 @@ Standards documents and policy pages are long-form reading: Lora body at `body-l
 
 **Emphasis.** Use weight for emphasis in UI. Use italic in long-form for titles of works, pull quotes and genuine stress. Do not color a single word in a headline for effect.
 
-**Numbers.** Use `font-variant-numeric: tabular-nums` in tables, stats and anything that updates live. Format with `Intl.NumberFormat`. Large statistics may be set in the sans at display size, tracking tightened (`-0.02em`) above 80px.
+**Numbers.** Use `font-variant-numeric: tabular-nums` in tables, stats and anything that updates live. Format with `Intl.NumberFormat`. Large statistics may be set in the sans at display size, tracking tightened (`-0.02em`) above 80px, which on the web means print-style statistic callouts only.
 
 **Links.** Underlined in body text, `--brand-text` color. Navigation and buttons do not need underlines.
 

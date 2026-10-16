@@ -185,7 +185,7 @@ Cards sit on Birch like the page and are separated by `--border` and elevation, 
 
 ### Inverted panels
 
-The brand dark (`bg-brand-dark`, Birch text) is the only inverted surface: hero bands, footers, feature callouts. It is how a layout reaches its "25 dark" ratio without big blocks of body text.
+The brand dark (`bg-brand-dark`, Birch text) is the inverted surface: hero bands, footers, feature callouts. It is how a layout reaches its "25 dark" ratio without big blocks of body text. In dark mode `--brand-dark` steps up to the card shade, so inverted panels stay distinct from the page; give them a `--border` outline where they meet a card.
 
 ## Layout
 
