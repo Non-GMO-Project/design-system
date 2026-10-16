@@ -103,7 +103,7 @@ export function createRenderer(ctx) {
     return `<section class="ds-section" id="overview" aria-labelledby="overview-h">
       <div class="hero" data-brand-follow>
         <p class="eyebrow">Digital design system${ver ? " · version " + esc(plain(ver)) : ""}</p>
-        <h1 id="overview-h" class="t-display" style="margin:0">${esc(readme.title)}</h1>
+        <h1 id="overview-h" class="t-display" style="margin:0">${esc(readme.title.replace(/\s+Digital Design System$/i, ""))}</h1>
         <hr class="signature-rule">
         <p class="prose" style="margin:0">${model ? inline(model.paragraphs()[0] ?? "") : ""}</p>
       </div>

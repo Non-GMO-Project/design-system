@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.34 (draft for review)
+**Version:** 0.35 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -168,6 +168,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.35 | 2026-10-16 | The showcase's opening headline now says just "Food Integrity Project" (#60); the eyebrow above it already says "Digital design system". The system's full name is unchanged in the docs |
 | 0.34 | 2026-10-16 | House-level color (#38). The Food Integrity Project support panel (`--brand-support`) is now a light Loam 200 with Cacao text (12.1:1), like the other brands' support tints, instead of a dark Loam 700 panel; the brand dark stays the only inverted surface. Program cards on house-level pages may carry a primary button in their own signature, a second exception to "Monarch and Dragon Fruit never appear in the same layout" alongside program chips; nothing else on those pages takes a program signature. The confirm-this-reading TODO in `01` is closed. Rule 4, the Claude Code block, `01`, `02`, `06`, both program profiles and the showcase say the same |
 | 0.33 | 2026-10-16 | Email type and buttons now match the rest of the system (#37). The footer and masthead description are 16px (`body`), so email has no text under 16px besides eyebrows and button labels. Buttons use the 8px radius (`rounded-md`) and the 15px `label` style, like product buttons. The masthead name is `h1` and email never uses `display` sizes. Food Integrity Collective emails follow its Quicksand + Avenir pairing, with Quicksand mastheads and headlines; the showcase sample shows it |
 | 0.32 | 2026-10-16 | Chart colors pass 3:1 everywhere (#36). Orange, sky blue and reddish purple are darkened in light mode so they reach 3:1 on Birch and Frost, replacing the outline-or-pattern workaround. New dark-mode chart values: the published Okabe-Ito orange, sky blue and purple, lighter bluish green, blue and vermillion, Stone 400 for "other", and `--chart-1` one or two steps up each brand scale, so charts no longer have to sit on the page background. Chart colors are named tokens (`--chart-orange` and the rest) and `--chart-2` to `--chart-8` map onto them; Non-GMO Project charts move orange to the end of the order because it sits next to Monarch. The build now checks every chart token against the page and cards in every brand and mode. `02` documents both sets and the order; the dark-mode TODO is closed |
