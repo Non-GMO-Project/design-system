@@ -557,5 +557,6 @@ dialog.sheet--left[open] { animation: sheet-left-in var(--duration-moderate) var
 .email-mock__masthead { font-family: var(--font-serif); font-size: 1.75rem; line-height: 1.1; margin: 0 0 0.25rem; }
 .email-mock__hero { display: grid; place-items: center; aspect-ratio: 2 / 1; background: var(--brand-support); color: var(--brand-support-foreground); border-radius: var(--radius-sm); margin-bottom: 1rem; }
 .email-mock__headline { font-family: var(--font-serif); font-weight: 500; font-size: 1.25rem; margin: 0 0 0.5rem; }
+.email-mock[data-brand="collective"] .email-mock__masthead, .email-mock[data-brand="collective"] .email-mock__headline { font-family: var(--font-accent); font-weight: 600; }
 .email-mock__rule { border: 0; border-top: 1px solid var(--brand-support); margin: 1rem 0; }
 .email-mock__footer { padding: 0.75rem 1rem 1rem; border-top: 1px solid var(--border); }

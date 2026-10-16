@@ -1056,7 +1056,7 @@ export function createRenderer(ctx) {
       return `<article class="email-mock" data-brand="${b}" aria-label="Sample ${esc(brandName(b))} email">${header}
         <div class="email-mock__body"><p class="email-mock__masthead">Newsletter name</p><p class="small muted" style="margin:0 0 1rem">Updates from ${esc(brandName(b))}</p>
         <div class="email-mock__hero" aria-hidden="true">${icon("domain.product", "icon")}</div>
-        <h4 class="email-mock__headline">A headline in Lora, left-aligned</h4><p class="small">Body text in Avenir at 16px, on Birch, in the brand dark. <a href="#email">Links say where they go</a>.</p>
+        <h4 class="email-mock__headline">A headline in ${b === "collective" ? "Quicksand" : "Lora"}, left-aligned</h4><p class="small">Body text in Avenir at 16px, on Birch, in the brand dark. <a href="#email">Links say where they go</a>.</p>
         <p><span class="btn btn--default btn--sm">Register for the webinar</span></p><hr class="email-mock__rule">
         <div class="panel-support small" style="padding:1rem">One appeal per email, on the support tint.</div></div>
         <div class="email-mock__footer small"><strong>${esc(brandName(b))}</strong><br>Mailing address · Website<br><a href="#email">Manage preferences</a> · <a href="#email">Unsubscribe</a></div></article>`;
