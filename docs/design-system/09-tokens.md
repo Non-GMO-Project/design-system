@@ -281,13 +281,21 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --status-neutral-border: var(--stone-300);
   --status-neutral-icon: var(--stone-600);
 
-  --chart-2: #E69F00;
-  --chart-3: #56B4E9;
-  --chart-4: #009E73;
-  --chart-5: #0072B2;
-  --chart-6: #D55E00;
-  --chart-7: #CC79A7;
-  --chart-8: var(--stone-500);
+  /* Chart colors: Okabe-Ito, with orange, sky blue and purple darkened to 3:1 on Birch and Frost (see 02, "Data visualization") */
+  --chart-orange: #C17D00;
+  --chart-sky: #3294C8;
+  --chart-green: #009E73;
+  --chart-blue: #0072B2;
+  --chart-vermillion: #D55E00;
+  --chart-purple: #C4719F;
+  --chart-other: var(--stone-500);
+  --chart-2: var(--chart-orange);
+  --chart-3: var(--chart-sky);
+  --chart-4: var(--chart-green);
+  --chart-5: var(--chart-blue);
+  --chart-6: var(--chart-vermillion);
+  --chart-7: var(--chart-purple);
+  --chart-8: var(--chart-other);
 
   /* shadcn base radius. Named radii, fonts and easing live in @theme (see Tailwind wiring) */
   --radius: 0.5rem;
@@ -311,6 +319,22 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
 .dark {
   --destructive: var(--danger-400);
   --destructive-foreground: var(--stone-950);
+
+  /* Chart colors, lighter so every series keeps 3:1 on each brand's dark page and cards */
+  --chart-orange: #E69F00;
+  --chart-sky: #56B4E9;
+  --chart-green: #06A074;
+  --chart-blue: #3692D5;
+  --chart-vermillion: #E1691A;
+  --chart-purple: #CC79A7;
+  --chart-other: var(--stone-400);
+  --chart-2: var(--chart-orange);
+  --chart-3: var(--chart-sky);
+  --chart-4: var(--chart-green);
+  --chart-5: var(--chart-blue);
+  --chart-6: var(--chart-vermillion);
+  --chart-7: var(--chart-purple);
+  --chart-8: var(--chart-other);
 
   --status-success-bg: var(--success-950);
   --status-success-fg: var(--success-200);
@@ -389,6 +413,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --brand-tint: var(--cacao-900);
   --brand-subtle: var(--cacao-800);
   --brand-border: var(--cacao-700);
+  --chart-1: var(--milkweed-500);
 }
 
 /* ---------- Non-GMO Project ---------- */
@@ -416,6 +441,13 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --brand-signature-foreground: var(--forest-900);
   --ring: var(--forest-900);
   --chart-1: var(--monarch-500);
+  /* Orange sits next to Monarch, so it moves to the end of the order */
+  --chart-2: var(--chart-sky);
+  --chart-3: var(--chart-green);
+  --chart-4: var(--chart-blue);
+  --chart-5: var(--chart-vermillion);
+  --chart-6: var(--chart-purple);
+  --chart-7: var(--chart-orange);
   --gradient-hero: linear-gradient(135deg, var(--forest-900), var(--forest-800));
   --gradient-flight: linear-gradient(120deg, var(--forest-900), var(--forest-700) 55%, var(--monarch-400));
 }
@@ -442,6 +474,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --brand-tint: var(--forest-800);
   --brand-subtle: var(--forest-700);
   --brand-border: var(--forest-600);
+  --chart-1: var(--monarch-400);
 }
 
 /* ---------- Non-UPF Verified ---------- */
@@ -495,6 +528,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --brand-tint: var(--dark-matter-900);
   --brand-subtle: var(--dark-matter-800);
   --brand-border: var(--dark-matter-700);
+  --chart-1: var(--dragonfruit-500);
 }
 
 /* ---------- Food Integrity Collective ---------- */
@@ -548,6 +582,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --brand-tint: var(--forest-800);
   --brand-subtle: var(--forest-700);
   --brand-border: var(--forest-600);
+  --chart-1: var(--cornflower-500);
 }
 
 @media (prefers-reduced-motion: reduce) {
