@@ -21,6 +21,8 @@
 :root {
   --birch: #FFFDEB;
   --frost: #F3F4F2;
+  --white: #FFFFFF;
+  --black: #000000;
   /* stone */
   --stone-50: #F3F4F2;
   --stone-100: #E8EFEB;
@@ -858,8 +860,8 @@ html.reduce-motion .skeleton { animation: none; }
 .avatar { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 999px; background: var(--brand-support); color: var(--brand-support-foreground); font-family: var(--font-accent); font-weight: 700; font-size: 0.875rem; }
 
 /* ---------- Color ---------- */
-.swatch { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; background: var(--card); text-align: left; padding: 0; font: inherit; color: inherit; cursor: copy; }
-.swatch__chip { height: 88px; display: flex; align-items: flex-end; padding: 0.5rem 0.75rem; font-family: var(--font-accent); font-weight: 600; font-size: 0.8125rem; }
+.swatch { display: flex; flex-direction: column; justify-content: flex-start; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; background: var(--card); text-align: left; padding: 0; font: inherit; color: inherit; cursor: copy; }
+.swatch__chip { flex: none; height: 88px; display: flex; align-items: flex-end; padding: 0.5rem 0.75rem; font-family: var(--font-accent); font-weight: 600; font-size: 0.8125rem; }
 .swatch__body { padding: 0.75rem; display: grid; gap: 0.125rem; }
 .swatch__body strong { font-size: 1rem; }
 .scale { display: grid; grid-template-columns: repeat(11, minmax(56px, 1fr)); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); }

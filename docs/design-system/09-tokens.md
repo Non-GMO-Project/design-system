@@ -48,6 +48,8 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
 :root {
   --birch: #FFFDEB;
   --frost: #F3F4F2;
+  --white: #FFFFFF;
+  --black: #000000;
   /* stone */
   --stone-50: #F3F4F2;
   --stone-100: #E8EFEB;

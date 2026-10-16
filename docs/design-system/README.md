@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.27 (draft for review)
+**Version:** 0.28 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -167,6 +167,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.28 | 2026-10-16 | White `#FFFFFF` and Black `#000000` added to the named palette (#49), as the colors of the white (reversed) and one-color black logo and seal files. They are not backgrounds, type or UI colors: Birch stays the ground and each brand's dark sets type. `palette.config.json`, `02` and the generated palette block in `09` (`--white`, `--black`) updated. The showcase palette cards no longer leave a gap above the color on shorter cards; the color now always sits at the top |
 | 0.27 | 2026-10-16 | Showcase fix (#50): the empty-state example's button icon was drawn at the 48px empty-state size in the muted color, because the empty-state icon style also matched icons inside the button. It now applies only to the empty state's own icon, so the button icon is the standard 20px in the button's text color |
 | 0.26 | 2026-10-16 | The showcase's endorsement line examples now show the Non-UPF Verified logo (#48). A program with no reversed logo, currently Non-UPF Verified, gets its example on Birch with its color logo and the parent logo, and a note says why, as the email samples already do. Dark footers stay where a reversed logo exists. The reversed Non-UPF Verified logo and the Birch parent mark are still open in `04` |
 | 0.25 | 2026-10-16 | Verification statuses confirmed (#41): a verification is Verified, On hold (warning, `CirclePause`), Withdrawn (neutral) or Terminated (danger, `CircleX`). Lapsed is gone; it was a reporting detail, not a status. Expiry is not a status either: a Verified product shows "Verified, expires December 1, 2026" in the warning set from 90 days before expiry, and `StatusBadge` takes an `expires` prop for it. Renewal leaves the product Verified while the renewal application is "In review", which replaces "Renewal in review" in `11`. A new "Other statuses" table in `02` keeps In progress, In review, Complete and Not eligible for applications, agreements and other processes. Icon registry, rule 5, `06`, `10`, `11`, `13` and the showcase updated to match; the lifecycle TODO in `02` is closed |
