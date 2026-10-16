@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.18 (draft for review)
+**Version:** 0.19 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -27,7 +27,7 @@ Values marked `TODO(...)` still need a decision. Everything else is a working de
 | `11-ux.md` | UX principles, audiences and jobs, information architecture, core flows, feedback timing, UX definition of done | Designing or building any flow or screen |
 | `12-responsive.md` | Breakpoints, layout behavior per screen size, container queries, touch and input, safe areas, performance budgets, device testing | Any layout, any component that changes with screen size |
 | `13-email.md` | Email types, anatomy, color and type that survive email clients, logos and seals, buttons, footer content, send checklist | Any email template, newsletter or campaign |
-| `trademark/*.md` | One trademark usage guide per certification program (Non-GMO Project Verified, Non-UPF Verified), written for participants. Each is also published as a standalone page in `trademark/` | Anything showing a certification seal, any material for licensees |
+| `trademark/*.md` | One trademark usage guide per verification program (Non-GMO Project Verified, Non-UPF Verified), written for participants. Each is also published as a standalone page in `trademark/` | Anything showing a certification seal, any material for licensees |
 | `brands/*.md` | One profile per brand: role, color roles, ratio, logos, imagery, voice, do and don't | Work scoped to one brand |
 
 ## The model in one paragraph
@@ -44,7 +44,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 6. **Logos and seals are assets, never drawings.** Always use the official files. Never recreate a logo or certification seal in SVG, CSS, canvas or text.
 7. **Use the component library before building.** Check `06-ui-framework.md` for the component that fits the interaction type. Build custom only when nothing fits, and build on the same primitives.
 8. **Motion explains change.** Animate to show what happened after someone acts. Do not decorate.
-9. **Plain words.** Sentence case, verbs on buttons, the same word for the same action through a whole flow. Never abbreviate the parent to "FIP" in external copy. See `10-writing.md`.
+9. **Plain words.** Sentence case, verbs on buttons, the same word for the same action through a whole flow. Never abbreviate the parent to "FIP", or the programs to "NGP" or "FIC", in external copy. See `10-writing.md`.
 10. **Every state, no dead ends.** Every screen has loading, empty, error and success states and always offers a next step. See `11-ux.md`.
 
 ## The showcase
@@ -101,7 +101,7 @@ Read docs/design-system/README.md first, then the topic files this task touches
 (for example 02-color, 06-ui-framework, 10-writing).
 
 Brand context: Non-GMO Project.
-Task: design a page that lists a company's verified products.
+Task: design a page that lists a company's Verified products.
 
 Use Birch as the background, semantic tokens only, the official logo and seal
 files, and color + icon + label for every status. If the system has no answer,
@@ -160,6 +160,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.19 | 2026-10-17 | Writing consistency pass against `10-writing.md`: sample copy in the showcase and docs now spells out months, writes Verified as a capitalized adjective, says "mark" and "the Butterfly" rather than "seal" in copy, "the Standard", "participants", "not eligible" (not "declined"), 12-hour times and numerals in UI. Renamed "Certification status" to "Verification status" in `02` (and the showcase heading). The abbreviation rule now covers "NGP" and "FIC" too (README rule 9, `01`). `08`'s reading level matches `10` (8th to 10th grade). Serial commas removed from doc prose. The root README and `CLAUDE.md` use the system's full name |
 | 0.18 | 2026-10-16 | Program chips now use each program's signature color (#6): a Milkweed Leaf, Monarch, Dragon Fruit or Romanesco fill with Birch or Forest text and dot (4.6:1 to 9.3:1), so programs are easy to tell apart in multi-program tables and filters. They are the one exception to "Monarch and Dragon Fruit never appear in the same layout", noted in rule 4, the Claude Code block, `01`, `02`, `06` and both program profiles. Generic filter chips keep the subtle tint |
 | 0.17 | 2026-10-16 | Updated `10-writing.md` to the *Writer's Guide* (Sixth Edition, September 2025) (#29): new Audiences section (general, business, technical) with AP Style for public material and Chicago for technical; 8th to 10th grade reading level; a second reader before anything public is published; the word list now carries the guide's terms (GMO vs GM, "the Project", "the Standard", Verified vs verified, the Butterfly, participant, Technical Administrator, ultraprocessed, wellbeing and others); no serial comma, which settles the open TODO; dates spelled out ("December 1, 2026"), times as "3 pm Pacific", date ranges with a hyphen; bulleted list punctuation, compound modifiers, species names and citation rules. "Ultra-processed" is now "ultraprocessed" in `01`, `08` and the Non-UPF Verified profile, and status dates in `02`, `06` and `11` spell out the month. The showcase shows the Audiences table. Brand fonts and colors still follow the Food Integrity Project Style Guide |
 | 0.16 | 2026-10-15 | Added "Use it with AI" to `README.md` (#27): brief steps for Claude Code, coding assistants and chat assistants, a sample prompt and the GitHub link. The showcase Overview shows it, with a button to copy the prompt |

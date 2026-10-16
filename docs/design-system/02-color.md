@@ -1,6 +1,6 @@
 # Color
 
-Color is the main way the house of brands tells people where they are. Typography, spacing, icons and motion stay shared; color and logos change. This file defines the named palette, the shared foundation, usage ratios, the tonal scales, the semantic layer that components use, and the rules for each brand.
+Color is the main way the house of brands tells people where they are. Typography, spacing, icons and motion stay shared; color and logos change. This file defines the named palette, the shared foundation, usage ratios, the tonal scales, the semantic layer that components use and the rules for each brand.
 
 > **Source of values.** Named colors come from the *Food Integrity Project Style Guide* (draft for review), which supersedes the older per-program guides. The Food Integrity Project palette is marked **proposed** in that guide. `TODO(brand): confirm the parent palette (Cacao, Loam, Milkweed Leaf) once the guide leaves draft.` Stone and the four status colors are interface additions this system needs; they are not in the brand guide.
 
@@ -269,11 +269,11 @@ Each set has four parts:
 | `-border` | 300 | 800 | Alert and badge outline |
 | `-icon` | 600 | 400 | Status icon |
 
-### Certification status
+### Verification status
 
 Verification has its own vocabulary. These map onto the status sets so the UI stays consistent.
 
-| Certification state | Status set | Icon | Label |
+| Verification state | Status set | Icon | Label |
 |---|---|---|---|
 | Verified | success | `status.verified` | Verified |
 | Enrolled, in progress | info | `status.in-progress` | In progress |
@@ -283,7 +283,7 @@ Verification has its own vocabulary. These map onto the status sets so the UI st
 | Not eligible | neutral | `status.not-eligible` | Not eligible |
 | Withdrawn | neutral | `status.withdrawn` | Withdrawn |
 
-`TODO(design): confirm the certification lifecycle states with Verification and Standards teams before this list is treated as final.`
+`TODO(design): confirm the verification lifecycle states with Verification and Standards teams before this list is treated as final.`
 
 ## Approved text pairings
 

@@ -62,7 +62,7 @@ Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. E
 | Accent (eyebrows, button labels) | `Quicksand, "Nunito Sans", "Avenir Next", Avenir, Helvetica, Arial, sans-serif` | Same as sans |
 
 - Sizes come from the web scale in `03-typography.md`. Body is 16px and never smaller, except the footer at 14px (`body-sm`).
-- Headlines are left-aligned, sentence case, and no larger than `h1` (40px). Use `display` sizes only for a masthead name.
+- Headlines are left-aligned, sentence case and no larger than `h1` (40px). Use `display` sizes only for a masthead name.
 - Body paragraphs are left-aligned. Center only short lines: the masthead, a single button, a date line.
 - `TODO(design): confirm Lora is loaded by link tag in email templates, or whether templates should go straight to Georgia.`
 
@@ -87,7 +87,7 @@ Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. E
 - Buttons are built in HTML (a padded table cell or "bulletproof" button with a VML fallback for Outlook), never an image of a button.
 - At least 44px tall and the label in Quicksand or Avenir 16px, weight 600. Corner radius 4px (`rounded-sm`).
 - Button labels start with a verb and say where the click goes: "Register for the webinar", "Read the Standard", "Donate". Not "Click here", "Learn more" alone or two different labels for the same link.
-- Link text says where it goes: "Read Standard version 17", not "here" (`10-writing.md`, Accessible copy).
+- Link text says where it goes: "Read the Non-GMO Project Standard, version 17", not "here" (`10-writing.md`, Accessible copy).
 - One primary button per story. A second action in the same story is a text link.
 
 ## Footer content
@@ -123,7 +123,7 @@ Optional: social row, the endorsement line, a forward or share link, a "Did some
 - Buttons are HTML, at least 44px tall, labels start with a verb, one label per action
 - No seal outside a verified-product story
 - Footer has address, preferences and unsubscribe
-- Checked at 320px wide, in dark mode, and in Gmail, Outlook and Apple Mail
+- Checked at 320px wide, in dark mode and in Gmail, Outlook and Apple Mail
 
 ## Rules for Claude Code
 

@@ -32,15 +32,15 @@ export function createRenderer(ctx) {
   const brandName = (b) => brandNames[b] ?? b;
 
   const statusSets = { success: "success", warning: "warning", danger: "danger", info: "info", neutral: "neutral", stone: "neutral" };
-  const certRows = rowsOf(docs["02-color.md"]?.section(/^Certification status$/)?.table("Certification state", "Status set"));
-  if (!certRows.length) check("error", "Color", `"Certification status" table not found`, "02-color.md");
+  const certRows = rowsOf(docs["02-color.md"]?.section(/^Verification status$/)?.table("Verification state", "Status set"));
+  if (!certRows.length) check("error", "Color", `"Verification status" table not found`, "02-color.md");
   const badge = (row) => {
     const set = statusSets[plain(row["status set"]).toLowerCase()] ?? "neutral";
     return `<span class="badge badge--${set}">${icon(plain(row.icon), "icon")}${esc(plain(row.label))}</span>`;
   };
   const cert = (state) => {
-    const row = certRows.find((r) => plain(r["certification state"]).toLowerCase().startsWith(state)) ?? certRows.find((r) => plain(r["certification state"]).toLowerCase().includes(state));
-    if (!row) check("warn", "Color", `Certification status "${state}" is used by the showcase but not in the Certification status table`, "02-color.md");
+    const row = certRows.find((r) => plain(r["verification state"]).toLowerCase().startsWith(state)) ?? certRows.find((r) => plain(r["verification state"]).toLowerCase().includes(state));
+    if (!row) check("warn", "Color", `Verification status "${state}" is used by the showcase but not in the Verification status table`, "02-color.md");
     return row ?? { "status set": "neutral", icon: "status.info", label: state };
   };
 
@@ -316,7 +316,7 @@ export function createRenderer(ctx) {
         .map((t) => `<tr><td><code>${t}</code></td>${BRANDS.map((b) => `<td>${tok(tokenCtx(b, dark), t)}</td>`).join("")}</tr>`)
         .join("")}</tbody></table></div>`;
 
-    // Status and certification.
+    // Status and verification.
     const certBadges = certRows.map((r) => badge(r)).join("");
 
     // Approved pairings: tiles plus a recomputed ratio.
@@ -381,7 +381,7 @@ export function createRenderer(ctx) {
       <h3>Tonal scales</h3><p class="prose small">The outlined step is the official color, kept exact. Ratios are against Birch.</p>${scales}
       <h3>Brand token mapping, light</h3>${matrix(false)}
       <h3>Brand token mapping, dark</h3>${matrix(true)}
-      <h3>Status and certification</h3><p class="prose">Status never changes by brand and never relies on color alone.</p><div class="row">${certBadges}</div>
+      <h3>Status and verification</h3><p class="prose">Status never changes by brand and never relies on color alone.</p><div class="row">${certBadges}</div>
       <h3>Approved text pairings</h3><div class="grid" style="--min:170px">${pairs}</div>
       <h3>Gradients</h3><div class="grid" style="--min:240px">${gradients}</div>
       <h3>Data visualization</h3>${chart}`,
@@ -456,9 +456,9 @@ export function createRenderer(ctx) {
     if (!scaleT) check("error", "Typography", "Type scale table not found", f);
     const samples = {
       display: "Integrity, at scale", h1: "Every claim stands on a standard", h2: "What verification covers", h3: "How products are tested", h4: "Card and dialog title", h5: "Minor heading",
-      eyebrow: "Verified standards", "body-lg": "Body copy carries the argument; the headline only introduces it. Keep paragraphs to four or five lines on screen.",
-      body: "Every verified product is reviewed against a published standard, and every claim we make can be traced back to it.", "body-sm": "Updated 3 days ago by the Verification team", label: "Product name",
-      caption: "Last synced 09:42", code: "PRD-004213", data: "1,284  ·  98.6%",
+      eyebrow: "How verification works", "body-lg": "Body copy carries the argument; the headline only introduces it. Keep paragraphs to four or five lines on screen.",
+      body: "Every Verified product is reviewed against a published standard, and every claim we make can be traced back to it.", "body-sm": "Updated 3 days ago by the Verification team", label: "Product name",
+      caption: "Last synced 9:42 am", code: "PRD-004213", data: "1,284  ·  98.6%",
     };
     const specimens = rowsOf(scaleT)
       .map((r) => {
@@ -472,7 +472,7 @@ export function createRenderer(ctx) {
         const head = /^Quicksand/.test(p) ? "var(--font-accent)" : "var(--font-serif)";
         const body = /Lora \+ Quicksand/.test(p) ? "var(--font-serif)" : "var(--font-sans)";
         const label = /Quicksand/.test(p) ? "var(--font-accent)" : "var(--font-sans)";
-        return `<article class="card"><p class="eyebrow" style="font-family:${label}">${esc(plain(r.context))}</p><h3 style="font-family:${head};margin-top:0;font-weight:${head.includes("accent") ? 700 : 500}">${/^Quicksand/.test(p) ? "Join us at the harvest table" : "What verification covers"}</h3><p style="font-family:${body}">Every verified product is reviewed against a published standard, and every claim can be traced back to it.</p><p class="small muted" style="margin:0"><strong>${esc(p)}.</strong> ${inline(r["how it works"])}</p></article>`;
+        return `<article class="card"><p class="eyebrow" style="font-family:${label}">${esc(plain(r.context))}</p><h3 style="font-family:${head};margin-top:0;font-weight:${head.includes("accent") ? 700 : 500}">${/^Quicksand/.test(p) ? "Join us at the harvest table" : "What verification covers"}</h3><p style="font-family:${body}">Every Verified product is reviewed against a published standard, and every claim can be traced back to it.</p><p class="small muted" style="margin:0"><strong>${esc(p)}.</strong> ${inline(r["how it works"])}</p></article>`;
       })
       .join("");
     const surface = d.section(/^Usage by surface$/);
@@ -548,7 +548,7 @@ export function createRenderer(ctx) {
     const variants = rowsOf(d.section(/^Buttons$/)?.table("Variant", "Token use")).map((r) => plain(r.variant));
     const sizes = rowsOf(d.section(/^Buttons$/)?.table("Size", "Height"));
     if (!variants.length) check("error", "Components", "Button variant table not found", f);
-    const labelFor = { default: "Submit for review", secondary: "Save draft", outline: "Filter", ghost: "Edit", destructive: "Delete product", link: "View standard" };
+    const labelFor = { default: "Submit for review", secondary: "Save draft", outline: "Filter", ghost: "Edit", destructive: "Delete product", link: "View the Standard" };
     const iconFor = { default: "nav.forward", outline: "action.filter", ghost: "action.edit", destructive: "action.delete" };
     const btn = (v, extra = "", label = labelFor[v] ?? v, attrs = "") =>
       `<button type="button" class="btn btn--${v} ${extra}" ${attrs}>${iconFor[v] && v !== "default" ? icon(iconFor[v]) : ""}${esc(label)}${v === "default" ? icon(iconFor[v]) : ""}</button>`;
@@ -653,7 +653,7 @@ export function createRenderer(ctx) {
       <h4>Verified product detail</h4>
       <div class="card ctx" data-brand="nongmo" style="display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center">
         ${asset("nongmo", "seal-verified-color") ? `<img src="${esc(asset("nongmo", "seal-verified-color").path)}" alt="Non-GMO Project Verified" style="width:112px">` : ""}
-        <div><h4 style="margin:0">Heritage Rolled Oats</h4><p class="small muted">Brightfield Mills</p>${badge(cert("verified"))}<p class="small" style="margin:0.5rem 0 0">The seal appears only because this product is currently verified.</p></div>
+        <div><h4 style="margin:0">Heritage Rolled Oats</h4><p class="small muted">Brightfield Mills</p>${badge(cert("verified"))}<p class="small" style="margin:0.5rem 0 0">The mark appears only because this product is Verified today.</p></div>
       </div>
 
       <h3 id="c-feedback">Alerts</h3><div class="stack">${alerts}</div>
@@ -669,10 +669,10 @@ export function createRenderer(ctx) {
         <div class="tabs" data-tabs><div role="tablist" aria-label="Product record"><button role="tab" id="tb1" aria-controls="tp1" aria-selected="true">Overview</button><button role="tab" id="tb2" aria-controls="tp2" aria-selected="false" tabindex="-1">Ingredients</button><button role="tab" id="tb3" aria-controls="tp3" aria-selected="false" tabindex="-1">History</button><span class="indicator" aria-hidden="true"></span></div>
           <div role="tabpanel" id="tp1" aria-labelledby="tb1"><p>Rolled oats from a single mill, tested for GMO markers every lot.</p></div>
           <div role="tabpanel" id="tp2" aria-labelledby="tb2" hidden><p>Whole grain oats. That is the whole list.</p></div>
-          <div role="tabpanel" id="tp3" aria-labelledby="tb3" hidden><ol class="timeline"><li><strong>Verified</strong><br><span class="small muted">Mar 4, 2026</span></li><li><strong>Lab test passed</strong><br><span class="small muted">Feb 20, 2026</span></li><li><strong>Enrolled</strong><br><span class="small muted">Jan 12, 2026</span></li></ol></div>
+          <div role="tabpanel" id="tp3" aria-labelledby="tb3" hidden><ol class="timeline"><li><strong>Verified</strong><br><span class="small muted">March 4, 2026</span></li><li><strong>Lab test passed</strong><br><span class="small muted">February 20, 2026</span></li><li><strong>Enrolled</strong><br><span class="small muted">January 12, 2026</span></li></ol></div>
         </div>
         <div class="stack">
-          <div class="accordion"><details><summary>What does verified cover?${icon("nav.expand")}</summary><div class="content">Ingredients, processing aids and testing against the published standard.</div></details><details><summary>How long does review take?${icon("nav.expand")}</summary><div class="content">Most reviews finish in four to six weeks.</div></details></div>
+          <div class="accordion"><details><summary>What does Verified cover?${icon("nav.expand")}</summary><div class="content">Ingredients, processing aids and testing against the published standard.</div></details><details><summary>How long does review take?${icon("nav.expand")}</summary><div class="content">Most reviews finish in 4 to 6 weeks.</div></details></div>
           <div class="row"><div style="position:relative"><button class="btn btn--outline" type="button" aria-haspopup="menu" aria-expanded="false" data-demo="menu">${icon("action.more")}Actions</button><div class="popover" role="menu" hidden><button role="menuitem" type="button">${icon("action.duplicate", "icon icon--sm")}Duplicate</button><button role="menuitem" type="button">${icon("action.export", "icon icon--sm")}Export</button><button role="menuitem" type="button">${icon("action.archive", "icon icon--sm")}Archive</button></div></div>
           <span class="tooltip-wrap"><button class="btn btn--ghost btn--icon" type="button" aria-label="Help">${icon("nav.help")}</button><span class="tooltip" role="tooltip">Help with this page</span></span></div>
         </div>
@@ -687,7 +687,7 @@ export function createRenderer(ctx) {
       </div>
       <dialog id="demo-dialog" aria-labelledby="dd-t"><h4 id="dd-t">Rename product</h4><div class="field"><label class="label" for="dd-name">Product name</label><input class="input" id="dd-name" value="Heritage Rolled Oats"></div><div class="actions"><button class="btn btn--outline" type="button" data-close>Cancel</button><button class="btn btn--default" type="button" data-close>Save changes</button></div></dialog>
       <dialog id="demo-alert" role="alertdialog" aria-labelledby="da-t" aria-describedby="da-d"><h4 id="da-t">Delete Heritage Rolled Oats?</h4><p id="da-d">This removes the product, its 3 documents and its review history. You cannot undo this.</p><div class="actions"><button class="btn btn--outline" type="button" data-close>Keep product</button><button class="btn btn--destructive" type="button" data-close>Delete product</button></div></dialog>
-      <dialog id="demo-sheet" class="sheet" aria-labelledby="ds-t"><div class="row" style="justify-content:space-between"><h4 id="ds-t" style="margin:0">Heritage Rolled Oats</h4><button class="btn btn--ghost btn--icon" type="button" aria-label="Close" data-close>${icon("action.close")}</button></div><p class="small muted">Brightfield Mills</p>${badge(cert("verified"))}<ol class="timeline" style="margin-top:1.5rem"><li><strong>Verified</strong><br><span class="small muted">Mar 4, 2026</span></li><li><strong>Lab test passed</strong><br><span class="small muted">Feb 20, 2026</span></li></ol></dialog>
+      <dialog id="demo-sheet" class="sheet" aria-labelledby="ds-t"><div class="row" style="justify-content:space-between"><h4 id="ds-t" style="margin:0">Heritage Rolled Oats</h4><button class="btn btn--ghost btn--icon" type="button" aria-label="Close" data-close>${icon("action.close")}</button></div><p class="small muted">Brightfield Mills</p>${badge(cert("verified"))}<ol class="timeline" style="margin-top:1.5rem"><li><strong>Verified</strong><br><span class="small muted">March 4, 2026</span></li><li><strong>Lab test passed</strong><br><span class="small muted">February 20, 2026</span></li></ol></dialog>
 
       <h3 id="c-progress">Progress, steps and loading</h3>
       <div class="split">
@@ -843,7 +843,7 @@ export function createRenderer(ctx) {
             </div>
             <hr class="signature-rule">
             <p class="prose t-body-lg" style="margin:0 0 1.25rem">${inline(d.field("Role") ?? "")}</p>
-            <div class="row"><button class="btn btn--default btn--lg" type="button">${esc({ fip: "Read the annual report", nongmo: "Find verified products", nonupf: "Apply for verification", collective: "Join us" }[b] ?? "Get started")}</button><span class="small">Voice: ${inline(d.field("Voice") ?? "")}</span></div>
+            <div class="row"><button class="btn btn--default btn--lg" type="button">${esc({ fip: "Read the annual report", nongmo: "Find Verified products", nonupf: "Apply for verification", collective: "Join us" }[b] ?? "Get started")}</button><span class="small">Voice: ${inline(d.field("Voice") ?? "")}</span></div>
           </div>
           ${source(file)}
           ${quote ? `<blockquote>${inline(quote.text)}</blockquote>` : ""}

@@ -8,7 +8,7 @@
 
 ## Who it speaks to
 
-Funders and donors, partners across the food system, press, policy audiences, staff, job seekers, and anyone who works with more than one program.
+Funders and donors, partners across the food system, press, policy audiences, staff, job seekers and anyone who works with more than one program.
 
 ## Personality
 

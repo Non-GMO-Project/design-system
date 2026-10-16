@@ -1,4 +1,4 @@
-# Food Integrity Project design system
+# Food Integrity Project Digital Design System
 
 The design framework for the Food Integrity Project and its programs (Non-GMO Project, Non-UPF Verified and Food Integrity Collective), written for people and for Claude Code.
 

@@ -118,7 +118,7 @@ Always paired with a text label.
 | `status.error` | `CircleAlert` | Error, failed |
 | `status.info` | `Info` | Information |
 | `status.loading` | `LoaderCircle` | Loading (spin animation, see 07) |
-| `status.verified` | `BadgeCheck` | Product or company is verified |
+| `status.verified` | `BadgeCheck` | Product is Verified |
 | `status.in-progress` | `CircleDashed` | Enrolled, in progress |
 | `status.pending` | `Clock` | Waiting on review |
 | `status.expiring` | `CalendarClock` | Verification expiring soon |
@@ -147,7 +147,7 @@ Always paired with a text label.
 | `domain.compliance` | `ShieldCheck` | Compliance, policy |
 | `domain.review` | `ClipboardCheck` | Evaluation, audit, checklist |
 | `domain.task` | `ListTodo` | A to-do or follow-up task for a person, such as a staff to-do or call follow-up. Not for evaluations or checklists (`domain.review`) |
-| `domain.history` | `History` | Activity history, a timeline of events, and its empty state ("No activity recorded yet") |
+| `domain.history` | `History` | Activity history, a timeline of events and its empty state ("No activity recorded yet") |
 | `domain.supply-chain` | `Truck` | Supply chain, shipping |
 | `domain.relationship` | `Network` | Supplier and facility relationships |
 | `domain.scan` | `ScanBarcode` | Scan a product barcode |
@@ -199,10 +199,10 @@ When Lucide has nothing suitable:
 2. If still nothing, draw the icon on Lucide's 24px grid with the same stroke, round caps and joins, and 2px padding. Save as `components/icons/custom/{name}.tsx` and add it to the registry.
 3. Custom icons go through design review. `TODO(design): name the reviewer.`
 
-Never use a logo, seal or the butterfly as an icon.
+Never use a logo, seal or the Butterfly as an icon.
 
 ## Rules for Claude Code
 
 - Import icons through the registry, by purpose name. Do not import from `lucide-react` directly in feature code.
-- If no registry name fits, add one to the registry with a comment, pick the closest Lucide icon, and mention it in your summary.
+- If no registry name fits, add one to the registry with a comment, pick the closest Lucide icon and mention it in your summary.
 - Never draw a custom icon without being asked.

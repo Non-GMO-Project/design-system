@@ -38,7 +38,7 @@ This table is the core of the framework. Find the interaction, use the component
 
 | Interaction | Component | Rules |
 |---|---|---|
-| Main action on a screen or in a region | `Button` variant `default` (primary) | One per region. It is where the brand signature appears, so it is also the "single point of emphasis". Verb first: "Save changes", "Submit product" |
+| Main action on a screen or in a region | `Button` variant `default` (primary) | One per region. It is where the brand signature appears, so it is also the "single point of emphasis". Verb first: "Save changes", "Submit for review" |
 | Alternative action | `Button` variant `secondary` or `outline` | |
 | Low-emphasis or repeated action (table rows, toolbars) | `Button` variant `ghost` | |
 | Destructive action | `Button` variant `destructive` + `AlertDialog` | Always confirm. Name what will be lost |
@@ -267,7 +267,7 @@ Page gutters: 16px mobile, 24px tablet, 32px desktop.
 
 ## Writing in the interface
 
-All interface copy follows `10-writing.md` (voice, tone, UI copy patterns, word list). The short version: buttons say exactly what happens, toasts use the past tense, errors say what happened and how to fix it, and empty states invite the next action.
+All interface copy follows `10-writing.md` (voice, tone, UI copy patterns, word list). The short version: buttons say exactly what happens, toasts use the past tense, errors say what happened and how to fix it and empty states invite the next action.
 
 Flows, states and the UX definition of done live in `11-ux.md`.
 
