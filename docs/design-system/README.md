@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.29 (draft for review)
+**Version:** 0.30 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -167,6 +167,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.30 | 2026-10-16 | The signature moment is no longer tied to verification (#54). It marks any milestone a person has worked toward, such as a product turning Verified, a member joining, a registration or a completed donation; routine saves and small confirmations still use `status-change` or a toast. Same sequence, timing and brand glow. `07` has a table of example events, and the Food Integrity Project, Collective and Non-UPF Verified profiles match. The showcase demo now has all four brands, each with its own example event |
 | 0.29 | 2026-10-16 | Removed "Research and measurement" from `11-ux.md` and the showcase UX section (#55), with its TODO about analytics tooling and success metrics |
 | 0.28 | 2026-10-16 | White `#FFFFFF` and Black `#000000` added to the named palette (#49), as the colors of the white (reversed) and one-color black logo and seal files. They are not backgrounds, type or UI colors: Birch stays the ground and each brand's dark sets type. `palette.config.json`, `02` and the generated palette block in `09` (`--white`, `--black`) updated. The showcase palette cards no longer leave a gap above the color on shorter cards; the color now always sits at the top |
 | 0.27 | 2026-10-16 | Showcase fix (#50): the empty-state example's button icon was drawn at the 48px empty-state size in the muted color, because the empty-state icon style also matched icons inside the button. It now applies only to the empty state's own icon, so the button icon is the standard 20px in the button's text color |

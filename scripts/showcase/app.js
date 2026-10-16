@@ -294,12 +294,12 @@
     if (!b) return;
     const wrap = b.parentElement.querySelector("[data-sig]");
     const slot = wrap.querySelector("[data-sig-badge]");
-    const toVerified = !wrap.dataset.verified;
-    slot.innerHTML = $(toVerified ? "#tpl-verified" : "#tpl-pending").innerHTML;
-    wrap.dataset.verified = toVerified ? "1" : "";
-    b.textContent = toVerified ? "Reset" : "Approve verification";
+    const done = !wrap.dataset.done;
+    slot.innerHTML = $(`#tpl-sig-${b.dataset.playSig}-${done ? "to" : "from"}`).innerHTML;
+    wrap.dataset.done = done ? "1" : "";
+    b.textContent = done ? "Reset" : b.dataset.action;
     wrap.classList.remove("sig-play");
-    if (toVerified && !reduced()) { void wrap.offsetWidth; wrap.classList.add("sig-play"); }
+    if (done && !reduced()) { void wrap.offsetWidth; wrap.classList.add("sig-play"); }
   });
 
   // ---------- UX definition of done checklist ----------

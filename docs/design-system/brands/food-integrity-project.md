@@ -48,7 +48,7 @@ Plain, precise, evidence-first, unhurried. Names sources. Explains what a standa
 
 ## Motion
 
-Shared system. No signature moment of its own; the parent does not verify products.
+Shared system. The signature moment, with a Milkweed Leaf glow, may mark the parent's own milestones, such as a completed donation (see `../07-motion.md`).
 
 ## Typical surfaces
 

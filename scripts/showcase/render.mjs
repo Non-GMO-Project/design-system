@@ -775,9 +775,19 @@ export function createRenderer(ctx) {
     const sig = d.section(/^Signature moment$/);
     const verified = cert("verified");
     const pending = cert("in review");
-    const sigDemo = BRANDS.filter((b) => b !== "collective")
-      .map((b) => `<div class="card ctx" data-brand="${b}" style="display:grid;gap:0.75rem;justify-items:start"><strong class="small">${esc(brandName(b))}</strong><div class="sig-wrap" data-sig><span class="sig-glow" aria-hidden="true"></span><span data-sig-badge aria-live="polite">${badge(pending)}</span></div><button class="btn btn--default btn--sm" type="button" data-play-sig>Approve verification</button></div>`)
-      .join("");
+    // One example milestone per brand (see the table in 07, "Signature moment").
+    const done = (label) => ({ "status set": "success", icon: "status.success", label });
+    const sigEvents = {
+      fip: { from: cert("in progress"), to: done("Donation received"), action: "Complete donation" },
+      nongmo: { from: pending, to: verified, action: "Approve verification" },
+      nonupf: { from: pending, to: verified, action: "Approve verification" },
+      collective: { from: cert("in progress"), to: done("Welcome, member"), action: "Join the Collective" },
+    };
+    const sigBadge = (row) => badge(row).replace('<span class="badge', '<span class="badge sig-badge');
+    const sigDemo = BRANDS.map((b) => {
+      const ev = sigEvents[b];
+      return `<div class="card ctx" data-brand="${b}" style="display:grid;gap:0.75rem;justify-items:start"><strong class="small">${esc(brandName(b))}</strong><div class="sig-wrap" data-sig><span class="sig-glow" aria-hidden="true"></span><span data-sig-badge aria-live="polite">${badge(ev.from)}</span></div><button class="btn btn--default btn--sm" type="button" data-play-sig="${b}" data-action="${esc(ev.action)}">${esc(ev.action)}</button><template id="tpl-sig-${b}-from">${badge(ev.from)}</template><template id="tpl-sig-${b}-to">${sigBadge(ev.to)}</template></div>`;
+    }).join("");
     return section(
       "motion", "07 · Motion", "Motion answers people", f,
       `<div class="row" style="margin-bottom:1rem"><label class="switch"><input type="checkbox" role="switch" data-toggle-reduce> Simulate reduced motion</label></div>
@@ -786,7 +796,7 @@ export function createRenderer(ctx) {
       <h3>Easing</h3><div class="grid" style="--min:200px">${easeTiles}</div>
       <h3>Springs</h3>${tableOrWarn(d.section(/^Easing tokens$/)?.table("Name", "Config"), f, "Motion")}
       <h3>Named animations</h3><p class="prose small">Each demo reads its duration and easing tokens live, so changing them in <code>09-tokens.md</code> changes the demo.</p><div class="grid" style="--min:250px">${namedTiles}</div>
-      <h3>Signature moment: "Verified"</h3><div class="prose">${sig ? render(sig.blocks.filter((b) => b.type === "p").slice(0, 2)) : ""}</div><div class="grid" style="--min:220px">${sigDemo}</div>
+      <h3>Signature moment</h3><div class="prose">${sig ? render(sig.blocks.filter((b) => b.type === "p").slice(0, 2)) : ""}</div>${tableOrWarn(sig?.table("Example event", "Brand"), f, "Motion")}<div class="grid" style="--min:220px;margin-top:1rem">${sigDemo}</div>
       <template id="tpl-verified">${badge(verified).replace("<span class=\"badge", "<span class=\"badge sig-badge")}</template><template id="tpl-pending">${badge(pending)}</template>
       <h3>Reduced motion</h3><div class="prose">${render(d.section(/^Reduced motion$/)?.blocks ?? [])}</div>`,
       `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
