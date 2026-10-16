@@ -648,9 +648,25 @@ export function createRenderer(ctx) {
     const patterns = d.section(/^Standard patterns$/);
     const writing = d.section(/^Writing in the interface$/);
 
+    // The same markup in each brand context: components read semantic tokens, so only the colors change.
+    const brandVariations = BRANDS.map((b) => {
+      const n = esc(brandName(b));
+      return `<div class="card ctx brand-variation" data-brand="${b}">
+        <p class="eyebrow" style="margin:0">${n}</p>
+        <div class="row"><button type="button" class="btn btn--default btn--sm">Submit for review</button><button type="button" class="btn btn--secondary btn--sm">Save draft</button><button type="button" class="btn btn--outline btn--sm">${icon("action.filter", "icon icon--sm")}Filter</button></div>
+        <div class="row"><a class="btn btn--link" href="#components">View the Standard</a><span class="chip chip--program">${n}</span></div>
+        <input class="input" aria-label="Sample field, ${n}" value="Heritage Rolled Oats">
+        <div class="row"><label class="check"><input type="checkbox" checked> Organic</label><label class="switch"><input type="checkbox" role="switch" checked> Email me</label></div>
+        <div class="progress" role="progressbar" aria-label="Sample progress, ${n}" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><div style="width:60%"></div></div>
+        <div class="panel-support small">Support panel: <code>--brand-support</code></div>
+        <div class="row">${badge(cert("verified"))}<span class="small muted">Status colors stay the same in every brand</span></div>
+      </div>`;
+    }).join("");
     return section(
       "components", "06 · UI framework", "Components and patterns", f,
-      `<h3 id="c-buttons">Buttons</h3>${buttonMatrix}
+      `<h3 id="c-brands">Brand variations</h3><p class="prose">Components read semantic tokens, so the same markup takes each brand's colors: primary button, links, focus ring, field borders, checkboxes, switches, progress, program chip and support panel. Behavior, size and spacing never change, and status colors stay shared. The examples below use the Food Integrity Project; these cards show the others side by side. The Dark switch applies to them too.</p>
+      <div class="grid" style="--min:260px">${brandVariations}</div>
+      <h3 id="c-buttons">Buttons</h3>${buttonMatrix}
       <h4>Sizes</h4><div class="row">${sizeRow}</div>
       <h4>Loading</h4><div class="row"><button type="button" class="btn btn--default" data-demo="loading">${icon("action.upload")}Upload spec sheet</button><span class="small muted">Spinner replaces the icon, the label stays, the button is disabled.</span></div>
 
