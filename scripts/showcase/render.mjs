@@ -180,7 +180,7 @@ export function createRenderer(ctx) {
       .map((a) => {
         const dark = /mono-light|reversed/.test(a.file);
         return `<figure class="asset" data-brand="${esc(a.brand)}" style="margin:0">
-          <div class="asset__art${dark ? " on-dark" : ""}">${a.exists ? `<img src="${esc(a.path)}" alt="${esc(brandName(a.brand))} ${esc(a.kind)}" loading="lazy">` : `<span class="placeholder-logo">Missing file</span>`}</div>
+          <div class="asset__art${dark ? " on-dark" : ""}">${a.exists ? `<img src="${esc(a.path)}" alt="${esc(brandName(a.brand))} ${esc(a.kind)}, ${esc(a.tone)}" loading="lazy">` : `<span class="placeholder-logo">Missing file</span>`}</div>
           <figcaption class="asset__meta"><code>${esc(a.file)}</code><span><strong>${esc(brandName(a.brand))}</strong> · ${esc(a.kind)} · ${esc(a.tone)}${a.size ? ` · ${a.size[0]}×${a.size[1]}px` : ""}</span><span class="muted">${inline(a.status)}</span></figcaption>
         </figure>`;
       })
@@ -195,7 +195,7 @@ export function createRenderer(ctx) {
     const horiz = `<div class="card lockup" data-brand="nongmo">
         ${ngpSeal ? `<img src="${esc(ngpSeal.path)}" alt="Non-GMO Project Verified" style="height:${sealH}px">` : ""}
         <span class="lockup__rule" aria-hidden="true"></span>
-        <div class="lockup__parent"><span class="eyebrow" style="margin:0">A program of</span>${fipLogo ? `<img src="${esc(fipLogo.path)}" alt="Food Integrity Project" style="height:${Math.round(sealH * 0.45)}px;width:auto;mix-blend-mode:multiply">` : ""}</div>
+        <div class="lockup__parent"><span class="eyebrow" style="margin:0">A program of</span>${fipLogo ? `<img class="logo-plate" src="${esc(fipLogo.path)}" alt="Food Integrity Project" style="height:${Math.round(sealH * 0.45)}px;width:auto">` : ""}</div>
       </div>`;
     const stacked = `<div class="card lockup lockup--stacked" data-brand="nonupf">
         ${upfSeal ? `<img src="${esc(upfSeal.path)}" alt="Non-UPF Verified" style="height:${sealH}px">` : ""}
@@ -203,6 +203,16 @@ export function createRenderer(ctx) {
         <span class="eyebrow" style="margin:0">A program of the Food Integrity Project</span>
       </div>`;
     const sizes = d.section(/^Clear space and size$/);
+    // Screen minimums come from the "Minimum sizes" table, so the demo follows the doc.
+    const minRows = rowsOf(sizes?.tables().find((t) => t.headers.some((h) => /screen minimum/i.test(plain(h)))));
+    const minPx = (re, fallback) => {
+      const row = minRows.find((r) => re.test(plain(r.asset)));
+      const px = Number(plain(row?.["screen minimum"] ?? "").match(/(\d+)px/)?.[1]);
+      if (!px) check("warn", "Logos", `No screen minimum for ${re} in the Minimum sizes table`, "04-logos-and-marks.md");
+      return px || fallback;
+    };
+    const ngpMin = minPx(/^Non-GMO Project Verified Mark$/, 72);
+    const fipMin = minPx(/^Parent mark/, 96);
     const backgrounds = rowsOf(d.section(/^Backgrounds$/)?.table("Background", "Logo version"));
     const bgDemos = backgrounds
       .map((r, i) => {
@@ -226,12 +236,12 @@ export function createRenderer(ctx) {
       <h3>Clear space and minimum size</h3>
       <div class="row" style="gap:2rem;align-items:flex-end;margin-bottom:1.5rem">
         ${upfSeal ? `<div class="clearspace" style="--x:18px"><img src="${esc(upfSeal.path)}" alt="Non-UPF Verified seal with clear space" style="height:96px"><span style="top:0;left:4px">X</span></div>` : ""}
-        ${ngpSeal ? `<figure style="margin:0"><img src="${esc(ngpSeal.path)}" alt="Non-GMO Project Verified seal at minimum screen size" style="width:72px"><figcaption class="small muted">Seal at 72px</figcaption></figure>` : ""}
-        ${fipLogo ? `<figure style="margin:0"><img src="${esc(fipLogo.path)}" alt="Food Integrity Project logo at minimum screen size" style="width:96px;mix-blend-mode:multiply"><figcaption class="small muted">Parent mark at 96px</figcaption></figure>` : ""}
+        ${ngpSeal ? `<figure style="margin:0"><img src="${esc(ngpSeal.path)}" alt="Non-GMO Project Verified seal at minimum screen size" style="width:${ngpMin}px"><figcaption class="small muted">Seal at ${ngpMin}px</figcaption></figure>` : ""}
+        ${fipLogo ? `<figure style="margin:0"><img class="logo-plate" src="${esc(fipLogo.path)}" alt="Food Integrity Project logo at minimum screen size" style="width:${fipMin}px"><figcaption class="small muted">Parent mark at ${fipMin}px</figcaption></figure>` : ""}
       </div>
       ${sizes ? render(sizes.blocks) : ""}
       <h3>Backgrounds</h3><div class="grid" style="--min:200px">${bgDemos}</div>
-      ${never ? `<h3>Never</h3><div class="do-dont"><div class="dont"><h5>${icon("status.lapsed", "icon")}Never</h5>${render([never])}</div></div>` : ""}`,
+      ${never ? `<h3>Never</h3><div class="do-dont"><div class="dont"><h4>${icon("status.lapsed", "icon")}Never</h4>${render([never])}</div></div>` : ""}`,
       `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
     );
   }
@@ -574,7 +584,7 @@ export function createRenderer(ctx) {
       ["Wildflower Honey", "nongmo", "in progress", "Hive & Hollow"],
     ];
     const tableRows = products
-      .map(([name, prog, st, brand], i) => `<tr ${i === 1 ? 'aria-selected="true"' : ""}><td data-label="Select"><input type="checkbox" aria-label="Select ${esc(name)}" ${i === 1 ? "checked" : ""}></td><td data-label="Product"><strong>${esc(name)}</strong><br><span class="small muted">${esc(brand)}</span></td><td data-label="Program"><span class="chip chip--program" data-brand="${prog}">${esc(brandName(prog))}</span></td><td data-label="Status">${badge(cert(st))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td><td class="num" data-label="Actions"><button type="button" class="btn btn--ghost btn--sm">${icon("action.edit", "icon icon--sm")}Edit</button> <button type="button" class="btn btn--ghost btn--sm btn--icon" aria-label="More actions for ${esc(name)}">${icon("action.more", "icon icon--sm")}</button></td></tr>`)
+      .map(([name, prog, st, brand], i) => `<tr${i === 1 ? ' class="is-selected"' : ""}><td data-label="Select"><input type="checkbox" aria-label="Select ${esc(name)}" ${i === 1 ? "checked" : ""}></td><td data-label="Product"><strong>${esc(name)}</strong><br><span class="small muted">${esc(brand)}</span></td><td data-label="Program"><span class="chip chip--program" data-brand="${prog}">${esc(brandName(prog))}</span></td><td data-label="Status">${badge(cert(st))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td><td class="num" data-label="Actions"><button type="button" class="btn btn--ghost btn--sm">${icon("action.edit", "icon icon--sm")}Edit</button> <button type="button" class="btn btn--ghost btn--sm btn--icon" aria-label="More actions for ${esc(name)}">${icon("action.more", "icon icon--sm")}</button></td></tr>`)
       .join("");
     const alerts = [
       ["info", "status.info", "Review in progress", "The Verification team is reviewing 3 ingredients. We will email you when it is done."],
@@ -645,7 +655,7 @@ export function createRenderer(ctx) {
 
       <h3 id="c-cards">Cards and panels</h3>
       <div class="grid" style="--min:250px">
-        <article class="card card--interactive" tabindex="0"><p class="eyebrow">Product</p><h4>Heritage Rolled Oats</h4><p class="small muted">Brightfield Mills · Grains</p>${badge(cert("verified"))}</article>
+        <article class="card card--interactive"><p class="eyebrow">Product</p><h4>Heritage Rolled Oats</h4><p class="small muted">Brightfield Mills · Grains</p>${badge(cert("verified"))}</article>
         <article class="card"><div class="stat"><span class="small muted">Products verified this quarter</span><span class="value">1,284</span><span class="small">${icon("status.success", "icon icon--sm")} 12% more than last quarter</span></div></article>
         <article class="panel-support"><h4 style="margin-top:0">Support panel</h4><p style="margin:0">Uses <code>--brand-support</code>: Loam, Seafoam, Almond or Corn Flower.</p></article>
         <article class="panel-dark"><p class="eyebrow" style="color:var(--birch)">Inverted panel</p><h4 style="margin-top:0">The brand dark</h4><p style="margin:0">Sets every inverted panel.</p></article>
@@ -854,11 +864,11 @@ export function createRenderer(ctx) {
           <h3>Color roles</h3><div class="grid" style="--min:170px">${roleSw}</div>
           ${ratioLine ? `<p class="small" style="margin-top:1rem">${inline(ratioLine)}</p>` : ""}
           ${text(/^Color roles$/).replace(/<p><strong>Ratio:[\s\S]*?<\/p>/, "")}
-          <h3>Logos</h3>${text(/^Logos/)}${brandAssets.length ? `<div class="grid" style="--min:180px">${brandAssets.map((a) => `<div class="asset__art${/mono-light|reversed/.test(a.file) ? " on-dark" : ""}" style="border:1px solid var(--border);border-radius:var(--radius-md);min-height:150px"><img src="${esc(a.path)}" alt="${esc(brandName(b))} ${esc(a.kind)}" loading="lazy"></div>`).join("")}</div>` : ""}
+          <h3>Logos</h3>${text(/^Logos/)}${brandAssets.length ? `<div class="grid" style="--min:180px">${brandAssets.map((a) => `<div class="asset__art${/mono-light|reversed/.test(a.file) ? " on-dark" : ""}" style="border:1px solid var(--border);border-radius:var(--radius-md);min-height:150px"><img src="${esc(a.path)}" alt="${esc(brandName(b))} ${esc(a.kind)}, ${esc(a.tone)}" loading="lazy"></div>`).join("")}</div>` : ""}
           <div class="split"><div><h3>Imagery</h3>${text(/^Imagery$/)}</div><div><h3>Voice</h3>${text(/^Voice$/)}</div></div>
           <div class="split"><div><h3>Typography</h3>${text(/^Typography$/)}</div><div><h3>Motion</h3>${text(/^Motion$/)}</div></div>
           <h3>Typical surfaces</h3>${text(/^Typical surfaces$/)}
-          <div class="do-dont">${doL ? `<div class="do"><h5>${icon("status.success")}Do</h5>${render([doL])}</div>` : ""}${dontL ? `<div class="dont"><h5>${icon("status.lapsed")}Don't</h5>${render([dontL])}</div>` : ""}</div>
+          <div class="do-dont">${doL ? `<div class="do"><h4>${icon("status.success")}Do</h4>${render([doL])}</div>` : ""}${dontL ? `<div class="dont"><h4>${icon("status.lapsed")}Don't</h4>${render([dontL])}</div>` : ""}</div>
         </article>`;
       });
     return `<section id="brands" aria-labelledby="brands-h"><div class="ds-section" style="border:0;padding-bottom:0"><p class="eyebrow">Brand profiles</p><h2 id="brands-h">The four brands</h2><p class="prose">Each profile renders inside its own <code>data-brand</code> context, whatever the brand switch says.</p></div>${out.join("")}</section>`;
@@ -1051,7 +1061,7 @@ export function createRenderer(ctx) {
         const thumbs = marks
           .map((m) => assets.find((a) => a.file === m && a.exists))
           .filter(Boolean)
-          .map((a) => `<div class="asset__art${/mono-light|reversed/.test(a.tone) ? " on-dark" : ""}" style="border:1px solid var(--border);border-radius:var(--radius-md);min-height:96px;padding:0.75rem"><img src="${esc(a.path)}" alt="${esc(a.file)}" loading="lazy" style="max-height:72px;width:auto"></div>`)
+          .map((a) => `<div class="asset__art${/mono-light|reversed/.test(a.tone) ? " on-dark" : ""}" style="border:1px solid var(--border);border-radius:var(--radius-md);min-height:96px;padding:0.75rem"><img src="${esc(a.path)}" alt="${esc(brandName(a.brand))} ${esc(a.kind)}, ${esc(a.tone)}" loading="lazy" style="max-height:72px;width:auto"></div>`)
           .join("");
         const intro = d.paragraphs().find((p) => !/^\*\*\w[\w ]*:\*\*/.test(p)) ?? "";
         const heads = d.blocks.filter((x) => x.type === "heading" && x.level === 2).map((x) => plain(x.text));

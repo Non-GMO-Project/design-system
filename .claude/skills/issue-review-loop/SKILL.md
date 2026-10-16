@@ -29,7 +29,7 @@ Each pass is safe to repeat. If nothing changed since the last pass, it changes 
   ```
 - **Nobody reviews these PRs before they merge.** Only implement what is clear. When an issue is unclear, ask instead of guessing.
 - **The repo is public.** Don't put internal links (Google Drive, Dropbox, internal tools), personal contact details or unreleased business information in docs, commits, PRs or comments.
-- **Follow `CLAUDE.md`.** The docs in `docs/design-system/` are the source of truth. Never hand-edit generated files (`index.html`, `styles/tokens.css`, `trademark/*.html`) or the content between the `scales`, `pairings` and `palette` markers. Never invent brand values; leave a `TODO(design)` or `TODO(brand)` instead. Never redraw, recolor or generate logos and seals.
+- **Follow `CLAUDE.md`.** The docs in `docs/design-system/` are the source of truth. Never hand-edit generated files (`index.html`, `styles/tokens.css`, `styles/tailwind.css`, `styles/fonts.css`, `trademark/*.html`) or the content between the `scales`, `pairings` and `palette` markers. Never invent brand values; leave a `TODO(design)` or `TODO(brand)` instead. Never redraw, recolor or generate logos and seals.
 - **Attribution.** End commit messages and PR bodies with the attribution lines the session gives for commits and pull requests.
 
 ## Workspace
@@ -84,7 +84,7 @@ Read each direct commit's diff (`git show --stat <sha>`, then the full diff). Fi
 
 | The direct commit… | Follow-up |
 |---|---|
-| Edits a doc, the palette config, a script or `public/brand/` | Rebuild: `index.html`, `styles/tokens.css`, `trademark/*.html` |
+| Edits a doc, the palette config, a script or `public/brand/` | Rebuild: `index.html`, `styles/tokens.css`, `styles/tailwind.css`, `styles/fonts.css`, `trademark/*.html` |
 | Edits `scripts/palette.config.json` | `npm run colors` to rewrite the scales, pairings and palette block |
 | Hand-edits content between generator markers, or a generated file | Move the change to its source (palette config or doc), then regenerate. If the intent isn't clear, ask in an issue (A5) |
 | Adds or renames a file in `public/brand/` | Add or fix its row in the asset inventory in `04-logos-and-marks.md` |

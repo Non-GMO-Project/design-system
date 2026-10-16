@@ -22,6 +22,7 @@ How to use the Non-UPF Verified mark on packaging, websites and marketing. The m
 | File | Mark | When to use it |
 |---|---|---|
 | `nonupf/nonupf-seal-verified-color.png` | Primary mark (rectangular), Pantone 214 C | The preferred mark. Use it whenever size, layout and packaging allow |
+| `nonupf/nonupf-seal-verified-color.svg` | Primary mark, Pantone 214 C, vector | Same as above. Scales to any size on screen |
 | `nonupf/nonupf-seal-verified-mono-dark.png` | Primary mark, Pantone 282 C | Same as above, in the program's dark color |
 | `nonupf/nonupf-seal-verified-mono-light.png` | Primary mark, white | Same as above, on dark packaging |
 | `nonupf/nonupf-seal-verified-mono-dark.svg` | Primary mark, black, vector | Same as above, in black. Scales to any size on screen |

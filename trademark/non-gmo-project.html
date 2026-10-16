@@ -615,8 +615,9 @@ p { margin: 0 0 1rem; }
   border-bottom: 1px solid var(--border);
 }
 .topbar__title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; margin: 0; margin-right: auto; display: flex; align-items: center; gap: 0.75rem; }
-.topbar__title img { height: 36px; width: auto; mix-blend-mode: multiply; }
-.dark .topbar__title img { mix-blend-mode: normal; background: var(--birch); border-radius: var(--radius-sm); padding: 2px 4px; }
+.topbar__title img { height: 36px; width: auto; }
+/* The interim Food Integrity Project logo is dark gray with no reversed file yet, so in dark mode it sits on a Birch plate. */
+.dark .topbar__title img, .dark .logo-plate { background: var(--birch); border-radius: var(--radius-sm); padding: 2px 4px; }
 .layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); }
 .sidenav { position: sticky; top: 65px; align-self: start; height: calc(100vh - 65px); overflow: auto; padding: 1.5rem 1rem; border-right: 1px solid var(--border); }
 .sidenav ol { list-style: none; margin: 0; padding: 0; }
@@ -709,13 +710,11 @@ html.reduce-motion .btn .spin { animation-duration: 2.4s; }
 .card--interactive:hover { box-shadow: var(--elevation-2); }
 .card--interactive:active { transform: scale(0.98); }
 .card h4 { margin-top: 0; }
-.panel-tint { background: var(--brand-tint); border: 1px solid var(--brand-border); border-radius: var(--radius-lg); padding: 1.5rem; }
 .panel-support { background: var(--brand-support); color: var(--brand-support-foreground); border-radius: var(--radius-lg); padding: 1.5rem; }
 .panel-dark { background: var(--brand-dark); color: var(--birch); border-radius: var(--radius-lg); padding: 2rem; }
 .panel-dark a, .panel-dark .muted { color: var(--birch); }
 .panel-dark :focus-visible { outline-color: var(--birch); }
 .ctx { background: var(--background); color: var(--foreground); }
-.ctx--padded { padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius-lg); }
 .hero { background: var(--gradient-hero); color: var(--birch); border-radius: var(--radius-lg); padding: clamp(1.5rem, 4vw, 3rem); }
 .hero .eyebrow { color: var(--birch); }
 .hero code, .panel-dark code, .footer-demo code { background: color-mix(in srgb, var(--birch) 16%, transparent); color: inherit; }
@@ -775,7 +774,7 @@ th { background: var(--muted); font-family: var(--font-accent); font-weight: 600
 tbody tr:last-child td { border-bottom: 0; }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .data-table tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--muted) 60%, transparent); }
-.data-table tbody tr[aria-selected="true"] td { background: var(--brand-subtle); }
+.data-table tbody tr.is-selected td { background: var(--brand-subtle); }
 .data-table td { vertical-align: middle; }
 .row-enter td { animation: row-enter-fade var(--duration-base) var(--ease-enter), row-enter-bg 1000ms linear var(--duration-base); }
 @keyframes row-enter-fade { from { opacity: 0; } }
@@ -809,7 +808,7 @@ dialog[open]::backdrop { animation: fade var(--duration-moderate) var(--ease-ent
 dialog h4 { margin-top: 0; }
 dialog .actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1.5rem; }
 dialog.sheet { margin: 0 0 0 auto; height: 100vh; max-height: 100vh; width: min(420px, 100vw); border-radius: var(--radius-lg) 0 0 var(--radius-lg); box-shadow: var(--elevation-3); }
-dialog.sheet[open] { animation: sheet-in var(--duration-moderate) cubic-bezier(0.2, 0.9, 0.3, 1); }
+dialog.sheet[open] { animation: sheet-in var(--duration-moderate) var(--ease-enter); }
 @keyframes sheet-in { from { transform: translateX(100%); } }
 .toasts { position: fixed; right: 1rem; bottom: calc(5rem + env(safe-area-inset-bottom)); display: grid; gap: 0.5rem; z-index: 60; }
 .feedback-fab { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 50; height: 48px; padding: 0 1.25rem; border-radius: 999px; box-shadow: var(--elevation-2); }
@@ -876,7 +875,6 @@ html.reduce-motion .skeleton { animation: none; }
 .verdict .icon { width: 14px; height: 14px; }
 .verdict--pass .icon { color: var(--status-success-icon); }
 .verdict--fail .icon { color: var(--status-danger-icon); }
-.verdict--warn .icon { color: var(--status-warning-icon); }
 .token-matrix td:first-child { white-space: nowrap; }
 .tok { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.8125rem; font-family: var(--font-mono); }
 .tok i { width: 18px; height: 18px; border-radius: 4px; border: 1px solid var(--border); flex: none; }
@@ -969,7 +967,7 @@ blockquote { margin: 0 0 1rem; padding: 0.75rem 1rem; border-left: 4px solid var
 .do-dont > div { border-radius: var(--radius-md); padding: 1rem 1.25rem; border: 1px solid; }
 .do-dont .do { background: var(--status-success-bg); border-color: var(--status-success-border); color: var(--status-success-fg); }
 .do-dont .dont { background: var(--status-danger-bg); border-color: var(--status-danger-border); color: var(--status-danger-fg); }
-.do-dont h5 { margin-top: 0; display: flex; gap: 0.5rem; align-items: center; }
+.do-dont h4 { font-family: var(--font-sans); font-weight: 700; font-size: 1.125rem; margin: 0 0 0.25rem; display: flex; gap: 0.5rem; align-items: center; }
 .do-dont ul { margin: 0; padding-left: 1.25rem; }
 
 /* ---------- Writing and UX ---------- */
@@ -988,7 +986,7 @@ blockquote { margin: 0 0 1rem; padding: 0.75rem 1rem; border-left: 4px solid var
 .mnav a:hover { background: var(--accent); }
 .mnav .sub a { padding-left: 1.5rem; color: var(--muted-foreground); }
 dialog.sheet--left { margin: 0 auto 0 0; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; width: min(320px, 85vw); height: 100dvh; max-height: 100dvh; overflow: auto; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
-dialog.sheet--left[open] { animation: sheet-left-in var(--duration-moderate) cubic-bezier(0.2, 0.9, 0.3, 1); }
+dialog.sheet--left[open] { animation: sheet-left-in var(--duration-moderate) var(--ease-enter); }
 @keyframes sheet-left-in { from { transform: translateX(-100%); } }
 @keyframes drawer-in { from { transform: translateY(100%); } }
 
@@ -1004,7 +1002,7 @@ dialog.sheet--left[open] { animation: sheet-left-in var(--duration-moderate) cub
   .stack-table td[data-label]::before { content: attr(data-label); display: block; font-family: var(--font-accent); font-weight: 600; font-size: 0.75rem; color: var(--muted-foreground); }
   .stack-table td[data-label="Select"]::before, .stack-table td[data-label="Actions"]::before { content: none; }
   .data-table.stack-table tbody tr:nth-child(even) td { background: none; }
-  .data-table.stack-table tbody tr[aria-selected="true"] { background: var(--brand-subtle); }
+  .data-table.stack-table tbody tr.is-selected { background: var(--brand-subtle); }
   .data-table.stack-table tr { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
   .data-table.stack-table td[data-label="Product"], .data-table.stack-table td[data-label="Actions"] { grid-column: 1 / -1; }
   .data-table.stack-table td[data-label="Product"] { padding-right: 3rem; }
@@ -1068,7 +1066,7 @@ dialog.sheet--left[open] { animation: sheet-left-in var(--duration-moderate) cub
 }
 @media (max-width: 639px) {
   dialog.sheet:not(.sheet--left) { margin: auto 0 0; width: 100vw; max-width: 100vw; height: fit-content; max-height: 85dvh; border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
-  dialog.sheet:not(.sheet--left)[open] { animation: drawer-in var(--duration-moderate) cubic-bezier(0.2, 0.9, 0.3, 1); }
+  dialog.sheet:not(.sheet--left)[open] { animation: drawer-in var(--duration-moderate) var(--ease-enter); }
   dialog .actions { flex-direction: column-reverse; }
   dialog .actions .btn { width: 100%; height: 48px; }
   .toasts { left: 1rem; right: 1rem; bottom: calc(5rem + env(safe-area-inset-bottom)); }
@@ -1093,7 +1091,7 @@ dialog.sheet--left[open] { animation: sheet-left-in var(--duration-moderate) cub
   .topbar__toggles { flex-wrap: wrap; gap: 0.5rem 0.75rem; }
   main { padding-inline: 0.75rem; }
   .hero { padding: 1.25rem; }
-  .card, .panel-support, .panel-dark, .panel-tint { padding: 1rem; }
+  .card, .panel-support, .panel-dark { padding: 1rem; }
   .copy-pair { grid-template-columns: 1fr; gap: 0.25rem; }
   .cq-card { grid-template-columns: 1fr; }
   .sig-wrap { padding: 1rem; }

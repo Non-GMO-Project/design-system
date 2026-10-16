@@ -69,7 +69,7 @@ What is in `public/brand/` today. The showcase build checks this table against t
 
 Still needed:
 
-- `TODO(design): SVG versions of the remaining PNG and JPG files. Vector files exist for the Non-UPF Verified logo and primary seal and the Non-GMO Project Butterfly.`
+- `TODO(design): SVG versions of the files that are still raster only: the Non-GMO Project bilingual seals and white seal; the Non-UPF Verified color and white circular seals, white primary seal and color mark; and every Food Integrity Collective file. (The Non-GMO Project color and reversed logos and the Non-UPF Verified reversed logo are covered below.)`
 - `TODO(design): Food Integrity Project logo and mark as source vector files, in Cacao and reversed Birch. The SVGs in fip/ are traces of a 500px raster, made as an interim exception to the rule against redrawing logos, and their edges are slightly uneven when enlarged.`
 - `TODO(design): vector corporate logo in color (Monarch) and reversed (white); only the one-color black logo is vector. Confirm whether the outline Butterfly's #F18C20 should become Monarch #F18A00 (the filled Butterfly and avatar from #24 already use #F18A00). Say when to use the filled Butterfly rather than the outline one.`
 - `TODO(design): Non-UPF Verified logo in reversed (Birch). Color (Dragon Fruit) and one-color black versions exist. Also vector Dragon Fruit and white versions of the circular seal and the mark, and a vector white primary seal.`
@@ -78,7 +78,9 @@ Still needed:
 
 Other Non-UPF Verified artwork in `public/brand/nonupf/graphics/` (not logos, so not in the inventory above), one-color black `#231F20` vectors supplied in #22, all built around the program URL: `nonupf-graphic-url-vertical.svg` ("nonultraprocessed.org" set vertically with a small NON UPF), `nonupf-graphic-url-badge.svg` (the icon in a circle under an arc of "nonultraprocessed.org") and `nonupf-graphic-url-wave.svg` ("NONULTRAPROCESSED.ORG" on a wave with NON UPF). The badge includes the icon, so the rule on the icon alone applies to it. `TODO(design): say where these graphics may be used (social, merchandise, campaigns) and whether they need approval.`
 
-Other Collective artwork in `public/brand/collective/` (not logos, so not in the inventory above): `campaign/collective-campaign-nourish-life-badge.png` and `-light.png` (the "Food should nourish life" badge), and `illustrations/collective-petals-*.png` (the petals motif). All use the Collective's earlier colors, green `#255330` and lime `#E2E98D`, not Forest and Romanesco. `TODO(design): recolor to Forest and Romanesco, or confirm the earlier colors stay for Collective artwork.`
+Other Collective artwork in `public/brand/collective/` (not logos, so not in the inventory above): `campaign/collective-campaign-nourish-life-badge.png` and `collective-campaign-nourish-life-badge-light.png` (the "Food should nourish life" badge), and `illustrations/collective-petals-*.png` (the petals motif). All use the Collective's earlier colors, green `#255330` and lime `#E2E98D`, not Forest and Romanesco. `TODO(design): recolor to Forest and Romanesco, or confirm the earlier colors stay for Collective artwork.`
+
+Photography in `public/brand/fip/`: `fip-photo-butterfly-wing.jpg`, a close-up of a butterfly wing used as the photography background example in the showcase. `TODO(brand): record this photo's source, license and credit, as "Photography sourcing" in 01-brand-architecture.md requires, or replace it with a photo whose rights are on record.`
 
 "Program trademark kit" files came from the artwork folders each program sends licensees, received 2026-10-08. The kits also hold EPS, AI and full-size JPG files for print; those stay with the programs and are not stored here. `TODO(design): bilingual Non-GMO Project mark in white, and the French and FSIS marks, are not in the kit as web files.`
 
@@ -90,6 +92,8 @@ Program trademark guides (the rules for seal use on pack and in marketing). Each
 ## Naming
 
 `{brand}-{asset}-{lockup}-{tone}.{ext}`
+
+The lockup part is left out for a mark in its default form (`nongmo-mark-color.svg`).
 
 | Part | Values |
 |---|---|
