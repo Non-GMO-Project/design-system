@@ -27,7 +27,7 @@ How interfaces are built: the stack, which component to use for each kind of int
 
 - Add components with the shadcn CLI so they land in `components/ui/`.
 - Customize the copied component once, in that file, to match this system. Do not override styles at every call site.
-- Domain components (status badge, program chip, product card, endorsement lockup) live in `components/fip/` and are built from `components/ui/` pieces.
+- Domain components (status badge, program chip, product card, stepper, empty state) live in `components/fip/` and are built from `components/ui/` pieces. Brand asset components (`BrandLogo`, `CertificationSeal`, `EndorsementLockup`) live in `components/brand/` (see `04-logos-and-marks.md`).
 - Keep Radix accessibility behavior intact. Do not replace a Radix trigger with a `div`.
 
 ## Interaction types and which component to use
@@ -76,6 +76,7 @@ This table is the core of the framework. Find the interaction, use the component
 | Key numbers | `StatCard` | Number in `data` style, label, comparison period |
 | Status of a record | `StatusBadge` | Color + icon + label, always |
 | Which program a record belongs to | `ProgramChip` | See `01-brand-architecture.md` |
+| Show a logo, seal or endorsement | `BrandLogo`, `CertificationSeal`, `EndorsementLockup` | Never an `<img>` of a logo in feature code. See `04-logos-and-marks.md` |
 | Progress through a known amount of work | `Progress` | |
 | Steps in a process | `Stepper` (domain component) | Real sequences only |
 | History of events | `Timeline` (domain component) | |
@@ -89,7 +90,7 @@ This table is the core of the framework. Find the interaction, use the component
 | Switch between views of the same thing | `Tabs` | 2 to 6 tabs. Not for steps |
 | Show and hide sections in place | `Accordion` or `Collapsible` | For FAQs, settings groups, long forms |
 | Short hint on hover or focus | `Tooltip` | Non-essential only. Never put required information in a tooltip |
-| Richer preview on hover | `HoverCard` | Preview of a linked record |
+| Richer preview on hover | `HoverCard` | Preview of a linked record. Supplementary only: the link itself leads to the same information, and nothing in it is needed on touch or by keyboard |
 | Small interactive panel tied to a control | `Popover` | Filters, quick edits |
 | Focused task that blocks the page | `Dialog` | Short tasks. Title states the task |
 | Confirm a consequential choice | `AlertDialog` | Buttons repeat the action: "Delete product", not "OK" |
@@ -100,7 +101,7 @@ This table is the core of the framework. Find the interaction, use the component
 
 | Interaction | Component | Rules |
 |---|---|---|
-| App-level navigation (staff, portal) | `Sidebar` (shadcn) | Collapsible to icons; labels in tooltips when collapsed |
+| App-level navigation (staff, portal) | `Sidebar` (shadcn) | Collapsible to icons with an expand button; on touch screens it opens as a `Sheet` instead of collapsing (see `12-responsive.md`) |
 | Site navigation (public) | `NavigationMenu` | Top bar; collapses to `Sheet` on mobile |
 | Where am I in a hierarchy | `Breadcrumb` | Apps and deep content only |
 | Move through pages of results | `Pagination` | Show total count |
@@ -110,11 +111,11 @@ This table is the core of the framework. Find the interaction, use the component
 
 | Interaction | Component | Rules |
 |---|---|---|
-| Confirm something just happened | `Toast` (Sonner) | Past tense of the action: "Product submitted". Include Undo when possible |
+| Confirm something just happened | `Toast` (Sonner) | Past tense of the action: "Product submitted". Include Undo when possible; a toast with an action pauses on hover and focus and stays at least 10 seconds (see `08-accessibility.md`) |
 | A problem or notice tied to a page or section | `Alert` | Stays until resolved. Says what happened and what to do |
 | A problem with one field | Inline `FormMessage` | Under the field, linked with `aria-describedby` |
 | Loading content | `Skeleton` | Shape of the real content. Not for under 300ms |
-| Loading after an action | Button loading state | Spinner replaces icon, label stays, button disabled |
+| Loading after an action | Button loading state | Spinner replaces the icon and the label changes to the action in progress ("Submitting"). Use `aria-disabled="true"` and `aria-busy="true"`, not `disabled`, so focus stays on the button; announce the result when it finishes |
 | Nothing here yet | `EmptyState` (domain component) | Say what will appear and offer the action that creates it |
 
 ## Component rules
@@ -135,9 +136,9 @@ Button text is the `label` style: Quicksand 600, sentence case.
 | Size | Height | Use |
 |---|---|---|
 | `sm` | 32px | Dense tables and toolbars (desktop only) |
-| `default` | 40px | Everywhere |
+| `default` | 40px | Desktop and dense staff tools. On touch screens and public pages, use `lg` or keep a 44px hit area (see `08-accessibility.md`) |
 | `lg` | 48px | Public pages, mobile primary actions |
-| `icon` | 40 x 40 | Icon-only, with `aria-label` |
+| `icon` | 40 x 40 | Icon-only, with `aria-label`. 44 x 44 hit area on touch screens and public pages |
 
 States every interactive component must have: default, hover, focus-visible (ring), active/pressed, disabled, loading where relevant. Focus ring: 2px `--ring` with 2px offset, never removed.
 
@@ -159,9 +160,10 @@ Romanesco (Collective) and Monarch (Non-GMO Project) primary buttons are light f
 ```tsx
 <StatusBadge status="verified" />   // success colors, BadgeCheck icon, "Verified"
 <StatusBadge status="expiring" date="2026-12-01" />  // "Expires December 1, 2026"
+<StatusBadge status="verified" program="nongmo" date="2026-03-04" />  // "Verified by the Non-GMO Project · March 4, 2026"
 ```
 
-Uses `--status-*` tokens. The label is always visible text. Same component in every brand.
+`date` is the date the status took effect, or the expiry date for `expiring`. `program` adds the source, which `11-ux.md` requires wherever a status appears outside a single-program view. Uses `--status-*` tokens. The label is always visible text. Same component in every brand.
 
 ### ProgramChip
 
@@ -257,6 +259,8 @@ Page gutters: 16px mobile, 24px tablet, 32px desktop.
 
 **Loading.** Skeleton for content areas, spinner only inside buttons and small inline spots. Show skeletons only if loading takes more than 300ms.
 
+**Success state.** Say what happened in the past tense and offer the next step. A toast for small actions that leave the person where they are ("Product submitted"); an inline confirmation for a finished form section; a confirmation page for the end of a flow (enrollment, application), with what happens next, when and a primary action. Never a dead end.
+
 **Confirmation.** Destructive or hard-to-undo actions confirm with `AlertDialog`. Everything else acts immediately and offers Undo in the toast.
 
 **Search and filter.** Search input first, filter button opens a `Popover` (desktop) or `Sheet` (mobile), active filters show as removable chips, results count updates live with `aria-live="polite"`.
@@ -276,5 +280,5 @@ Flows, states and the UX definition of done live in `11-ux.md`.
 - Use the interaction table to choose components. Do not reach for a `Dialog` when the table says `Sheet`, or a `Select` when there are three options.
 - Build with `components/ui/` and `components/fip/`. Add missing shadcn components with the CLI rather than writing from scratch.
 - Every interactive element gets all states listed under Buttons, including visible focus.
-- Every async view gets loading, empty and error states.
+- Every async view gets loading, empty, error and success states.
 - Do not create new variants of a component for one screen. Add a variant to the component itself, or flag it.
