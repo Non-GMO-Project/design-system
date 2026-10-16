@@ -127,11 +127,13 @@ html.reduce-motion .btn .spin { animation-duration: 2.4s; }
   background: var(--brand-subtle); color: var(--foreground); border: 1px solid var(--brand-border);
   font-family: var(--font-accent); font-weight: 600; font-size: 0.8125rem; line-height: 1.6; white-space: nowrap;
 }
-.chip::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--brand-dark); }
+.chip::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--foreground); }
 /* Program chips: the program's signature fill with its paired foreground (4.5:1 or better for every brand). */
 .chip--program { background: var(--brand-signature); color: var(--brand-signature-foreground); border-color: transparent; }
 .chip--program::before { background: currentColor; }
 .chip--program.chip--removable button:hover { background: color-mix(in srgb, currentColor 18%, transparent); }
+/* The focus ring sits on the chip fill, so it takes the chip's text color (3:1 or better on every fill, light and dark). */
+.chip--program button:focus-visible { outline-color: var(--brand-signature-foreground); outline-offset: 0; }
 .chip--removable { padding-right: 0.25rem; }
 .chip--removable button { display: inline-grid; place-items: center; width: 20px; height: 20px; border: 0; border-radius: 999px; background: transparent; color: inherit; cursor: pointer; padding: 0; }
 .chip--removable button:hover { background: var(--accent); }
