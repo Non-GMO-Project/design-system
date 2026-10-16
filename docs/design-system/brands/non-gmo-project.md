@@ -6,7 +6,7 @@
 
 ## Who it speaks to
 
-Shoppers who look for the seal, brands and manufacturers seeking verification, Technical Administrators, retailers. Two shopper groups from earlier research: "Food as Medicine" (health and clean labels, cautious about technology) and "Agents of Intelligent Change" (younger, systemic impact, forward-looking).
+Shoppers who look for the Butterfly, participants (brands and manufacturers) seeking verification, Technical Administrators, retailers. Two shopper groups from earlier research: "Food as Medicine" (health and clean labels, cautious about technology) and "Agents of Intelligent Change" (younger, systemic impact, forward-looking).
 
 ## Personality
 
@@ -28,7 +28,7 @@ Forest carries type and structure; Monarch is reserved for a single point of emp
 
 ## Logos and seal
 
-`nongmo-logo-*` and `nongmo-seal-verified-*`. Four distinct assets: the organizational logo (butterfly + wordmark), the Verification Mark (the seal), the butterfly avatar for social profiles, and the trademarked Butterfly, used sparingly. The seal follows `../04-logos-and-marks.md` and the Trademark User Guide. In product lists use `StatusBadge status="verified"`; reserve the seal for verified product detail pages and seal education.
+`nongmo-logo-*` and `nongmo-seal-verified-*`. Four distinct assets: the organizational logo (butterfly + wordmark), the Verification Mark (the seal), the butterfly avatar for social profiles, and the trademarked Butterfly, used sparingly. The seal follows `../04-logos-and-marks.md` and the Trademark Use Guide. In product lists use `StatusBadge status="verified"`; reserve the seal for verified product detail pages and seal education.
 
 ## Typography
 
@@ -44,7 +44,7 @@ Fine-line botanical illustrations are a signature element, used with restraint b
 
 ## Voice
 
-Direct and reassuring. Active voice, plain language, short sentences. Explains what "verified" covers and what it does not. Avoids fear-based language about GMOs; states standards and facts. Messaging pillars: nature (humility), freedom (openness), change (positivity).
+Direct and reassuring. Active voice, plain language, short sentences. Explains what "Verified" covers and what it does not. Avoids fear-based language about GMOs; states standards and facts. Messaging pillars: nature (humility), freedom (openness), change (positivity).
 
 ## Motion
 
@@ -52,7 +52,7 @@ Shared system. The signature "Verified" moment may use a single Monarch flutter 
 
 ## Typical surfaces
 
-Product and brand finder, seal education pages, brand enrollment and verification flows, Non-GMO Project emails.
+Product and brand finder, mark education pages, brand enrollment and verification flows, Non-GMO Project emails.
 
 ## Do
 
@@ -63,5 +63,5 @@ Product and brand finder, seal education pages, brand enrollment and verificatio
 
 - Use Monarch as text, or for anything that could mean "warning".
 - Put Monarch and Dragon Fruit in the same layout. Program chips in multi-program views are the one exception.
-- Put the seal next to anything that is not currently verified.
+- Put the seal next to anything that is not currently Verified.
 - Use the retired orange `#DF7838` or eggplant `#221C35` in new work.

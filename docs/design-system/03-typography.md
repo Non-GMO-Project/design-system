@@ -105,7 +105,7 @@ Retired from the older guides: Copperplate (Non-GMO Project callouts) and system
 ## Tailwind usage
 
 ```tsx
-<p className="font-accent text-[0.8125rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Verified standards</p>
+<p className="font-accent text-[0.8125rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">How verification works</p>
 <h1 className="font-serif text-[2.5rem]/[1.08] font-medium">What verification covers</h1>
 <p className="max-w-[66ch] text-base/relaxed text-foreground">...</p>
 <span className="text-sm text-muted-foreground">Updated 3 days ago</span>

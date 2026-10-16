@@ -1,4 +1,4 @@
-# Food Integrity Project digital design system
+# Food Integrity Project Digital Design System
 
 This repository is the design system itself: Markdown docs, generated tokens, brand assets and a generated visual showcase.
 
@@ -17,7 +17,7 @@ This repository is the design system itself: Markdown docs, generated tokens, br
 
 ## Maintenance loop
 
-`.claude/skills/issue-review-loop/SKILL.md` defines how issues and direct commits to `main` are handled: clear issues from org members and collaborators are implemented and merged, unclear ones get questions, and direct edits that skipped the build are regenerated and followed up. Start it with `/loop 1h /issue-review-loop`; run one pass with `/issue-review-loop`.
+`.claude/skills/issue-review-loop/SKILL.md` defines how issues and direct commits to `main` are handled: clear issues from org members and collaborators are implemented and merged, unclear ones get questions and direct edits that skipped the build are regenerated and followed up. Start it with `/loop 1h /issue-review-loop`; run one pass with `/issue-review-loop`.
 
 ## Commands
 

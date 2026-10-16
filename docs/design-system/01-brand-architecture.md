@@ -1,6 +1,6 @@
 # Brand architecture
 
-The Food Integrity Project is the canopy over three symbiotic programs, each with its own audience and reputation. This file explains how the brands relate, what they share, what changes between them, and how to decide which brand an interface speaks for. Source: *Food Integrity Project Style Guide*, section 01.
+The Food Integrity Project is the canopy over three symbiotic programs, each with its own audience and reputation. This file explains how the brands relate, what they share, what changes between them and how to decide which brand an interface speaks for. Source: *Food Integrity Project Style Guide*, section 01.
 
 ## The family
 
@@ -28,7 +28,7 @@ Food Integrity Project                    parent, institutional voice
 
 ### Written reference
 
-- On first mention: "Non-GMO Project, a program of the Food Integrity Project." Afterwards, the program name alone.
+- On first mention: "Non-GMO Project, a program of the Food Integrity Project." Afterwards, the program name alone, or "the Project" for the Non-GMO Project.
 - Never hyphenate or abbreviate the parent to "FIP" in external copy. (`fip` is fine as an internal code name.)
 - Write "Non-GMO Project" and "Non-UPF Verified" exactly; expand "Non-UPF" (non-ultraprocessed food) the first time it appears on a page.
 
@@ -125,7 +125,7 @@ For headers or footers where the parent should be visible, use the lockups in `0
 
 Only on house-level surfaces. Rules:
 - Each program appears in its own container with its own `data-brand`.
-- Programs get equal size, equal weight, and a consistent order: Non-GMO Project, Non-UPF Verified, Food Integrity Collective. `TODO(brand): confirm order.`
+- Programs get equal size, equal weight and a consistent order: Non-GMO Project, Non-UPF Verified, Food Integrity Collective. `TODO(brand): confirm order.`
 - Never blend two program colors in one element, gradient or chart series.
 - **Monarch and Dragon Fruit never appear in the same layout,** except in program chips (see "Multi-program views"). On house-level pages, program cards show their seal or logo, their dark and their supporting tint; the signature colors stay inside each program's own pages. `TODO(brand): confirm this reading of "one program, one accent" for house-level pages.`
 
@@ -142,5 +142,5 @@ When a partner's product or logo appears (a verified product listing, a retailer
 - Before building, state the brand context you are using and why, based on the table above.
 - Set `data-brand` at the layout or route group level, not on individual components.
 - Never hard-code a program color to identify a program. Use `<ProgramChip />` or a nested `data-brand` wrapper.
-- Never write "FIP" in user-facing copy.
+- Never write "FIP", "NGP" or "FIC" in user-facing copy.
 - If a surface seems to need two brand contexts side by side and it is not a house-level page, stop and flag it.

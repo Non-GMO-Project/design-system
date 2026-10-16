@@ -40,7 +40,7 @@ This file wins any conflict with the rest of the design system, including the br
 
 ### Forms
 - Every input has a visible label linked with `for` / `id`.
-- Errors are text, linked with `aria-describedby`, announced, and say how to fix the problem.
+- Errors are text, linked with `aria-describedby`, announced and say how to fix the problem.
 - Do not ask for the same information twice in one flow (2.2 redundant entry).
 - Authentication must not rely on memory puzzles alone; support password managers and paste (2.2 accessible authentication).
 
@@ -60,7 +60,7 @@ This file wins any conflict with the rest of the design system, including the br
 - Session timeouts warn at least two minutes ahead and allow extension.
 
 ### Language
-- Plain language. Aim for a reading level around grade 8 on public pages.
+- Plain language. Aim for an 8th to 10th grade reading level (Flesch-Kincaid) on public pages (see `10-writing.md`).
 - Expand an abbreviation the first time it appears on a page (Non-UPF: non-ultraprocessed food; TA: Technical Administrator; GMO: genetically modified organism).
 
 ## Brand-specific risks

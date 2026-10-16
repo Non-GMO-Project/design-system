@@ -6,7 +6,7 @@ How layouts and components adapt from a 320px phone to a wide desktop. Shoppers 
 
 1. **Mobile first.** Start with the 320px layout, then add columns and chrome as space allows. Never design desktop first and squeeze.
 2. **Same content, same features.** A phone gets the same information and actions as a desktop, arranged differently. No "lite" versions and no "use a computer for this" dead ends.
-3. **Thumbs, not cursors.** Touch targets are large, primary actions sit within reach, and nothing depends on hover.
+3. **Thumbs, not cursors.** Touch targets are large, primary actions sit within reach and nothing depends on hover.
 4. **Components adapt to their container.** A card or table responds to the space it is given, using container queries, so it works in a sidebar, a sheet or a full page without special cases.
 5. **Fast on a mid-range phone on a slow connection.** Performance is part of responsive design, not a separate concern.
 
