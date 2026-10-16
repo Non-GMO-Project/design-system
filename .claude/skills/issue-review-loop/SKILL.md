@@ -178,7 +178,7 @@ After the merge, comment on the closed issue with:
 
 - what changed, by file
 - the visible effect in the showcase or participant pages
-- any `TODO`s left open
+- any open questions left, as links to their `question` issues (never as TODOs in the docs)
 - a link to the PR
 
 Someone reading the issue should understand the result without opening the PR.

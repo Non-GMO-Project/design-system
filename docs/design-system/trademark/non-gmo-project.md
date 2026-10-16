@@ -55,7 +55,7 @@ Also available from the Client Experience Team:
 | Clear space | Keep a space equal to the height of the capital "N" in "Non-GMO" on every side, measured from the white edge. No text or graphic may touch the Mark or enter that space. The space scales with the Mark |
 | Minimum size, English and French | 3/8 inch tall and 1/2 inch wide |
 | Minimum size, bilingual | 3/8 inch tall and 3/4 inch wide |
-| Minimum size, on screen | Large enough that the URL can be read. `TODO(brand): the guide sets print sizes only. The design system uses 72px wide on screen until the program confirms a digital minimum.` |
+| Minimum size, on screen | Large enough that the URL can be read. The guide sets print sizes only; the design system uses 72px wide on screen. |
 | Brand hierarchy | The Mark must never look like the name of your business or product. Keep it smaller than your own logo and lower in the layout |
 
 ## Color

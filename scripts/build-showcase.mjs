@@ -208,7 +208,7 @@ function build() {
     ["brands", "Brands", r.brands()],
   ];
   const todo = r.todos();
-  sections.push(["todos", `Open TODOs (${todo.count})`, todo.html], ["source", "Source documents", r.sources()]);
+  sections.push(["todos", "Open questions", todo.html], ["source", "Source documents", r.sources()]);
 
   const showcaseCss = readFileSync(join(root, "scripts/showcase/styles.css"), "utf8");
   const appJs = readFileSync(join(root, "scripts/showcase/app.js"), "utf8");

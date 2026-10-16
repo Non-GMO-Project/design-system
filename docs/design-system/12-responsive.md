@@ -111,8 +111,6 @@ Measured on a mid-range Android phone over a 4G connection.
 | Images below the fold | Lazy loaded |
 | Fonts | WOFF2, Latin and Latin Extended subsets only, `font-display: swap` |
 
-`TODO(dev): wire these budgets into CI with Lighthouse CI or a similar check.`
-
 ## Testing
 
 | Width | Represents | Check |

@@ -198,7 +198,6 @@ export function createRenderer(ctx) {
         </figure>`;
       })
       .join("");
-    const still = inv?.lists()[0];
     const ngpSeal = asset("nongmo", "seal-verified-color");
     const upfSeal = asset("nonupf", "seal-verified-color");
     const fipLogo = asset("fip", "logo-horizontal-color");
@@ -244,7 +243,6 @@ export function createRenderer(ctx) {
       `<h3>Two different things</h3>${tableOrWarn(d.section(/^Two different things/)?.tables()[0], f, "Logos")}
       <h3>Asset inventory</h3><p class="prose">Every file listed in the doc, rendered from <code>public/brand/</code>. Light files sit on the brand dark.</p>
       <div class="grid" style="--min:220px">${cards}</div>
-      ${still ? `<h4>Still needed</h4>${render([still])}` : ""}
       ${byApp ? `<h3>Logo by application</h3>${render(byApp.blocks)}` : ""}
       <h3>Endorsement lockups</h3>
       <div class="split">${horiz}${stacked}</div>
@@ -1117,15 +1115,16 @@ export function createRenderer(ctx) {
 
   // ---------- TODOs and source ----------
   function todos() {
-    const items = [];
+    // Open questions live in GitHub issues labeled `question`, not in the docs. Flag any TODO item that slips back in.
     for (const [file, d] of Object.entries(docs)) {
-      for (const m of d.raw.matchAll(/`?TODO\((\w+)\):\s*([^`\n]+)`?/g)) items.push({ file, kind: m[1], text: m[2].trim() });
+      for (const line of d.raw.split("\n")) {
+        if (/^\| 0\.\d+ \|/.test(line)) continue; // changelog rows describe past TODOs
+        for (const m of line.matchAll(/TODO\((design|brand|dev)\):\s*([A-Za-z][^`\n]*)/g))
+          check("warn", "Open questions", `TODO in the docs: "${m[2].trim().slice(0, 80)}". Open a \`question\` issue instead`, file);
+      }
     }
-    const kinds = [...new Set(items.map((i) => i.kind))].sort();
-    const body = kinds
-      .map((k) => `<h3>${esc(k)} <span class="muted small">${items.filter((i) => i.kind === k).length}</span></h3><ul class="todo-list">${items.filter((i) => i.kind === k).map((i) => `<li>${inline(i.text)} <a class="small" href="#doc-${slug(i.file)}">${esc(i.file)}</a></li>`).join("")}</ul>`)
-      .join("");
-    return { html: `<section class="ds-section" id="todos" aria-labelledby="todos-h"><p class="eyebrow">Open decisions</p><h2 id="todos-h">Open TODOs</h2><p class="prose">${items.length} markers across the docs. Run <code>npm run todos</code> for file and line numbers.</p>${body}</section>`, count: items.length };
+    const url = "https://github.com/Non-GMO-Project/design-system/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion";
+    return { html: `<section class="ds-section" id="todos" aria-labelledby="todos-h"><p class="eyebrow">Open decisions</p><h2 id="todos-h">Open questions</h2><p class="prose">Decisions still needed, files still to come and implementation steps are tracked as GitHub issues labeled <code>question</code>, each with links to the doc and showcase sections it affects. Answer in the issue and the docs are updated from there.</p><p><a class="btn btn--secondary" href="${url}" target="_blank" rel="noopener">${icon("contact.message")}Open questions on GitHub<span class="sr-only"> (opens in a new tab)</span></a></p></section>` };
   }
 
   function sources() {

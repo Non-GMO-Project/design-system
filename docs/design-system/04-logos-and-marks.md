@@ -67,22 +67,15 @@ What is in `public/brand/` today. The showcase build checks this table against t
 | `collective/collective-mark-mono-dark.png` | collective | mark | mono-dark | Black mark |
 | `collective/collective-mark-mono-light.png` | collective | mark | mono-light | White mark |
 
-Still needed:
+Files still to come (reversed logos, vector versions of raster files, endorsement lockups) are tracked as `question` issues on GitHub.
 
-- `TODO(design): SVG versions of the files that are still raster only: the Non-GMO Project bilingual seals and white seal; the Non-UPF Verified color and white circular seals, white primary seal and color mark; and every Food Integrity Collective file. (The Non-GMO Project color and reversed logos and the Non-UPF Verified reversed logo are covered below.)`
-- `TODO(design): Food Integrity Project logo and mark as source vector files, in Cacao and reversed Birch. The SVGs in fip/ are traces of a 500px raster, made as an interim exception to the rule against redrawing logos, and their edges are slightly uneven when enlarged.`
-- `TODO(design): vector corporate logo in color (Monarch) and reversed (white); only the one-color black logo is vector. Confirm whether the outline Butterfly's #F18C20 should become Monarch #F18A00 (the filled Butterfly and avatar from #24 already use #F18A00). Say when to use the filled Butterfly rather than the outline one.`
-- `TODO(design): Non-UPF Verified logo in reversed (Birch). Color (Dragon Fruit) and one-color black versions exist. Also vector Dragon Fruit and white versions of the circular seal and the mark, and a vector white primary seal.`
-- `TODO(design): Food Integrity Collective lockup in color (Forest) for Birch backgrounds. Only the light version exists. The older guide called the symbol the umbrella mark; confirm it now belongs to the Collective.`
-- `TODO(design): endorsement lockup files (horizontal and stacked) for each program.`
+Other Non-UPF Verified artwork in `public/brand/nonupf/graphics/` (not logos, so not in the inventory above), one-color black `#231F20` vectors supplied in #22, all built around the program URL: `nonupf-graphic-url-vertical.svg` ("nonultraprocessed.org" set vertically with a small NON UPF), `nonupf-graphic-url-badge.svg` (the icon in a circle under an arc of "nonultraprocessed.org") and `nonupf-graphic-url-wave.svg` ("NONULTRAPROCESSED.ORG" on a wave with NON UPF). The badge includes the icon, so the rule on the icon alone applies to it.
 
-Other Non-UPF Verified artwork in `public/brand/nonupf/graphics/` (not logos, so not in the inventory above), one-color black `#231F20` vectors supplied in #22, all built around the program URL: `nonupf-graphic-url-vertical.svg` ("nonultraprocessed.org" set vertically with a small NON UPF), `nonupf-graphic-url-badge.svg` (the icon in a circle under an arc of "nonultraprocessed.org") and `nonupf-graphic-url-wave.svg` ("NONULTRAPROCESSED.ORG" on a wave with NON UPF). The badge includes the icon, so the rule on the icon alone applies to it. `TODO(design): say where these graphics may be used (social, merchandise, campaigns) and whether they need approval.`
+Other Collective artwork in `public/brand/collective/` (not logos, so not in the inventory above): `campaign/collective-campaign-nourish-life-badge.png` and `collective-campaign-nourish-life-badge-light.png` (the "Food should nourish life" badge), and `illustrations/collective-petals-*.png` (the petals motif). All use the Collective's earlier colors, green `#255330` and lime `#E2E98D`, not Forest and Romanesco.
 
-Other Collective artwork in `public/brand/collective/` (not logos, so not in the inventory above): `campaign/collective-campaign-nourish-life-badge.png` and `collective-campaign-nourish-life-badge-light.png` (the "Food should nourish life" badge), and `illustrations/collective-petals-*.png` (the petals motif). All use the Collective's earlier colors, green `#255330` and lime `#E2E98D`, not Forest and Romanesco. `TODO(design): recolor to Forest and Romanesco, or confirm the earlier colors stay for Collective artwork.`
+Photography in `public/brand/fip/`: `fip-photo-butterfly-wing.jpg`, a close-up of a butterfly wing used as the photography background example in the showcase. Its source, license and credit are not on record yet, as "Photography sourcing" in `01-brand-architecture.md` requires.
 
-Photography in `public/brand/fip/`: `fip-photo-butterfly-wing.jpg`, a close-up of a butterfly wing used as the photography background example in the showcase. `TODO(brand): record this photo's source, license and credit, as "Photography sourcing" in 01-brand-architecture.md requires, or replace it with a photo whose rights are on record.`
-
-"Program trademark kit" files came from the artwork folders each program sends licensees, received 2026-10-08. The kits also hold EPS, AI and full-size JPG files for print; those stay with the programs and are not stored here. `TODO(design): bilingual Non-GMO Project mark in white, and the French and FSIS marks, are not in the kit as web files.`
+"Program trademark kit" files came from the artwork folders each program sends licensees, received 2026-10-08. The kits also hold EPS, AI and full-size JPG files for print; those stay with the programs and are not stored here. The bilingual mark in white and the French and FSIS marks are not in the kit as web files.
 
 Program trademark guides (the rules for seal use on pack and in marketing). Each program also has a trademark usage page in this system, written for participants: `trademark/non-gmo-project.md` and `trademark/non-upf-verified.md`, published as standalone pages at `trademark/non-gmo-project.html` and `trademark/non-upf-verified.html`:
 
@@ -139,18 +132,14 @@ Which artwork and which file to use for each application, by program. Sizes are 
 
 Square icons and share images are made by placing the official file on a Birch or brand-dark background. That is layout, not redrawing: never change the artwork itself.
 
-`TODO(design): export the favicon, touch icon, app icon and share image PNGs for each brand, and confirm each mark still reads at 16px (favicons sit below the 24px mark minimum) or supply a simplified favicon.`
-
-`TODO(design): watermark opacity and placement.`
-
 ### Food Integrity Project
 
 | Application | File |
 |---|---|
 | Favicon, touch and app icons, social avatar | `fip/fip-mark-color.svg` on Birch |
 | Header, share image | `fip/fip-logo-horizontal-color.svg`; `fip/fip-mark-color.svg` in narrow headers |
-| Footer and email | `fip/fip-logo-horizontal-color.svg` on Birch. `TODO(design): a transparent PNG for email; the PNG in fip/ has a white background` |
-| Dark grounds, photography, watermark | `TODO(design)`: no reversed or one-color files yet (see "Still needed") |
+| Footer and email | `fip/fip-logo-horizontal-color.svg` on Birch. No transparent PNG for email yet; the PNG in `fip/` has a white background |
+| Dark grounds, photography, watermark | No reversed or one-color files yet |
 
 ### Non-GMO Project
 
@@ -170,20 +159,20 @@ Square icons and share images are made by placing the official file on a Birch o
 | Application | File |
 |---|---|
 | Favicon, touch and app icons | `nonupf/nonupf-mark-color.png`, or `nonupf/nonupf-mark-mono-dark.svg` for a one-color favicon. These are the only places the icon alone is approved |
-| Social avatar | `TODO(brand): approve the icon for social avatars, or name the file to use` |
+| Social avatar | Not set yet. The icon alone is approved only for favicons and app icons |
 | Header, share image | `nonupf/nonupf-logo-horizontal-color.svg` on Birch. In narrow headers keep the logo at 120px or wider, since the icon alone needs approval |
 | Footer | `nonupf/nonupf-logo-horizontal-color.svg` on Birch, until a reversed logo exists |
-| Email header | `TODO(design): a PNG of the logo for email clients that block SVG` |
+| Email header | No PNG of the logo yet for email clients that block SVG |
 | Watermark, one-color | `nonupf/nonupf-logo-horizontal-mono-dark.svg` |
 | Product page seal | `nonupf/nonupf-seal-verified-color.svg`; `nonupf/nonupf-seal-verified-mono-light.png` on dark grounds; `nonupf/nonupf-seal-circular-color.png` only where the primary cannot fit; `nonupf/nonupf-seal-verified-color.png` in email |
-| Dark grounds, photography | `TODO(design)`: no reversed logo yet (see "Still needed") |
+| Dark grounds, photography | No reversed logo yet |
 
 ### Food Integrity Collective
 
 | Application | File |
 |---|---|
 | Favicon, touch and app icons, social avatar | `collective/collective-mark-color.png` on Birch, or `collective/collective-mark-mono-light.png` on Forest |
-| Header, share image | `collective/collective-logo-horizontal-mono-light.png` on Forest. On Birch, `TODO(design)`: no color lockup yet (see "Still needed") |
+| Header, share image | `collective/collective-logo-horizontal-mono-light.png` on Forest. No color lockup for Birch yet |
 | Footer and email header | `collective/collective-logo-horizontal-mono-light.png` on Forest (1501px wide) |
 | Watermark, one-color | `collective/collective-mark-mono-dark.png`, or `collective/collective-mark-mono-light.png` on dark grounds |
 | On photography | `collective/collective-mark-mono-light.png` |
@@ -214,7 +203,7 @@ Until lockup files exist, the `EndorsementLockup` component places the two offic
 
 | Asset | Screen minimum | Print minimum |
 |---|---|---|
-| Non-GMO Project Verified Mark | 72px wide `TODO(brand): the program sets print sizes only` | 3/8 in tall and 1/2 in wide |
+| Non-GMO Project Verified Mark | 72px wide (the program sets print sizes only) | 3/8 in tall and 1/2 in wide |
 | Non-GMO Project bilingual Mark | 72px wide | 3/8 in tall and 3/4 in wide |
 | Non-UPF Verified primary (rectangular) seal | 80px wide | 3/8 in tall and 1/2 in wide |
 | Parent mark (Food Integrity Project) | 96px wide | 0.75 in (19 mm) wide |
@@ -269,9 +258,7 @@ Behavior:
 - Picks the file from the naming scheme, so a missing asset fails loudly in development.
 - Enforces minimum sizes.
 - Sets alt text from the table above.
-- If the asset file does not exist yet, renders a neutral placeholder box with the brand name and a `TODO(design)` console warning. It never generates artwork.
-
-`TODO(dev): build BrandLogo, CertificationSeal and EndorsementLockup in components/brand/.`
+- If the asset file does not exist yet, renders a neutral placeholder box with the brand name and a console warning. It never generates artwork.
 
 ## Rules for Claude Code
 

@@ -12,7 +12,7 @@ This repository is the design system itself: Markdown docs, generated tokens, br
 - Semantic token mappings live in the CSS blocks of `09-tokens.md`.
 - A PostToolUse hook in `.claude/settings.json` rebuilds the showcase after every edit to a doc, the palette config, the showcase scripts or `public/brand/`. If it reports build-check errors (contrast, palette drift, missing assets, unknown icons, undefined tokens), fix them before finishing.
 - The showcase parses the docs' tables by heading and column name. When renaming a heading or a table column in a doc, update the matching lookup in `scripts/showcase/render.mjs`, or the build reports the section as missing.
-- Brand values come from the *Food Integrity Project Style Guide* (draft for review). Where it is silent, leave a `TODO(design)` or `TODO(brand)` rather than inventing a value.
+- Brand values come from the *Food Integrity Project Style Guide* (draft for review). Where it is silent, don't invent a value and don't add a TODO to the docs: open a GitHub issue labeled `question` with the context and links to the doc and showcase sections. Open questions live only in GitHub issues.
 - Logos and seals in `public/brand/` are official files. Never redraw, recolor or generate artwork. Add new files to the asset inventory in `04-logos-and-marks.md`.
 
 ## Maintenance loop

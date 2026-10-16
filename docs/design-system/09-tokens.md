@@ -711,7 +711,3 @@ The raw palette is deliberately **not** exposed as Tailwind utilities (no `bg-mo
 - Palette: `--{name}-{step}`. Lowercase, the official color name, steps 50 to 950 (`--dark-matter-950`, `--milkweed-600`).
 - Semantic: `--{role}` or `--{role}-{part}`. Named for the job, never the hue (`--brand-signature`, not `--orange`).
 - New tokens get added here first, then documented in the file that owns the topic.
-
-## Exporting for design tools
-
-`TODO(design): if the team uses Figma variables, export this file to the W3C Design Tokens format (tokens.json) so Figma and code stay in sync. Tokens Studio or Style Dictionary can do the round trip.`

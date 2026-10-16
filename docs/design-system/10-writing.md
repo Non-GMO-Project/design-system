@@ -94,7 +94,7 @@ Terms are listed alphabetically by the word to use. "Not" lists the words that a
 | Non-GMO Month | Non-GMO month | Capitalize "Month" for the event in October |
 | Non-GMO Project, then the Project | NGP, the project | Capitalize the full name and the "P" in "the Project". Never "NGP" for external audiences |
 | Non-GMO Project Standard, then the Standard | the standard (for ours) | Capitalize the full name and "the Standard" |
-| Non-GMO Project Verified | GMO-free, non-GMO certified | Verification is not a "GMO-free" claim. `TODO(brand): confirm wording with the Standards team.` |
+| Non-GMO Project Verified | GMO-free, non-GMO certified | Verification is not a "GMO-free" claim. |
 | Non-GMO Project Verified mark, then the verification mark or the mark | the seal, the logo (in copy) | Full term on first use. The same pattern for the Non-UPF Verified mark |
 | non-GMO | Non-GMO, nonGMO | Hyphenated, lowercase "non" unless it starts a sentence: "non-GMO commodities" |
 | nonprofit | non-profit | One word |
@@ -169,7 +169,7 @@ Terms are listed alphabetically by the word to use. "Not" lists the words that a
 
 ## Translation
 
-Spanish and French are the likely first languages after English. Write so translation is easy: full sentences, no text baked into images, room for 30% longer strings in layouts. `TODO(brand): confirm target languages and a translation workflow.`
+Spanish and French are the likely first languages after English. Write so translation is easy: full sentences, no text baked into images, room for 30% longer strings in layouts.
 
 ## Rules for Claude Code
 
@@ -179,4 +179,4 @@ Spanish and French are the likely first languages after English. Write so transl
 - Use the brand voice from the table for the surface's brand context.
 - Write dates and times in the format above: "December 3 at 6 pm Pacific". No serial comma.
 - Never write "FIP", "NGP" or another program abbreviation in user-facing text.
-- Never write a verification or health claim the data does not support. If unsure, ask and leave a `TODO(brand)`.
+- Never write a verification or health claim the data does not support. If unsure, ask, and open a `question` issue rather than guessing.
