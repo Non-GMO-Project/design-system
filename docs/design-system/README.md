@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.31 (draft for review)
+**Version:** 0.32 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -167,6 +167,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.32 | 2026-10-16 | Chart colors pass 3:1 everywhere (#36). Orange, sky blue and reddish purple are darkened in light mode so they reach 3:1 on Birch and Frost, replacing the outline-or-pattern workaround. New dark-mode chart values: the published Okabe-Ito orange, sky blue and purple, lighter bluish green, blue and vermillion, Stone 400 for "other", and `--chart-1` one or two steps up each brand scale, so charts no longer have to sit on the page background. Chart colors are named tokens (`--chart-orange` and the rest) and `--chart-2` to `--chart-8` map onto them; Non-GMO Project charts move orange to the end of the order because it sits next to Monarch. The build now checks every chart token against the page and cards in every brand and mode. `02` documents both sets and the order; the dark-mode TODO is closed |
 | 0.31 | 2026-10-16 | New "Logo by application" section in `04` (#58): the platform size and format for each application (favicon, Apple touch icon, web app and app store icons, social avatar, share image, header, footer, email header, watermark, product page seal, on photography), then one table per brand naming the file to use for each. Gaps are TODOs: icon and share-image PNG exports, a 16px favicon check, watermark opacity, a Non-UPF Verified social avatar (the icon alone is approved only for favicons and app icons), a Non-UPF Verified email PNG, and a transparent parent PNG for email. The showcase Logos section shows it |
 | 0.30 | 2026-10-16 | The signature moment is no longer tied to verification (#54). It marks any milestone a person has worked toward, such as a product turning Verified, a member joining, a registration or a completed donation; routine saves and small confirmations still use `status-change` or a toast. Same sequence, timing and brand glow. `07` has a table of example events, and the Food Integrity Project, Collective and Non-UPF Verified profiles match. The showcase demo now has all four brands, each with its own example event |
 | 0.29 | 2026-10-16 | Removed "Research and measurement" from `11-ux.md` and the showcase UX section (#55), with its TODO about analytics tooling and success metrics |

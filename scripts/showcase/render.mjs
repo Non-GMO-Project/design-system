@@ -392,12 +392,12 @@ export function createRenderer(ctx) {
 
     // Chart with a data table alternative.
     const series = [42, 35, 28, 24, 19, 15, 11, 8];
-    const chartRows = rowsOf(d.section(/^Data visualization$/)?.table("Order", "Color"));
+    const dataviz = d.section(/^Data visualization$/);
     const chart = `<div class="split"><figure style="margin:0"><svg viewBox="0 0 400 200" role="img" aria-labelledby="chart-t" style="width:100%;height:auto"><title id="chart-t">Example categorical bar chart using chart-1 to chart-8</title>
       ${series.map((v, i) => `<rect x="${12 + i * 48}" y="${190 - v * 4}" width="36" height="${v * 4}" rx="3" fill="var(--chart-${i + 1})"/><text x="${30 + i * 48}" y="${184 - v * 4}" text-anchor="middle" font-size="11" fill="currentColor">${v}</text>`).join("")}
       <line x1="0" y1="190" x2="400" y2="190" stroke="var(--border)"/></svg><figcaption class="small muted">Series 1 follows the brand. Switch brands to see it change.</figcaption></figure>
       <div class="table-wrap"><table><thead><tr><th scope="col">Series</th><th scope="col">Color</th><th scope="col" class="num">Value</th></tr></thead><tbody>${series
-        .map((v, i) => `<tr><td>Series ${i + 1}</td><td><span class="tok"><i style="background:var(--chart-${i + 1})"></i>${inline(chartRows[i]?.color ?? `--chart-${i + 1}`)}</span></td><td class="num">${v}</td></tr>`)
+        .map((v, i) => `<tr><td>Series ${i + 1}</td><td><span class="tok"><i style="background:var(--chart-${i + 1})"></i><code>--chart-${i + 1}</code></span></td><td class="num">${v}</td></tr>`)
         .join("")}</tbody></table></div></div>`;
 
     return section(
@@ -411,7 +411,7 @@ export function createRenderer(ctx) {
       <h3>Status and verification</h3><p class="prose">Status never changes by brand and never relies on color alone.</p><div class="row">${certBadges}</div><p class="small muted">Other statuses, for applications, agreements and other processes</p><div class="row">${otherBadges}</div>
       <h3>Approved text pairings</h3><div class="grid" style="--min:170px">${pairs}</div>
       <h3>Gradients</h3><div class="grid" style="--min:240px">${gradients}</div>
-      <h3>Data visualization</h3>${chart}`,
+      <h3>Data visualization</h3>${chart}${tableOrWarn(dataviz?.table("Color", "Token"), f, "Color")}${tableOrWarn(dataviz?.table("Brand", "Series order"), f, "Color")}`,
       `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
     );
   }
@@ -435,6 +435,10 @@ export function createRenderer(ctx) {
     ["Input border on page", "--input", "--background", 3],
     ["Input border on field", "--input", "--field", 3],
     ["Focus ring", "--ring", "--background", 3],
+    ...[1, 2, 3, 4, 5, 6, 7, 8].flatMap((n) => [
+      [`Chart ${n} on page`, `--chart-${n}`, "--background", 3],
+      [`Chart ${n} on cards`, `--chart-${n}`, "--card", 3],
+    ]),
     ...["success", "warning", "danger", "info", "neutral"].flatMap((s) => [
       [`Status ${s} text`, `--status-${s}-fg`, `--status-${s}-bg`, 4.5],
       [`Status ${s} icon`, `--status-${s}-icon`, `--status-${s}-bg`, 3],

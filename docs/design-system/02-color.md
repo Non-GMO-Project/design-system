@@ -378,22 +378,29 @@ Rules:
 
 ## Data visualization
 
-Charts need more distinguishable colors than a brand palette can give. Use this categorical set, based on the Okabe-Ito palette, which stays distinguishable for the most common forms of color blindness.
+Charts need more distinguishable colors than a brand palette can give. Use this categorical set, based on the Okabe-Ito palette, which stays distinguishable for the most common forms of color blindness. Series take `--chart-1` to `--chart-8` in order; the brand series is always first, so charts feel on-brand.
 
-| Order | Color | Note |
-|---|---|---|
-| 1 | `--chart-1` | Brand series: Milkweed Leaf, Monarch 500, Dragon Fruit, or Corn Flower 600. Always first, so charts feel on-brand |
-| 2 | `#E69F00` | Orange |
-| 3 | `#56B4E9` | Sky blue |
-| 4 | `#009E73` | Bluish green |
-| 5 | `#0072B2` | Blue |
-| 6 | `#D55E00` | Vermillion |
-| 7 | `#CC79A7` | Reddish purple |
-| 8 | `stone-500` | "Other" and comparison series |
+| Color | Token | Light | Dark |
+|---|---|---|---|
+| Brand series | `--chart-1` | Milkweed Leaf 600, Monarch 500, Dragon Fruit 600 or Corn Flower 600 | Milkweed Leaf 500, Monarch 400, Dragon Fruit 500 or Corn Flower 500 |
+| Orange | `--chart-orange` | `#C17D00` | `#E69F00` |
+| Sky blue | `--chart-sky` | `#3294C8` | `#56B4E9` |
+| Bluish green | `--chart-green` | `#009E73` | `#06A074` |
+| Blue | `--chart-blue` | `#0072B2` | `#3692D5` |
+| Vermillion | `--chart-vermillion` | `#D55E00` | `#E1691A` |
+| Reddish purple | `--chart-purple` | `#C4719F` | `#CC79A7` |
+| Other and comparison | `--chart-other` | `stone-500` | `stone-400` |
+
+| Brand | Series order |
+|---|---|
+| Food Integrity Project, Non-UPF Verified, Food Integrity Collective | Brand, orange, sky blue, bluish green, blue, vermillion, reddish purple, other |
+| Non-GMO Project | Brand, sky blue, bluish green, blue, vermillion, reddish purple, orange, other. Orange sits too close to Monarch, so it moves to the end |
+
+In Non-UPF Verified charts, reddish purple is close to Dragon Fruit; it is already the last categorical color, so it only appears in charts with seven or more series.
 
 Rules: label series directly where possible instead of relying on a legend; use one brand ramp for sequential data (low = 200, high = 800); use the status sets only when the chart is literally about status.
 
-**Contrast.** Chart marks need 3:1 against the surface they sit on (WCAG 1.4.11), which is why Monarch and Corn Flower step down for `--chart-1`. Three of the categorical colors fall short on Birch: orange `#E69F00` (2.2:1), sky blue `#56B4E9` (2.3:1) and reddish purple `#CC79A7` (3.0:1, just under). When a chart uses any of them, give those marks a 1px outline in `--foreground` (or a pattern) and label the series directly, so no reading depends on the fill alone. In dark mode the same rule applies against the dark page: blue `#0072B2` falls to 2.7:1 on Forest, and most series fall below 3:1 on dark cards, so place charts on the page background in dark mode. `TODO(design): decide whether the chart set gets dark-mode values.`
+**Contrast.** Chart marks need 3:1 against the surface they sit on (WCAG 1.4.11). Every chart color passes 3:1 on the page and on cards in every brand, in light and dark mode, and the build checks it. To get there, the light set darkens three published Okabe-Ito values that fell short on Birch and Frost: orange (`#E69F00`), sky blue (`#56B4E9`) and reddish purple (`#CC79A7`). The dark set keeps those three at their published values and lightens bluish green, blue and vermillion, and `--chart-1` steps up the brand scale. Still label series directly, so no reading depends on color alone.
 
 ## How the scales were built
 
