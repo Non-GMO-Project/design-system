@@ -44,7 +44,7 @@ The voice is the personality; it stays the same. Tone (below) shifts with the si
 | Success | Brief, past tense, no fanfare | "Product submitted for review." |
 | Verification granted | Proud but plain. This is the one moment that may celebrate | "Heritage Rolled Oats is Non-GMO Project Verified. You can now use the verification mark on pack." |
 | Verification denied or not eligible | Respectful, factual, with a path forward | "Cultured Oat Butter is not eligible yet. One ingredient, natural flavor, has no supplier documentation. Add it and we will review again." |
-| Lapsed or expiring | Clear dates, no blame | "Verification for Sprouted Lentil Pasta expires December 1, 2026. Renew before then to keep the mark on pack." |
+| Expiring, on hold or terminated | Clear dates, no blame | "Verification for Sprouted Lentil Pasta expires December 1, 2026. Renew before then to keep the mark on pack." |
 | Errors | Calm, specific, fixable. Never "Oops" | "We could not upload the spec sheet. The file is larger than 20 MB. Compress it or upload a PDF instead." |
 | Waiting | Honest about time | "Most reviews finish in 4 to 6 weeks. We will email you at each step." |
 | Fundraising | Grounded, specific about impact | "Your gift funds independent testing of 40 products this year." |
@@ -64,7 +64,7 @@ The voice is the personality; it stays the same. Tone (below) shifts with the si
 | Link text | Read the Non-GMO Project Standard | Click here | Link text makes sense out of context |
 | Help text | 12 digits, no spaces. | Please ensure that the UPC you enter is formatted correctly. | Example of the format, not a warning |
 | Loading | Loading products | Please wait... | Names what is loading |
-| Status label | Expires December 1, 2026 | Expiring soon!! | A date is more useful than urgency |
+| Status label | Verified, expires December 1, 2026 | Expiring soon!! | A date is more useful than urgency |
 | Event time | December 3 at 6 pm Pacific | 12/3 @ 6:00 PM PST | The date and time format from the grammar table |
 | AI content | AI summary · Check against the source document | (no label) | AI-generated content is always disclosed |
 

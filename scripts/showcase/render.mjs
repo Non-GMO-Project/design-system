@@ -34,13 +34,20 @@ export function createRenderer(ctx) {
   const statusSets = { success: "success", warning: "warning", danger: "danger", info: "info", neutral: "neutral", stone: "neutral" };
   const certRows = rowsOf(docs["02-color.md"]?.section(/^Verification status$/)?.table("Verification state", "Status set"));
   if (!certRows.length) check("error", "Color", `"Verification status" table not found`, "02-color.md");
+  const otherRows = rowsOf(docs["02-color.md"]?.section(/^Other statuses$/)?.table("State", "Status set"));
+  if (!otherRows.length) check("warn", "Color", `"Other statuses" table not found`, "02-color.md");
+  const stateOf = (r) => plain(r["verification state"] ?? r.state).toLowerCase();
+  // Expiry is shown on a Verified badge, not as a status of its own (see 02, "Verification status").
+  const expiring = { "status set": "warning", icon: "status.expiring", label: "Verified, expires December 1, 2026" };
   const badge = (row) => {
     const set = statusSets[plain(row["status set"]).toLowerCase()] ?? "neutral";
     return `<span class="badge badge--${set}">${icon(plain(row.icon), "icon")}${esc(plain(row.label))}</span>`;
   };
   const cert = (state) => {
-    const row = certRows.find((r) => plain(r["verification state"]).toLowerCase().startsWith(state)) ?? certRows.find((r) => plain(r["verification state"]).toLowerCase().includes(state));
-    if (!row) check("warn", "Color", `Verification status "${state}" is used by the showcase but not in the Verification status table`, "02-color.md");
+    if (state === "expiring") return expiring;
+    const all = [...certRows, ...otherRows];
+    const row = all.find((r) => stateOf(r).startsWith(state)) ?? all.find((r) => stateOf(r).includes(state));
+    if (!row) check("warn", "Color", `Status "${state}" is used by the showcase but not in the Verification status or Other statuses tables`, "02-color.md");
     return row ?? { "status set": "neutral", icon: "status.info", label: state };
   };
 
@@ -241,7 +248,7 @@ export function createRenderer(ctx) {
       </div>
       ${sizes ? render(sizes.blocks) : ""}
       <h3>Backgrounds</h3><div class="grid" style="--min:200px">${bgDemos}</div>
-      ${never ? `<h3>Never</h3><div class="do-dont"><div class="dont"><h4>${icon("status.lapsed", "icon")}Never</h4>${render([never])}</div></div>` : ""}`,
+      ${never ? `<h3>Never</h3><div class="do-dont"><div class="dont"><h4>${icon("status.terminated", "icon")}Never</h4>${render([never])}</div></div>` : ""}`,
       `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
     );
   }
@@ -327,7 +334,8 @@ export function createRenderer(ctx) {
         .join("")}</tbody></table></div>`;
 
     // Status and verification.
-    const certBadges = certRows.map((r) => badge(r)).join("");
+    const certBadges = [...certRows, expiring].map((r) => badge(r)).join("");
+    const otherBadges = otherRows.map((r) => badge(r)).join("");
 
     // Approved pairings: tiles plus a recomputed ratio.
     const pairRows = rowsOf(d.section(/^Approved text pairings$/)?.table("Text", "On", "Ratio"));
@@ -391,7 +399,7 @@ export function createRenderer(ctx) {
       <h3>Tonal scales</h3><p class="prose small">The outlined step is the official color, kept exact. Ratios are against Birch.</p>${scales}
       <h3>Brand token mapping, light</h3>${matrix(false)}
       <h3>Brand token mapping, dark</h3>${matrix(true)}
-      <h3>Status and verification</h3><p class="prose">Status never changes by brand and never relies on color alone.</p><div class="row">${certBadges}</div>
+      <h3>Status and verification</h3><p class="prose">Status never changes by brand and never relies on color alone.</p><div class="row">${certBadges}</div><p class="small muted">Other statuses, for applications, agreements and other processes</p><div class="row">${otherBadges}</div>
       <h3>Approved text pairings</h3><div class="grid" style="--min:170px">${pairs}</div>
       <h3>Gradients</h3><div class="grid" style="--min:240px">${gradients}</div>
       <h3>Data visualization</h3>${chart}`,
@@ -574,13 +582,13 @@ export function createRenderer(ctx) {
       })
       .join("");
 
-    const certAll = certRows.map(badge).join("");
+    const certAll = [...certRows, expiring].map(badge).join("");
     const chips = BRANDS.map((b) => `<span class="chip chip--program" data-brand="${b}">${esc(brandName(b))}</span>`).join("");
     const products = [
       ["Heritage Rolled Oats", "nongmo", "verified", "Brightfield Mills"],
-      ["Stone-Ground Corn Tortillas", "nonupf", "pending", "Casa Maíz"],
+      ["Stone-Ground Corn Tortillas", "nonupf", "in review", "Casa Maíz"],
       ["Sprouted Lentil Pasta", "nongmo", "expiring", "Good Acre Foods"],
-      ["Cultured Oat Butter", "nonupf", "lapsed", "Northfold Dairy"],
+      ["Cultured Oat Butter", "nonupf", "on hold", "Northfold Dairy"],
       ["Wildflower Honey", "nongmo", "in progress", "Hive & Hollow"],
     ];
     const tableRows = products
@@ -760,7 +768,7 @@ export function createRenderer(ctx) {
       .join("");
     const sig = d.section(/^Signature moment$/);
     const verified = cert("verified");
-    const pending = cert("pending");
+    const pending = cert("in review");
     const sigDemo = BRANDS.filter((b) => b !== "collective")
       .map((b) => `<div class="card ctx" data-brand="${b}" style="display:grid;gap:0.75rem;justify-items:start"><strong class="small">${esc(brandName(b))}</strong><div class="sig-wrap" data-sig><span class="sig-glow" aria-hidden="true"></span><span data-sig-badge aria-live="polite">${badge(pending)}</span></div><button class="btn btn--default btn--sm" type="button" data-play-sig>Approve verification</button></div>`)
       .join("");
@@ -868,7 +876,7 @@ export function createRenderer(ctx) {
           <div class="split"><div><h3>Imagery</h3>${text(/^Imagery$/)}</div><div><h3>Voice</h3>${text(/^Voice$/)}</div></div>
           <div class="split"><div><h3>Typography</h3>${text(/^Typography$/)}</div><div><h3>Motion</h3>${text(/^Motion$/)}</div></div>
           <h3>Typical surfaces</h3>${text(/^Typical surfaces$/)}
-          <div class="do-dont">${doL ? `<div class="do"><h4>${icon("status.success")}Do</h4>${render([doL])}</div>` : ""}${dontL ? `<div class="dont"><h4>${icon("status.lapsed")}Don't</h4>${render([dontL])}</div>` : ""}</div>
+          <div class="do-dont">${doL ? `<div class="do"><h4>${icon("status.success")}Do</h4>${render([doL])}</div>` : ""}${dontL ? `<div class="dont"><h4>${icon("status.terminated")}Don't</h4>${render([dontL])}</div>` : ""}</div>
         </article>`;
       });
     return `<section id="brands" aria-labelledby="brands-h"><div class="ds-section" style="border:0;padding-bottom:0"><p class="eyebrow">Brand profiles</p><h2 id="brands-h">The four brands</h2><p class="prose">Each profile renders inside its own <code>data-brand</code> context, whatever the brand switch says.</p></div>${out.join("")}</section>`;
@@ -981,7 +989,7 @@ export function createRenderer(ctx) {
     const bpCards = bps.map((b) => `<div class="card bp-card" data-bp-card="${esc(b.name)}"><p class="eyebrow" style="margin:0">${esc(b.name)} · ${b.min}px and up</p><p class="small" style="margin:0.25rem 0"><strong>${esc(b.devices)}</strong></p><p class="small muted" style="margin:0">${esc(b.layout)}</p></div>`).join("");
     const testWidths = rowsOf(d.section(/^Testing$/)?.table("Width", "Represents")).map((r) => parseInt(plain(r.width), 10)).filter(Boolean);
     const previewWidths = [...new Set([320, ...testWidths.filter((w) => w > 320 && w <= 1024).map((w) => (w === 375 ? 393 : w))])].slice(0, 4);
-    const products = [["Heritage Rolled Oats", "nongmo", "verified"], ["Stone-Ground Corn Tortillas", "nonupf", "pending"], ["Sprouted Lentil Pasta", "nongmo", "expiring"]];
+    const products = [["Heritage Rolled Oats", "nongmo", "verified"], ["Stone-Ground Corn Tortillas", "nonupf", "in review"], ["Sprouted Lentil Pasta", "nongmo", "expiring"]];
     const cqTable = `<div class="table-wrap cq"><table class="stack-table data-table"><thead><tr><th scope="col">Product</th><th scope="col">Program</th><th scope="col">Status</th><th scope="col" class="num">Units</th></tr></thead><tbody>${products
       .map(([n, p, s], i) => `<tr><td data-label="Product"><strong>${esc(n)}</strong></td><td data-label="Program"><span class="chip chip--program" data-brand="${p}">${esc(brandName(p))}</span></td><td data-label="Status">${badge(cert(s))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td></tr>`)
       .join("")}</tbody></table></div>`;

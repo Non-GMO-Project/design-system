@@ -248,15 +248,15 @@ Monarch and Romanesco are light, so their buttons carry Forest text. Milkweed Le
 
 ## Status colors (never re-themed)
 
-Status colors mean the same thing in every brand. A lapsed verification is red whether you are in Non-GMO Project or Non-UPF Verified. Brands do not override these.
+Status colors mean the same thing in every brand. A terminated verification is red whether you are in Non-GMO Project or Non-UPF Verified. Brands do not override these.
 
 Status is never shown with color alone. Every status pairs a color with an icon and a text label (see `05-iconography.md`).
 
 | Status token set | Built from | Means |
 |---|---|---|
 | `--status-success-*` | Success | Saved, complete, passed, verified |
-| `--status-warning-*` | Warning | Needs attention, expiring soon |
-| `--status-danger-*` | Danger | Error, destructive action, failed, lapsed |
+| `--status-warning-*` | Warning | Needs attention, on hold, expiring soon |
+| `--status-danger-*` | Danger | Error, destructive action, failed, terminated |
 | `--status-info-*` | Info | In review, neutral notice |
 | `--status-neutral-*` | Stone and Frost | Not eligible, withdrawn |
 
@@ -273,19 +273,27 @@ Neutral is the exception in dark mode: its `-bg` is Stone 900 and its `-border` 
 
 ### Verification status
 
-Verification has its own vocabulary. These map onto the status sets so the UI stays consistent.
+A verification has one of four statuses, confirmed with the Verification team. These map onto the status sets so the UI stays consistent.
 
 | Verification state | Status set | Icon | Label |
 |---|---|---|---|
 | Verified | success | `status.verified` | Verified |
-| Enrolled, in progress | info | `status.in-progress` | In progress |
-| Pending review | info | `status.pending` | Pending review |
-| Expiring soon | warning | `status.expiring` | Expires December 1, 2026 |
-| Lapsed | danger | `status.lapsed` | Lapsed |
-| Not eligible | neutral | `status.not-eligible` | Not eligible |
+| On hold | warning | `status.on-hold` | On hold |
 | Withdrawn | neutral | `status.withdrawn` | Withdrawn |
+| Terminated | danger | `status.terminated` | Terminated |
 
-`TODO(design): confirm the verification lifecycle states with Verification and Standards teams before this list is treated as final.`
+**Expiry is not a status.** A Verified product near its expiry date stays Verified and shows the date in the warning set: `status.expiring` icon, label "Verified, expires December 1, 2026". Show it from the first renewal reminder (90 days before expiry, see `11-ux.md`). Renewal doesn't change the status either: the product stays Verified while its renewal application is in review.
+
+### Other statuses
+
+These are not verification statuses. Use them for applications, enrollment, agreement signing and other processes, so every process in the family shows progress the same way.
+
+| State | Status set | Icon | Label |
+|---|---|---|---|
+| In progress | info | `status.in-progress` | In progress |
+| In review | info | `status.pending` | In review |
+| Complete | success | `status.success` | Complete |
+| Not eligible | neutral | `status.not-eligible` | Not eligible |
 
 ## Approved text pairings
 
