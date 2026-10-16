@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.25 (draft for review)
+**Version:** 0.26 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -167,6 +167,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.26 | 2026-10-16 | The showcase's endorsement line examples now show the Non-UPF Verified logo (#48). A program with no reversed logo, currently Non-UPF Verified, gets its example on Birch with its color logo and the parent logo, and a note says why, as the email samples already do. Dark footers stay where a reversed logo exists. The reversed Non-UPF Verified logo and the Birch parent mark are still open in `04` |
 | 0.25 | 2026-10-16 | Verification statuses confirmed (#41): a verification is Verified, On hold (warning, `CirclePause`), Withdrawn (neutral) or Terminated (danger, `CircleX`). Lapsed is gone; it was a reporting detail, not a status. Expiry is not a status either: a Verified product shows "Verified, expires December 1, 2026" in the warning set from 90 days before expiry, and `StatusBadge` takes an `expires` prop for it. Renewal leaves the product Verified while the renewal application is "In review", which replaces "Renewal in review" in `11`. A new "Other statuses" table in `02` keeps In progress, In review, Complete and Not eligible for applications, agreements and other processes. Icon registry, rule 5, `06`, `10`, `11`, `13` and the showcase updated to match; the lifecycle TODO in `02` is closed |
 | 0.24 | 2026-10-16 | AI assistants now report gaps as GitHub issues (#45). "Use it with AI" has a fourth step: when the system has no answer, or a rule is wrong or unclear, the assistant leaves a `TODO(design)` and opens an issue on the repository (or drafts one for a person to file), describing only the gap since the repository is public. The sample prompt, the Claude Code block and "What Claude Code should do when the system is silent" say the same |
 | 0.23 | 2026-10-16 | Icon spec gaps (#43): stroke width is 2 at 14px (`icon-xs`) as well as 16px, so small icons in badges and chips don't thin out. The icon-to-label gap is 4px (`gap-1`) with `icon-sm` and `icon-xs`, replacing 6px, which wasn't on the spacing scale; 8px (`gap-2`) stays for `icon-md` and larger. The showcase badges and chips use the 4px gap, and its empty-state icons use the 1.75 stroke the spec sets for 20px and above |
