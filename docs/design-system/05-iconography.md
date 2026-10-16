@@ -16,7 +16,7 @@ The showcase build resolves every name in the registry below against the install
 |---|---|
 | Grid | 24 x 24 |
 | Style | Outline (stroke). No filled icons except where a filled state is the point (a selected star) |
-| Stroke width | 1.75 at 20px and above; 2 at 16px |
+| Stroke width | 1.75 at 20px and above; 2 at 16px and 14px, so small icons don't thin out |
 | Corners and caps | Round (Lucide default) |
 | Color | `currentColor`, so icons inherit text color |
 
@@ -31,7 +31,7 @@ The showcase build resolves every name in the registry below against the install
 | `icon-xl` | 32 | Feature lists, cards that lead with an icon |
 | `icon-2xl` | 48 | Empty states |
 
-Icon and text sit on the same center line. Gap between icon and label: 8px (`gap-2`) at md, 6px at sm.
+Icon and text sit on the same center line. Gap between icon and label: 8px (`gap-2`) with `icon-md` and larger, 4px (`gap-1`) with `icon-sm` and `icon-xs`, as in badges and chips. Both are on the spacing scale in `06-ui-framework.md`.
 
 ## Color rules
 
