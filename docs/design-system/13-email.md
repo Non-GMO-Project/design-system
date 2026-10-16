@@ -48,7 +48,7 @@ Email clients do not reliably support CSS variables, so templates use the hex va
 
 - Links are the brand dark and underlined. Never the signature color for running text: Monarch fails contrast on Birch.
 - The signature color appears in buttons and at most one accent rule per email, the same ratio as the brand profile.
-- Status in service email (verified, lapsed, pending) uses the shared status colors with an icon and a text label, as everywhere else.
+- Status in service email (Verified, on hold, terminated, in review) uses the shared status colors with an icon and a text label, as everywhere else.
 - **Dark mode.** Apple Mail, Outlook and Gmail apps may invert colors. Use logos with transparent backgrounds and enough padding to survive on a dark ground, never put dark text on a transparent image, and test in dark mode before sending. `TODO(dev): add color-scheme meta tags and a dark-mode test pass to the send checklist.`
 
 ## Type in email

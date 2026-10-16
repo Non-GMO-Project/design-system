@@ -119,12 +119,13 @@ Always paired with a text label.
 | `status.info` | `Info` | Information |
 | `status.loading` | `LoaderCircle` | Loading (spin animation, see 07) |
 | `status.verified` | `BadgeCheck` | Product is Verified |
-| `status.in-progress` | `CircleDashed` | Enrolled, in progress |
-| `status.pending` | `Clock` | Waiting on review |
-| `status.expiring` | `CalendarClock` | Verification expiring soon |
-| `status.lapsed` | `CircleX` | Verification lapsed |
+| `status.in-progress` | `CircleDashed` | In progress (applications, enrollment, other processes) |
+| `status.pending` | `Clock` | In review, waiting on review |
+| `status.expiring` | `CalendarClock` | Verified, expiry date approaching |
+| `status.on-hold` | `CirclePause` | Verification on hold |
+| `status.terminated` | `CircleX` | Verification terminated |
 | `status.not-eligible` | `Ban` | Not eligible |
-| `status.withdrawn` | `CircleMinus` | Withdrawn |
+| `status.withdrawn` | `CircleMinus` | Verification withdrawn |
 | `status.locked` | `Lock` | No permission, read-only |
 
 `status.verified` uses a badge outline, not the certification seal. See `04-logos-and-marks.md`.

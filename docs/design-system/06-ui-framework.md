@@ -159,11 +159,11 @@ Romanesco (Collective) and Monarch (Non-GMO Project) primary buttons are light f
 
 ```tsx
 <StatusBadge status="verified" />   // success colors, BadgeCheck icon, "Verified"
-<StatusBadge status="expiring" date="2026-12-01" />  // "Expires December 1, 2026"
+<StatusBadge status="verified" expires="2026-12-01" />  // warning colors, CalendarClock, "Verified, expires December 1, 2026"
 <StatusBadge status="verified" program="nongmo" date="2026-03-04" />  // "Verified by the Non-GMO Project · March 4, 2026"
 ```
 
-`date` is the date the status took effect, or the expiry date for `expiring`. `program` adds the source, which `11-ux.md` requires wherever a status appears outside a single-program view. Uses `--status-*` tokens. The label is always visible text. Same component in every brand.
+`status` is one of the verification statuses or other statuses in `02-color.md`. `date` is the date the status took effect. `expires` switches a Verified badge to the expiry warning from 90 days before that date. `program` adds the source, which `11-ux.md` requires wherever a status appears outside a single-program view. Uses `--status-*` tokens. The label is always visible text. Same component in every brand.
 
 ### ProgramChip
 

@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.24 (draft for review)
+**Version:** 0.25 (draft for review)
 **Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -40,7 +40,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 2. **Start on Birch.** Every brand's background is Birch `#FFFDEB`. Never substitute pure white.
 3. **Semantic tokens only.** Components never contain hex values, raw palette variables or arbitrary Tailwind colors.
 4. **One brand context per surface.** A page or region speaks for one brand. One program, one accent: Monarch and Dragon Fruit never appear in the same layout. The one exception is program chips in multi-program views (see `01-brand-architecture.md`).
-5. **Status is shared and never color alone.** Verified, lapsed and pending look the same in every brand and always pair color, icon and label.
+5. **Status is shared and never color alone.** Verified, on hold and terminated look the same in every brand and always pair color, icon and label.
 6. **Logos and seals are assets, never drawings.** Always use the official files. Never recreate a logo or certification seal in SVG, CSS, canvas or text.
 7. **Use the component library before building.** Check `06-ui-framework.md` for the component that fits the interaction type. Build custom only when nothing fits, and build on the same primitives.
 8. **Motion explains change.** Animate to show what happened after someone acts. Do not decorate.
@@ -167,6 +167,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.25 | 2026-10-16 | Verification statuses confirmed (#41): a verification is Verified, On hold (warning, `CirclePause`), Withdrawn (neutral) or Terminated (danger, `CircleX`). Lapsed is gone; it was a reporting detail, not a status. Expiry is not a status either: a Verified product shows "Verified, expires December 1, 2026" in the warning set from 90 days before expiry, and `StatusBadge` takes an `expires` prop for it. Renewal leaves the product Verified while the renewal application is "In review", which replaces "Renewal in review" in `11`. A new "Other statuses" table in `02` keeps In progress, In review, Complete and Not eligible for applications, agreements and other processes. Icon registry, rule 5, `06`, `10`, `11`, `13` and the showcase updated to match; the lifecycle TODO in `02` is closed |
 | 0.24 | 2026-10-16 | AI assistants now report gaps as GitHub issues (#45). "Use it with AI" has a fourth step: when the system has no answer, or a rule is wrong or unclear, the assistant leaves a `TODO(design)` and opens an issue on the repository (or drafts one for a person to file), describing only the gap since the repository is public. The sample prompt, the Claude Code block and "What Claude Code should do when the system is silent" say the same |
 | 0.23 | 2026-10-16 | Icon spec gaps (#43): stroke width is 2 at 14px (`icon-xs`) as well as 16px, so small icons in badges and chips don't thin out. The icon-to-label gap is 4px (`gap-1`) with `icon-sm` and `icon-xs`, replacing 6px, which wasn't on the spacing scale; 8px (`gap-2`) stays for `icon-md` and larger. The showcase badges and chips use the 4px gap, and its empty-state icons use the 1.75 stroke the spec sets for 20px and above |
 | 0.22 | 2026-10-17 | Showcase and tooling pass. The showcase favicon is now the Food Integrity Project mark (it was the Non-UPF Verified icon, behind a media query browsers no longer match). The interim parent logo no longer uses a multiply blend and sits on a Birch plate in dark mode. The logo demo reads its minimum sizes from `04`. The showcase keeps working when browser storage is blocked, only confirms a copy that succeeded, and its Undo toasts stay 10 seconds and pause on hover and focus. Accessibility fixes in the generated markup: meaningful alt text for asset images and the top-bar logo, no skipped heading levels, no `aria-selected` on table rows, no focusable non-interactive card. The build now warns about any file in `public/brand/` that no doc mentions; the butterfly-wing photo is documented in `04` with a TODO for its source and rights. `04` lists which files are still raster only and notes that marks may leave out the lockup. The Non-UPF Verified participant page lists the vector color seal. Participant pages drop bare TODOs too and hide an empty contact line. Removed the October 2026 live-site audit (`docs/audits/`), which described the sites against v0.4 |
