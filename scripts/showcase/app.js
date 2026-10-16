@@ -13,10 +13,13 @@
   const dur = (name) => (reduced() ? 0 : ms(name));
 
   // ---------- Brand, mode, reduced motion ----------
-  const saved = JSON.parse(localStorage.getItem("fip-ds") || "{}");
+  // Storage can be blocked or hold a bad value; the page must still work without it.
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem("fip-ds") || "{}") || {}; } catch { saved = {}; }
   const apply = () => {
     root.dataset.brand = saved.brand || "fip";
     root.classList.toggle("dark", !!saved.dark);
+    $('meta[name="color-scheme"]')?.setAttribute("content", saved.dark ? "dark" : "light");
     root.classList.toggle("reduce-motion", !!saved.reduce);
     $$('input[name="brand"]').forEach((i) => (i.checked = i.value === root.dataset.brand));
     $$('select[name="brand"]').forEach((s) => (s.value = root.dataset.brand));
@@ -24,7 +27,7 @@
     $$("[data-toggle-reduce]").forEach((i) => (i.checked = !!saved.reduce));
     requestAnimationFrame(() => { updateLiveTokens(); $$("[data-tabs]").forEach(placeIndicator); });
   };
-  const persist = () => localStorage.setItem("fip-ds", JSON.stringify(saved));
+  const persist = () => { try { localStorage.setItem("fip-ds", JSON.stringify(saved)); } catch { /* not saved; the switch still applies */ } };
   document.addEventListener("change", (e) => {
     const t = e.target;
     if (t.name === "brand") { saved.brand = t.value; persist(); apply(); }
@@ -49,13 +52,24 @@
     toasts.append(el);
     const remove = () => el.animate([{ opacity: 1 }, { opacity: 0, transform: "translateY(8px)" }], { duration: dur("--duration-base"), easing: css("--ease-exit") }).finished.then(() => el.remove());
     el.querySelector("button")?.addEventListener("click", remove);
-    setTimeout(remove, 5000);
+    // Toasts with an action stay 10s and pause while hovered or focused (08-accessibility.md).
+    let timer;
+    const start = () => { clearTimeout(timer); timer = setTimeout(remove, undo ? 10000 : 5000); };
+    el.addEventListener("pointerenter", () => clearTimeout(timer));
+    el.addEventListener("pointerleave", start);
+    el.addEventListener("focusin", () => clearTimeout(timer));
+    el.addEventListener("focusout", start);
+    start();
   }
   document.addEventListener("click", (e) => {
     const c = e.target.closest("[data-copy]");
     if (!c) return;
-    navigator.clipboard?.writeText(c.dataset.copy);
-    toast(`Copied ${c.dataset.copyLabel ?? c.dataset.copy}`, false);
+    const label = c.dataset.copyLabel ?? c.dataset.copy;
+    if (!navigator.clipboard) { toast(`Could not copy ${label}. Copy it from the page instead.`, false); return; }
+    navigator.clipboard.writeText(c.dataset.copy).then(
+      () => toast(`Copied ${label}`, false),
+      () => toast(`Could not copy ${label}. Copy it from the page instead.`, false)
+    );
   });
 
   // ---------- Tabs ----------
@@ -161,7 +175,7 @@
     if (e.target.closest('[data-demo="add-row"]')) {
       const body = $("#demo-table tbody");
       const tr = body.rows[0].cloneNode(true);
-      tr.removeAttribute("aria-selected");
+      tr.classList.remove("is-selected");
       tr.querySelector("strong").textContent = ["Sunflower Seed Butter", "Black Bean Chips", "Oat Milk Barista"][added++ % 3];
       tr.querySelector("input").checked = false;
       tr.classList.add("row-enter");

@@ -83,7 +83,7 @@ function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(join(dir, e.name)) : [join(dir, e.name)]));
 }
 
-function readAssets(doc04, checks) {
+function readAssets(doc04, checks, allDocsText = "") {
   const rows = rowsOf(doc04?.section(/^Asset inventory$/)?.table("File", "Brand", "Asset"));
   if (!rows.length) checks.push({ level: "error", area: "Logos", message: "Asset inventory table not found", file: "04-logos-and-marks.md" });
   const listed = rows.map((r) => {
@@ -98,8 +98,19 @@ function readAssets(doc04, checks) {
   });
   for (const abs of walk(join(root, "public/brand"))) {
     const rel = relative(join(root, "public/brand"), abs);
-    if (/-(logo|mark|seal)-/.test(rel) && !listed.some((a) => a.file === rel))
+    if (listed.some((a) => a.file === rel)) continue;
+    if (/-(logo|mark|seal)-/.test(rel))
       checks.push({ level: "warn", area: "Logos", message: `\`public/brand/${rel}\` exists but is not in the asset inventory`, file: "04-logos-and-marks.md" });
+    // Other artwork (photos, illustrations, graphics) must at least be documented somewhere:
+    // by file name, or by its subfolder (for example nongmo/illustrations/).
+    else {
+      const dir = rel.includes("/") ? rel.slice(0, rel.lastIndexOf("/") + 1) : "";
+      const sub = dir.split("/").length > 2 ? dir : "";
+      const base = rel.split("/").pop();
+      const globs = [...allDocsText.matchAll(/([\w-]+)-\*/g)].map((m) => m[1] + "-");
+      if (!allDocsText.includes(base) && !(sub && allDocsText.includes(sub)) && !globs.some((g) => base.startsWith(g)))
+        checks.push({ level: "warn", area: "Logos", message: `\`public/brand/${rel}\` is not documented in any doc. Add it to 04-logos-and-marks.md with its source and rights`, file: "04-logos-and-marks.md" });
+    }
   }
   return listed;
 }
@@ -173,7 +184,7 @@ function build() {
   for (const m of semantic.matchAll(/var\((--[\w-]+)\)/g)) if (!defined.has(m[1])) checks.push({ level: "error", area: "Tokens", message: `\`${m[1]}\` is referenced but never defined`, file: "09-tokens.md" });
   for (const m of tailwind.matchAll(/var\((--[\w-]+)\)/g)) if (!defined.has(m[1]) && !/^--font-/.test(m[1])) checks.push({ level: "error", area: "Tokens", message: `Tailwind wiring references \`${m[1]}\`, which is not defined`, file: "09-tokens.md" });
 
-  const assets = readAssets(docs["04-logos-and-marks.md"], checks);
+  const assets = readAssets(docs["04-logos-and-marks.md"], checks, Object.values(docs).map((d) => d.raw).join("\n"));
   const fontCss = fonts(checks);
   const r = createRenderer({ docs, checks, palette, labelToName, official, tokenCtx, iconSvg, assets });
 
@@ -259,9 +270,9 @@ function build() {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <title>Digital design system | Food Integrity Project</title>
-<link rel="icon" href="public/brand/nonupf/nonupf-mark-color.png" media="(prefers-color-scheme: no-preference)">
+<link rel="icon" href="public/brand/fip/fip-mark-color.svg" type="image/svg+xml">
 <style>
 ${fontCss}
 ${tokensCss}
@@ -272,7 +283,7 @@ ${showcaseCss}
 <body>
 <a class="btn btn--default skip" href="#main">Skip to main content</a>
 <header class="topbar">
-  <p class="topbar__title">${fipLogo ? `<img src="${esc(fipLogo.path)}" alt="">` : ""}<span>Digital design system <span class="muted small">v${esc(version.split(" ")[0])}</span></span></p>
+  <p class="topbar__title">${fipLogo ? `<img src="${esc(fipLogo.path)}" alt="Food Integrity Project">` : ""}<span>Digital design system <span class="muted small">v${esc(version.split(" ")[0])}</span></span></p>
   <button class="btn btn--outline btn--sm nav-toggle" type="button" data-open="mobile-nav" aria-haspopup="dialog">${r.icon("nav.menu", "icon icon--sm")}Sections</button>
   <fieldset class="segmented brand-seg"><legend class="sr-only">Brand context</legend>${brandRadios}</fieldset>
   <label class="brand-select"><span class="sr-only">Brand context</span><span class="select-wrap"><select class="select" name="brand">${brandOptions}</select>${r.icon("nav.expand", "icon icon--sm")}</span></label>
@@ -282,7 +293,7 @@ ${showcaseCss}
   </div>
 </header>
 <dialog id="mobile-nav" class="sheet sheet--left" aria-labelledby="mobile-nav-h">
-  <div class="row" style="justify-content:space-between;margin-bottom:0.5rem"><h4 id="mobile-nav-h" style="margin:0">Sections</h4><button class="btn btn--ghost btn--icon" type="button" aria-label="Close sections" data-close>${r.icon("action.close")}</button></div>
+  <div class="row" style="justify-content:space-between;margin-bottom:0.5rem"><h2 id="mobile-nav-h" class="t-h4" style="margin:0">Sections</h2><button class="btn btn--ghost btn--icon" type="button" aria-label="Close sections" data-close>${r.icon("action.close")}</button></div>
   <nav aria-label="Sections menu" class="mnav"><ol>${nav}</ol></nav>
 </dialog>
 <div class="layout">

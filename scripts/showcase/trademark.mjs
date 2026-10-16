@@ -10,7 +10,7 @@ const MIME = { ".png": "image/png", ".jpg": "image/jpeg", ".svg": "image/svg+xml
 const dataUri = (abs) => `data:${MIME[extname(abs)] ?? "application/octet-stream"};base64,${readFileSync(abs).toString("base64")}`;
 
 // Drop `TODO(...): ...` code spans; a block that was only a TODO disappears.
-const stripTodo = (s) => (s ?? "").replace(/\s*`TODO\([^`]*`/g, "").trim();
+const stripTodo = (s) => (s ?? "").replace(/\s*`TODO\([^`]*`/g, "").replace(/\s*TODO\([a-z]+\):[^.|]*\.?/gi, "").trim();
 function cleanBlocks(blocks) {
   return blocks
     .map((b) => {
@@ -130,7 +130,7 @@ ${PAGE_CSS}
 <nav class="tm-toc" aria-labelledby="toc-h"><h2 id="toc-h" class="t-h4" style="margin:0 0 0.5rem">On this page</h2><ol>${sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join("")}</ol></nav>
 ${mailto(sections.map((s) => s.html).join("\n"))}
 </main>
-<footer class="tm-footer small muted">${inline(field("Source"))}<br>${mailto(`Questions: ${esc(field("Contact"))}`)}</footer>
+<footer class="tm-footer small muted">${inline(field("Source"))}${field("Contact") ? `<br>${mailto(`Questions: ${esc(field("Contact"))}`)}` : ""}</footer>
 </body>
 </html>
 `;
