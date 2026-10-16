@@ -12,6 +12,12 @@ export const slug = (s) =>
 export const plain = (s) =>
   String(s ?? "").replace(/`([^`]*)`/g, "$1").replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\*([^*]+)\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").trim();
 
+// Doc file names that inline code links to (file -> href), set by the showcase build so a
+// mention like `08-accessibility.md` jumps to that doc. Off (null) for standalone pages.
+let docLinks = null;
+export const setDocLinks = (map) => { docLinks = map; };
+const docHref = (c) => docLinks?.get(c.replace(/^(\.\.?\/)+/, "").replace(/^docs\/design-system\//, ""));
+
 // Inline Markdown to HTML. TODO(...) markers get a highlight so they stand out in the showcase.
 export function inline(s) {
   const codes = [];
@@ -23,9 +29,13 @@ export function inline(s) {
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/(^|[^*\w])\*([^*\s][^*]*)\*(?!\w)/g, "$1<em>$2</em>")
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  // Code already inside a link stays plain; links don't nest.
+  out = out.replace(/<a [^>]*>.*?<\/a>/g, (a) => a.replace(/\u0000(\d+)\u0000/g, (_, i) => `<code>${codes[i]}</code>`));
   return out.replace(/\u0000(\d+)\u0000/g, (_, i) => {
     const c = codes[i];
-    return /^TODO\(/.test(c) ? `<code class="todo">${c}</code>` : `<code>${c}</code>`;
+    if (/^TODO\(/.test(c)) return `<code class="todo">${c}</code>`;
+    const href = docHref(c);
+    return href ? `<a class="doc-ref" href="${href}"><code>${c}</code></a>` : `<code>${c}</code>`;
   });
 }
 

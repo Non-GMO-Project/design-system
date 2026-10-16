@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.40 (draft for review)
+**Version:** 0.41 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.41 | 2026-10-16 | Doc file names in the showcase are links (#118). Wherever a doc names another doc file in code style, such as `08-accessibility.md`, `../02-color.md` or `brands/non-gmo-project.md`, the showcase links it to that file's entry in Source documents and opens it. The brand and trademark headers that name their source file link the same way. The standalone participant pages keep them as plain text, since those pages stand alone |
 | 0.40 | 2026-10-16 | Non-UPF Verified mark colors follow the design system (#115). The participant guide's color table now gives Dragon Fruit `#CE1B6A` and Dark Matter `#0A2041`, replacing the earlier trademark guide's `#CE0F69` and `#041E42`; Pantone 214 C and 282 C stay as the print equivalents. The page says its screen colors follow the Food Integrity Project Style Guide, `02` and `CLAUDE.md` say the same, and the participant page `trademark/non-upf-verified.html` is rebuilt |
 | 0.39 | 2026-10-16 | The showcase Components section opens with "Brand variations" (#70): one card per brand, each in its own `data-brand` context, showing the parts whose colors change by brand (primary, secondary and outline buttons, links, a field, a checkbox and switch, progress, the program chip and the support panel) next to a shared status badge. It replaces what the removed brand switcher used to do for components, with every brand visible at once |
 | 0.38 | 2026-10-16 | Open questions moved out of the docs into GitHub. Every `TODO(design)`, `TODO(brand)` and `TODO(dev)` became an issue labeled `question` (#71 to #115, and #40 for the butterfly photo), each with its context, numbered questions and links to the doc section, the showcase section and the line where the TODO was. Related TODOs share one issue. The markers are gone from the docs and the showcase; where a table cell held only a TODO it now states the fact (for example "No reversed logo yet"). The "Placeholder convention" section is now "Open questions", the showcase's Open TODOs list is now a link to the `question` issues, `npm run todos` lists those issues, and the build warns if a TODO item comes back into a doc. `CLAUDE.md` and the review loop say to open a `question` issue instead of adding a TODO. The Food Integrity Project email support band in `13` now matches its Loam 200 panel |
