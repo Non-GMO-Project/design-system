@@ -237,12 +237,15 @@ export function createRenderer(ctx) {
       })
       .join("");
     const never = d.section(/^Never$/)?.lists()[0];
+    const byApp = d.section(/^Logo by application$/);
+    if (!byApp) check("warn", "Logos", 'No "Logo by application" section', f);
     return section(
       "logos", "04 · Logos and marks", "Logos, seals and lockups", f,
       `<h3>Two different things</h3>${tableOrWarn(d.section(/^Two different things/)?.tables()[0], f, "Logos")}
       <h3>Asset inventory</h3><p class="prose">Every file listed in the doc, rendered from <code>public/brand/</code>. Light files sit on the brand dark.</p>
       <div class="grid" style="--min:220px">${cards}</div>
       ${still ? `<h4>Still needed</h4>${render([still])}` : ""}
+      ${byApp ? `<h3>Logo by application</h3>${render(byApp.blocks)}` : ""}
       <h3>Endorsement lockups</h3>
       <div class="split">${horiz}${stacked}</div>
       ${lockRules ? renderTable(lockRules) : ""}
