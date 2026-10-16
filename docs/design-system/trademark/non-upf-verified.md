@@ -2,7 +2,7 @@
 
 **Program:** Non-UPF Verified
 **Brand context:** `data-brand="nonupf"`
-**Source:** *Non-UPF Verified Trademark Use Guide* v1.0, published December 2025. Where this page and the guide differ, the guide wins.
+**Source:** *Non-UPF Verified Trademark Use Guide* v1.0, published December 2025. Where this page and the guide differ, the guide wins, except for the mark's screen colors, which follow the Food Integrity Project Style Guide (see Color).
 **For:** Licensees with a signed license agreement and Non-UPF Verified products.
 **Contact:** marketing@nonultraprocessed.org
 **Page:** `trademark/non-upf-verified.html`
@@ -67,11 +67,13 @@ The mark always appears in **one solid color**. No gradients, shading, patterns 
 
 The official files come in the program colors, black and white. These are preferred:
 
-| Color | Pantone | Hex |
+| Color | Pantone (print) | Hex (screen) |
 |---|---|---|
-| Pink | 214 C | `#CE0F69` |
-| Navy | 282 C | `#041E42` |
+| Dragon Fruit | 214 C | `#CE1B6A` |
+| Dark Matter | 282 C | `#0A2041` |
 | White | | `#FFFFFF` |
+
+The hex values are the program colors from the Food Integrity Project Style Guide. They replace the earlier trademark guide's `#CE0F69` and `#041E42`.
 
 Brands with verified products may also reproduce the mark in **any single solid color** that suits their packaging or gives better contrast. Every part of the mark must be in that one color; you may not color parts separately.
 
