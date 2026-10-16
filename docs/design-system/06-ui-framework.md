@@ -21,8 +21,6 @@ How interfaces are built: the stack, which component to use for each kind of int
 | Dates | react-day-picker (shadcn Calendar), date-fns | |
 | Theme | next-themes | Sets `.dark`; brand comes from `data-brand` |
 
-`TODO(dev): pin versions in package.json and record them here when the first project is set up.`
-
 ### Working with shadcn/ui
 
 - Add components with the shadcn CLI so they land in `components/ui/`.
@@ -216,8 +214,6 @@ Radius follows hierarchy rather than one value everywhere:
 | `rounded-md` | 8px | Buttons, cards, menus, popovers |
 | `rounded-lg` | 12px | Dialogs, sheets, large feature panels |
 | `rounded-full` | | Avatars, switches, program chip dots, pills |
-
-`TODO(design): the brand guide's own layouts use pill swatches and 16px card corners. Decide whether public pages adopt pill buttons and larger card radii.`
 
 | Elevation | Token | Use |
 |---|---|---|

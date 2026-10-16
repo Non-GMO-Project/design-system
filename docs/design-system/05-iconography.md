@@ -8,7 +8,7 @@ One icon library for every brand, used through a named registry so the same idea
 
 Do not mix in icons from other libraries. If Lucide lacks something, see "Custom icons" below.
 
-The showcase build resolves every name in the registry below against the installed Lucide version and flags any that do not exist. `TODO(dev): pin the same lucide-react version in app package.json files.`
+The showcase build resolves every name in the registry below against the installed Lucide version and flags any that do not exist.
 
 ## Style
 
@@ -165,8 +165,6 @@ Always paired with a text label.
 | `domain.document` | `FileText` | Generic document |
 | `domain.ai` | `Sparkles` | AI-generated or AI-assisted content (always disclose) |
 
-`TODO(design): confirm the icons for domain.task (ListTodo; SquareCheck was the alternative) and domain.history (History), added for activity timelines (#19).`
-
 ### People and contact
 
 | Name | Lucide | Use |
@@ -198,7 +196,7 @@ Always paired with a text label.
 When Lucide has nothing suitable:
 1. Check Lucide again under other words.
 2. If still nothing, draw the icon on Lucide's 24px grid with the same stroke, round caps and joins, and 2px padding. Save as `components/icons/custom/{name}.tsx` and add it to the registry.
-3. Custom icons go through design review. `TODO(design): name the reviewer.`
+3. Custom icons go through design review.
 
 Never use a logo, seal or the Butterfly as an icon.
 

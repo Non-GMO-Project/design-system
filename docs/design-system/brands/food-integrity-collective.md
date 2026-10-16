@@ -4,7 +4,7 @@
 **Role:** Membership and advocacy. Speaks to industry and members rather than shoppers. Softer, editorial.
 **Voice:** Collegial, editorial, member-facing.
 
-> The older Food Integrity Collective guide described the Collective as the umbrella organization. The current style guide makes the Food Integrity Project the parent and the Collective a program. `TODO(brand): confirm the Collective's audiences and offerings under this structure.`
+> The older Food Integrity Collective guide described the Collective as the umbrella organization. The current style guide makes the Food Integrity Project the parent and the Collective a program.
 
 ## Who it speaks to
 
@@ -32,8 +32,6 @@ The Collective shares Forest with Non-GMO Project but pairs it with two mid-tone
 
 `collective-mark-*`: the hand, sprout and butterfly symbol in green, black and white. `collective-logo-horizontal-mono-light`: the full lockup with "Food Integrity Collective" set in serif, in cream, for dark grounds. No certification seal; the Collective does not verify products.
 
-`TODO(design): the lockup in color (Forest) for Birch backgrounds.`
-
 ## Typography
 
 Campaign and member pairing (Quicksand + Avenir) for events and member communications; editorial pairing (Lora + Quicksand) for long-form stories.
@@ -42,7 +40,7 @@ Campaign and member pairing (Quicksand + Avenir) for events and member communica
 
 The Collective has its own graphic motifs: the petals (`illustrations/collective-petals-*`) and the "Food should nourish life" badge (`campaign/`). Use them as decoration with restraint, never as a logo. People together: markets, events, farms open to visitors, shared meals, community work, supply chains seen as systems. Natural, neutral tones without strong orange or magenta casts. Faces and activity over landscapes.
 
-**Photo library.** Use the shared sources in `01-brand-architecture.md`, "Photography sourcing". The social team's Pinterest moodboards set the mood. `TODO(brand): link a Collective photo library, if one exists.`
+**Photo library.** Use the shared sources in `01-brand-architecture.md`, "Photography sourcing". The social team's Pinterest moodboards set the mood.
 
 ## Voice
 

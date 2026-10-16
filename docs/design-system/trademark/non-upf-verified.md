@@ -55,8 +55,6 @@ Every mark has four parts. All four are required, and none may be removed or rea
 | Minimum size, secondary mark, digital | 60 pixels wide |
 | URL | Must be readable at every allowed size |
 
-`TODO(brand): the guide's minimum-size figure labels the primary mark "Minimum Height 0.50 inches", while its text says 3/8 inch tall and 1/2 inch wide. This page follows the text. Confirm with the program.`
-
 ## Placement and brand hierarchy
 
 - The mark must never be larger or more prominent than your brand's primary logo. It supports your brand identity and should not compete with it.
@@ -76,8 +74,6 @@ The official files come in the program colors, black and white. These are prefer
 | White | | `#FFFFFF` |
 
 Brands with verified products may also reproduce the mark in **any single solid color** that suits their packaging or gives better contrast. Every part of the mark must be in that one color; you may not color parts separately.
-
-`TODO(brand): the trademark guide gives the mark's colors as #CE0F69 and #041E42. The design system's program colors are Dragon Fruit #CE1B6A and Dark Matter #0A2041, and 02-color.md lists the trademark-guide values as retired. Confirm which values the mark artwork should use going forward.`
 
 ## Transparency and backgrounds
 

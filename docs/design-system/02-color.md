@@ -2,7 +2,7 @@
 
 Color is the main way the house of brands tells people where they are. Typography, spacing, icons and motion stay shared; color and logos change. This file defines the named palette, the shared foundation, usage ratios, the tonal scales, the semantic layer that components use and the rules for each brand.
 
-> **Source of values.** Named colors come from the *Food Integrity Project Style Guide* (draft for review), which supersedes the older per-program guides. The Food Integrity Project palette is marked **proposed** in that guide. `TODO(brand): confirm the parent palette (Cacao, Loam, Milkweed Leaf) once the guide leaves draft.` Stone and the four status colors are interface additions this system needs; they are not in the brand guide.
+> **Source of values.** Named colors come from the *Food Integrity Project Style Guide* (draft for review), which supersedes the older per-program guides. The Food Integrity Project palette is marked **proposed** in that guide. Stone and the four status colors are interface additions this system needs; they are not in the brand guide.
 
 ## The model: one ground, one dark, one signature
 
@@ -361,7 +361,7 @@ The 600-on-Frost rows check input borders on fields. The last three rows are war
 
 ## Gradients (decorative)
 
-The brand guide does not define gradients. These are interface additions for hero bands and campaign art, built only from each brand's own colors. `TODO(brand): approve or remove.`
+The brand guide does not define gradients. These are interface additions for hero bands and campaign art, built only from each brand's own colors.
 
 Rules:
 1. At most one gradient surface per screen.

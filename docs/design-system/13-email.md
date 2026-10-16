@@ -26,30 +26,30 @@ Top to bottom. Skip any part a type above does not list.
 | Part | Holds | Rules |
 |---|---|---|
 | Preheader | One line of preview text, hidden in the body | Adds to the subject, never repeats it. 40 to 90 characters |
-| Header | Brand logo, issue date or "View in browser" | Horizontal logo, PNG at 2x, 120px wide minimum (`TODO(design): PNG exports of the Non-UPF Verified logo, which exists only as SVG, and a transparent Food Integrity Project logo PNG`), linked to the brand site, alt text = brand name. On Birch, or on the brand dark with a reversed logo |
+| Header | Brand logo, issue date or "View in browser" | Horizontal logo, PNG at 2x, 120px wide minimum, linked to the brand site, alt text = brand name. On Birch, or on the brand dark with a reversed logo |
 | Masthead | Newsletter name and a one-line description | Name at `h1` size in Lora (Quicksand for the Collective), description in Avenir `body` or `eyebrow`. Brand dark text on Birch. One masthead per email |
 | Hero | One photograph | Full column width. Calm subject, no text burned in, no seals or logos dropped on top. Meaningful alt text, or `alt=""` if purely mood |
 | Story block | Eyebrow (optional), headline, body, button | Headline in Lora `h2` or `h3` (Quicksand for the Collective), body in Avenir `body`, left-aligned. Image beside the text on wide screens, stacked above it on phones |
 | Divider | A hairline between stories | 1px in the brand's support color, or `border` from the tokens. Never the signature color |
 | Support band | One appeal: donate, sign up, share | Full-width panel on the brand's support color with its paired text color (see the table below), or the brand dark with Birch text. One per email, after the last story |
-| Social row | Links to the brand's social accounts | Icons in the brand dark on Birch (or Birch on the brand dark), each with the platform name as alt text. `TODO(design): official social icon set. Lucide has no platform logos` |
+| Social row | Links to the brand's social accounts | Icons in the brand dark on Birch (or Birch on the brand dark), each with the platform name as alt text. |
 | Footer | Logo or mark, legal name, mailing address, website, preferences, unsubscribe | Plain text on Birch, Avenir `body` (16px). The endorsement line "A program of the Food Integrity Project" for program emails |
 
 ## Color in email
 
-Email clients do not reliably support CSS variables, so templates use the hex values behind the semantic tokens, inlined. Take them from the brand's color roles, never from an older template or by eye. `TODO(dev): generate an email token file (hex per role, per brand) from scripts/palette.config.json so templates never hand-copy values.`
+Email clients do not reliably support CSS variables, so templates use the hex values behind the semantic tokens, inlined. Take them from the brand's color roles, never from an older template or by eye.
 
 | Brand | Body ground | Text and links | Header and dark bands | Support panels | Primary button |
 |---|---|---|---|---|---|
-| Food Integrity Project | Birch `#FFFDEB` | Cacao `#241A15` | Cacao, with the reversed logo `TODO(design): reversed FIP logo file` | Loam `#6B5644` with Birch text | Milkweed Leaf `#5F7A52`, Birch text |
+| Food Integrity Project | Birch `#FFFDEB` | Cacao `#241A15` | Cacao, once a reversed logo exists; until then the header stays on Birch | Loam 200 `#E3D8CF` with Cacao text | Milkweed Leaf `#5F7A52`, Birch text |
 | Non-GMO Project | Birch `#FFFDEB` | Forest `#053220` | Forest, with `nongmo-logo-horizontal-reversed.png` | Seafoam `#DDEED6` with Forest text | Monarch `#F18A00`, Forest text |
-| Non-UPF Verified | Birch `#FFFDEB` | Dark Matter `#0A2041` | Dark Matter, with the reversed logo `TODO(design): reversed Non-UPF Verified logo file` | Almond `#F5DFCE` with Dark Matter text | Dragon Fruit `#CE1B6A`, Birch text |
+| Non-UPF Verified | Birch `#FFFDEB` | Dark Matter `#0A2041` | Dark Matter, once a reversed logo exists; until then the header stays on Birch | Almond `#F5DFCE` with Dark Matter text | Dragon Fruit `#CE1B6A`, Birch text |
 | Food Integrity Collective | Birch `#FFFDEB` | Forest `#053220` | Forest, with `collective-logo-horizontal-mono-light.png` | Corn Flower `#9EB6DE` with Forest text | Romanesco `#D3D95E`, Forest text |
 
 - Links are the brand dark and underlined. Never the signature color for running text: Monarch fails contrast on Birch.
 - The signature color appears in buttons and at most one accent rule per email, the same ratio as the brand profile.
 - Status in service email (Verified, on hold, terminated, in review) uses the shared status colors with an icon and a text label, as everywhere else.
-- **Dark mode.** Apple Mail, Outlook and Gmail apps may invert colors. Use logos with transparent backgrounds and enough padding to survive on a dark ground, never put dark text on a transparent image, and test in dark mode before sending. `TODO(dev): add color-scheme meta tags and a dark-mode test pass to the send checklist.`
+- **Dark mode.** Apple Mail, Outlook and Gmail apps may invert colors. Use logos with transparent backgrounds and enough padding to survive on a dark ground, never put dark text on a transparent image, and test in dark mode before sending.
 
 ## Type in email
 
@@ -65,7 +65,6 @@ Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. E
 - Headlines and the masthead name are left-aligned, sentence case and no larger than `h1` (40px). Email never uses `display` sizes.
 - Food Integrity Collective emails follow its pairing in `03-typography.md`: Quicksand for the masthead and headlines, Avenir for body. Lora sits out.
 - Body paragraphs are left-aligned. Center only short lines: the masthead, a single button, a date line.
-- `TODO(design): confirm Lora is loaded by link tag in email templates, or whether templates should go straight to Georgia.`
 
 ## Layout and images
 
@@ -104,7 +103,7 @@ Required in every email:
 | Manage preferences | Link to choose topics or frequency |
 | Unsubscribe | One click for marketing and newsletters. Service email can omit it only where the law allows |
 
-Optional: social row, the endorsement line, a forward or share link, a "Did someone forward this? Subscribe" line. `TODO(brand): confirm the mailing address and legal name to use for Food Integrity Project and Non-UPF Verified emails.`
+Optional: social row, the endorsement line, a forward or share link, a "Did someone forward this? Subscribe" line.
 
 ## Accessibility
 
@@ -113,7 +112,7 @@ Optional: social row, the endorsement line, a forward or share link, a "Did some
 - Contrast follows `08-accessibility.md`: 4.5:1 for body text and for button labels on their fill, 3:1 for large text. Light button fills (Monarch, Romanesco) do not need 3:1 against Birch because the label carries the meaning, as in `06-ui-framework.md`; never make those buttons icon-only or image-only.
 - The email still makes sense with images off: every headline, date and action is text.
 - No information in color alone, no animated GIFs that flash more than three times a second.
-- No emoji as icons. Use text, or an icon from the system's set with alt text. Motion in email follows `07-motion.md`. `TODO(design): decide whether animated GIFs are allowed in campaigns (see issue #5).`
+- No emoji as icons. Use text, or an icon from the system's set with alt text. Motion in email follows `07-motion.md`.
 
 ## Before sending
 
@@ -129,5 +128,5 @@ Optional: social row, the endorsement line, a forward or share link, a "Did some
 ## Rules for Claude Code
 
 - Build email templates from the tables above. Inline the hex values from "Color in email"; never pick colors by eye or copy them from an older template.
-- Use only official logo files. If the needed version (for example a reversed logo) does not exist, use the closest allowed variant from `04-logos-and-marks.md` and leave a `TODO(design)`.
+- Use only official logo files. If the needed version (for example a reversed logo) does not exist, use the closest allowed variant from `04-logos-and-marks.md` and open a `question` issue for the missing file.
 - Write all email copy with `10-writing.md`. Service email timing and content follow `11-ux.md`, "Notifications and email".

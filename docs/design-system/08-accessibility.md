@@ -88,7 +88,7 @@ This file wins any conflict with the rest of the design system, including the br
 | Every build of this repo | `npm run check` recomputes every documented contrast ratio and the semantic-pairing audit |
 | Every pull request | Automated axe checks with `@axe-core/playwright` on key pages, in light and dark, for each brand context |
 | Before release | Keyboard-only pass; screen reader pass (VoiceOver on Safari, NVDA on Firefox or Chrome); 200% zoom and 320px width check |
-| Quarterly | Review with people who use assistive technology. `TODO(design): set up a panel or partner.` |
+| Quarterly | Review with people who use assistive technology |
 
 Automated tools catch roughly a third of issues. Manual checks are required.
 

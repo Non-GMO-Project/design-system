@@ -10,7 +10,7 @@
     "watch": "node scripts/build-showcase.mjs --watch",
     "dev": "node scripts/build-showcase.mjs --watch --serve",
     "check": "node scripts/generate-color-scales.mjs --check && node scripts/build-showcase.mjs --check",
-    "todos": "grep -rn \"TODO(\" docs/design-system",
+    "todos": "gh issue list --repo Non-GMO-Project/design-system --label question --state open --limit 200",
     "prepare": "git config core.hooksPath .githooks || true"
   },
   "engines": {

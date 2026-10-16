@@ -11,7 +11,7 @@ One set of typefaces serves every brand. Color and logos tell the brands apart; 
 | Accent | `--font-accent` | **Quicksand** | Eyebrows, labels, buttons and seal wordmarks. May carry the headline where a piece needs warmth over authority | Paragraphs |
 | Mono | `--font-mono` | System monospace | Code, API keys, record IDs where character-level accuracy matters | Prose |
 
-**Avenir on screens.** Avenir is a licensed desktop face. Nunito Sans is the approved substitute where it cannot be embedded, which includes every website and app until a web license exists. The sans stack puts Nunito Sans first so every device renders the same face. `TODO(design): decide whether to buy an Avenir web license. If so, put "Avenir Next" first in --font-sans.`
+**Avenir on screens.** Avenir is a licensed desktop face. Nunito Sans is the approved substitute where it cannot be embedded, which includes every website and app until a web license exists. The sans stack puts Nunito Sans first so every device renders the same face.
 
 All three web families are open-licensed (SIL Open Font License) and self-hosted. In Next.js, load them with `next/font/google`, which self-hosts at build time and adjusts fallback metrics to avoid layout shift. Everywhere else, import the generated `styles/fonts.css`, which serves the same files from `public/fonts/` with `font-display: swap` (see `09-tokens.md`). Each stack keeps system fallbacks after the hosted face.
 
@@ -70,8 +70,6 @@ Print minimums from the brand guide: 12pt body in print, 24px on a 1920 slide.
 | Display size | Allowed, once per page | Not used |
 | Eyebrows | Allowed above section heads | Rare. Use a plain `h5` instead |
 
-`TODO(design): the brand guide does not address operational apps. Confirm Lora page titles and Nunito Sans sub-headings for staff tools.`
-
 Standards documents and policy pages are long-form reading: Lora body at `body-lg`, measure around 66 characters.
 
 ## Rules
@@ -112,11 +110,9 @@ Retired from the older guides: Copperplate (Non-GMO Project callouts) and system
 <td className="text-sm tabular-nums">1,284</td>
 ```
 
-`TODO(dev): add named text utilities (text-h1, text-eyebrow, text-body-sm and so on) in the tokens CSS with @utility so the scale names above become classes and the arbitrary values above disappear.`
-
 ## Rules for Claude Code
 
 - Use the scale. No arbitrary font sizes outside the named tokens.
 - Lora for headings, Nunito Sans for reading and interface text, Quicksand for labels, buttons and eyebrows. Never Quicksand for paragraphs.
 - Prose containers always get a max width.
-- Never load a font family beyond these three without a `TODO(design)` sign-off.
+- Never load a font family beyond these three without design sign-off. Ask in a `question` issue.

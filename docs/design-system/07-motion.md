@@ -84,8 +84,6 @@ This is the one place the system allows delight. Use it for milestones, such as 
 
 Information is not a milestone: a Non-UPF Verified scan result uses `status-change`, never the signature moment.
 
-`TODO(design): approve or replace the signature moment.`
-
 ## Public page orchestration
 
 A public landing page may have one orchestrated entrance: eyebrow, hero headline, supporting text and primary action appear in sequence, 60ms apart, using `page-enter`. Sections further down do not each animate in as you scroll. If a section needs attention, use layout and content, not motion.

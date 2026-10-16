@@ -70,7 +70,7 @@ Where photographs come from, for every brand. This covers photography only; illu
 - **Know where every image came from.** Keep the license, download record or contract with the project, so the source and terms can be found later.
 - **Credits** appear only when the license or contract requires them.
 - **Real products must be verified.** If a photo shows an actual, identifiable product, that product must be verified by the program the piece speaks for.
-- **AI-generated images** may be used for ideation and creative brainstorming only, not in published work. `TODO(brand): confirm whether AI-generated imagery is allowed in published work, and under what limits.`
+- **AI-generated images** may be used for ideation and creative brainstorming only, not in published work.
 - **No formal sign-off.** There is no required approval step for imagery. The brand and creative team can review images on request.
 
 ## Choosing the brand context
@@ -87,7 +87,7 @@ Ask "who is this surface speaking for, and who is it speaking to?"
 | Collective membership, events, advocacy, member portal | `collective` | Program leads |
 | "Our programs" page comparing all three | `fip` page, each program card in its own context | House level with equal programs |
 | Email from a program | That program | |
-| Donation flow | `fip` unless the campaign is for one program | `TODO(brand): confirm` |
+| Donation flow | `fip` unless the campaign is for one program | The parent leads funder communications |
 
 When unsure, use `fip`. The house context is always correct, just less specific.
 
@@ -125,7 +125,7 @@ For headers or footers where the parent should be visible, use the lockups in `0
 
 Only on house-level surfaces. Rules:
 - Each program appears in its own container with its own `data-brand`.
-- Programs get equal size, equal weight and a consistent order: Non-GMO Project, Non-UPF Verified, Food Integrity Collective. `TODO(brand): confirm order.`
+- Programs get equal size, equal weight and a consistent order: Non-GMO Project, Non-UPF Verified, Food Integrity Collective.
 - Never blend two program colors in one element, gradient or chart series.
 - **Monarch and Dragon Fruit never appear in the same layout,** except in program chips (see "Multi-program views") and program cards on house-level pages. A program card shows its seal or logo, its dark and its supporting tint, and may carry one primary button in its own signature so each card leads into its program. Because the card sets its own `data-brand`, the button takes that program's colors automatically. Nothing else on a house-level page takes a program signature: no signature headlines, fills or highlights outside the card's button.
 

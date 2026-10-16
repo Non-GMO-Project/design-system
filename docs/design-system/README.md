@@ -1,13 +1,13 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.37 (draft for review)
-**Owner:** Food Integrity Project design team. `TODO(design): name an owner and a reviewer.`
+**Version:** 0.38 (draft for review)
+**Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
 
 This folder is the design framework that people and Claude Code both follow. It defines how things look, move and behave so that a page built this week and a tool built next year feel like they came from the same family.
 
-Values marked `TODO(...)` still need a decision. Everything else is a working default.
+Everything here is a working default. Open questions are tracked as [GitHub issues labeled `question`](https://github.com/Non-GMO-Project/design-system/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion), not in these files.
 
 ## How the folder is organized
 
@@ -64,7 +64,7 @@ It is **generated from these Markdown files** by `scripts/build-showcase.mjs`. D
 | `npm run watch` | Rebuild on every change, without the server |
 | `npm run colors` | Regenerate color scales and pairings from `scripts/palette.config.json` |
 | `npm run check` | Fail if anything generated is out of date or a check fails (for CI) |
-| `npm run todos` | List every open `TODO(...)` |
+| `npm run todos` | List the open `question` issues on GitHub (needs the GitHub CLI) |
 
 **How it stays current automatically:**
 
@@ -73,15 +73,11 @@ It is **generated from these Markdown files** by `scripts/build-showcase.mjs`. D
 3. **On commit:** the pre-commit hook in `.githooks/` rebuilds and stages `index.html`, `styles/` and the trademark pages whenever a doc is part of the commit. `npm install` turns the hook on.
 4. **In CI:** `npm run check` fails the build if someone committed docs without rebuilding.
 
-## Placeholder convention
+## Open questions
 
-| Marker | Meaning |
-|---|---|
-| `TODO(design): ...` | A design decision or official value is needed |
-| `TODO(dev): ...` | An implementation step is needed |
-| `TODO(brand): ...` | Needs sign-off from brand or communications leadership |
+Decisions still needed, files still to come and implementation steps are [GitHub issues labeled `question`](https://github.com/Non-GMO-Project/design-system/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion), not markers in these files. Each issue links to the doc section and the showcase section it affects. Answer in the issue; the change is made in the docs and the issue is closed.
 
-Run `npm run todos` to see what is still open. The showcase lists them too.
+When the system has no answer, don't invent a value and don't add a TODO to the docs: open a `question` issue with the context instead. Run `npm run todos` to list the open ones.
 
 ## Use it with AI
 
@@ -168,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.38 | 2026-10-16 | Open questions moved out of the docs into GitHub. Every `TODO(design)`, `TODO(brand)` and `TODO(dev)` became an issue labeled `question` (#71 to #115, and #40 for the butterfly photo), each with its context, numbered questions and links to the doc section, the showcase section and the line where the TODO was. Related TODOs share one issue. The markers are gone from the docs and the showcase; where a table cell held only a TODO it now states the fact (for example "No reversed logo yet"). The "Placeholder convention" section is now "Open questions", the showcase's Open TODOs list is now a link to the `question` issues, `npm run todos` lists those issues, and the build warns if a TODO item comes back into a doc. `CLAUDE.md` and the review loop say to open a `question` issue instead of adding a TODO. The Food Integrity Project email support band in `13` now matches its Loam 200 panel |
 | 0.37 | 2026-10-16 | Badge and chip accessibility check (#68). Status badges pass in every brand and mode (text 8.5:1 or better, icons 4.4:1 or better), and program chip text passes for every program, Non-GMO Project included (Forest on Monarch, 5.6:1). Two fixes: the remove button's focus ring inside a program chip now uses the chip's text color, because the usual ring fell to 2.4:1 on Monarch and 1.5:1 on Romanesco in dark mode; and the generic filter chip's dot is now `--foreground`, because the brand dark nearly disappeared on the dark-mode chip. The build's contrast audit now lists program chips, their focus ring and filter chips explicitly |
 | 0.36 | 2026-10-16 | Removed the brand switcher from the showcase top bar and mobile header (#66). It recolored the components but not the content, which was confusing. The page now always uses the Food Integrity Project context; brand-specific examples (logos, color mappings, email samples, the signature moment demo, brand profiles) keep showing every brand side by side |
 | 0.35 | 2026-10-16 | The showcase's opening headline now says just "Food Integrity Project" (#60); the eyebrow above it already says "Digital design system". The system's full name is unchanged in the docs |

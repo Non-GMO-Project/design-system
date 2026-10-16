@@ -4,7 +4,7 @@
 **Role:** Parent organization and institutional voice. Governance, funding, policy, employer brand.
 **Voice:** Institutional, plain, unhurried.
 
-> The parent palette is marked **proposed** in the style guide. `TODO(brand): confirm Cacao, Loam and Milkweed Leaf.`
+> The parent palette is marked **proposed** in the style guide.
 
 ## Who it speaks to
 
@@ -26,7 +26,7 @@ Rigorous, calm, connective. It sounds like an organization that checks its work 
 
 **Ratio:** 60 Birch, 24 Cacao type, 6 Loam, 10 Milkweed Leaf.
 
-Green is the one hue no program owns, and Milkweed Leaf sits opposite Monarch orange. Cacao is a warm near-black that matches Forest and Dark Matter in weight; it sets type. The guide says Cacao "is never a fill" but also that each brand's dark "sets every inverted panel"; this system allows Cacao for inverted hero bands and footers only. `TODO(brand): confirm.`
+Green is the one hue no program owns, and Milkweed Leaf sits opposite Monarch orange. Cacao is a warm near-black that matches Forest and Dark Matter in weight; it sets type. The guide says Cacao "is never a fill" but also that each brand's dark "sets every inverted panel"; this system allows Cacao for inverted hero bands and footers only.
 
 ## Logos
 
@@ -40,7 +40,7 @@ Documents and standards pairing by default (Lora + Avenir). Donor reports and th
 
 Close, textured views of the natural systems food depends on (the style guide's butterfly-wing macro), and wide views of working landscapes and food systems: fields, processing lines, labs, people at work. Real people, real places, natural light. Avoid stock "hands holding a seedling" clichés and anything that looks staged.
 
-**Photo library.** Use the shared sources in `01-brand-architecture.md`, "Photography sourcing". `TODO(brand): a Food Integrity Project photo library, if one is planned.`
+**Photo library.** Use the shared sources in `01-brand-architecture.md`, "Photography sourcing".
 
 ## Voice
 
