@@ -15,7 +15,7 @@ How the brand elements carry into email: newsletters, campaigns and service mess
 | Type | Examples | Layout | Rules |
 |---|---|---|---|
 | Service | Documents needed, status change, confirmation | Header, one message block, one button, minimal footer | No hero image, no support band, no social row. Subject says the thing (`11-ux.md`) |
-| Newsletter | Industry News, Better With the Butterfly, New GMO Alert, The Fullist | Header, masthead, lead story, more stories, support band, full footer | A recurring name (masthead) set in Lora. Two to five stories |
+| Newsletter | Industry News, Better With the Butterfly, New GMO Alert, The Fullist | Header, masthead, lead story, more stories, support band, full footer | A recurring name (masthead) set in Lora (Quicksand for the Collective). Two to five stories |
 | Campaign | Webinar invitation, appeal, launch | Header, hero, one story, one button (repeated once at the end), full footer | One goal. The button label is the same both times |
 | Member and community | Collective member updates | Header, letter-style body, image grid, full footer | Warmer tone (Quicksand + Avenir pairing), still one brand |
 
@@ -27,13 +27,13 @@ Top to bottom. Skip any part a type above does not list.
 |---|---|---|
 | Preheader | One line of preview text, hidden in the body | Adds to the subject, never repeats it. 40 to 90 characters |
 | Header | Brand logo, issue date or "View in browser" | Horizontal logo, PNG at 2x, 120px wide minimum (`TODO(design): PNG exports of the Non-UPF Verified logo, which exists only as SVG, and a transparent Food Integrity Project logo PNG`), linked to the brand site, alt text = brand name. On Birch, or on the brand dark with a reversed logo |
-| Masthead | Newsletter name and a one-line description | Name in Lora (`h1` size), description in Avenir `body-sm` or `eyebrow`. Brand dark text on Birch. One masthead per email |
+| Masthead | Newsletter name and a one-line description | Name at `h1` size in Lora (Quicksand for the Collective), description in Avenir `body` or `eyebrow`. Brand dark text on Birch. One masthead per email |
 | Hero | One photograph | Full column width. Calm subject, no text burned in, no seals or logos dropped on top. Meaningful alt text, or `alt=""` if purely mood |
-| Story block | Eyebrow (optional), headline, body, button | Headline in Lora `h2` or `h3`, body in Avenir `body`, left-aligned. Image beside the text on wide screens, stacked above it on phones |
+| Story block | Eyebrow (optional), headline, body, button | Headline in Lora `h2` or `h3` (Quicksand for the Collective), body in Avenir `body`, left-aligned. Image beside the text on wide screens, stacked above it on phones |
 | Divider | A hairline between stories | 1px in the brand's support color, or `border` from the tokens. Never the signature color |
 | Support band | One appeal: donate, sign up, share | Full-width panel on the brand's support color with its paired text color (see the table below), or the brand dark with Birch text. One per email, after the last story |
 | Social row | Links to the brand's social accounts | Icons in the brand dark on Birch (or Birch on the brand dark), each with the platform name as alt text. `TODO(design): official social icon set. Lucide has no platform logos` |
-| Footer | Logo or mark, legal name, mailing address, website, preferences, unsubscribe | Plain text on Birch, Avenir `body-sm`. The endorsement line "A program of the Food Integrity Project" for program emails |
+| Footer | Logo or mark, legal name, mailing address, website, preferences, unsubscribe | Plain text on Birch, Avenir `body` (16px). The endorsement line "A program of the Food Integrity Project" for program emails |
 
 ## Color in email
 
@@ -57,12 +57,13 @@ Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. E
 
 | Role | Stack for email | Falls back to |
 |---|---|---|
-| Serif (masthead, headlines) | `Lora, Georgia, "Times New Roman", serif` | Georgia |
+| Serif (masthead, headlines; not the Collective) | `Lora, Georgia, "Times New Roman", serif` | Georgia |
 | Sans (body, footer) | `"Nunito Sans", "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif` | Avenir on Apple devices, Segoe UI on Windows, Arial elsewhere |
-| Accent (eyebrows, button labels) | `Quicksand, "Nunito Sans", "Avenir Next", Avenir, Helvetica, Arial, sans-serif` | Same as sans |
+| Accent (eyebrows, button labels; Collective mastheads and headlines) | `Quicksand, "Nunito Sans", "Avenir Next", Avenir, Helvetica, Arial, sans-serif` | Same as sans |
 
-- Sizes come from the web scale in `03-typography.md`. Body is 16px and never smaller, except the footer at 14px (`body-sm`).
-- Headlines are left-aligned, sentence case and no larger than `h1` (40px). Use `display` sizes only for a masthead name.
+- Sizes come from the web scale in `03-typography.md`. Body is 16px and never smaller, footer included.
+- Headlines and the masthead name are left-aligned, sentence case and no larger than `h1` (40px). Email never uses `display` sizes.
+- Food Integrity Collective emails follow its pairing in `03-typography.md`: Quicksand for the masthead and headlines, Avenir for body. Lora sits out.
 - Body paragraphs are left-aligned. Center only short lines: the masthead, a single button, a date line.
 - `TODO(design): confirm Lora is loaded by link tag in email templates, or whether templates should go straight to Georgia.`
 
@@ -85,7 +86,7 @@ Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. E
 ## Buttons and links
 
 - Buttons are built in HTML (a padded table cell or "bulletproof" button with a VML fallback for Outlook), never an image of a button.
-- At least 44px tall and the label in Quicksand or Avenir 16px, weight 600. Corner radius 4px (`rounded-sm`).
+- At least 44px tall, with the label in the `label` style from `03-typography.md` (Quicksand 15px, weight 600, on the accent stack above). Corner radius 8px (`rounded-md`), the same as product buttons in `06-ui-framework.md`.
 - Button labels start with a verb and say where the click goes: "Register for the webinar", "Read the Standard", "Donate". Not "Click here", "Learn more" alone or two different labels for the same link.
 - Link text says where it goes: "Read the Non-GMO Project Standard, version 17", not "here" (`10-writing.md`, Accessible copy).
 - One primary button per story. A second action in the same story is a text link.
