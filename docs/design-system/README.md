@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.41 (draft for review)
+**Version:** 0.42 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.42 | 2026-10-21 | Collective artwork takes Forest and Romanesco (#108). The "Food should nourish life" badge and the petals illustrations are to be recolored from the earlier green `#255330` and lime `#E2E98D`, which are now retired; the design team supplies the recolored files under the same names. `04`, `02` and the Collective profile say so |
 | 0.41 | 2026-10-16 | Doc file names in the showcase are links (#118). Wherever a doc names another doc file in code style, such as `08-accessibility.md`, `../02-color.md` or `brands/non-gmo-project.md`, the showcase links it to that file's entry in Source documents and opens it. The brand and trademark headers that name their source file link the same way. The standalone participant pages keep them as plain text, since those pages stand alone |
 | 0.40 | 2026-10-16 | Non-UPF Verified mark colors follow the design system (#115). The participant guide's color table now gives Dragon Fruit `#CE1B6A` and Dark Matter `#0A2041`, replacing the earlier trademark guide's `#CE0F69` and `#041E42`; Pantone 214 C and 282 C stay as the print equivalents. The page says its screen colors follow the Food Integrity Project Style Guide, `02` and `CLAUDE.md` say the same, and the participant page `trademark/non-upf-verified.html` is rebuilt |
 | 0.39 | 2026-10-16 | The showcase Components section opens with "Brand variations" (#70): one card per brand, each in its own `data-brand` context, showing the parts whose colors change by brand (primary, secondary and outline buttons, links, a field, a checkbox and switch, progress, the program chip and the support panel) next to a shared status badge. It replaces what the removed brand switcher used to do for components, with every brand visible at once |
