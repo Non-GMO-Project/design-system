@@ -680,7 +680,7 @@ Tailwind v4 reads tokens from CSS with `@theme`. `inline` makes the utilities re
 
 /* Static values that never change by brand or mode */
 @theme {
-  --radius-sm: 0.25rem;   /* inputs, badges, checkboxes, chips */
+  --radius-sm: 0.25rem;   /* inputs, badges, checkboxes */
   --radius-md: 0.5rem;    /* buttons, cards, menus, popovers */
   --radius-lg: 0.75rem;   /* dialogs, sheets, large panels */
 

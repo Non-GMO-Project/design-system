@@ -210,10 +210,12 @@ Radius follows hierarchy rather than one value everywhere:
 
 | Token | Value | Use |
 |---|---|---|
-| `rounded-sm` | 4px | Inputs, checkboxes, badges, chips |
+| `rounded-sm` | 4px | Inputs, checkboxes, badges |
 | `rounded-md` | 8px | Buttons, cards, menus, popovers |
 | `rounded-lg` | 12px | Dialogs, sheets, large feature panels |
-| `rounded-full` | | Avatars, switches, program chip dots, pills |
+| `rounded-full` | | Avatars, switches, program and filter chips, chip dots |
+
+Buttons and cards stay at 8px on every surface, public pages included. Pill shapes are only for chips, never for buttons, and cards don't go to 16px corners, which reads noticeably curvier than the rest of the system.
 
 | Elevation | Token | Use |
 |---|---|---|
