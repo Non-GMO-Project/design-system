@@ -22,6 +22,15 @@ The showcase build (`npm run build`) extracts the CSS blocks on this page into g
 
 `<design-system>` is the path to this repository in the app (for example a vendored copy pinned to a commit). A design-system update then restyles the app with no hand-copied code. Skip `fonts.css` in a Next.js app that loads the fonts with `next/font` (see Tailwind wiring below). The palette block is generated from `scripts/palette.config.json` by `npm run colors`. Do not edit it by hand.
 
+## Gradual adoption
+
+An existing app can take the system on one area at a time. There is no scoped build of the tokens: `tokens.css` sets the shared and Food Integrity Project semantic tokens on `:root`, using common names such as `--background`, `--foreground`, `--primary` and `--border`.
+
+1. **Fonts first.** `fonts.css` only adds `@font-face` rules and changes nothing until something uses the families, so it is safe to import on its own.
+2. **Rename the app's own variables.** If the app already defines any of the system's token names on `:root`, rename its own to an app prefix (for example `--app-background`) before importing anything else. Copying the system's values into a scoped block instead drifts as soon as the palette changes.
+3. **Then import `tokens.css` and `tailwind.css` as they are.** Set `data-brand` on the wrapper of each area that speaks for one program (see How brand switching works). Screens not yet migrated keep their own renamed variables.
+4. **Components last.** The components in `06-ui-framework.md` are built on shadcn/ui; an app without it adopts them screen by screen once the tokens are in place.
+
 ## How brand switching works
 
 ```html

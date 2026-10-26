@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.43 (draft for review)
+**Version:** 0.44 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -43,7 +43,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 5. **Status is shared and never color alone.** Verified, on hold and terminated look the same in every brand and always pair color, icon and label.
 6. **Logos and seals are assets, never drawings.** Always use the official files. Never recreate a logo or certification seal in SVG, CSS, canvas or text.
 7. **Use the component library before building.** Check `06-ui-framework.md` for the component that fits the interaction type. Build custom only when nothing fits, and build on the same primitives.
-8. **Motion explains change.** Animate to show what happened after someone acts. Do not decorate.
+8. **Motion explains change.** Animate to show what happened after someone acts. Do not decorate; an app may choose a larger celebration for a milestone (see `07-motion.md`).
 9. **Plain words.** Sentence case, verbs on buttons, the same word for the same action through a whole flow. Never abbreviate the parent to "FIP", or the programs to "NGP" or "FIC", in external copy. See `10-writing.md`.
 10. **Every state, no dead ends.** Every screen has loading, empty, error and success states and always offers a next step. See `11-ux.md`.
 
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.44 | 2026-10-26 | Answers to two open questions. Celebrations (#123): an app may go beyond the signature moment for a milestone when it improves the experience, such as a countdown and confetti for a shared score reveal; it is the app team's call, case by case. It still runs only on someone's action, once per milestone, never in lists, never flashes more than three times a second, and is off under reduced motion. New "Larger celebrations" section in `07`; principle 4, the reduced-motion list, the operational-apps motion row in `06` and rule 8 say the same. Gradual adoption (#124): no scoped token build; a new "Gradual adoption" section in `09` says to import `fonts.css` first, rename the app's own clashing `:root` variables, then import `tokens.css` and `tailwind.css` as they are, and take the shadcn/ui components last |
 | 0.43 | 2026-10-23 | Answers to three open questions. Shape (#93): buttons and cards stay at 8px (`rounded-md`) on public pages and in apps; pills are only for program and filter chips, never buttons, and cards don't use 16px corners. The radius table in `06` now lists chips under `rounded-full`, matching how the showcase draws them (it had them at 4px). Program order (#97): Non-GMO Project, Non-UPF Verified, Food Integrity Collective, as `01` already says, is confirmed. Design-tool export (#82): no `tokens.json` for now, since Figma is only used to review an external developer's mockups |
 | 0.42 | 2026-10-21 | Collective artwork takes Forest and Romanesco (#108). The "Food should nourish life" badge and the petals illustrations are to be recolored from the earlier green `#255330` and lime `#E2E98D`, which are now retired; the design team supplies the recolored files under the same names. `04`, `02` and the Collective profile say so |
 | 0.41 | 2026-10-16 | Doc file names in the showcase are links (#118). Wherever a doc names another doc file in code style, such as `08-accessibility.md`, `../02-color.md` or `brands/non-gmo-project.md`, the showcase links it to that file's entry in Source documents and opens it. The brand and trademark headers that name their source file link the same way. The standalone participant pages keep them as plain text, since those pages stand alone |
