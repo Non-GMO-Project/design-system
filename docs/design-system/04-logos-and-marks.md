@@ -60,7 +60,7 @@ What is in `public/brand/` today. The showcase build checks this table against t
 | `nonupf/nonupf-seal-circular-color.png` | nonupf | seal | color | Secondary circular mark, pink, 900 x 900. Only when the primary cannot fit. Program trademark kit (`Secondary_Non-UPF_Verified_pink.png`) |
 | `nonupf/nonupf-seal-circular-mono-dark.png` | nonupf | seal | mono-dark | Secondary circular mark, navy, 900 x 900. Program trademark kit (`Secondary_Non-UPF_Verified_navy.png`) |
 | `nonupf/nonupf-seal-circular-mono-light.png` | nonupf | seal | mono-light | Secondary circular mark, white, 900 x 900. Program trademark kit (`Secondary_Non-UPF_Verified_white.png`) |
-| `nonupf/nonupf-mark-color.png` | nonupf | mark | color | Icon in circle. Favicon and app icon only; the icon alone needs approval elsewhere |
+| `nonupf/nonupf-mark-color.png` | nonupf | mark | color | Icon in circle. Favicon, app icon and social avatar only; the icon alone needs approval elsewhere |
 | `nonupf/nonupf-mark-mono-dark.svg` | nonupf | mark | mono-dark | Icon in circle, one-color black `#231F20`, vector. Favicon and app icon only; the icon alone needs approval elsewhere. Supplied in #22 |
 | `collective/collective-logo-horizontal-mono-light.png` | collective | logo | mono-light | Full lockup (mark + "Food Integrity Collective" in serif), cream `#FEFDF0` on transparent, 1501 x 509. foodintegritycollective.org header (`food_integrity_cream.png`) |
 | `collective/collective-mark-color.png` | collective | mark | color | Green mark |
@@ -69,7 +69,7 @@ What is in `public/brand/` today. The showcase build checks this table against t
 
 Files still to come (reversed logos, vector versions of raster files, endorsement lockups) are tracked as `question` issues on GitHub.
 
-Other Non-UPF Verified artwork in `public/brand/nonupf/graphics/` (not logos, so not in the inventory above), one-color black `#231F20` vectors supplied in #22, all built around the program URL: `nonupf-graphic-url-vertical.svg` ("nonultraprocessed.org" set vertically with a small NON UPF), `nonupf-graphic-url-badge.svg` (the icon in a circle under an arc of "nonultraprocessed.org") and `nonupf-graphic-url-wave.svg` ("NONULTRAPROCESSED.ORG" on a wave with NON UPF). The badge includes the icon, so the rule on the icon alone applies to it.
+Other Non-UPF Verified artwork in `public/brand/nonupf/graphics/` (not logos, so not in the inventory above), one-color black `#231F20` vectors supplied in #22, all built around the program URL: `nonupf-graphic-url-vertical.svg` ("nonultraprocessed.org" set vertically with a small NON UPF), `nonupf-graphic-url-badge.svg` (the icon in a circle under an arc of "nonultraprocessed.org") and `nonupf-graphic-url-wave.svg` ("NONULTRAPROCESSED.ORG" on a wave with NON UPF). They are submarks. Use them on social media, merchandise and campaign collateral, and as watermarks; they need no approval. Use them only once the corporate logo or the verification mark is already established in the piece, never in place of either.
 
 Other Collective artwork in `public/brand/collective/` (not logos, so not in the inventory above): `campaign/collective-campaign-nourish-life-badge.png` and `collective-campaign-nourish-life-badge-light.png` (the "Food should nourish life" badge), and `illustrations/collective-petals-*.png` (the petals motif). These files still use the Collective's earlier colors, green `#255330` and lime `#E2E98D`. They are to be recolored to Forest and Romanesco, and the earlier colors are retired; the design team supplies the recolored files, which replace these under the same names.
 
@@ -106,7 +106,7 @@ SVG for everything on screen once supplied. PNG only where a platform requires i
 | Footer on a program page | Program logo, plus the endorsement line |
 | Program page where the parent must be visible | Endorsement lockup (below) |
 | On the brand dark or a hero gradient | Reversed or mono-light |
-| Single-color printing, embossing, watermark | Mono |
+| Single-color printing, embossing | Mono |
 | Favicon, app icon, social avatar | Mark, on Birch or the brand dark |
 | Email header | Horizontal logo, PNG at 2x, with alt text |
 | On photography | A Birch (light) mark dropped onto a calm part of the image |
@@ -126,7 +126,7 @@ Which artwork and which file to use for each application, by program. Sizes are 
 | Site or app header | SVG, at least 120px wide | Horizontal logo; the mark alone under 400px of space |
 | Footer | SVG | Program logo plus the endorsement line |
 | Email header | PNG at twice the display size, with alt text | Horizontal logo |
-| Watermark, embossing, one-color use | SVG | Mono-dark, or mono-light on dark grounds |
+| Embossing, one-color use | SVG | Mono-dark, or mono-light on dark grounds |
 | Product page seal | SVG, at least the seal's screen minimum | Certification seal, only on a currently verified product |
 | On photography | SVG | Light mark or logo on a calm part of the image, with a scrim if needed |
 
@@ -139,7 +139,7 @@ Square icons and share images are made by placing the official file on a Birch o
 | Favicon, touch and app icons, social avatar | `fip/fip-mark-color.svg` on Birch |
 | Header, share image | `fip/fip-logo-horizontal-color.svg`; `fip/fip-mark-color.svg` in narrow headers |
 | Footer and email | `fip/fip-logo-horizontal-color.svg` on Birch. No transparent PNG for email yet; the PNG in `fip/` has a white background |
-| Dark grounds, photography, watermark | No reversed or one-color files yet |
+| Dark grounds, photography, one-color | No reversed or one-color files yet |
 
 ### Non-GMO Project
 
@@ -150,7 +150,7 @@ Square icons and share images are made by placing the official file on a Birch o
 | Header, share image | `nongmo/nongmo-logo-horizontal-color.png` on Birch, or `nongmo/nongmo-logo-horizontal-reversed.png` on Forest; `nongmo/nongmo-mark-color.svg` in narrow headers |
 | Footer | `nongmo/nongmo-logo-horizontal-reversed.png` on Forest |
 | Email header | `nongmo/nongmo-logo-horizontal-color.png` (913px wide, sharp up to 456px displayed) |
-| Watermark, one-color | `nongmo/nongmo-logo-horizontal-mono-dark.svg` or `nongmo/nongmo-mark-mono-dark.svg` |
+| One-color | `nongmo/nongmo-logo-horizontal-mono-dark.svg` or `nongmo/nongmo-mark-mono-dark.svg` |
 | Product page seal | `nongmo/nongmo-seal-verified-color.svg`; `nongmo/nongmo-seal-verified-mono-light.png` on dark grounds; `nongmo/nongmo-seal-bilingual-color.jpg` for products sold in Canada |
 | On photography | `nongmo/nongmo-logo-horizontal-reversed.png` |
 
@@ -158,12 +158,12 @@ Square icons and share images are made by placing the official file on a Birch o
 
 | Application | File |
 |---|---|
-| Favicon, touch and app icons | `nonupf/nonupf-mark-color.png`, or `nonupf/nonupf-mark-mono-dark.svg` for a one-color favicon. These are the only places the icon alone is approved |
-| Social avatar | Not set yet. The icon alone is approved only for favicons and app icons |
+| Favicon, touch and app icons | `nonupf/nonupf-mark-color.png`, or `nonupf/nonupf-mark-mono-dark.svg` for a one-color favicon. These and the social avatar are the only places the icon alone is approved |
+| Social avatar | `nonupf/nonupf-mark-color.png`; where the space allows a wider image, `nonupf/nonupf-logo-horizontal-color.svg` |
 | Header, share image | `nonupf/nonupf-logo-horizontal-color.svg` on Birch. In narrow headers keep the logo at 120px or wider, since the icon alone needs approval |
 | Footer | `nonupf/nonupf-logo-horizontal-color.svg` on Birch, until a reversed logo exists |
 | Email header | No PNG of the logo yet for email clients that block SVG |
-| Watermark, one-color | `nonupf/nonupf-logo-horizontal-mono-dark.svg` |
+| One-color | `nonupf/nonupf-logo-horizontal-mono-dark.svg` |
 | Product page seal | `nonupf/nonupf-seal-verified-color.svg`; `nonupf/nonupf-seal-verified-mono-light.png` on dark grounds; `nonupf/nonupf-seal-circular-color.png` only where the primary cannot fit; `nonupf/nonupf-seal-verified-color.png` in email |
 | Dark grounds, photography | No reversed logo yet |
 
@@ -174,7 +174,7 @@ Square icons and share images are made by placing the official file on a Birch o
 | Favicon, touch and app icons, social avatar | `collective/collective-mark-color.png` on Birch, or `collective/collective-mark-mono-light.png` on Forest |
 | Header, share image | `collective/collective-logo-horizontal-mono-light.png` on Forest. No color lockup for Birch yet |
 | Footer and email header | `collective/collective-logo-horizontal-mono-light.png` on Forest (1501px wide) |
-| Watermark, one-color | `collective/collective-mark-mono-dark.png`, or `collective/collective-mark-mono-light.png` on dark grounds |
+| One-color | `collective/collective-mark-mono-dark.png`, or `collective/collective-mark-mono-light.png` on dark grounds |
 | On photography | `collective/collective-mark-mono-light.png` |
 
 ## Endorsement lockups
@@ -230,6 +230,7 @@ The seal URL (nongmoproject.org, nonultraprocessed.org) must stay readable at ev
 - Lock the parent to a seal: no shared container, no touching edges, no combined mark. Endorsement is adjacency, not fusion.
 - Rearrange lockup parts or build an endorsed lockup that reads as one mark.
 - Put a logo inside a sentence as a word.
+- Use a logo or seal as a watermark, or show one at any opacity other than 100%. Logos are not watermarks.
 - Use a program logo to represent a different program, or substitute one program's mark for another.
 - Show a seal on a product, brand or company that is not currently verified.
 - Show the Non-UPF Verified seal on a product that also carries a bioengineered food disclosure.
