@@ -9,7 +9,7 @@ The brand guide does not cover motion; everything here is a system decision. It 
 1. **Respond, then settle.** Most motion starts from a person's action and finishes quickly.
 2. **Show cause and effect.** Things enter from where they came from and leave toward where they went: a sheet slides from the edge it lives on, a deleted row collapses in place.
 3. **Fast in apps, calmer on public pages.** Staff tools should feel instant. Public pages may take a little more time for one orchestrated moment.
-4. **One signature moment.** The system has one animation for delight (see "Signature moment"), saved for the events that deserve it. Everything else stays quiet.
+4. **One signature moment.** The system has one animation for delight (see "Signature moment"), saved for the events that deserve it. Everything else stays quiet, unless an app chooses a larger celebration for a milestone (see "Larger celebrations").
 5. **Reduced motion is a first-class mode,** not an afterthought.
 
 ## Duration tokens
@@ -84,6 +84,17 @@ This is the one place the system allows delight. Use it for milestones, such as 
 
 Information is not a milestone: a Non-UPF Verified scan result uses `status-change`, never the signature moment.
 
+## Larger celebrations
+
+An app may go beyond the signature moment for a milestone when it makes the experience better for the people using it, for example a countdown and confetti when a review panel reveals its scores together. This is the app team's call, case by case; it is not a default and not a pattern for routine actions.
+
+What still applies:
+
+- It runs only when someone acts, once per milestone, never on page load and never in lists of records.
+- No flashing more than three times a second (`08-accessibility.md`).
+- Under `prefers-reduced-motion` it is off and the end state shows at once (see Reduced motion).
+- Note the choice and the reason in the app's own documentation.
+
 ## Public page orchestration
 
 A public landing page may have one orchestrated entrance: eyebrow, hero headline, supporting text and primary action appear in sequence, 60ms apart, using `page-enter`. Sections further down do not each animate in as you scroll. If a section needs attention, use layout and content, not motion.
@@ -97,7 +108,7 @@ When `prefers-reduced-motion: reduce` is set:
 - `skeleton` pulse stops; skeletons show static (`animate-pulse` is switched off in `09-tokens.md`).
 - `spin` keeps running, slowed to 1.5s, because a still spinner looks broken. Pair it with "Loading" text.
 - tw-animate-css enter and exit classes (`animate-in`, `zoom-in-95` and the rest) do not read the duration tokens. Add `motion-reduce:animate-none` to them in the component file.
-- The signature moment becomes an instant state change.
+- The signature moment and any larger celebration become an instant state change.
 - In Motion, wrap the app in `<MotionConfig reducedMotion="user">`.
 
 ## Performance

@@ -247,7 +247,7 @@ Page gutters: 16px mobile, 24px tablet, 32px desktop.
 | Shell | Top navigation, footer with endorsement | Sidebar, top bar, no marketing footer |
 | Density | Comfortable | Comfortable default, compact option for tables |
 | Brand presence | Strong: follow the usage ratios, inverted hero, imagery | Quiet: Birch, the brand dark for type, signature only on primary actions |
-| Motion | One orchestrated page moment allowed | Responsive to actions only |
+| Motion | One orchestrated page moment allowed | Responsive to actions only; a larger celebration for a milestone is the app's call (see `07-motion.md`) |
 
 ## Standard patterns
 
