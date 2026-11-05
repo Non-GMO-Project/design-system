@@ -809,7 +809,7 @@ export function createRenderer(ctx) {
     const sigBadge = (row) => badge(row).replace('<span class="badge', '<span class="badge sig-badge');
     const sigDemo = BRANDS.map((b) => {
       const ev = sigEvents[b];
-      return `<div class="card ctx" data-brand="${b}" style="display:grid;gap:0.75rem;justify-items:start"><strong class="small">${esc(brandName(b))}</strong><div class="sig-wrap" data-sig><span class="sig-glow" aria-hidden="true"></span><span data-sig-badge aria-live="polite">${badge(ev.from)}</span></div><button class="btn btn--default btn--sm" type="button" data-play-sig="${b}" data-action="${esc(ev.action)}">${esc(ev.action)}</button><template id="tpl-sig-${b}-from">${badge(ev.from)}</template><template id="tpl-sig-${b}-to">${sigBadge(ev.to)}</template></div>`;
+      return `<div class="card ctx" data-brand="${b}" style="display:grid;gap:0.75rem;justify-items:start"><strong class="small">${esc(brandName(b))}</strong><div class="sig-wrap" data-sig><span data-sig-badge aria-live="polite">${badge(ev.from)}</span></div><button class="btn btn--default btn--sm" type="button" data-play-sig="${b}" data-action="${esc(ev.action)}">${esc(ev.action)}</button><template id="tpl-sig-${b}-from">${badge(ev.from)}</template><template id="tpl-sig-${b}-to">${sigBadge(ev.to)}</template></div>`;
     }).join("");
     return section(
       "motion", "07 · Motion", "Motion answers people", f,

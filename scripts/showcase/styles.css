@@ -375,11 +375,9 @@ html.reduce-motion .skeleton { animation: none; }
 .dark .curve path { stroke: var(--birch); }
 .demo-box { width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--brand-support); border: 1px solid var(--brand-border); }
 .sig-wrap { position: relative; display: inline-grid; place-items: center; padding: 1.5rem 2rem; }
-.sig-glow { position: absolute; inset: 0; border-radius: 999px; background: radial-gradient(closest-side, var(--brand-signature), transparent); opacity: 0; }
-.sig-play .sig-glow { animation: sig-glow var(--duration-deliberate) var(--ease-standard); }
-.sig-play .badge { animation: sig-badge var(--duration-deliberate) var(--ease-emphasized); }
+.sig-play .badge { animation: sig-badge var(--duration-deliberate) var(--ease-emphasized), sig-glow var(--duration-deliberate) var(--ease-standard); }
 .sig-play .badge path { stroke-dasharray: 60; animation: sig-draw var(--duration-deliberate) var(--ease-standard); }
-@keyframes sig-glow { 30% { opacity: 0.55; } 100% { opacity: 0; } }
+@keyframes sig-glow { from { box-shadow: 0 0 0 0 transparent; } 30% { box-shadow: 0 0 12px 6px color-mix(in srgb, var(--brand-signature) 55%, transparent); } to { box-shadow: 0 0 20px 10px transparent; } }
 @keyframes sig-badge { from { transform: scale(0.94); } }
 @keyframes sig-draw { from { stroke-dashoffset: 60; } }
 html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after { animation-duration: 0ms !important; transition-duration: 0ms !important; }
