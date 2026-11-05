@@ -37,7 +37,7 @@ Top to bottom. Skip any part a type above does not list.
 
 ## Color in email
 
-Email clients do not reliably support CSS variables, so templates use the hex values behind the semantic tokens, inlined. Take them from the brand's color roles, never from an older template or by eye.
+Email clients do not reliably support CSS variables, so templates use the hex values behind the semantic tokens, inlined. Take them from the generated `styles/email.css`, never from an older template or by eye. It has one class per brand (`.email-fip`, `.email-nongmo`, `.email-nonupf`, `.email-collective`) for the outermost wrapper, with the body ground, text and links; inside it, `.email-band` for the header and dark bands, `.email-support` for support panels and `.email-button` for the primary button; and `.email-status-success`, `-warning`, `-danger`, `-info` and `-neutral` for status, shared by every brand. Run the template through the email tool's CSS inliner so every value ends up in a `style` attribute. The build checks that the table below matches the tokens.
 
 | Brand | Body ground | Text and links | Header and dark bands | Support panels | Primary button |
 |---|---|---|---|---|---|
