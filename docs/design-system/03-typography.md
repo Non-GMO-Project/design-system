@@ -102,17 +102,19 @@ Retired from the older guides: Copperplate (Non-GMO Project callouts) and system
 
 ## Tailwind usage
 
+Every token in the type scale is a Tailwind utility: `text-` plus the token name, such as `text-h1`, `text-eyebrow` or `text-body-sm`. The build generates them into `styles/tailwind.css` from the table above. Each sets the family, size, line height and weight (and the case and tracking for `eyebrow`), so don't add those separately. For a serif lead paragraph, add `font-serif leading-[1.65]` to `text-body-lg`.
+
 ```tsx
-<p className="font-accent text-[0.8125rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">How verification works</p>
-<h1 className="font-serif text-[2.5rem]/[1.08] font-medium">What verification covers</h1>
-<p className="max-w-[66ch] text-base/relaxed text-foreground">...</p>
-<span className="text-sm text-muted-foreground">Updated 3 days ago</span>
-<td className="text-sm tabular-nums">1,284</td>
+<p className="text-eyebrow text-muted-foreground">How verification works</p>
+<h1 className="text-h1">What verification covers</h1>
+<p className="max-w-[66ch] text-body text-foreground">...</p>
+<span className="text-caption text-muted-foreground">Updated 3 days ago</span>
+<td className="text-body-sm text-data">1,284</td>
 ```
 
 ## Rules for Claude Code
 
-- Use the scale. No arbitrary font sizes outside the named tokens.
+- Use the scale through its `text-*` utilities. No arbitrary font sizes outside the named tokens.
 - Lora for headings, Nunito Sans for reading and interface text, Quicksand for labels, buttons and eyebrows. Never Quicksand for paragraphs.
 - Prose containers always get a max width.
 - Never load a font family beyond these three without design sign-off. Ask in a `question` issue.

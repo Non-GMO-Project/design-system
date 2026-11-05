@@ -79,7 +79,7 @@ This is the one place the system allows delight. Use it for milestones, such as 
 | Example event | Brand | End state |
 |---|---|---|
 | A product turns Verified while a reviewer or brand is watching | Non-GMO Project, Non-UPF Verified | `Verified` badge |
-| Joining or registering for an event | Food Integrity Collective | "Welcome, member" or "You're registered" |
+| Joining or registering for an event | Food Integrity Collective | A welcome by first name, such as "Welcome, Jordan", or "You're registered" |
 | A donation completes | Food Integrity Project, or the program the campaign is for | "Donation received" |
 
 Information is not a milestone: a Non-UPF Verified scan result uses `status-change`, never the signature moment.

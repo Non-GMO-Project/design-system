@@ -7,7 +7,7 @@ The showcase build (`npm run build`) extracts the CSS blocks on this page into g
 | Generated file | What it holds |
 |---|---|
 | `styles/tokens.css` | The palette, the static values from `@theme` as plain `:root` variables, and the semantic tokens for every brand and mode |
-| `styles/tailwind.css` | The Tailwind CSS v4 wiring below (`@custom-variant dark`, `@theme inline`, `@theme`), without the `tailwindcss` and `tw-animate-css` imports |
+| `styles/tailwind.css` | The Tailwind CSS v4 wiring below (`@custom-variant dark`, `@theme inline`, `@theme`), without the `tailwindcss` and `tw-animate-css` imports, followed by one `@utility` per type scale token (`text-h1`, `text-eyebrow` and the rest, from `03-typography.md`) |
 | `styles/fonts.css` | `@font-face` rules for the self-hosted Lora, Nunito Sans and Quicksand files in `public/fonts/`, with `font-display: swap` (see `03-typography.md`) |
 | `styles/email.css` | The semantic tokens resolved to hex values, light mode, one class per brand and role, for email templates (see `13-email.md`, "Color in email") |
 
