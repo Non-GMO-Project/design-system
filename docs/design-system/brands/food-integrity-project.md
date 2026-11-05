@@ -40,7 +40,7 @@ Documents and standards pairing by default (Lora + Avenir). Donor reports and th
 
 Close, textured views of the natural systems food depends on (the style guide's butterfly-wing macro), and wide views of working landscapes and food systems: fields, processing lines, labs, people at work. Real people, real places, natural light. Avoid stock "hands holding a seedling" clichés and anything that looks staged.
 
-**Photo library.** Use the shared sources in `01-brand-architecture.md`, "Photography sourcing".
+**Photo library.** There is no single Food Integrity Project photo library; photos live in the team's own folders. When none fits, use the shared sources in `01-brand-architecture.md`, "Photography sourcing": the organization's Adobe Stock license, royalty-free sites, or a commissioned shoot where one is available.
 
 ## Voice
 

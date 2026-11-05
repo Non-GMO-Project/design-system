@@ -61,7 +61,7 @@ Where photographs come from, for every brand. This covers photography only; illu
 
 | Source | When to use it | Rights and credit |
 |---|---|---|
-| The brand's own photo library | First choice where one exists (see the brand file) | Covered by the commissioning contract |
+| The brand's own photo library | First choice where one exists. Only Non-UPF Verified has one; the other brands' photos live in team folders (see the brand file) | Covered by the commissioning contract |
 | Commissioned shoots | Hero imagery and campaigns that need real people, places and products | A signed contract with the photographer that covers the intended uses |
 | Adobe Stock | When no library image fits | Use within the terms of the organization's Adobe license |
 | Unsplash, Kaboompics, Death to Stock | When no library or Adobe image fits | Check each image's license before use. Credit the photographer when the license asks for it |

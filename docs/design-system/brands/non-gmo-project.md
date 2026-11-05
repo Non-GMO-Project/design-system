@@ -38,7 +38,7 @@ Shared system. The older Lora + Quicksand + Copperplate stack becomes the house 
 
 Fine-line botanical illustrations are a signature element, used with restraint between content blocks and next to educational content (high-risk crops, new GMOs). They live in `public/brand/nongmo/illustrations/`. Photography: rich, warm, natural tones; food preparation, farming, family meals, grocery shopping, community; intentionally inclusive; a clear focal point; real, not staged.
 
-**Photo library.** Use the shared sources in `01-brand-architecture.md`, "Photography sourcing".
+**Photo library.** There is no single Non-GMO Project photo library; photos live in the team's own folders. When none fits, use the shared sources in `01-brand-architecture.md`, "Photography sourcing": the organization's Adobe Stock license, royalty-free sites, or a commissioned shoot where one is available.
 
 ## Voice
 

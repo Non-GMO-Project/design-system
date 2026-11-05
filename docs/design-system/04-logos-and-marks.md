@@ -205,7 +205,7 @@ Until lockup files exist, the `EndorsementLockup` component places the two offic
 |---|---|---|
 | Non-GMO Project Verified Mark | 72px wide (the program sets print sizes only) | 3/8 in tall and 1/2 in wide |
 | Non-GMO Project bilingual Mark | 72px wide | 3/8 in tall and 3/4 in wide |
-| Non-UPF Verified primary (rectangular) seal | 80px wide | 3/8 in tall and 1/2 in wide |
+| Non-UPF Verified primary (rectangular) seal | 72px wide, the same as the Non-GMO Project Verified Mark | 3/8 in tall and 1/2 in wide |
 | Parent mark (Food Integrity Project) | 96px wide | 0.75 in (19 mm) wide |
 | Non-UPF Verified secondary (circular) seal | 60px wide | 0.375 in wide |
 | Program horizontal logo | 120px wide | 30 mm wide |
