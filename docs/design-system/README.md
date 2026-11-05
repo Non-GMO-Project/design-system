@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.49 (draft for review)
+**Version:** 0.50 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.50 | 2026-11-06 | Two email answers in `13`. Lora (#90): templates that use Lora load it with a `<link>` tag and keep the serif stack `Lora, Georgia, "Times New Roman", serif`, so clients without web fonts show Georgia. Animated GIFs (#92): allowed in campaigns, sparingly and decorative only, because email apps can't honor reduced motion; under 5 seconds, no more than three flashes a second, no essential information only in the animation, the email works if it never plays, and decorative GIFs get empty alt text |
 | 0.49 | 2026-11-05 | Five answers. Type utilities (#77): every type scale token is now a Tailwind utility (`text-h1`, `text-eyebrow`, `text-body-sm` and the rest), generated from the table in `03` and appended to `styles/tailwind.css`; the Tailwind examples in `03` use them instead of arbitrary values, and `09` lists them. Staff tools (#76): Lora page titles and Nunito Sans sub-headings are confirmed, with no change. Gradients (#74): all the decorative gradients in `02` are approved. Signature moment (#80): the Collective's welcome greets the person by first name ("Welcome, Jordan") instead of "Welcome, member", in `07`, `11`, the Collective profile and the showcase demo. Email social row (#87): each platform's official icon, unaltered, replacing icons in the brand dark |
 | 0.48 | 2026-11-05 | The signature moment's glow now follows the shape of the element it marks (#80): a rounded rectangle around a status badge instead of an oval behind it. Same color, timing and sequence. `07` says so, and the showcase demo draws the glow as a fading shadow on the badge itself |
 | 0.47 | 2026-11-05 | Email colors as a generated file (#88). The build now writes `styles/email.css`: the semantic tokens resolved to hex values in light mode, with a class per brand (`.email-fip` and the rest) for the body ground, text and links, and role classes inside it for dark bands, support panels and the primary button, plus shared status classes. Email clients don't support CSS variables, so templates run it through their CSS inliner instead of copying hex values by hand. The build also checks that the "Color in email" table in `13` matches the tokens. `13`, `09`, the README, `CLAUDE.md` and the review loop list the new file; `npm run check` flags it when stale and the pre-commit hook stages it with the rest of `styles/` |

@@ -53,7 +53,7 @@ Email clients do not reliably support CSS variables, so templates use the hex va
 
 ## Type in email
 
-Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. Every stack ends in a font that every client has, chosen to keep the same shape.
+Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. Every stack ends in a font that every client has, chosen to keep the same shape. Templates that use Lora load it with a `<link>` tag in the `<head>` and keep the full serif stack, so clients that support web fonts show Lora and the rest show Georgia.
 
 | Role | Stack for email | Falls back to |
 |---|---|---|
@@ -111,7 +111,12 @@ Optional: social row, the endorsement line, a forward or share link, a "Did some
 - Real headings (`<h1>` for the masthead or main headline, `<h2>` for stories) so screen readers can jump between stories.
 - Contrast follows `08-accessibility.md`: 4.5:1 for body text and for button labels on their fill, 3:1 for large text. Light button fills (Monarch, Romanesco) do not need 3:1 against Birch because the label carries the meaning, as in `06-ui-framework.md`; never make those buttons icon-only or image-only.
 - The email still makes sense with images off: every headline, date and action is text.
-- No information in color alone, no animated GIFs that flash more than three times a second.
+- No information in color alone.
+- **Animated GIFs** are allowed in campaigns, sparingly, for fun and personality. Email apps can't honor a reduced motion setting, so:
+  - Decorative only. No essential information only in the animation, and the email still works if the animation never plays.
+  - Under 5 seconds.
+  - No more than three flashes a second.
+  - Decorative GIFs get empty alt text (`alt=""`).
 - No emoji as icons. Use text, or an icon from the system's set with alt text. Motion in email follows `07-motion.md`.
 
 ## Before sending
