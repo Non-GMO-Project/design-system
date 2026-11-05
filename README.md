@@ -18,7 +18,7 @@ npm run dev      # rebuild on every change and serve at http://localhost:4321 wi
 | `docs/design-system/` | The system: README, topic files 01 to 13, trademark guides, brand profiles |
 | `public/brand/` | Official logos, seals and illustrations |
 | `public/fonts/` | Self-hosted Lora, Nunito Sans and Quicksand (copied by the build) |
-| `styles/` | Generated CSS for apps to import: `tokens.css`, `tailwind.css`, `fonts.css` |
+| `styles/` | Generated CSS for apps to import: `tokens.css`, `tailwind.css`, `fonts.css`, and `email.css` for email templates |
 | `index.html` | Generated showcase, published at the link above |
 | `trademark/*.html` | Generated standalone trademark pages for participants |
 | `scripts/` | Color scale generator, showcase build, Claude Code hook |

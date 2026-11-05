@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Builds index.html (the visual showcase), styles/tokens.css, styles/tailwind.css,
-// styles/fonts.css and the trademark/*.html participant pages from the Markdown in
+// styles/fonts.css, styles/email.css and the trademark/*.html participant pages from the Markdown in
 // docs/design-system. Nothing in index.html is written by hand.
 //
 //   node scripts/build-showcase.mjs            build once
@@ -16,6 +16,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join, extname, relative } from "node:path";
 import { parse, esc, plain, rowsOf, slug, setDocLinks } from "./lib/markdown.mjs";
 import { extractCss, resolver } from "./lib/tokens.mjs";
+import { emailCss } from "./lib/email.mjs";
 import { createRenderer } from "./showcase/render.mjs";
 import { trademarkPage } from "./showcase/trademark.mjs";
 
@@ -223,6 +224,9 @@ function build() {
   // Self-hosted @font-face rules with paths relative to styles/, for apps that don't use next/font.
   const fontsCss = `/* Generated from the @fontsource-variable packages (see docs/design-system/03-typography.md) by scripts/build-showcase.mjs. Do not edit. */\n/* Font files live in public/fonts/. */\n\n${fontCss.replace(/url\(public\/fonts\//g, "url(../public/fonts/")}`;
 
+  // Hex values per brand and role for email templates, which can't use CSS variables.
+  const emailStyles = emailCss(tokenCtx, r.brandName, docs["13-email.md"], (level, area, message, file) => checks.push({ level, area, message, file }));
+
   // Standalone participant pages, one per trademark doc. Path comes from the doc's **Page:** field.
   // They stand alone, so doc names stay plain text there.
   const showcaseLinks = new Map(Object.keys(docs).map((f) => [f, `#doc-${slug(f)}`]));
@@ -314,7 +318,7 @@ ${appJs}
 </body>
 </html>
 `;
-  return { html, outputs: [["index.html", html], ["styles/tokens.css", tokensCss], ["styles/tailwind.css", tailwindCss], ["styles/fonts.css", fontsCss], ...pages], errors, warns };
+  return { html, outputs: [["index.html", html], ["styles/tokens.css", tokensCss], ["styles/tailwind.css", tailwindCss], ["styles/fonts.css", fontsCss], ["styles/email.css", emailStyles], ...pages], errors, warns };
 }
 
 // ---------- outputs ----------

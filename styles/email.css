@@ -1,0 +1,51 @@
+/* Generated from docs/design-system/09-tokens.md by scripts/build-showcase.mjs. Do not edit. */
+/* Email colors, light mode, as hex values (see docs/design-system/13-email.md, "Color in email").
+   Put .email-<brand> on the outermost wrapper and the role classes inside it, then run the
+   template through the email tool's CSS inliner so every value ends up in a style attribute. */
+
+/* Food Integrity Project */
+.email-fip { background-color: #FFFDEB; color: #241A15; }
+.email-fip a { color: #241A15; text-decoration: underline; }
+/* Header and dark bands: only with a reversed logo (13-email.md). */
+.email-fip .email-band { background-color: #241A15; color: #FFFDEB; }
+.email-fip .email-band a { color: #FFFDEB; }
+.email-fip .email-support { background-color: #E3D8CF; color: #241A15; }
+.email-fip .email-button { background-color: #5F7A52; color: #FFFDEB; }
+.email-fip a.email-button { color: #FFFDEB; text-decoration: none; }
+
+/* Non-GMO Project */
+.email-nongmo { background-color: #FFFDEB; color: #053220; }
+.email-nongmo a { color: #053220; text-decoration: underline; }
+/* Header and dark bands: only with a reversed logo (13-email.md). */
+.email-nongmo .email-band { background-color: #053220; color: #FFFDEB; }
+.email-nongmo .email-band a { color: #FFFDEB; }
+.email-nongmo .email-support { background-color: #DDEED6; color: #053220; }
+.email-nongmo .email-button { background-color: #F18A00; color: #053220; }
+.email-nongmo a.email-button { color: #053220; text-decoration: none; }
+
+/* Non-UPF Verified */
+.email-nonupf { background-color: #FFFDEB; color: #0A2041; }
+.email-nonupf a { color: #0A2041; text-decoration: underline; }
+/* Header and dark bands: only with a reversed logo (13-email.md). */
+.email-nonupf .email-band { background-color: #0A2041; color: #FFFDEB; }
+.email-nonupf .email-band a { color: #FFFDEB; }
+.email-nonupf .email-support { background-color: #F5DFCE; color: #0A2041; }
+.email-nonupf .email-button { background-color: #CE1B6A; color: #FFFDEB; }
+.email-nonupf a.email-button { color: #FFFDEB; text-decoration: none; }
+
+/* Food Integrity Collective */
+.email-collective { background-color: #FFFDEB; color: #053220; }
+.email-collective a { color: #053220; text-decoration: underline; }
+/* Header and dark bands: only with a reversed logo (13-email.md). */
+.email-collective .email-band { background-color: #053220; color: #FFFDEB; }
+.email-collective .email-band a { color: #FFFDEB; }
+.email-collective .email-support { background-color: #9EB6DE; color: #053220; }
+.email-collective .email-button { background-color: #D3D95E; color: #053220; }
+.email-collective a.email-button { color: #053220; text-decoration: none; }
+
+/* Status, the same in every brand. Always with an icon and a text label. */
+.email-status-success { background-color: #EEFBF1; color: #085128; border-color: #ABCAB2; }
+.email-status-warning { background-color: #FFF5EA; color: #613C00; border-color: #DEBB94; }
+.email-status-danger { background-color: #FFF4F2; color: #7C110F; border-color: #EAAFA7; }
+.email-status-info { background-color: #F0F8FF; color: #0D4470; border-color: #A9C3DD; }
+.email-status-neutral { background-color: #F3F4F2; color: #404844; border-color: #BAC7C0; }
