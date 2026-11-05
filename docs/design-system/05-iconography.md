@@ -4,7 +4,7 @@ One icon library for every brand, used through a named registry so the same idea
 
 ## Library
 
-**Lucide** (`lucide-react` in apps, `lucide-static` for this showcase). It is the default icon set for shadcn/ui, it is open source (ISC license), every icon shares the same 24px grid and stroke style, and it covers both general UI and food and agriculture subjects (Wheat, Sprout, Leaf, ChefHat, FlaskConical, ScanBarcode). Its round caps and joins sit comfortably next to Quicksand's rounded terminals.
+**Lucide** (`lucide-react` 1.52 or later in apps, `lucide-static` for this showcase; see the version list in `06-ui-framework.md`, "Stack"). It is the default icon set for shadcn/ui, it is open source (ISC license), every icon shares the same 24px grid and stroke style, and it covers both general UI and food and agriculture subjects (Wheat, Sprout, Leaf, ChefHat, FlaskConical, ScanBarcode). Its round caps and joins sit comfortably next to Quicksand's rounded terminals.
 
 Do not mix in icons from other libraries. If Lucide lacks something, see "Custom icons" below.
 

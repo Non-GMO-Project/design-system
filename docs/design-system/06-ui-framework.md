@@ -4,22 +4,24 @@ How interfaces are built: the stack, which component to use for each kind of int
 
 ## Stack
 
-| Layer | Choice | Notes |
-|---|---|---|
-| Framework | Next.js (App Router), React, TypeScript | Matches the current platform direction (Vercel hosting) |
-| Styling | Tailwind CSS v4 | Tokens wired in `09-tokens.md`. No CSS-in-JS |
-| Component base | shadcn/ui, built on Radix UI primitives | Components are copied into `components/ui/` and owned by us. Accessible behavior (focus, keyboard, ARIA) comes from Radix |
-| Icons | lucide-react, through the registry | See `05-iconography.md` |
-| Fonts | Lora, Nunito Sans, Quicksand via `next/font/google` | See `03-typography.md` |
-| Animation | CSS transitions and `tw-animate-css` for simple cases; Motion (`motion/react`) for layout, gestures and orchestration | See `07-motion.md` |
-| Forms | React Hook Form + Zod, through the shadcn Form components | One Zod schema validates on client and server |
-| Data tables | TanStack Table, rendered with shadcn Table | Sorting, filtering, pagination, column visibility |
-| Charts | Recharts, through shadcn Chart | Colors from `--chart-*` |
-| Toasts | Sonner (shadcn) | |
-| Command palette, combobox | cmdk (shadcn Command) | |
-| Mobile drawer | Vaul (shadcn Drawer) | |
-| Dates | react-day-picker (shadcn Calendar), date-fns | |
-| Theme | next-themes | Sets `.dark`; brand comes from `data-brand` |
+| Layer | Choice | Version | Notes |
+|---|---|---|---|
+| Framework | Next.js (App Router), React, TypeScript | `next` 16.4, `react` 19.3, `typescript` 7.0 | Matches the current platform direction (Vercel hosting) |
+| Styling | Tailwind CSS v4 | `tailwindcss` 4.3 | Tokens wired in `09-tokens.md`. No CSS-in-JS |
+| Component base | shadcn/ui, built on Radix UI primitives | `shadcn` CLI 4.23, `radix-ui` 1.8 | Components are copied into `components/ui/` and owned by us. Accessible behavior (focus, keyboard, ARIA) comes from Radix |
+| Icons | lucide-react, through the registry | `lucide-react` 1.52 or later | The showcase checks the icon registry against `lucide-static` 1.52. See `05-iconography.md` |
+| Fonts | Lora, Nunito Sans, Quicksand via `next/font/google` | Comes with Next.js | See `03-typography.md` |
+| Animation | CSS transitions and `tw-animate-css` for simple cases; Motion (`motion/react`) for layout, gestures and orchestration | `tw-animate-css` 1.4, `motion` 14.9 | See `07-motion.md` |
+| Forms | React Hook Form + Zod, through the shadcn Form components | `react-hook-form` 7.91, `zod` 4.6 | One Zod schema validates on client and server |
+| Data tables | TanStack Table, rendered with shadcn Table | `@tanstack/react-table` 9.3 | Sorting, filtering, pagination, column visibility |
+| Charts | Recharts, through shadcn Chart | `recharts` 3.10 | Colors from `--chart-*` |
+| Toasts | Sonner (shadcn) | `sonner` 2.0 | |
+| Command palette, combobox | cmdk (shadcn Command) | `cmdk` 1.1 | |
+| Mobile drawer | Vaul (shadcn Drawer) | `vaul` 1.1 | |
+| Dates | react-day-picker (shadcn Calendar), date-fns | `react-day-picker` 10.0, `date-fns` 4.4 | |
+| Theme | next-themes | `next-themes` 0.4 | Sets `.dark`; brand comes from `data-brand` |
+
+Versions are the current stable releases as of November 5, 2026, recommended for new app projects; there is no reference app yet. Pin them in the app's `package.json` with `^` ranges so minor updates come in. Where the shadcn CLI installs a different major version for one of its components, use the version it installs. These versions are updated when a first app project sets its own.
 
 ### Working with shadcn/ui
 

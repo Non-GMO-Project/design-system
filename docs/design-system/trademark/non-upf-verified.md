@@ -2,7 +2,7 @@
 
 **Program:** Non-UPF Verified
 **Brand context:** `data-brand="nonupf"`
-**Source:** *Non-UPF Verified Trademark Use Guide* v1.0, published December 2025. Where this page and the guide differ, the guide wins, except for the mark's screen colors, which follow the Food Integrity Project Style Guide (see Color).
+**Source:** *Non-UPF Verified Trademark Use Guide* v1.0, published December 2025. Where this page and the guide differ, the guide wins, except for the mark's screen colors, which follow the Food Integrity Project Style Guide (see Color), and the primary mark's minimum size on screen, which matches the Non-GMO Project Verified Mark (see Clear space and size).
 **For:** Licensees with a signed license agreement and Non-UPF Verified products.
 **Contact:** marketing@nonultraprocessed.org
 **Page:** `trademark/non-upf-verified.html`
@@ -51,7 +51,7 @@ Every mark has four parts. All four are required, and none may be removed or rea
 | Clear space | Keep a space equal to the height of the capital "N" in "Non-UPF" on every side, measured from the outside of the keyline. No text or graphic may touch the mark or enter that space. The space scales with the mark |
 | Minimum size, primary mark, print | 3/8 inch tall and 1/2 inch wide |
 | Minimum size, secondary mark, print | 0.375 inch wide |
-| Minimum size, primary mark, digital | 80 pixels wide |
+| Minimum size, primary mark, digital | 72 pixels wide |
 | Minimum size, secondary mark, digital | 60 pixels wide |
 | URL | Must be readable at every allowed size |
 

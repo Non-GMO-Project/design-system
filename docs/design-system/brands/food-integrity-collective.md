@@ -40,7 +40,7 @@ Campaign and member pairing (Quicksand + Avenir) for events and member communica
 
 The Collective has its own graphic motifs: the petals (`illustrations/collective-petals-*`) and the "Food should nourish life" badge (`campaign/`). Use them as decoration with restraint, never as a logo. They take Forest and Romanesco; the current files still use the earlier green and lime and are being recolored. People together: markets, events, farms open to visitors, shared meals, community work, supply chains seen as systems. Natural, neutral tones without strong orange or magenta casts. Faces and activity over landscapes.
 
-**Photo library.** Use the shared sources in `01-brand-architecture.md`, "Photography sourcing". The social team's Pinterest moodboards set the mood.
+**Photo library.** There is no single Food Integrity Collective photo library; photos live in the team's own folders. When none fits, use the shared sources in `01-brand-architecture.md`, "Photography sourcing": the organization's Adobe Stock license, royalty-free sites, or a commissioned shoot where one is available. The social team's Pinterest moodboards set the mood.
 
 ## Voice
 
