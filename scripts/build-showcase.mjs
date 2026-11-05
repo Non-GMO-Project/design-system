@@ -220,7 +220,7 @@ function build() {
   // tw-animate-css itself, so those two @import lines stay in the doc only.
   const tailwindBody = tailwind.replace(/^@import\s+"(tailwindcss|tw-animate-css)";\n/gm, "").trim();
   if (!tailwindBody.includes("@theme inline")) checks.push({ level: "error", area: "Tokens", message: 'No CSS block containing "@theme inline" found', file: "09-tokens.md" });
-  const tailwindCss = `/* Generated from docs/design-system/09-tokens.md ("Tailwind CSS v4 wiring") by scripts/build-showcase.mjs. Do not edit. */\n/* Import after tailwindcss, tw-animate-css and styles/tokens.css. */\n\n${tailwindBody}\n`;
+  const tailwindCss = `/* Generated from docs/design-system/09-tokens.md ("Tailwind CSS v4 wiring") by scripts/build-showcase.mjs. Do not edit. */\n/* Import after tailwindcss, tw-animate-css and styles/tokens.css. */\n\n${tailwindBody}\n\n/* Type scale utilities, from the table in docs/design-system/03-typography.md ("Type scale"). */\n${r.typeUtilities()}\n`;
   // Self-hosted @font-face rules with paths relative to styles/, for apps that don't use next/font.
   const fontsCss = `/* Generated from the @fontsource-variable packages (see docs/design-system/03-typography.md) by scripts/build-showcase.mjs. Do not edit. */\n/* Font files live in public/fonts/. */\n\n${fontCss.replace(/url\(public\/fonts\//g, "url(../public/fonts/")}`;
 

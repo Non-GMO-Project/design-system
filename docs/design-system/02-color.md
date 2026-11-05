@@ -361,7 +361,7 @@ The 600-on-Frost rows check input borders on fields. The last three rows are war
 
 ## Gradients (decorative)
 
-The brand guide does not define gradients. These are interface additions for hero bands and campaign art, built only from each brand's own colors.
+The brand guide does not define gradients. These are interface additions, approved for hero bands and campaign art, built only from each brand's own colors.
 
 Rules:
 1. At most one gradient surface per screen.

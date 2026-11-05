@@ -518,26 +518,34 @@ export function createRenderer(ctx) {
     );
   }
 
-  // Generated CSS for the type scale classes.
-  function typeCss() {
+  // The declarations for each type scale token, from the table in 03.
+  function typeScale() {
     const t = docs["03-typography.md"]?.section(/^Type scale/)?.table("Token", "rem", "Line height");
-    return rowsOf(t)
-      .map((r) => {
-        const tok = plain(r.token);
-        const fam = plain(r.family);
-        const family = /mono/.test(fam) ? "var(--font-mono)" : /accent/.test(fam) ? "var(--font-accent)" : /^serif/.test(fam) ? "var(--font-serif)" : "var(--font-sans)";
-        const size = plain(r.rem);
-        const lh = plain(r["line height"]);
-        const wt = plain(r.weight);
-        let css = `.t-${slug(tok)}{font-family:${family};`;
-        if (size !== "inherit") css += `font-size:${size.replace(/^relative$/, "inherit")};`;
-        if (lh !== "inherit") css += `line-height:${lh};`;
-        if (/^\d+$/.test(wt)) css += `font-weight:${wt};`;
-        if (tok === "eyebrow") css += "text-transform:uppercase;letter-spacing:0.18em;";
-        if (/tabular/.test(fam)) css += "font-variant-numeric:tabular-nums;";
-        return css + "}";
-      })
-      .join("\n");
+    return rowsOf(t).map((r) => {
+      const tok = plain(r.token);
+      const fam = plain(r.family);
+      const family = /mono/.test(fam) ? "var(--font-mono)" : /accent/.test(fam) ? "var(--font-accent)" : /^serif/.test(fam) ? "var(--font-serif)" : "var(--font-sans)";
+      const size = plain(r.rem);
+      const lh = plain(r["line height"]);
+      const wt = plain(r.weight);
+      const decls = [["font-family", family]];
+      if (size !== "inherit") decls.push(["font-size", size.replace(/^relative$/, "inherit")]);
+      if (lh !== "inherit") decls.push(["line-height", lh]);
+      if (/^\d+$/.test(wt)) decls.push(["font-weight", wt]);
+      if (tok === "eyebrow") decls.push(["text-transform", "uppercase"], ["letter-spacing", "0.18em"]);
+      if (/tabular/.test(fam)) decls.push(["font-variant-numeric", "tabular-nums"]);
+      return { tok, decls };
+    });
+  }
+
+  // Generated CSS for the type scale classes in the showcase.
+  function typeCss() {
+    return typeScale().map(({ tok, decls }) => `.t-${slug(tok)}{${decls.map(([p, v]) => `${p}:${v};`).join("")}}`).join("\n");
+  }
+
+  // Tailwind utilities for the type scale (text-h1, text-eyebrow...), appended to styles/tailwind.css.
+  function typeUtilities() {
+    return typeScale().map(({ tok, decls }) => `@utility text-${slug(tok)} {\n${decls.map(([p, v]) => `  ${p}: ${v};`).join("\n")}\n}`).join("\n");
   }
 
   // ---------- 05 Iconography ----------
@@ -804,7 +812,7 @@ export function createRenderer(ctx) {
       fip: { from: cert("in progress"), to: done("Donation received"), action: "Complete donation" },
       nongmo: { from: pending, to: verified, action: "Approve verification" },
       nonupf: { from: pending, to: verified, action: "Approve verification" },
-      collective: { from: cert("in progress"), to: done("Welcome, member"), action: "Join the Collective" },
+      collective: { from: cert("in progress"), to: done("Welcome, Jordan"), action: "Join the Collective" },
     };
     const sigBadge = (row) => badge(row).replace('<span class="badge', '<span class="badge sig-badge');
     const sigDemo = BRANDS.map((b) => {
@@ -1150,5 +1158,5 @@ export function createRenderer(ctx) {
     return `<section class="ds-section" id="source" aria-labelledby="source-h"><p class="eyebrow">Reference</p><h2 id="source-h">Source documents</h2><p class="prose">The full text of every file the showcase was built from.</p>${files}</section>`;
   }
 
-  return { responsive, email, trademark, writing, ux, overview, architecture, logos, color, audit, typography, typeCss, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
+  return { responsive, email, trademark, writing, ux, overview, architecture, logos, color, audit, typography, typeCss, typeUtilities, icons, components, motion, accessibility, tokens, brands, todos, sources, icon, brandName };
 }
