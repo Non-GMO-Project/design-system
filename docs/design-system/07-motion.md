@@ -74,13 +74,7 @@ Shaking fields, bouncing icons, parallax, auto-playing carousels and scroll-jack
 
 **A moment of delight for a milestone.** When something a person has worked toward completes while they are watching, the element that shows the new state (a status badge or a confirmation) plays one short sequence: its icon draws its stroke, it settles from scale 0.94 to 1 with `--ease-emphasized`, and a glow in `--brand-signature` blooms once around it and fades. The glow follows the element's own shape, so a badge gets a rounded-rectangle glow, not an oval. Total 640ms. It plays once per event, never on page load, never in lists of many records.
 
-This is the one place the system allows delight. Use it for milestones, such as a product turning Verified, a member joining, a registration confirmed or a donation completed, not for routine saves or small confirmations, which use `status-change` or a toast. The glow takes each brand's signature (Milkweed Leaf, Monarch, Dragon Fruit or Romanesco), but the shape and timing stay the same. A status badge keeps its status colors. Seals are never animated.
-
-| Example event | Brand | End state |
-|---|---|---|
-| A product turns Verified while a reviewer or brand is watching | Non-GMO Project, Non-UPF Verified | `Verified` badge |
-| Joining or registering for an event | Food Integrity Collective | A welcome by first name, such as "Welcome, Jordan", or "You're registered" |
-| A donation completes | Food Integrity Project, or the program the campaign is for | "Donation received" |
+This is the system's built-in moment of delight; larger celebrations are covered below. Use it for milestones, such as a product turning Verified, a member joining or a registration confirmed in any brand, not for routine saves or small confirmations, which use `status-change` or a toast. The glow takes each brand's signature (Milkweed Leaf, Monarch, Dragon Fruit or Romanesco), but the shape and timing stay the same. A status badge keeps its status colors. Seals are never animated.
 
 Information is not a milestone: a Non-UPF Verified scan result uses `status-change`, never the signature moment.
 

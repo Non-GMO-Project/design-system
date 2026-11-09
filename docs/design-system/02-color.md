@@ -2,7 +2,7 @@
 
 Color is the main way the house of brands tells people where they are. Typography, spacing, icons and motion stay shared; color and logos change. This file defines the named palette, the shared foundation, usage ratios, the tonal scales, the semantic layer that components use and the rules for each brand.
 
-> **Source of values.** Named colors come from the *Food Integrity Project Style Guide* (draft for review), which supersedes the older per-program guides. The Food Integrity Project palette is marked **proposed** in that guide. Stone and the four status colors are interface additions this system needs; they are not in the brand guide.
+> **Source of values.** Named colors come from the *Food Integrity Project Style Guide* (draft for review), which supersedes the older per-program guides. The Food Integrity Project palette (Cacao, Loam and Milkweed Leaf), marked proposed in that guide, is confirmed as final. Stone and the four status colors are interface additions this system needs; they are not in the brand guide.
 
 ## The model: one ground, one dark, one signature
 
