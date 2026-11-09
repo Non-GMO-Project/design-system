@@ -169,7 +169,7 @@ Terms are listed alphabetically by the word to use. "Not" lists the words that a
 
 ## Translation
 
-Spanish and French are the likely first languages after English. Write so translation is easy: full sentences, no text baked into images, room for 30% longer strings in layouts.
+Spanish and French are the confirmed languages after English. There is no translation workflow or vendor yet. Write so translation is easy: full sentences, no text baked into images, room for 30% longer strings in layouts.
 
 ## Rules for Claude Code
 
