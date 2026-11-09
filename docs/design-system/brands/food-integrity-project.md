@@ -4,8 +4,6 @@
 **Role:** Parent organization and institutional voice. Governance, funding, policy, employer brand.
 **Voice:** Institutional, plain, unhurried.
 
-> The parent palette is marked **proposed** in the style guide.
-
 ## Who it speaks to
 
 Funders and donors, partners across the food system, press, policy audiences, staff, job seekers and anyone who works with more than one program.
@@ -48,7 +46,7 @@ Plain, precise, evidence-first, unhurried. Names sources. Explains what a standa
 
 ## Motion
 
-Shared system. The signature moment, with a Milkweed Leaf glow, may mark the parent's own milestones, such as a completed donation (see `../07-motion.md`).
+Shared system. The signature moment, with a Milkweed Leaf glow, may mark the parent's own milestones, such as an event registration (see `../07-motion.md`).
 
 ## Typical surfaces
 

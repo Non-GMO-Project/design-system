@@ -806,10 +806,10 @@ export function createRenderer(ctx) {
     const sig = d.section(/^Signature moment$/);
     const verified = cert("verified");
     const pending = cert("in review");
-    // One example milestone per brand (see the table in 07, "Signature moment").
+    // One example milestone per brand (see 07, "Signature moment").
     const done = (label) => ({ "status set": "success", icon: "status.success", label });
     const sigEvents = {
-      fip: { from: cert("in progress"), to: done("Donation received"), action: "Complete donation" },
+      fip: { from: cert("in progress"), to: done("You're registered"), action: "Register for event" },
       nongmo: { from: pending, to: verified, action: "Approve verification" },
       nonupf: { from: pending, to: verified, action: "Approve verification" },
       collective: { from: cert("in progress"), to: done("Welcome, Jordan"), action: "Join the Collective" },
@@ -827,7 +827,7 @@ export function createRenderer(ctx) {
       <h3>Easing</h3><div class="grid" style="--min:200px">${easeTiles}</div>
       <h3>Springs</h3>${tableOrWarn(d.section(/^Easing tokens$/)?.table("Name", "Config"), f, "Motion")}
       <h3>Named animations</h3><p class="prose small">Each demo reads its duration and easing tokens live, so changing them in ${inline("`09-tokens.md`")} changes the demo.</p><div class="grid" style="--min:250px">${namedTiles}</div>
-      <h3>Signature moment</h3><div class="prose">${sig ? render(sig.blocks.filter((b) => b.type === "p").slice(0, 2)) : ""}</div>${tableOrWarn(sig?.table("Example event", "Brand"), f, "Motion")}<div class="grid" style="--min:220px;margin-top:1rem">${sigDemo}</div>
+      <h3>Signature moment</h3><div class="prose">${sig ? render(sig.blocks.filter((b) => b.type === "p").slice(0, 2)) : ""}</div><div class="grid" style="--min:220px;margin-top:1rem">${sigDemo}</div>
       <template id="tpl-verified">${badge(verified).replace("<span class=\"badge", "<span class=\"badge sig-badge")}</template><template id="tpl-pending">${badge(pending)}</template>
       <h3>Reduced motion</h3><div class="prose">${render(d.section(/^Reduced motion$/)?.blocks ?? [])}</div>`,
       `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
