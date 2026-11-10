@@ -32,8 +32,8 @@ Top to bottom. Skip any part a type above does not list.
 | Story block | Eyebrow (optional), headline, body, button | Headline in Lora `h2` or `h3` (Quicksand for the Collective), body in Avenir `body`, left-aligned. Image beside the text on wide screens, stacked above it on phones |
 | Divider | A hairline between stories | 1px in the brand's support color, or `border` from the tokens. Never the signature color |
 | Support band | One appeal: donate, sign up, share | Full-width panel on the brand's support color with its paired text color (see the table below), or the brand dark with Birch text. One per email, after the last story |
-| Social row | Links to the brand's social accounts | Each platform's official icon from its own brand resources, unaltered and used as its guidelines allow (Lucide has no platform logos), each with the platform name as alt text. Non-GMO Project: Facebook, Instagram, LinkedIn. Non-UPF Verified: Instagram, LinkedIn. Food Integrity Collective: Instagram, LinkedIn, YouTube |
-| Footer | Logo or mark, legal name, mailing address, website, preferences, unsubscribe | Plain text on Birch, Avenir `body` (16px). The endorsement line "A program of the Food Integrity Project" for program emails |
+| Social row | Links to the brand's social accounts | Each platform's official icon from its own brand resources, unaltered and used as its guidelines allow (Lucide has no platform logos), each with the platform name as alt text. Non-GMO Project: Facebook, Instagram, LinkedIn. Non-UPF Verified: Instagram, LinkedIn. Food Integrity Collective: Instagram, LinkedIn, YouTube. Food Integrity Project emails have no social row |
+| Footer | Logo or mark, brand name, mailing address, website, preferences, unsubscribe | Plain text on Birch, Avenir `body` (16px). The endorsement line "A program of the Food Integrity Project" for program emails |
 
 ## Color in email
 
@@ -96,7 +96,7 @@ Required in every email:
 
 | Item | Detail |
 |---|---|
-| Sender name | The brand's full name. Never "FIP" |
+| Sender name | The brand's full name, which is also the name used in the footer; no separate legal name. Never "FIP" |
 | Mailing address | P.O. Box 5606, Bellingham, WA 98227, in every brand's emails |
 | Website | The brand's own domain, as a link |
 | Why you are getting this | One line: "You're receiving this because you signed up for Industry News" |
