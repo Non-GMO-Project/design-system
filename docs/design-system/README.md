@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.54 (draft for review)
+**Version:** 0.55 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -37,7 +37,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 ## Rules that apply everywhere
 
 1. **Accessibility wins.** If a visual rule anywhere conflicts with `08-accessibility.md`, accessibility wins.
-2. **Start on Birch.** Every brand's background is Birch `#FFFDEB`. Never substitute pure white.
+2. **Start on Birch.** Every brand's background is Birch `#FFFDEB`. Never substitute pure white, except in email, which sits on White (`13-email.md`).
 3. **Semantic tokens only.** Components never contain hex values, raw palette variables or arbitrary Tailwind colors.
 4. **One brand context per surface.** A page or region speaks for one brand. One program, one accent: Monarch and Dragon Fruit never appear in the same layout. The exceptions are program chips in multi-program views and the primary button on program cards on house-level pages (see `01-brand-architecture.md`).
 5. **Status is shared and never color alone.** Verified, on hold and terminated look the same in every brand and always pair color, icon and label.
@@ -130,7 +130,7 @@ Before writing or changing UI:
 - For work scoped to one program, also read docs/design-system/brands/<brand>.md.
 
 Hard rules:
-- Start on Birch, never pure white. Use semantic tokens and existing components.
+- Start on Birch, never pure white (email is the one exception: White, `13-email.md`). Use semantic tokens and existing components.
   No hex values or one-off colors in components.
 - Never draw or approximate a logo or certification seal. Use <BrandLogo /> and official assets.
 - Monarch and Dragon Fruit never share a layout, except in program chips and the buttons on
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.55 | 2026-11-12 | Email on White and on phones: email bodies sit on White `#FFFFFF` instead of Birch, the one surface that doesn't start on Birch (rule 2 and the Claude Code block say so), since a cream panel reads as a box inside an inbox's white pane. `13` adds layout rules for small screens: a fluid column (`width="100%"` with `max-width:600px`, and a fixed table for Outlook only), text that wraps (`overflow-wrap:anywhere` on long addresses and links), 16px body text and 44px buttons, and a 320px check in "Before sending". The showcase's sample emails use White |
 | 0.54 | 2026-11-10 | Email footer and social row (#91, #87): the footer uses the brand's full name, with no separate legal name, and Food Integrity Project emails have no social row (`13`) |
 | 0.53 | 2026-11-10 | Email dark mode (#89): `13` says the `color-scheme` meta tags are applied by the email CRM rather than written into templates, and the "Before sending" checklist now includes checking they are present in the test send, alongside the existing dark-mode check |
 | 0.52 | 2026-11-10 | Three answers. Email mailing address (#91): every brand's emails use P.O. Box 5606, Bellingham, WA 98227; `13` says so and the showcase's sample email footers show it. Email social row (#87): `13` lists each brand's platforms (Non-GMO Project: Facebook, Instagram, LinkedIn; Non-UPF Verified: Instagram, LinkedIn; Collective: Instagram, LinkedIn, YouTube). Translation (#84): Spanish and French are the confirmed languages after English, with no translation workflow or vendor yet (`10`) |

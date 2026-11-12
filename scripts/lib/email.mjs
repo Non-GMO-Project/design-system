@@ -6,6 +6,8 @@ import { BRANDS } from "./tokens.mjs";
 import { plain, rowsOf } from "./markdown.mjs";
 
 const STATUSES = ["success", "warning", "danger", "info", "neutral"];
+// The email body ground (13-email.md, "White, not Birch, in email"): the palette's White.
+const EMAIL_GROUND = "#FFFFFF";
 
 export function emailCss(tokenCtx, brandName, d13, check) {
   const out = [
@@ -22,10 +24,11 @@ export function emailCss(tokenCtx, brandName, d13, check) {
       if (!v) check("error", "Email", `\`${name}\` has no hex value for \`${b}\`, so styles/email.css can't use it`, "09-tokens.md");
       return v ?? "#000000";
     };
-    const ground = hex("--background"), text = hex("--foreground"), dark = hex("--brand-dark");
+    // Email sits on White, not Birch (13-email.md, principle 2); bands and button labels keep their own colors.
+    const ground = EMAIL_GROUND, birch = hex("--background"), text = hex("--foreground"), dark = hex("--brand-dark");
     const support = hex("--brand-support"), supportText = hex("--brand-support-foreground");
     const button = hex("--primary"), buttonText = hex("--primary-foreground");
-    quoted[b] = new Set([ground, text, dark, support, supportText, button, buttonText]);
+    quoted[b] = new Set([ground, birch, text, dark, support, supportText, button, buttonText]);
     const k = `.email-${b}`;
     out.push(
       "",
@@ -33,8 +36,8 @@ export function emailCss(tokenCtx, brandName, d13, check) {
       `${k} { background-color: ${ground}; color: ${text}; }`,
       `${k} a { color: ${text}; text-decoration: underline; }`,
       `/* Header and dark bands: only with a reversed logo (13-email.md). */`,
-      `${k} .email-band { background-color: ${dark}; color: ${ground}; }`,
-      `${k} .email-band a { color: ${ground}; }`,
+      `${k} .email-band { background-color: ${dark}; color: ${birch}; }`,
+      `${k} .email-band a { color: ${birch}; }`,
       `${k} .email-support { background-color: ${support}; color: ${supportText}; }`,
       `${k} .email-button { background-color: ${button}; color: ${buttonText}; }`,
       `${k} a.email-button { color: ${buttonText}; text-decoration: none; }`,
