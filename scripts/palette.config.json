@@ -48,7 +48,7 @@
       "label": "White",
       "hex": "#FFFFFF",
       "owner": "House (shared)",
-      "purpose": "Color of the white (reversed) logo and seal files, and the fill of section cards (--surface). Never a page background (start on Birch); not for type or any other UI.",
+      "purpose": "Color of the white (reversed) logo and seal files, the fill of section cards (--surface) and the ground of email (13-email.md). Never a page background anywhere else (start on Birch); not for type or any other UI.",
       "official": false
     },
     {
