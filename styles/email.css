@@ -4,7 +4,7 @@
    template through the email tool's CSS inliner so every value ends up in a style attribute. */
 
 /* Food Integrity Project */
-.email-fip { background-color: #FFFDEB; color: #241A15; }
+.email-fip { background-color: #FFFFFF; color: #241A15; }
 .email-fip a { color: #241A15; text-decoration: underline; }
 /* Header and dark bands: only with a reversed logo (13-email.md). */
 .email-fip .email-band { background-color: #241A15; color: #FFFDEB; }
@@ -14,7 +14,7 @@
 .email-fip a.email-button { color: #FFFDEB; text-decoration: none; }
 
 /* Non-GMO Project */
-.email-nongmo { background-color: #FFFDEB; color: #053220; }
+.email-nongmo { background-color: #FFFFFF; color: #053220; }
 .email-nongmo a { color: #053220; text-decoration: underline; }
 /* Header and dark bands: only with a reversed logo (13-email.md). */
 .email-nongmo .email-band { background-color: #053220; color: #FFFDEB; }
@@ -24,7 +24,7 @@
 .email-nongmo a.email-button { color: #053220; text-decoration: none; }
 
 /* Non-UPF Verified */
-.email-nonupf { background-color: #FFFDEB; color: #0A2041; }
+.email-nonupf { background-color: #FFFFFF; color: #0A2041; }
 .email-nonupf a { color: #0A2041; text-decoration: underline; }
 /* Header and dark bands: only with a reversed logo (13-email.md). */
 .email-nonupf .email-band { background-color: #0A2041; color: #FFFDEB; }
@@ -34,7 +34,7 @@
 .email-nonupf a.email-button { color: #FFFDEB; text-decoration: none; }
 
 /* Food Integrity Collective */
-.email-collective { background-color: #FFFDEB; color: #053220; }
+.email-collective { background-color: #FFFFFF; color: #053220; }
 .email-collective a { color: #053220; text-decoration: underline; }
 /* Header and dark bands: only with a reversed logo (13-email.md). */
 .email-collective .email-band { background-color: #053220; color: #FFFDEB; }

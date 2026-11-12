@@ -48,7 +48,7 @@
       "label": "White",
       "hex": "#FFFFFF",
       "owner": "House (shared)",
-      "purpose": "Color of the white (reversed) logo and seal files. Not a background (start on Birch) and not a UI color.",
+      "purpose": "Color of the white (reversed) logo and seal files, and the ground of email (13-email.md). Not a background anywhere else (start on Birch) and not a UI color.",
       "official": false
     },
     {

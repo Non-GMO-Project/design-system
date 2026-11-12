@@ -5,7 +5,7 @@ How the brand elements carry into email: newsletters, campaigns and service mess
 ## Principles
 
 1. **One sender, one brand.** Every email comes from one brand and carries only that brand's logo, colors and voice (`01-brand-architecture.md`). A Non-GMO Project newsletter can report Non-UPF Verified news in words and links, but it never shows a Non-UPF Verified seal, logo or Dragon Fruit.
-2. **Birch, not white.** The email body sits on Birch `#FFFDEB`, the same as every other surface. The area outside the 600px column can be Birch or Frost.
+2. **White, not Birch, in email.** The email body sits on White `#FFFFFF`. Email is the one surface that doesn't start on Birch: in inboxes, a cream panel reads as a box drawn around the message (most clients show it inside their own white pane, and some clip or tint it), and white is what people expect from a trusted sender. The brand still shows in the logo, the brand-dark text and the button. The area outside the 600px column is White too.
 3. **Text is text.** Headlines, dates, prices and calls to action are live text, never part of an image. Images can be blocked, and an email that only works with images on does not work.
 4. **One main action per section.** Each story ends in at most one primary button. The same action keeps the same label through the whole email.
 5. **Seals are claims.** A certification seal appears only next to the product it verifies. It is never decoration on a photo (`04-logos-and-marks.md`).
@@ -26,14 +26,14 @@ Top to bottom. Skip any part a type above does not list.
 | Part | Holds | Rules |
 |---|---|---|
 | Preheader | One line of preview text, hidden in the body | Adds to the subject, never repeats it. 40 to 90 characters |
-| Header | Brand logo, issue date or "View in browser" | Horizontal logo, PNG at 2x, 120px wide minimum, linked to the brand site, alt text = brand name. On Birch, or on the brand dark with a reversed logo |
-| Masthead | Newsletter name and a one-line description | Name at `h1` size in Lora (Quicksand for the Collective), description in Avenir `body` or `eyebrow`. Brand dark text on Birch. One masthead per email |
+| Header | Brand logo, issue date or "View in browser" | Horizontal logo, PNG at 2x, 120px wide minimum, linked to the brand site, alt text = brand name. On White, or on the brand dark with a reversed logo |
+| Masthead | Newsletter name and a one-line description | Name at `h1` size in Lora (Quicksand for the Collective), description in Avenir `body` or `eyebrow`. Brand dark text on White. One masthead per email |
 | Hero | One photograph | Full column width. Calm subject, no text burned in, no seals or logos dropped on top. Meaningful alt text, or `alt=""` if purely mood |
 | Story block | Eyebrow (optional), headline, body, button | Headline in Lora `h2` or `h3` (Quicksand for the Collective), body in Avenir `body`, left-aligned. Image beside the text on wide screens, stacked above it on phones |
 | Divider | A hairline between stories | 1px in the brand's support color, or `border` from the tokens. Never the signature color |
 | Support band | One appeal: donate, sign up, share | Full-width panel on the brand's support color with its paired text color (see the table below), or the brand dark with Birch text. One per email, after the last story |
 | Social row | Links to the brand's social accounts | Each platform's official icon from its own brand resources, unaltered and used as its guidelines allow (Lucide has no platform logos), each with the platform name as alt text. Non-GMO Project: Facebook, Instagram, LinkedIn. Non-UPF Verified: Instagram, LinkedIn. Food Integrity Collective: Instagram, LinkedIn, YouTube. Food Integrity Project emails have no social row |
-| Footer | Logo or mark, brand name, mailing address, website, preferences, unsubscribe | Plain text on Birch, Avenir `body` (16px). The endorsement line "A program of the Food Integrity Project" for program emails |
+| Footer | Logo or mark, brand name, mailing address, website, preferences, unsubscribe | Plain text on White, Avenir `body` (16px). The endorsement line "A program of the Food Integrity Project" for program emails |
 
 ## Color in email
 
@@ -41,12 +41,12 @@ Email clients do not reliably support CSS variables, so templates use the hex va
 
 | Brand | Body ground | Text and links | Header and dark bands | Support panels | Primary button |
 |---|---|---|---|---|---|
-| Food Integrity Project | Birch `#FFFDEB` | Cacao `#241A15` | Cacao, once a reversed logo exists; until then the header stays on Birch | Loam 200 `#E3D8CF` with Cacao text | Milkweed Leaf `#5F7A52`, Birch text |
-| Non-GMO Project | Birch `#FFFDEB` | Forest `#053220` | Forest, with `nongmo-logo-horizontal-reversed.png` | Seafoam `#DDEED6` with Forest text | Monarch `#F18A00`, Forest text |
-| Non-UPF Verified | Birch `#FFFDEB` | Dark Matter `#0A2041` | Dark Matter, once a reversed logo exists; until then the header stays on Birch | Almond `#F5DFCE` with Dark Matter text | Dragon Fruit `#CE1B6A`, Birch text |
-| Food Integrity Collective | Birch `#FFFDEB` | Forest `#053220` | Forest, with `collective-logo-horizontal-mono-light.png` | Corn Flower `#9EB6DE` with Forest text | Romanesco `#D3D95E`, Forest text |
+| Food Integrity Project | White `#FFFFFF` | Cacao `#241A15` | Cacao, once a reversed logo exists; until then the header stays on White | Loam 200 `#E3D8CF` with Cacao text | Milkweed Leaf `#5F7A52`, Birch text |
+| Non-GMO Project | White `#FFFFFF` | Forest `#053220` | Forest, with `nongmo-logo-horizontal-reversed.png` | Seafoam `#DDEED6` with Forest text | Monarch `#F18A00`, Forest text |
+| Non-UPF Verified | White `#FFFFFF` | Dark Matter `#0A2041` | Dark Matter, once a reversed logo exists; until then the header stays on White | Almond `#F5DFCE` with Dark Matter text | Dragon Fruit `#CE1B6A`, Birch text |
+| Food Integrity Collective | White `#FFFFFF` | Forest `#053220` | Forest, with `collective-logo-horizontal-mono-light.png` | Corn Flower `#9EB6DE` with Forest text | Romanesco `#D3D95E`, Forest text |
 
-- Links are the brand dark and underlined. Never the signature color for running text: Monarch fails contrast on Birch.
+- Links are the brand dark and underlined. Never the signature color for running text: Monarch fails contrast on White.
 - The signature color appears in buttons and at most one accent rule per email, the same ratio as the brand profile.
 - Status in service email (Verified, on hold, terminated, in review) uses the shared status colors with an icon and a text label, as everywhere else.
 - **Dark mode.** Apple Mail, Outlook and Gmail apps may invert colors. Use logos with transparent backgrounds and enough padding to survive on a dark ground, never put dark text on a transparent image, and test in dark mode before sending. The `color-scheme` meta tags that tell clients how to handle dark mode are applied by the email CRM, not written into templates; check they are present in the test send.
@@ -68,7 +68,10 @@ Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. E
 
 ## Layout and images
 
-- One column, 600px wide, with 24px of padding inside. On phones the column fills the screen with 16px gutters, the same as `12-responsive.md`.
+- One column, 600px wide at most, with 24px of padding inside. On phones the column fills the screen with 16px gutters, the same as `12-responsive.md`.
+- **Fluid, never fixed.** The outer table is `width="100%"`; the column is a table with `width="100%"` and `style="max-width:600px;width:100%"`. Never a bare `width="600"` attribute: clients that ignore the inline style keep it 600px wide, and the text runs off a phone's screen. For Outlook on Windows, which ignores `max-width`, wrap the column in a conditional `<!--[if mso]><table width="600"><tr><td><![endif]-->` table.
+- **Text wraps.** Every text cell sets `word-break:break-word; overflow-wrap:anywhere`, so a long link, address or code wraps instead of widening the column. Show a link's own address only when people need to copy it, and then in its own short paragraph.
+- **Readable on a phone without zooming.** Body 16px with a 24px line height; headlines no larger than 28px in service email, so a heading of five words fits on two lines at 320px. Buttons are at least 44px tall; a label that might not fit on one line at 320px is shortened rather than shrunk.
 - Two-column story blocks (image beside text) stack to one column below 600px, image first.
 - Build layout with tables and inline styles; `<div>` layouts break in Outlook. Mark layout tables `role="presentation"`.
 - Images are JPG for photographs and PNG for logos and illustrations, exported at 2x and sized with `width` attributes. Keep the whole email under 1MB and each image under 200KB.
@@ -109,7 +112,7 @@ Optional: social row, the endorsement line, a forward or share link, a "Did some
 
 - Set `lang="en"` and a `<title>` that matches the subject.
 - Real headings (`<h1>` for the masthead or main headline, `<h2>` for stories) so screen readers can jump between stories.
-- Contrast follows `08-accessibility.md`: 4.5:1 for body text and for button labels on their fill, 3:1 for large text. Light button fills (Monarch, Romanesco) do not need 3:1 against Birch because the label carries the meaning, as in `06-ui-framework.md`; never make those buttons icon-only or image-only.
+- Contrast follows `08-accessibility.md`: 4.5:1 for body text and for button labels on their fill, 3:1 for large text. Light button fills (Monarch, Romanesco) do not need 3:1 against the White ground because the label carries the meaning, as in `06-ui-framework.md`; never make those buttons icon-only or image-only.
 - The email still makes sense with images off: every headline, date and action is text.
 - No information in color alone.
 - **Animated GIFs** are allowed in campaigns, sparingly, for fun and personality. Email apps can't honor a reduced motion setting, so:
@@ -122,13 +125,13 @@ Optional: social row, the endorsement line, a forward or share link, a "Did some
 ## Before sending
 
 - One brand, one set of colors, one logo
-- Birch ground, brand-dark text, signature color only on buttons and one accent
+- White ground, brand-dark text, signature color only on buttons and one accent
 - Preheader written; subject says the thing
 - Every image has alt text; the email reads correctly with images off
 - Buttons are HTML, at least 44px tall, labels start with a verb, one label per action
 - No seal outside a verified-product story
 - Footer has address, preferences and unsubscribe
-- Checked at 320px wide, in dark mode and in Gmail, Outlook and Apple Mail
+- Checked at 320px wide (nothing runs off the screen; no sideways scrolling), in dark mode and in Gmail, Outlook and Apple Mail
 - `color-scheme` meta tags present in the test send (the email CRM adds them)
 
 ## Rules for Claude Code
