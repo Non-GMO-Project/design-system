@@ -175,7 +175,16 @@ Sets its own `data-brand`. The fill is `--brand-signature` and the text and dot 
 
 ### Cards
 
-Cards sit on Birch like the page and are separated by `--border` and elevation, not by white. Use `--brand-support` or `--brand-tint` fills for feature panels (Loam 200, Seafoam, Almond, Corn Flower), each with the brand dark for text. Do not wrap every section of a page in a card. Card hierarchy is shown by elevation and radius, not by putting cards in cards.
+There are two card fills:
+
+| Variant | Token | Use |
+|---|---|---|
+| Default card | `--card` (Birch) | Items in a grid or list: products, stats, search results. Separated from the page by `--border` and elevation |
+| Section card | `--surface` (White) | A white panel that groups one section of a page, such as a form section, a settings group or a dashboard region, so it stands apart from the Birch ground |
+
+Section cards keep the `--border` and the 8px radius (`rounded-md`), with `--surface-foreground` for text. They are the only place white is a UI fill: the page itself stays Birch, and a section card never spans the full width of the page as a band. Fields inside a section card keep their Frost fill. Group what sits inside with headings, dividers and `--muted` panels rather than more cards: card hierarchy is shown by elevation and radius, not by putting cards in cards. Use section cards where they help someone find their way through a long page; a short page needs none.
+
+Use `--brand-support` or `--brand-tint` fills for feature panels (Loam 200, Seafoam, Almond, Corn Flower), each with the brand dark for text. In dark mode, section cards take the same shade as default cards.
 
 ### Tables
 

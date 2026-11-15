@@ -418,6 +418,9 @@ export function createRenderer(ctx) {
   const AUDIT = [
     ["Body text", "--foreground", "--background", 4.5],
     ["Text on cards", "--card-foreground", "--card", 4.5],
+    ["Text on section cards", "--surface-foreground", "--surface", 4.5],
+    ["Help text on section cards", "--muted-foreground", "--surface", 4.5],
+    ["Links on section cards", "--brand-text", "--surface", 4.5],
     ["Help text", "--muted-foreground", "--background", 4.5],
     ["Help text on Frost panels", "--muted-foreground", "--muted", 4.5],
     ["Primary button", "--primary-foreground", "--primary", 4.5],
@@ -438,6 +441,7 @@ export function createRenderer(ctx) {
     ...[1, 2, 3, 4, 5, 6, 7, 8].flatMap((n) => [
       [`Chart ${n} on page`, `--chart-${n}`, "--background", 3],
       [`Chart ${n} on cards`, `--chart-${n}`, "--card", 3],
+      [`Chart ${n} on section cards`, `--chart-${n}`, "--surface", 3],
     ]),
     ...["success", "warning", "danger", "info", "neutral"].flatMap((s) => [
       [`Status ${s} text`, `--status-${s}-fg`, `--status-${s}-bg`, 4.5],
@@ -703,6 +707,7 @@ export function createRenderer(ctx) {
         <article class="card card--interactive"><p class="eyebrow">Product</p><h4>Heritage Rolled Oats</h4><p class="small muted">Brightfield Mills · Grains</p>${badge(cert("verified"))}</article>
         <article class="card"><div class="stat"><span class="small muted">Products verified this quarter</span><span class="value">1,284</span><span class="small">${icon("status.success", "icon icon--sm")} 12% more than last quarter</span></div></article>
         <article class="panel-support"><h4 style="margin-top:0">Support panel</h4><p style="margin:0">Uses <code>--brand-support</code>: Loam, Seafoam, Almond or Corn Flower.</p></article>
+        <article class="card card--surface"><h4>Section card</h4><p class="small muted">Uses <code>--surface</code>: white, to set one section of a page apart from Birch.</p></article>
         <article class="panel-dark"><p class="eyebrow" style="color:var(--birch)">Inverted panel</p><h4 style="margin-top:0">The brand dark</h4><p style="margin:0">Sets every inverted panel.</p></article>
       </div>
       <h4>Verified product detail</h4>

@@ -263,6 +263,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
 :root {
   --background: var(--birch);
   --card: var(--birch);
+  --surface: var(--white); /* section cards: the one place white is a UI fill (see 06, "Cards") */
   --popover: var(--birch);
   --muted: var(--frost);
   --accent: var(--frost);
@@ -376,6 +377,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
 :root, [data-brand="fip"] {
   --foreground: var(--cacao-950);
   --card-foreground: var(--cacao-950);
+  --surface-foreground: var(--cacao-950);
   --popover-foreground: var(--cacao-950);
   --accent-foreground: var(--cacao-950);
   --muted-foreground: var(--loam-700);
@@ -405,12 +407,14 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --gradient-hero: linear-gradient(135deg, var(--cacao-900), var(--cacao-800));
   --foreground: var(--birch);
   --card-foreground: var(--birch);
+  --surface-foreground: var(--birch);
   --popover-foreground: var(--birch);
   --accent-foreground: var(--birch);
   --brand-text: var(--birch);
   --ring: var(--birch);
   --background: var(--cacao-950);
   --card: var(--cacao-900);
+  --surface: var(--cacao-900);
   --popover: var(--cacao-900);
   --muted: var(--cacao-900);
   --muted-foreground: var(--cacao-200);
@@ -430,6 +434,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
 [data-brand="nongmo"] {
   --foreground: var(--forest-900);
   --card-foreground: var(--forest-900);
+  --surface-foreground: var(--forest-900);
   --popover-foreground: var(--forest-900);
   --accent-foreground: var(--forest-900);
   --muted-foreground: var(--forest-700);
@@ -466,12 +471,14 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --gradient-hero: linear-gradient(135deg, var(--forest-800), var(--forest-700));
   --foreground: var(--birch);
   --card-foreground: var(--birch);
+  --surface-foreground: var(--birch);
   --popover-foreground: var(--birch);
   --accent-foreground: var(--birch);
   --brand-text: var(--birch);
   --ring: var(--birch);
   --background: var(--forest-900);
   --card: var(--forest-800);
+  --surface: var(--forest-800);
   --popover: var(--forest-800);
   --muted: var(--forest-800);
   --muted-foreground: var(--forest-200);
@@ -491,6 +498,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
 [data-brand="nonupf"] {
   --foreground: var(--dark-matter-950);
   --card-foreground: var(--dark-matter-950);
+  --surface-foreground: var(--dark-matter-950);
   --popover-foreground: var(--dark-matter-950);
   --accent-foreground: var(--dark-matter-950);
   --muted-foreground: var(--dark-matter-700);
@@ -520,12 +528,14 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --gradient-hero: linear-gradient(135deg, var(--dark-matter-900), var(--dark-matter-800));
   --foreground: var(--birch);
   --card-foreground: var(--birch);
+  --surface-foreground: var(--birch);
   --popover-foreground: var(--birch);
   --accent-foreground: var(--birch);
   --brand-text: var(--birch);
   --ring: var(--birch);
   --background: var(--dark-matter-950);
   --card: var(--dark-matter-900);
+  --surface: var(--dark-matter-900);
   --popover: var(--dark-matter-900);
   --muted: var(--dark-matter-900);
   --muted-foreground: var(--dark-matter-200);
@@ -545,6 +555,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
 [data-brand="collective"] {
   --foreground: var(--forest-900);
   --card-foreground: var(--forest-900);
+  --surface-foreground: var(--forest-900);
   --popover-foreground: var(--forest-900);
   --accent-foreground: var(--forest-900);
   --muted-foreground: var(--forest-700);
@@ -574,12 +585,14 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --gradient-hero: linear-gradient(135deg, var(--forest-800), var(--forest-700));
   --foreground: var(--birch);
   --card-foreground: var(--birch);
+  --surface-foreground: var(--birch);
   --popover-foreground: var(--birch);
   --accent-foreground: var(--birch);
   --brand-text: var(--birch);
   --ring: var(--birch);
   --background: var(--forest-900);
   --card: var(--forest-800);
+  --surface: var(--forest-800);
   --popover: var(--forest-800);
   --muted: var(--forest-800);
   --muted-foreground: var(--forest-200);
@@ -623,6 +636,8 @@ Tailwind v4 reads tokens from CSS with `@theme`. `inline` makes the utilities re
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);

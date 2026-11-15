@@ -10,7 +10,7 @@ Every brand is built from the same four parts, plus one shared utility neutral (
 
 | Part | What it is | Rule |
 |---|---|---|
-| **Birch** | `#FFFDEB`, the shared background | Default background for every brand, print and digital. **Never substitute pure white.** Any layout that starts on Birch already belongs to the family |
+| **Birch** | `#FFFDEB`, the shared background | Default background for every brand, print and digital. **Never substitute pure white for the page.** White appears only as the fill of section cards (`--surface`). Any layout that starts on Birch already belongs to the family |
 | **One dark** | Cacao, Forest or Dark Matter | Each brand has exactly one dark. It sets all body type and every inverted panel |
 | **Supporting tint** | Loam, Seafoam, Almond or Corn Flower | Warms or structures the surface underneath |
 | **One signature** | Milkweed Leaf, Monarch, Dragon Fruit or Romanesco | The color a viewer should name when asked which brand they just saw. Never more than about a tenth of a layout |
@@ -34,7 +34,7 @@ Because components only use semantic tokens, a button written once renders as a 
 |---|---|---|---|---|
 | **Birch** | `#FFFDEB` | Ground | All (shared) | Default background everywhere |
 | **Frost** | `#F3F4F2` | Utility neutral | All (shared) | Fields, stripes, disabled, data panels |
-| **White** | `#FFFFFF` | Logo color | All (shared) | The color of the white (reversed) logo and seal files, such as the white Non-GMO Project Verified Mark. Never a background: start on Birch. Not a UI color |
+| **White** | `#FFFFFF` | Logo color, section cards | All (shared) | The color of the white (reversed) logo and seal files, such as the white Non-GMO Project Verified Mark, and the fill of section cards (`--surface`, see `06-ui-framework.md`). Never a page background: start on Birch. Not used for type or any other UI |
 | **Black** | `#000000` | Logo color | All (shared) | The color of the one-color black logo and seal files (`*-mono-dark`), for one-color printing and partner materials. Never for type or UI: each brand's dark does that |
 | **Cacao** | `#241A15` | Dark | Food Integrity Project | From the logo. Warm near-black that matches Forest and Dark Matter in weight. Sets type. The guide says Cacao is never a fill, but also that each dark sets every inverted panel; this system allows it for inverted hero bands and footers only (see `brands/food-integrity-project.md`) |
 | **Loam** | `#6B5644` | Supporting tone | Food Integrity Project | Brown of turned soil, a lighter tone of Cacao |
@@ -211,7 +211,8 @@ These are the only color names components use. The full mapping per brand and mo
 |---|---|---|---|
 | `--background` | Birch | Brand dark | Page background |
 | `--foreground` | Brand dark | Birch | All body type |
-| `--card`, `--popover` | Birch | Brand dark, one step lighter | Cards, panels, menus (separated by border and elevation, not by white) |
+| `--card`, `--popover` | Birch | Brand dark, one step lighter | Cards, panels, menus (separated by border and elevation) |
+| `--surface` | White | Same as `--card` | Section cards that set one part of a page apart from the Birch ground. The only white fill in the UI |
 | `--muted` | Frost | Brand dark, one step lighter | Table header rows, data panels |
 | `--muted-foreground` | Brand dark family, 700 (Loam for the Food Integrity Project) | Brand dark family, 200 | Secondary text, help text, metadata |
 | `--accent` | Frost | Brand dark family, 700 to 800 | Hover and highlighted rows in menus and lists (shadcn meaning, not brand accent) |
@@ -419,7 +420,7 @@ So the design team can tune a base hex and regenerate without guesswork:
 ## Rules for Claude Code
 
 - Never write a hex value, `rgb()` or a raw palette variable inside a component. Use semantic tokens or Tailwind classes mapped to them (`bg-primary`, `text-brand-text`, `border-border`).
-- Backgrounds are Birch, never `#FFFFFF`. Pure white is allowed only inside imagery and partner logos.
+- Page backgrounds are Birch, never `#FFFFFF`. White appears only as `--surface` on section cards, and inside imagery and partner logos.
 - If a needed color has no semantic token, stop and add one to `09-tokens.md`, then use it. Do not inline it.
 - Status meaning always comes from status tokens, never brand tokens.
 - Monarch and Dragon Fruit never appear in the same layout. On house-level pages each program sits in its own `data-brand` container showing its seal or logo, its dark and its supporting tint; the signature colors otherwise stay inside each program's own pages (see `01-brand-architecture.md`). Program cards may also carry a primary button in their own signature. The other exception is program chips, which use each program's signature fill.
