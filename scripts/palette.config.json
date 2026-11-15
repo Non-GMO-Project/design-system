@@ -32,7 +32,7 @@
       "label": "Birch",
       "hex": "#FFFDEB",
       "owner": "House (shared)",
-      "purpose": "Default background for every brand, print and digital. Never substitute pure white.",
+      "purpose": "Default background for every brand, print and digital. Never substitute pure white for the page; white is only for section cards.",
       "official": true
     },
     {
@@ -48,7 +48,7 @@
       "label": "White",
       "hex": "#FFFFFF",
       "owner": "House (shared)",
-      "purpose": "Color of the white (reversed) logo and seal files. Not a background (start on Birch) and not a UI color.",
+      "purpose": "Color of the white (reversed) logo and seal files, and the fill of section cards (--surface). Never a page background (start on Birch); not for type or any other UI.",
       "official": false
     },
     {
