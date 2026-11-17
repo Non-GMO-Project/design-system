@@ -50,7 +50,7 @@ Shared system. The signature moment, with a Milkweed Leaf glow, may mark the par
 
 ## Typical surfaces
 
-Organization website, annual report, donation flows, careers, press, staff operating system, partner portal chrome, house-level "our programs" pages.
+Organization website, annual report, donation flows (except campaigns for one program, which use that program's context throughout), careers, press, staff operating system, partner portal chrome, house-level "our programs" pages.
 
 ## Do
 

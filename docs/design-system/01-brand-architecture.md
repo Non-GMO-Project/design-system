@@ -87,7 +87,7 @@ Ask "who is this surface speaking for, and who is it speaking to?"
 | Collective membership, events, advocacy, member portal | `collective` | Program leads |
 | "Our programs" page comparing all three | `fip` page, each program card in its own context | House level with equal programs |
 | Email from a program | That program | |
-| Donation flow | `fip` unless the campaign is for one program | The parent leads funder communications |
+| Donation flow | `fip`, or the program's context when the campaign is for one program. A program campaign keeps that program's context at every step: the campaign page, the donation form and checkout, the thank-you page and the receipt and thank-you emails | The parent leads funder communications; a program campaign speaks for that program from start to finish |
 
 When unsure, use `fip`. The house context is always correct, just less specific.
 
