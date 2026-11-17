@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.57 (draft for review)
+**Version:** 0.58 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -37,7 +37,7 @@ There is one shared system (Birch ground, type, spacing, components, icons, moti
 ## Rules that apply everywhere
 
 1. **Accessibility wins.** If a visual rule anywhere conflicts with `08-accessibility.md`, accessibility wins.
-2. **Start on Birch.** Every brand's page background is Birch `#FFFDEB`. Never substitute pure white. White is only for section cards (`--surface`, see `06-ui-framework.md`).
+2. **Start on Birch.** Every brand's page background is Birch `#FFFDEB`. Never substitute pure white. There are two exceptions: section cards (`--surface`, see `06-ui-framework.md`) and email, which sits on White (`13-email.md`).
 3. **Semantic tokens only.** Components never contain hex values, raw palette variables or arbitrary Tailwind colors.
 4. **One brand context per surface.** A page or region speaks for one brand. One program, one accent: Monarch and Dragon Fruit never appear in the same layout. The exceptions are program chips in multi-program views and the primary button on program cards on house-level pages (see `01-brand-architecture.md`).
 5. **Status is shared and never color alone.** Verified, on hold and terminated look the same in every brand and always pair color, icon and label.
@@ -130,7 +130,7 @@ Before writing or changing UI:
 - For work scoped to one program, also read docs/design-system/brands/<brand>.md.
 
 Hard rules:
-- Start on Birch, never pure white; white is only for section cards (`--surface`). Use semantic tokens and existing components.
+- Start on Birch, never pure white. The exceptions are section cards (`--surface`) and email (White, `13-email.md`). Use semantic tokens and existing components.
   No hex values or one-off colors in components.
 - Never draw or approximate a logo or certification seal. Use <BrandLogo /> and official assets.
 - Monarch and Dragon Fruit never share a layout, except in program chips and the buttons on
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.58 | 2026-11-17 | Email on White and on phones: email bodies sit on White `#FFFFFF` instead of Birch, since a cream panel reads as a box inside an inbox's white pane. Along with section cards, email is the only place White is used as a fill (rule 2 and the Claude Code block say so). `13` adds layout rules for small screens: a fluid column (`width="100%"` with `max-width:600px`, and a fixed table for Outlook only), text that wraps (`overflow-wrap:anywhere` on long addresses and links), 16px body text and 44px buttons, and a 320px check in "Before sending". The showcase's sample emails use White |
 | 0.57 | 2026-11-17 | Icon registry additions for apps (#140): 105 new names in `05`, in the existing Actions, Status and feedback, Food integrity domain and People and contact tables, plus two new tables, Text formatting (`format.*`) and Views (`view.*`). One meaning per icon: `TrendingUp` is only `domain.opportunity` (growth uses `domain.chart`), `List` is only `format.bulleted-list` (`view.list` is `LayoutList`), and editors insert links with `action.link`. `status.not-started` is `Circle`, keeping `CircleDashed` for `status.in-progress`; `domain.certificate` is `Award`, keeping `BadgeCheck` for Verified; `person.add` and `person.remove` are `UserPlus` and `UserX`, and `person.remove` only ends access. Lucide stays at 1.52 or later. The showcase icon grid shows every new name |
 | 0.56 | 2026-11-17 | Donation flows (#96): a donation flow uses `fip` unless the campaign is for one program; then every step takes that program's context, from the campaign page through the donation form and checkout, the thank-you page and the receipt and thank-you emails. The brand context table in `01` and the Food Integrity Project profile say so |
 | 0.55 | 2026-11-15 | White section cards. A new `--surface` token (White in light mode, the card shade in dark mode, with `--surface-foreground`) and a section card variant in `06` let a white card group one section of a page so it stands apart from the Birch ground. Default cards stay Birch. The page ground is still always Birch, and section cards are the only white fill in the UI. Rule 2, the Claude Code block, White and Birch in `02`, the token tables in `02` and `09`, the Tailwind wiring (`bg-surface`) and the palette config say so. The showcase's Cards and panels shows a section card, and the build checks text, help text, links and chart colors on it |
