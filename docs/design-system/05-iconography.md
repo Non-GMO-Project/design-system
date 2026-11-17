@@ -87,6 +87,43 @@ export type IconName = keyof typeof icons;
 | `action.confirm` | `Check` | Confirm, select |
 | `action.external` | `ExternalLink` | Opens another site or a new tab |
 | `action.print` | `Printer` | Print |
+| `action.save` | `Save` | Save a form or a draft |
+| `action.send` | `Send` | Send a message, an invitation or a document |
+| `action.reply` | `Reply` | Reply to a message or a comment |
+| `action.compose` | `SquarePen` | Start a new message |
+| `action.attach` | `Paperclip` | Attach a file; a file on a message |
+| `action.link` | `Link2` | Link two records; insert a link, including in the text editor |
+| `action.unlink` | `Link2Off` | Remove a link; disconnect an account |
+| `action.disconnect` | `Unplug` | Disconnect a connected app |
+| `action.connect` | `Plug` | Connect an app or an account |
+| `action.merge` | `Merge` | Merge two duplicate records |
+| `action.restore` | `ArchiveRestore` | Restore something archived |
+| `action.undo` | `Undo2` | Undo; take back a step |
+| `action.start` | `Play` | Start a job or a routine |
+| `action.stop` | `Square` | Stop a recording |
+| `action.skip` | `SkipForward` | Skip to the next item in a review queue |
+| `action.view` | `Eye` | Preview; shown to the public. Seeing the app as another person uses `action.view-as` |
+| `action.hide` | `EyeOff` | Hide from the public |
+| `action.view-as` | `ScanEye` | See the app as another person sees it |
+| `action.move-up` | `ArrowUp` | Move an item up in a builder |
+| `action.move-down` | `ArrowDown` | Move an item down in a builder |
+| `action.drag` | `GripVertical` | Drag handle |
+| `action.rearrange` | `Move` | Rearrange a layout |
+| `action.mention` | `AtSign` | Mention a colleague |
+| `action.give-feedback` | `MessageSquarePlus` | Send feedback; add a comment |
+| `action.add-to-list` | `ListPlus` | Add items to a list |
+| `action.schedule` | `CalendarPlus` | Set a date or a follow-up |
+| `action.remind` | `AlarmClock` | A reminder to follow up |
+| `action.sign` | `PenLine` | Sign a document |
+| `action.rate-up` | `ThumbsUp` | "Did this help?": yes |
+| `action.rate-down` | `ThumbsDown` | "Did this help?": no |
+| `action.feature` | `Star` | Feature or favorite something |
+| `action.mark-read` | `MailOpen` | Mark as read |
+| `action.mute` | `BellOff` | Stop notifications for something |
+| `action.open-panel` | `PanelRight` | Open the details panel |
+| `action.collapse-sidebar` | `PanelLeftClose` | Fold the sidebar |
+| `action.expand-sidebar` | `PanelLeftOpen` | Unfold the sidebar |
+| `action.choose` | `ChevronsUpDown` | Open a picker (combobox) |
 
 ### Navigation
 
@@ -127,6 +164,18 @@ Always paired with a text label.
 | `status.not-eligible` | `Ban` | Not eligible |
 | `status.withdrawn` | `CircleMinus` | Verification withdrawn |
 | `status.locked` | `Lock` | No permission, read-only |
+| `status.new` | `CircleDot` | New or unread |
+| `status.not-started` | `Circle` | A step not started yet. Not `CircleDashed`, which is `status.in-progress` |
+| `status.waiting-long` | `Hourglass` | Waiting too long; stalled |
+| `status.screened` | `ShieldAlert` | Suspected spam or a risky file |
+| `status.disabled` | `CircleSlash` | Switched off; not in use |
+| `status.no-results` | `SearchX` | Nothing found; page not found |
+| `status.image-missing` | `ImageOff` | A picture couldn't be loaded |
+| `status.idea` | `Lightbulb` | An idea, on a roadmap |
+| `status.building` | `Hammer` | Being built, on a roadmap |
+| `status.transition` | `MoveRight` | From one status to another, in a history |
+| `status.sub-item` | `CornerDownRight` | A result or a step nested under another |
+| `status.due` | `Calendar` | A due date (`status.expiring` keeps `CalendarClock`) |
 
 `status.verified` uses a badge outline, not the certification seal. See `04-logos-and-marks.md`.
 
@@ -164,6 +213,34 @@ Always paired with a text label.
 | `domain.learning` | `GraduationCap` | Courses, education |
 | `domain.document` | `FileText` | Generic document |
 | `domain.ai` | `Sparkles` | AI-generated or AI-assisted content (always disclose) |
+| `domain.opportunity` | `TrendingUp` | A sales opportunity. Growth in a chart uses `domain.chart` |
+| `domain.win` | `Trophy` | An opportunity won |
+| `domain.agreement` | `FileSignature` | An agreement to sign or signed |
+| `domain.discussion` | `NotebookPen` | Staff discussion on a record |
+| `domain.note` | `StickyNote` | An internal note |
+| `domain.knowledge` | `BookOpen` | Knowledge articles and guidance |
+| `domain.passkey` | `KeyRound` | A passkey; strong sign-in |
+| `domain.api-key` | `Key` | An API key or token |
+| `domain.webhook` | `Webhook` | Webhooks for developers |
+| `domain.certificate` | `Award` | A certificate. `BadgeCheck` stays only on `status.verified` |
+| `domain.form` | `ClipboardList` | A form people fill in |
+| `domain.booking` | `CalendarCheck` | A call booked through a form |
+| `domain.credit` | `HandCoins` | A credit or refund on an invoice |
+| `domain.rate` | `Percent` | A billing rate or a discount |
+| `domain.spreadsheet-export` | `FileSpreadsheet` | Export to an accounting system or spreadsheet |
+| `domain.time-off` | `CalendarOff` | Someone away (for assigning work) |
+| `domain.transcript` | `FileAudio` | A call's transcript |
+| `domain.technical-administrator` | `Stamp` | A certifying body that verifies products |
+| `domain.dataset` | `TableProperties` | A dataset for reports |
+| `domain.database` | `Database` | Data and sync status |
+| `domain.resources` | `FolderOpen` | Files and resources to download |
+| `domain.chart` | `ChartColumn` | A chart, usage figures or growth |
+| `domain.code` | `CodeXml` | Developer documentation |
+| `domain.launch` | `Rocket` | Launch and rollout progress |
+| `domain.roadmap` | `Map` | A roadmap |
+| `domain.design-system` | `LayoutTemplate` | Design and UI reference |
+| `domain.admin` | `Shield` | The admin area |
+| `domain.apps` | `LayoutGrid` | An app launcher; widgets |
 
 ### People and contact
 
@@ -171,11 +248,51 @@ Always paired with a text label.
 |---|---|---|
 | `person.single` | `User` | One person |
 | `person.group` | `Users` | Several people, members |
+| `person.add` | `UserPlus` | Invite or add a person |
+| `person.remove` | `UserX` | End someone's access. An unassigned item uses `person.unassign` or the text "Unassigned" |
+| `person.assign-to-me` | `UserCheck` | Assign to me |
+| `person.unassign` | `UserMinus` | Unassign me; unassigned |
+| `person.owner` | `UserRound` | Who something is assigned to |
+| `person.team` | `UsersRound` | A team (`person.group` is a list of people) |
 | `contact.email` | `Mail` | Email |
 | `contact.phone` | `Phone` | Phone |
 | `contact.message` | `MessageSquare` | Message, comment |
 | `contact.location` | `MapPin` | Address, location |
 | `contact.website` | `Globe` | Website |
+| `contact.call` | `PhoneCall` | Place a call, log a call |
+| `contact.hang-up` | `PhoneOff` | End a call |
+| `contact.mute` | `MicOff` | Mute the microphone |
+| `contact.record` | `Mic` | Record a greeting; a recording |
+| `contact.voicemail` | `Voicemail` | A voicemail |
+| `contact.headset` | `Headphones` | The in-browser phone |
+| `contact.dialpad-delete` | `Delete` | Delete a digit |
+| `contact.inbound` | `ArrowDownLeft` | A received message or call |
+| `contact.outbound` | `ArrowUpRight` | A sent message or call |
+| `contact.conversation` | `MessagesSquare` | A conversation thread (`contact.message` is one message) |
+| `contact.delivered` | `MailCheck` | An email was sent or delivered |
+
+### Text formatting
+
+For rich-text editors. Inserting a link uses `action.link`.
+
+| Name | Lucide | Use |
+|---|---|---|
+| `format.bold` | `Bold` | Bold text |
+| `format.italic` | `Italic` | Italic text |
+| `format.underline` | `Underline` | Underlined text |
+| `format.heading` | `Heading2` | A heading |
+| `format.bulleted-list` | `List` | A bulleted list |
+| `format.highlight` | `Highlighter` | Highlighted text |
+| `format.table` | `Table` | Insert a table |
+
+### Views
+
+| Name | Lucide | Use |
+|---|---|---|
+| `view.list` | `LayoutList` | A list view |
+| `view.board` | `Columns3` | A board (kanban) view |
+| `view.inbox` | `Inbox` | An inbox or queue |
+| `view.checklist` | `ListChecks` | "My items" lists |
 
 ## Usage rules
 
