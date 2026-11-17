@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 0.55 (draft for review)
+**Version:** 0.56 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.56 | 2026-11-17 | Donation flows (#96): a donation flow uses `fip` unless the campaign is for one program; then every step takes that program's context, from the campaign page through the donation form and checkout, the thank-you page and the receipt and thank-you emails. The brand context table in `01` and the Food Integrity Project profile say so |
 | 0.55 | 2026-11-15 | White section cards. A new `--surface` token (White in light mode, the card shade in dark mode, with `--surface-foreground`) and a section card variant in `06` let a white card group one section of a page so it stands apart from the Birch ground. Default cards stay Birch. The page ground is still always Birch, and section cards are the only white fill in the UI. Rule 2, the Claude Code block, White and Birch in `02`, the token tables in `02` and `09`, the Tailwind wiring (`bg-surface`) and the palette config say so. The showcase's Cards and panels shows a section card, and the build checks text, help text, links and chart colors on it |
 | 0.54 | 2026-11-10 | Email footer and social row (#91, #87): the footer uses the brand's full name, with no separate legal name, and Food Integrity Project emails have no social row (`13`) |
 | 0.53 | 2026-11-10 | Email dark mode (#89): `13` says the `color-scheme` meta tags are applied by the email CRM rather than written into templates, and the "Before sending" checklist now includes checking they are present in the test send, alongside the existing dark-mode check |
