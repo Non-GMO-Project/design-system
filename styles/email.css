@@ -44,8 +44,8 @@
 .email-collective a.email-button { color: #053220; text-decoration: none; }
 
 /* Status, the same in every brand. Always with an icon and a text label. */
-.email-status-success { background-color: #EEFBF1; color: #085128; border-color: #ABCAB2; }
-.email-status-warning { background-color: #FFF5EA; color: #613C00; border-color: #DEBB94; }
-.email-status-danger { background-color: #FFF4F2; color: #7C110F; border-color: #EAAFA7; }
-.email-status-info { background-color: #F0F8FF; color: #0D4470; border-color: #A9C3DD; }
+.email-status-success { background-color: #F3F9F1; color: #374D2C; border-color: #BBC8B5; }
+.email-status-warning { background-color: #FFF5EC; color: #683900; border-color: #FAB273; }
+.email-status-danger { background-color: #FFF3F6; color: #840040; border-color: #FAAABF; }
+.email-status-info { background-color: #F2F7FF; color: #3A4A66; border-color: #BACEEF; }
 .email-status-neutral { background-color: #F3F4F2; color: #404844; border-color: #BAC7C0; }

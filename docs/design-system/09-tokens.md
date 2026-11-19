@@ -204,54 +204,6 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --romanesco-800: #464800;
   --romanesco-900: #323400;
   --romanesco-950: #202100;
-  /* success */
-  --success-50: #EEFBF1;
-  --success-100: #E1F1E4;
-  --success-200: #C9E0CE;
-  --success-300: #ABCAB2;
-  --success-400: #84AF8E;
-  --success-500: #5C956C;
-  --success-600: #2F7D4A;
-  --success-700: #1D6638;
-  --success-800: #085128;
-  --success-900: #003B1A;
-  --success-950: #00270F;
-  /* warning */
-  --warning-50: #FFF5EA;
-  --warning-100: #FAE9D7;
-  --warning-200: #EDD5BA;
-  --warning-300: #DEBB94;
-  --warning-400: #CA9B62;
-  --warning-500: #B7791F;
-  --warning-600: #9A6200;
-  --warning-700: #7D4E00;
-  --warning-800: #613C00;
-  --warning-900: #462A00;
-  --warning-950: #2F1A00;
-  /* danger */
-  --danger-50: #FFF4F2;
-  --danger-100: #FFE5E1;
-  --danger-200: #F8CDC6;
-  --danger-300: #EAAFA7;
-  --danger-400: #D88A80;
-  --danger-500: #C46459;
-  --danger-600: #B4372F;
-  --danger-700: #98251F;
-  --danger-800: #7C110F;
-  --danger-900: #600003;
-  --danger-950: #430001;
-  /* info */
-  --info-50: #F0F8FF;
-  --info-100: #E0EEFB;
-  --info-200: #C8DBEE;
-  --info-300: #A9C3DD;
-  --info-400: #82A5C8;
-  --info-500: #5B88B3;
-  --info-600: #2F6DA3;
-  --info-700: #1E5889;
-  --info-800: #0D4470;
-  --info-900: #003156;
-  --info-950: #00213C;
 }
 /* palette:end */
 ```
@@ -268,25 +220,25 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --muted: var(--frost);
   --accent: var(--frost);
   --field: var(--frost);
-  --destructive: var(--danger-600);
+  --destructive: var(--dragonfruit-800); /* darker than the Non-UPF Verified primary (Dragon Fruit 600) */
   --destructive-foreground: var(--birch);
 
-  --status-success-bg: var(--success-50);
-  --status-success-fg: var(--success-800);
-  --status-success-border: var(--success-300);
-  --status-success-icon: var(--success-600);
-  --status-warning-bg: var(--warning-50);
-  --status-warning-fg: var(--warning-800);
-  --status-warning-border: var(--warning-300);
-  --status-warning-icon: var(--warning-600);
-  --status-danger-bg: var(--danger-50);
-  --status-danger-fg: var(--danger-800);
-  --status-danger-border: var(--danger-300);
-  --status-danger-icon: var(--danger-600);
-  --status-info-bg: var(--info-50);
-  --status-info-fg: var(--info-800);
-  --status-info-border: var(--info-300);
-  --status-info-icon: var(--info-600);
+  --status-success-bg: var(--milkweed-50);
+  --status-success-fg: var(--milkweed-800);
+  --status-success-border: var(--milkweed-300);
+  --status-success-icon: var(--milkweed-600);
+  --status-warning-bg: var(--monarch-50);
+  --status-warning-fg: var(--monarch-800);
+  --status-warning-border: var(--monarch-300);
+  --status-warning-icon: var(--monarch-600);
+  --status-danger-bg: var(--dragonfruit-50);
+  --status-danger-fg: var(--dragonfruit-800);
+  --status-danger-border: var(--dragonfruit-300);
+  --status-danger-icon: var(--dragonfruit-600);
+  --status-info-bg: var(--cornflower-50);
+  --status-info-fg: var(--cornflower-800);
+  --status-info-border: var(--cornflower-300);
+  --status-info-icon: var(--cornflower-600);
   --status-neutral-bg: var(--frost);
   --status-neutral-fg: var(--stone-800);
   --status-neutral-border: var(--stone-300);
@@ -328,7 +280,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
 
 /* ---------- Shared, dark ---------- */
 .dark {
-  --destructive: var(--danger-400);
+  --destructive: var(--dragonfruit-400);
   --destructive-foreground: var(--stone-950);
 
   /* Chart colors, lighter so every series keeps 3:1 on each brand's dark page and cards */
@@ -347,22 +299,22 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --chart-7: var(--chart-purple);
   --chart-8: var(--chart-other);
 
-  --status-success-bg: var(--success-950);
-  --status-success-fg: var(--success-200);
-  --status-success-border: var(--success-800);
-  --status-success-icon: var(--success-400);
-  --status-warning-bg: var(--warning-950);
-  --status-warning-fg: var(--warning-200);
-  --status-warning-border: var(--warning-800);
-  --status-warning-icon: var(--warning-400);
-  --status-danger-bg: var(--danger-950);
-  --status-danger-fg: var(--danger-200);
-  --status-danger-border: var(--danger-800);
-  --status-danger-icon: var(--danger-400);
-  --status-info-bg: var(--info-950);
-  --status-info-fg: var(--info-200);
-  --status-info-border: var(--info-800);
-  --status-info-icon: var(--info-400);
+  --status-success-bg: var(--milkweed-950);
+  --status-success-fg: var(--milkweed-200);
+  --status-success-border: var(--milkweed-800);
+  --status-success-icon: var(--milkweed-400);
+  --status-warning-bg: var(--monarch-950);
+  --status-warning-fg: var(--monarch-200);
+  --status-warning-border: var(--monarch-800);
+  --status-warning-icon: var(--monarch-400);
+  --status-danger-bg: var(--dragonfruit-950);
+  --status-danger-fg: var(--dragonfruit-200);
+  --status-danger-border: var(--dragonfruit-800);
+  --status-danger-icon: var(--dragonfruit-400);
+  --status-info-bg: var(--cornflower-950);
+  --status-info-fg: var(--cornflower-200);
+  --status-info-border: var(--cornflower-800);
+  --status-info-icon: var(--cornflower-400);
   --status-neutral-bg: var(--stone-900);
   --status-neutral-fg: var(--stone-200);
   --status-neutral-border: var(--stone-700);

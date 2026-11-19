@@ -93,7 +93,7 @@
       "label": "Milkweed Leaf",
       "hex": "#5F7A52",
       "owner": "Food Integrity Project",
-      "purpose": "The parent's signature. Grey-green of the plant the monarch cannot breed without.",
+      "purpose": "The parent's signature. Grey-green of the plant the monarch cannot breed without. Also the success status color (--status-success-*).",
       "official": true
     },
     {
@@ -117,7 +117,7 @@
       "label": "Monarch",
       "hex": "#F18A00",
       "owner": "Non-GMO Project",
-      "purpose": "Non-GMO Project signature. One point of emphasis per view. Never small text.",
+      "purpose": "Non-GMO Project signature. One point of emphasis per view. Never small text. Also the warning status color (--status-warning-*).",
       "official": true
     },
     {
@@ -141,7 +141,7 @@
       "label": "Dragon Fruit",
       "hex": "#CE1B6A",
       "owner": "Non-UPF Verified",
-      "purpose": "Non-UPF Verified signature and seal color. The mark, headlines and single emphasis elements.",
+      "purpose": "Non-UPF Verified signature and seal color. The mark, headlines and single emphasis elements. Also the danger status color (--status-danger-*) and, at 800, destructive buttons.",
       "official": true
     },
     {
@@ -149,7 +149,7 @@
       "label": "Corn Flower",
       "hex": "#9EB6DE",
       "owner": "Food Integrity Collective",
-      "purpose": "Collective supporting accent. Shapes, charts and panels. Never small text.",
+      "purpose": "Collective supporting accent. Shapes, charts and panels. Never small text. Also the info status color (--status-info-*).",
       "official": true
     },
     {
@@ -159,38 +159,6 @@
       "owner": "Food Integrity Collective",
       "purpose": "Collective signature. Shapes, charts and panels. Never small text.",
       "official": true
-    },
-    {
-      "name": "success",
-      "label": "Success",
-      "hex": "#2F7D4A",
-      "owner": "Status (shared)",
-      "purpose": "Status: success, verified, complete.",
-      "official": false
-    },
-    {
-      "name": "warning",
-      "label": "Warning",
-      "hex": "#B7791F",
-      "owner": "Status (shared)",
-      "purpose": "Status: warning, needs attention, expiring soon.",
-      "official": false
-    },
-    {
-      "name": "danger",
-      "label": "Danger",
-      "hex": "#B4372F",
-      "owner": "Status (shared)",
-      "purpose": "Status: error, destructive, lapsed.",
-      "official": false
-    },
-    {
-      "name": "info",
-      "label": "Info",
-      "hex": "#2F6DA3",
-      "owner": "Status (shared)",
-      "purpose": "Status: informational, in review, neutral notices.",
-      "official": false
     }
   ],
   "pairings": [
@@ -343,20 +311,20 @@
       "cornflower-50"
     ],
     [
-      "success-800",
-      "success-50"
+      "milkweed-800",
+      "milkweed-50"
     ],
     [
-      "warning-800",
-      "warning-50"
+      "monarch-800",
+      "monarch-50"
     ],
     [
-      "danger-800",
-      "danger-50"
+      "dragonfruit-800",
+      "dragonfruit-50"
     ],
     [
-      "info-800",
-      "info-50"
+      "cornflower-800",
+      "cornflower-50"
     ],
     [
       "stone-800",
@@ -364,7 +332,7 @@
     ],
     [
       "birch",
-      "danger-600"
+      "dragonfruit-800"
     ],
     [
       "monarch-400",
