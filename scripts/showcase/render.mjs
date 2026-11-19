@@ -862,7 +862,7 @@ export function createRenderer(ctx) {
     const f = "09-tokens.md";
     const d = docs[f];
     const sw = d.section(/^How brand switching works$/);
-    const names = tokenCtx("fip", false).names().filter((n) => !/^--(stone|cacao|loam|milkweed|forest|seafoam|monarch|dark-matter|almond|dragonfruit|cornflower|romanesco|success|warning|danger|info)-\d+$/.test(n) && n !== "--birch" && n !== "--frost");
+    const names = tokenCtx("fip", false).names().filter((n) => !/^--(stone|cacao|loam|milkweed|forest|seafoam|monarch|dark-matter|almond|dragonfruit|cornflower|romanesco)-\d+$/.test(n) && n !== "--birch" && n !== "--frost");
     const live = `<div class="table-wrap"><table><thead><tr><th scope="col">Token</th><th scope="col">Current value</th></tr></thead><tbody>${names
       .map((n) => `<tr><td><code>${esc(n)}</code></td><td><span class="tok" data-live-token="${esc(n)}"><i style="background:var(${esc(n)})"></i><span></span></span></td></tr>`)
       .join("")}</tbody></table></div>`;

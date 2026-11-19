@@ -61,7 +61,7 @@ Consumer pages, the scanning app, standards and pre-evaluation pages, brand-faci
 
 ## Don't
 
-- Use Dragon Fruit near errors, validation or form fields; it sits close to danger red.
-- Put Monarch and Dragon Fruit in the same layout. Program chips in multi-program views and the buttons on program cards on house-level pages are the only exceptions.
+- Use Dragon Fruit on its own to mean an error. Errors share its hue, so they always show the danger icon and label.
+- Put Monarch and Dragon Fruit in the same layout. Program chips in multi-program views, the buttons on program cards on house-level pages and status colors are the only exceptions.
 - Show a scan result as if it were a verification. A scan result is information; verification is a status with its own badge.
 - Use the seal as a logo, or the icon alone without approval.

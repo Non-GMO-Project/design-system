@@ -71,12 +71,10 @@ This file wins any conflict with the rest of the design system, including the br
 |---|---|---|
 | All | Birch is close to white, so tints read as almost nothing | Separate surfaces with `--border` and elevation, not by tint alone |
 | All | Eyebrows are uppercase and tracked | Four words or fewer; never for essential information; screen readers get the same text in sentence case if it reads oddly |
+| All | Status colors come from the palette and share a hue with a brand signature (success with Milkweed Leaf, warning with Monarch, danger with Dragon Fruit, info with Corn Flower) | Status always shows its icon and label. A brand's signature color on its own (a button, a headline, a fill) never means a status |
 | Food Integrity Project | Milkweed Leaf with Birch text is 4.6:1, close to the limit | Never lighten the primary or set its label below 15px; use milkweed-700 for hover |
-| Food Integrity Project | Milkweed Leaf and success green are both green | Status always uses icon + label. Never use the brand primary to mean "success" |
-| Non-GMO Project | Monarch orange is close to warning amber | Monarch never means "warning". Warnings use the warning status set with its icon |
 | Non-GMO Project and Collective | Monarch and Romanesco fail as text on Birch (2.4:1 and 1.4:1) | Fills, rules and large display only. Text on those fills is Forest |
 | Non-GMO Project and Collective | They share Forest as their dark | Program identity comes from logo, tint and signature, never from the dark alone. Always show the program name |
-| Non-UPF Verified | Dragon Fruit sits near danger red | Never use Dragon Fruit for errors, validation or anything near form fields. Errors use the danger status set |
 | Food Integrity Collective | Corn Flower fails as text (2.0:1) | Panels, charts and shapes only |
 | Food Integrity Collective | The Romanesco primary is a light fill on Birch (1.4:1) | The label carries the meaning. Never make a Romanesco button icon-only; keep the visible focus ring |
 
