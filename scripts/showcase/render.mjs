@@ -57,9 +57,12 @@ export function createRenderer(ctx) {
   // The parent butterfly in an endorsement line: Cacao on light grounds, Birch on dark (04, "Endorsement lockups").
   // Decorative: the line's text already names the Food Integrity Project.
   const parentMark = (ground = "auto") => {
+    // Looked up by file name: asset() skips files whose note mentions favicons, which the parent mark's note does.
+    const byFile = (f) => assets.find((x) => x.file === f && x.exists);
     const img = (a) => (a ? `<img class="endorse-mark" src="${esc(a.path)}" alt="">` : "");
-    const light = img(asset("fip", "mark-color.svg"));
-    const dark = img(asset("fip", "mark-reversed.svg"));
+    const light = img(byFile("fip/fip-mark-color.svg"));
+    const dark = img(byFile("fip/fip-mark-reversed.svg"));
+    if (!light || !dark) check("error", "Logos", "The parent butterfly for endorsement lines (fip-mark-color.svg, fip-mark-reversed.svg) is missing", "04-logos-and-marks.md");
     if (ground === "light") return light;
     if (ground === "dark") return dark;
     return `<span class="logo-on-light">${light}</span><span class="logo-on-dark">${dark}</span>`;
