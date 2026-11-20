@@ -239,7 +239,7 @@ How a program shows it belongs to the Food Integrity Project.
 
 | Rule | Detail |
 |---|---|
-| Relative size | The parent mark is 40 to 50% of the height of the program seal or logo it sits beside, and never larger than it |
+| Relative size | The parent mark is 60 to 70% of the height of the program seal or logo it sits beside, and never larger than it |
 | Separation | A hairline rule or a full clear-space gap always sits between the two marks, so they never read as one lockup |
 | Color | In an endorsement, the parent mark is Cacao or reversed Birch only. It never adopts the program's accent |
 | On pack | Certification seals appear alone on packaging. Endorsement lockups are for owned channels: sites, decks, signage, print |
