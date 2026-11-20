@@ -135,7 +135,7 @@ Other Non-UPF Verified artwork in `public/brand/nonupf/graphics/` (not logos, so
 
 Other Collective artwork in `public/brand/collective/` (not logos, so not in the inventory above): `campaign/collective-campaign-nourish-life-badge.png` and `collective-campaign-nourish-life-badge-light.png` (the "Food should nourish life" badge), and `illustrations/collective-petals-*.png` (the petals motif). These files still use the Collective's earlier colors, green `#255330` and lime `#E2E98D`. They are to be recolored to Forest and Romanesco, and the earlier colors are retired; the design team supplies the recolored files, which replace these under the same names.
 
-Photography in `public/brand/fip/`: `fip-photo-butterfly-wing.jpg`, a close-up of a butterfly wing used as the photography background example in the showcase. Its source, license and credit are not on record yet, as "Photography sourcing" in `01-brand-architecture.md` requires.
+Photography in `public/brand/fip/`: `fip-photo-butterfly-wing.jpg`, a close-up of a butterfly wing. It is no longer shown in the showcase. Its source, license and credit are not on record yet, as "Photography sourcing" in `01-brand-architecture.md` requires.
 
 "Program trademark kit" files came from the artwork folders each program sends licensees, received 2026-10-08. The kits also hold EPS, AI and full-size JPG files for print; those stay with the programs and are not stored here. The bilingual mark in white and the French mark are not in the kit as web files; the one-color bilingual and FSIS marks were supplied as vectors on 2026-11-21.
 
@@ -323,15 +323,6 @@ There are no separate lockup files. The `EndorsementLockup` component builds eac
 | Mark only | 24px | 8 mm |
 
 The seal URL (nongmoproject.org, nonultraprocessed.org) must stay readable at every allowed size.
-
-## Backgrounds
-
-| Background | Logo version |
-|---|---|
-| Birch, Frost, white | Color |
-| The brand's own dark, hero gradients | Reversed or mono-light |
-| Photography | Birch (light) mark on a calm part of the image, with a scrim if needed |
-| Another organization's color | Mono, or place on a Birch panel |
 
 ## Never
 

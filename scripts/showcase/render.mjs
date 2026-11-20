@@ -241,16 +241,6 @@ export function createRenderer(ctx) {
     };
     const ngpMin = minPx(/^Non-GMO Project Verified Mark$/, 72);
     const fipMin = minPx(/^Parent mark/, 96);
-    const backgrounds = rowsOf(d.section(/^Backgrounds$/)?.table("Background", "Logo version"));
-    const bgDemos = backgrounds
-      .map((r, i) => {
-        const bgName = plain(r.background);
-        const dark = /dark|gradient/i.test(bgName);
-        const photo = /photograph/i.test(bgName);
-        const style = photo ? `background:url(public/brand/fip/fip-photo-butterfly-wing.jpg) center/cover` : dark ? "background:var(--brand-dark);color:var(--birch)" : i === 0 ? "background:var(--birch)" : "background:var(--frost)";
-        return `<div class="bg-sample" data-brand="collective" style="${style}">${logoImg("collective", { height: 64, tone: dark || photo ? "light" : "color" })}<span style="${photo ? "background:var(--birch);color:var(--stone-950);padding:0 0.5rem;border-radius:4px" : ""}"><strong>${esc(bgName)}</strong><br>${inline(r["logo version"])}</span></div>`;
-      })
-      .join("");
     const never = d.section(/^Never$/)?.lists()[0];
     const byApp = d.section(/^Logo by application$/);
     if (!byApp) check("warn", "Logos", 'No "Logo by application" section', f);
@@ -270,7 +260,6 @@ export function createRenderer(ctx) {
         ${fipLogo ? `<figure style="margin:0"><img class="logo-plate" src="${esc(fipLogo.path)}" alt="Food Integrity Project logo at minimum screen size" style="width:${fipMin}px"><figcaption class="small muted">Parent mark at ${fipMin}px</figcaption></figure>` : ""}
       </div>
       ${sizes ? render(sizes.blocks) : ""}
-      <h3>Backgrounds</h3><div class="grid" style="--min:200px">${bgDemos}</div>
       ${never ? `<h3>Never</h3><div class="do-dont"><div class="dont"><h4>${icon("status.terminated", "icon")}Never</h4>${render([never])}</div></div>` : ""}`,
       `<p>${inline(d.paragraphs()[0] ?? "")}</p>`
     );

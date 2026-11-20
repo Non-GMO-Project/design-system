@@ -335,8 +335,6 @@ html.reduce-motion .skeleton { animation: none; }
 .clearspace { display: inline-block; position: relative; outline: 1px dashed var(--status-danger-icon); outline-offset: 0; padding: var(--x, 20px); background: repeating-linear-gradient(45deg, transparent 0 6px, color-mix(in srgb, var(--status-danger-icon) 15%, transparent) 6px 7px); }
 .clearspace img { display: block; background: var(--birch); }
 .clearspace span { position: absolute; font-size: 0.75rem; font-family: var(--font-accent); font-weight: 700; color: var(--status-danger-fg); }
-.bg-sample { border-radius: var(--radius-md); padding: 1.25rem; display: grid; place-items: center; min-height: 140px; border: 1px solid var(--border); gap: 0.5rem; text-align: center; font-size: 0.8125rem; }
-.bg-sample img { max-height: 72px; }
 .footer-demo { border-radius: var(--radius-lg); padding: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; justify-content: space-between; }
 .endorse { display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-accent); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; }
 .endorse .lockup__rule { height: 32px; align-self: center; }
