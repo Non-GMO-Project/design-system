@@ -348,12 +348,12 @@ Rules:
 | Token | Brand | Text allowed | Use |
 |---|---|---|---|
 | `--gradient-hero` | Every brand | Birch | Inverted hero bands, from the brand dark |
-| `--gradient-ground` | Food Integrity Project | None | Milkweed Leaf into Seafoam. Decorative |
+| `--gradient-ground` | Food Integrity Project | None | Milkweed Leaf into its lightest step, Milkweed 50 (`#F3F9F1`). Decorative |
 | `--gradient-flight` | Non-GMO Project | None | Monarch into White. Illustration and campaign art |
 | `--gradient-harvest` | Non-UPF Verified | None | Dragon Fruit into Almond. Decorative |
 | `--gradient-gather` | Food Integrity Collective | None | Corn Flower into Romanesco. Decorative |
 
-The same gradients serve light and dark mode. `--gradient-ground` borrows Seafoam, the Non-GMO Project's supporting tint, as its light end; this is the one place a Food Integrity Project surface uses a program color, and Seafoam appears nowhere else on house-level pages. `--gradient-flight` ends in White, the one decorative use of White.
+The same gradients serve light and dark mode. `--gradient-flight` ends in White, the one decorative use of White.
 
 ## Data visualization
 
