@@ -38,6 +38,12 @@ What is in `public/brand/` today. The showcase build checks this table against t
 | `fip/fip-logo-horizontal-reversed.png` | fip | logo | reversed | Birch, transparent, 960px wide. Derived by the build. For email dark bands |
 | `fip/fip-mark-reversed.svg` | fip | mark | reversed | Birch mark alone, for dark grounds. Derived by the build from `fip-mark-color.svg` |
 | `fip/fip-logo-horizontal-color.png` | fip | logo | color | Transparent PNG, 960px wide, rendered by the build from `fip-logo-horizontal-color.svg` (see "Derived files"). For email and anywhere SVG is not supported. It replaces the raster pulled from the style guide PDF, which had a white background |
+| `fip/fip-logo-stacked-mono-dark.svg` | fip | logo | mono-dark | Stacked logo (butterfly above "food integrity project"), one-color black `#231F20`, vector. Source file from the design team, supplied 2026-11-20 |
+| `fip/fip-logo-stacked-mono-dark.png` | fip | logo | mono-dark | Black stacked logo, transparent, 960px wide. Derived by the build |
+| `fip/fip-logo-stacked-color.svg` | fip | logo | color | Cacao stacked logo, for Birch and White grounds. Derived by the build |
+| `fip/fip-logo-stacked-color.png` | fip | logo | color | Cacao stacked logo, transparent, 960px wide. Derived by the build |
+| `fip/fip-logo-stacked-reversed.svg` | fip | logo | reversed | Birch stacked logo, for dark grounds. Derived by the build |
+| `fip/fip-logo-stacked-reversed.png` | fip | logo | reversed | Birch stacked logo, transparent, 960px wide. Derived by the build |
 | `nongmo/nongmo-logo-horizontal-color.png` | nongmo | logo | color | Corporate logo in orange, 913 x 432, transparent. nongmoproject.org media library (`NGP_corp_logo_new.png`) |
 | `nongmo/nongmo-logo-horizontal-reversed.png` | nongmo | logo | reversed | Birch corporate logo, transparent, 960px wide. Derived by the build from `nongmo-logo-horizontal-mono-dark.svg`. For email dark bands. It replaces the white PNG from the media library |
 | `nongmo/nongmo-logo-horizontal-mono-dark.svg` | nongmo | logo | mono-dark | Corporate logo, one-color black `#231F20`, vector. Supplied in #24 |
@@ -96,6 +102,11 @@ Logos on dark grounds use a Birch one-color version, never the color logo and ne
 | `fip/fip-logo-horizontal-reversed.png` | `fip/fip-logo-horizontal-color.svg` | Birch | 960 |
 | `fip/fip-logo-horizontal-color.png` | `fip/fip-logo-horizontal-color.svg` | As drawn | 960 |
 | `fip/fip-mark-reversed.svg` | `fip/fip-mark-color.svg` | Birch | |
+| `fip/fip-logo-stacked-mono-dark.png` | `fip/fip-logo-stacked-mono-dark.svg` | As drawn | 960 |
+| `fip/fip-logo-stacked-color.svg` | `fip/fip-logo-stacked-mono-dark.svg` | Cacao | |
+| `fip/fip-logo-stacked-color.png` | `fip/fip-logo-stacked-mono-dark.svg` | Cacao | 960 |
+| `fip/fip-logo-stacked-reversed.svg` | `fip/fip-logo-stacked-mono-dark.svg` | Birch | |
+| `fip/fip-logo-stacked-reversed.png` | `fip/fip-logo-stacked-mono-dark.svg` | Birch | 960 |
 | `nongmo/nongmo-logo-horizontal-reversed.svg` | `nongmo/nongmo-logo-horizontal-mono-dark.svg` | Birch | |
 | `nongmo/nongmo-logo-horizontal-reversed.png` | `nongmo/nongmo-logo-horizontal-mono-dark.svg` | Birch | 960 |
 | `nongmo/nongmo-mark-reversed.svg` | `nongmo/nongmo-mark-mono-dark.svg` | Birch | |
@@ -188,6 +199,8 @@ Square icons and share images are made by placing the official file on a Birch o
 | Favicon, touch and app icons, social avatar | `fip/fip-mark-color.svg` on Birch |
 | Header, share image | `fip/fip-logo-horizontal-color.svg`; `fip/fip-mark-color.svg` in narrow headers |
 | Footer | `fip/fip-logo-horizontal-color.svg` on Birch, or `fip/fip-logo-horizontal-reversed.svg` on Cacao |
+| Square and narrow formats (mobile footers, share images, slides, signage) | `fip/fip-logo-stacked-color.svg` on Birch, or `fip/fip-logo-stacked-reversed.svg` on Cacao |
+| One-color | `fip/fip-logo-stacked-mono-dark.svg` |
 | Email header | `fip/fip-logo-horizontal-color.png` on White, or `fip/fip-logo-horizontal-reversed.png` on Cacao |
 | Dark grounds, photography | `fip/fip-logo-horizontal-reversed.svg`, or `fip/fip-mark-reversed.svg` in tight spaces |
 
