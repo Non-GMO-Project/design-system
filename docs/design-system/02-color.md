@@ -10,7 +10,7 @@ Every brand is built from the same four parts, plus one shared utility neutral (
 
 | Part | What it is | Rule |
 |---|---|---|
-| **Birch** | `#FFFDEB`, the shared background | Default background for every brand, print and digital. **Never substitute pure white for the page.** White appears only as the fill of section cards (`--surface`) and as the ground of email (`13-email.md`). Any layout that starts on Birch already belongs to the family |
+| **Birch** | `#FFFDEB`, the shared background | Default background for every brand, print and digital. **Never substitute pure white for the page.** White appears only as the fill of section cards (`--surface`), as the ground of email (`13-email.md`) and at the light end of `--gradient-flight`. Any layout that starts on Birch already belongs to the family |
 | **One dark** | Cacao, Forest or Dark Matter | Each brand has exactly one dark. It sets all body type and every inverted panel |
 | **Supporting tint** | Loam, Seafoam, Almond or Corn Flower | Warms or structures the surface underneath |
 | **One signature** | Milkweed Leaf, Monarch, Dragon Fruit or Romanesco | The color a viewer should name when asked which brand they just saw. Never more than about a tenth of a layout |
@@ -34,7 +34,7 @@ Because components only use semantic tokens, a button written once renders as a 
 |---|---|---|---|---|
 | **Birch** | `#FFFDEB` | Ground | All (shared) | Default background everywhere |
 | **Frost** | `#F3F4F2` | Utility neutral | All (shared) | Fields, stripes, disabled, data panels |
-| **White** | `#FFFFFF` | Logo color, section cards | All (shared) | The color of the white (reversed) logo and seal files, such as the white Non-GMO Project Verified Mark, the fill of section cards (`--surface`, see `06-ui-framework.md`) and the ground of email (`13-email.md`). Never a page background anywhere else: start on Birch. Not used for type or any other UI |
+| **White** | `#FFFFFF` | Logo color, section cards | All (shared) | The color of the white (reversed) logo and seal files, such as the white Non-GMO Project Verified Mark, the fill of section cards (`--surface`, see `06-ui-framework.md`), the ground of email (`13-email.md`) and the light end of the Non-GMO Project gradient. Never a page background anywhere else: start on Birch. Not used for type or any other UI |
 | **Black** | `#000000` | Logo color | All (shared) | The color of the one-color black logo and seal files (`*-mono-dark`, or `*-mono-black` where a program's `mono-dark` is not black), for one-color printing and partner materials. Never for type or UI: each brand's dark does that |
 | **Cacao** | `#241A15` | Dark | Food Integrity Project | From the logo. Warm near-black that matches Forest and Dark Matter in weight. Sets type. The guide says Cacao is never a fill, but also that each dark sets every inverted panel; this system allows it for inverted hero bands and footers only (see `brands/food-integrity-project.md`) |
 | **Loam** | `#6B5644` | Supporting tone | Food Integrity Project | Brown of turned soil, a lighter tone of Cacao |
@@ -348,10 +348,12 @@ Rules:
 | Token | Brand | Text allowed | Use |
 |---|---|---|---|
 | `--gradient-hero` | Every brand | Birch | Inverted hero bands, from the brand dark |
-| `--gradient-ground` | Food Integrity Project | None | Loam into Milkweed Leaf. Decorative |
-| `--gradient-flight` | Non-GMO Project | None | Forest into Monarch. Illustration and campaign art |
-| `--gradient-harvest` | Non-UPF Verified | None | Dark Matter into Dragon Fruit. Decorative |
+| `--gradient-ground` | Food Integrity Project | None | Milkweed Leaf into Seafoam. Decorative |
+| `--gradient-flight` | Non-GMO Project | None | Monarch into White. Illustration and campaign art |
+| `--gradient-harvest` | Non-UPF Verified | None | Dragon Fruit into Almond. Decorative |
 | `--gradient-gather` | Food Integrity Collective | None | Corn Flower into Romanesco. Decorative |
+
+The same gradients serve light and dark mode. `--gradient-ground` borrows Seafoam, the Non-GMO Project's supporting tint, as its light end; this is the one place a Food Integrity Project surface uses a program color, and Seafoam appears nowhere else on house-level pages. `--gradient-flight` ends in White, the one decorative use of White.
 
 ## Data visualization
 
@@ -395,7 +397,7 @@ So the design team can tune a base hex and regenerate without guesswork:
 ## Rules for Claude Code
 
 - Never write a hex value, `rgb()` or a raw palette variable inside a component. Use semantic tokens or Tailwind classes mapped to them (`bg-primary`, `text-brand-text`, `border-border`).
-- Page backgrounds are Birch, never `#FFFFFF`. White appears only as `--surface` on section cards, as the ground of email (`13-email.md`), and inside imagery and partner logos.
+- Page backgrounds are Birch, never `#FFFFFF`. White appears only as `--surface` on section cards, as the ground of email (`13-email.md`), at the end of `--gradient-flight`, and inside imagery and partner logos.
 - If a needed color has no semantic token, stop and add one to `09-tokens.md`, then use it. Do not inline it.
 - Status meaning always comes from status tokens, never brand tokens.
 - Monarch and Dragon Fruit never appear in the same layout. On house-level pages each program sits in its own `data-brand` container showing its seal or logo, its dark and its supporting tint; the signature colors otherwise stay inside each program's own pages (see `01-brand-architecture.md`). Program cards may also carry a primary button in their own signature. The other exceptions are program chips, which use each program's signature fill, and status colors (see "Status colors").

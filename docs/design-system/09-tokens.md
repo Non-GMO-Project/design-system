@@ -352,7 +352,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --ring: var(--cacao-950);
   --chart-1: var(--milkweed-600);
   --gradient-hero: linear-gradient(135deg, var(--cacao-950), var(--loam-800));
-  --gradient-ground: linear-gradient(120deg, var(--loam-700), var(--milkweed-600) 60%, var(--milkweed-400));
+  --gradient-ground: linear-gradient(120deg, var(--milkweed-600), var(--seafoam-100));
 }
 .dark, .dark [data-brand="fip"], [data-brand="fip"].dark {
   --brand-dark: var(--cacao-900);
@@ -416,7 +416,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --chart-6: var(--chart-purple);
   --chart-7: var(--chart-orange);
   --gradient-hero: linear-gradient(135deg, var(--forest-900), var(--forest-800));
-  --gradient-flight: linear-gradient(120deg, var(--forest-900), var(--forest-700) 55%, var(--monarch-400));
+  --gradient-flight: linear-gradient(120deg, var(--monarch-400), var(--white));
 }
 .dark [data-brand="nongmo"], [data-brand="nongmo"].dark {
   --brand-dark: var(--forest-800);
@@ -473,7 +473,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --ring: var(--dark-matter-950);
   --chart-1: var(--dragonfruit-600);
   --gradient-hero: linear-gradient(135deg, var(--dark-matter-950), var(--dark-matter-900));
-  --gradient-harvest: linear-gradient(120deg, var(--dark-matter-950), var(--dragonfruit-700) 60%, var(--dragonfruit-500));
+  --gradient-harvest: linear-gradient(120deg, var(--dragonfruit-600), var(--almond-200));
 }
 .dark [data-brand="nonupf"], [data-brand="nonupf"].dark {
   --brand-dark: var(--dark-matter-900);

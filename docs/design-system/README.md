@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 1.7 (draft for review)
+**Version:** 1.8 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 1.8 | 2026-11-20 | New brand gradients, chosen from a mockup. `--gradient-ground` (Food Integrity Project) is Milkweed Leaf into Seafoam, `--gradient-flight` (Non-GMO Project) Monarch into White and `--gradient-harvest` (Non-UPF Verified) Dragon Fruit into Almond; `--gradient-gather` (Collective) is unchanged. They are lighter and simpler than before (two stops, no brand dark) and serve both modes. `02` notes the two exceptions they bring: Seafoam, a Non-GMO Project tint, at the end of the parent's gradient, and White at the end of the Non-GMO Project's |
 | 1.7 | 2026-11-20 | Endorsements with the parent butterfly, chosen from a mockup of options. The horizontal lockup and the endorsement line are now one line, "A program of the [butterfly] Food Integrity Project", in Quicksand caps; the stacked lockup has two tiers, "A program of" above the butterfly and "Food Integrity Project" in Quicksand Bold at 20px. The butterfly is Cacao on light grounds and Birch on dark ones, 1.5 times its line's text size, and decorative to screen readers; a wrapped line breaks after "the". The text is about 15% of the program mark's height, which replaces the 60 to 70% parent-logo rule from 1.5, since lockups no longer use the parent logo file. The `04` Never list allows this one use of a mark inside a sentence. `01`, `04`, the Food Integrity Project profile and the showcase (both lockups and the program footers) updated |
 | 1.6 | 2026-11-20 | Food Integrity Project stacked logo: the design team's one-color vector of the butterfly above "food integrity project" is added as `fip-logo-stacked-mono-dark.svg`, and the build derives Cacao (`color`) and Birch (`reversed`) versions as SVG and transparent PNG. `04` lists the files and uses the stacked logo for square and narrow formats. Unlike the horizontal logo, it is a source file, not an interim trace |
 | 1.5 | 2026-11-20 | The parent mark in an endorsement is now 60 to 70% of the height of the program seal or logo beside it, up from 40 to 50%, which read too small next to the Non-GMO Project Verified Mark. It is still never larger than the program mark. `01`, `04` and the Food Integrity Project profile say so, and the showcase's horizontal lockup draws the parent logo at 65% with no Birch plate, switching to the Birch logo in dark mode |
