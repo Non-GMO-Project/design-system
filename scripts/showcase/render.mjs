@@ -210,7 +210,7 @@ export function createRenderer(ctx) {
     const horiz = `<div class="card lockup" data-brand="nongmo">
         ${ngpSeal ? `<img src="${esc(ngpSeal.path)}" alt="Non-GMO Project Verified" style="height:${sealH}px">` : ""}
         <span class="lockup__rule" aria-hidden="true"></span>
-        <div class="lockup__parent"><span class="eyebrow" style="margin:0">A program of</span>${fipLogo ? `<img class="logo-plate" src="${esc(fipLogo.path)}" alt="Food Integrity Project" style="height:${Math.round(sealH * 0.45)}px;width:auto">` : ""}</div>
+        <div class="lockup__parent"><span class="eyebrow" style="margin:0">A program of</span>${fipLogo ? logoImg("fip", { height: Math.round(sealH * 0.65), tone: "auto" }) : ""}</div>
       </div>`;
     const stacked = `<div class="card lockup lockup--stacked" data-brand="nonupf">
         ${upfSeal ? `<img src="${esc(upfSeal.path)}" alt="Non-UPF Verified" style="height:${sealH}px">` : ""}

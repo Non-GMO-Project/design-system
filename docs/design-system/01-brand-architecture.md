@@ -114,7 +114,7 @@ Every program surface carries the endorsement once, usually in the footer:
 > A program of the Food Integrity Project
 
 - Set in Quicksand caps (`eyebrow` style) or `body-sm`, in `--muted-foreground`.
-- Preceded by the parent mark in Cacao (or Birch on dark), at 40 to 50% of the program logo's height, separated by a hairline rule.
+- Preceded by the parent mark in Cacao (or Birch on dark), at 60 to 70% of the program logo's height, separated by a hairline rule.
 - Links to the organization website.
 
 ### Endorsement lockup
