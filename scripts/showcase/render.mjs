@@ -922,7 +922,7 @@ export function createRenderer(ctx) {
           <div class="hero">
             <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:flex-start">
               <div><p class="eyebrow">${esc(b === "fip" ? "Parent" : "Program")} · data-brand="${b}"</p><h2 id="brand-${b}-h" class="t-h1" style="margin:0">${esc(d.title)}</h2></div>
-              <div class="logo-plate">${logoImg(b, { height: 48 })}</div>
+              <div class="hero__logo">${logoImg(b, { height: 56, tone: "light" })}</div>
             </div>
             <hr class="signature-rule">
             <p class="prose t-body-lg" style="margin:0 0 1.25rem">${inline(d.field("Role") ?? "")}</p>

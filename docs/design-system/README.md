@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 1.9 (draft for review)
+**Version:** 1.10 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 1.10 | 2026-11-21 | Showcase: each brand profile's header band now shows the brand's Birch reversed logo directly on the dark band, instead of the color logo on a Birch plate, following the rule that logos on dark grounds use the Birch `reversed` file |
 | 1.9 | 2026-11-20 | `--gradient-ground` (Food Integrity Project) is now Milkweed Leaf into Milkweed 50 (`#F3F9F1`) instead of into Seafoam, so the parent's gradient stays within its own palette and the Seafoam exception in `02` is gone |
 | 1.8 | 2026-11-20 | New brand gradients, chosen from a mockup. `--gradient-ground` (Food Integrity Project) is Milkweed Leaf into Seafoam, `--gradient-flight` (Non-GMO Project) Monarch into White and `--gradient-harvest` (Non-UPF Verified) Dragon Fruit into Almond; `--gradient-gather` (Collective) is unchanged. They are lighter and simpler than before (two stops, no brand dark) and serve both modes. `02` notes the two exceptions they bring: Seafoam, a Non-GMO Project tint, at the end of the parent's gradient, and White at the end of the Non-GMO Project's |
 | 1.7 | 2026-11-20 | Endorsements with the parent butterfly, chosen from a mockup of options. The horizontal lockup and the endorsement line are now one line, "A program of the [butterfly] Food Integrity Project", in Quicksand caps; the stacked lockup has two tiers, "A program of" above the butterfly and "Food Integrity Project" in Quicksand Bold at 20px. The butterfly is Cacao on light grounds and Birch on dark ones, 1.5 times its line's text size, and decorative to screen readers; a wrapped line breaks after "the". The text is about 15% of the program mark's height, which replaces the 60 to 70% parent-logo rule from 1.5, since lockups no longer use the parent logo file. The `04` Never list allows this one use of a mark inside a sentence. `01`, `04`, the Food Integrity Project profile and the showcase (both lockups and the program footers) updated |
