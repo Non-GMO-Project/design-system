@@ -56,7 +56,7 @@
       "label": "Black",
       "hex": "#000000",
       "owner": "House (shared)",
-      "purpose": "Color of the one-color black logo and seal files (mono-dark). Not for type or UI; each brand's dark does that.",
+      "purpose": "Color of the one-color black logo and seal files (mono-dark, or mono-black where a program's mono-dark is not black). Not for type or UI; each brand's dark does that.",
       "official": false
     }
   ],
