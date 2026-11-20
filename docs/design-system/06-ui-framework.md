@@ -10,7 +10,7 @@ How interfaces are built: the stack, which component to use for each kind of int
 | Styling | Tailwind CSS v4 | `tailwindcss` 4.3 | Tokens wired in `09-tokens.md`. No CSS-in-JS |
 | Component base | shadcn/ui, built on Radix UI primitives | `shadcn` CLI 4.23, `radix-ui` 1.8 | Components are copied into `components/ui/` and owned by us. Accessible behavior (focus, keyboard, ARIA) comes from Radix |
 | Icons | lucide-react, through the registry | `lucide-react` 1.52 or later | The showcase checks the icon registry against `lucide-static` 1.52. See `05-iconography.md` |
-| Fonts | Lora, Nunito Sans, Quicksand via `next/font/google` | Comes with Next.js | See `03-typography.md` |
+| Fonts | Lora, Montserrat, Quicksand via `next/font/google` | Comes with Next.js | See `03-typography.md` |
 | Animation | CSS transitions and `tw-animate-css` for simple cases; Motion (`motion/react`) for layout, gestures and orchestration | `tw-animate-css` 1.4, `motion` 14.9 | See `07-motion.md` |
 | Forms | React Hook Form + Zod, through the shadcn Form components | `react-hook-form` 7.91, `zod` 4.6 | One Zod schema validates on client and server |
 | Data tables | TanStack Table, rendered with shadcn Table | `@tanstack/react-table` 9.3 | Sorting, filtering, pagination, column visibility |

@@ -43,7 +43,7 @@ Program seals keep their own color, artwork and standards. The parent does not r
 | Color | Birch ground, Frost utility neutral, Stone, status colors, chart palette | The one dark, the supporting tint, the signature |
 | Logo | Placement rules, clear space, minimum sizes, file naming, endorsement rules | The logo itself, favicon, social avatar |
 | Certification seals | Usage rules | The seal artwork (one per verification program) |
-| Typography | Lora, Avenir (Nunito Sans on web), Quicksand; the scale; context pairings | Nothing |
+| Typography | Lora, Montserrat, Quicksand; the scale; context pairings | Nothing |
 | Icons | Library, registry, sizes, stroke | Nothing. Icons inherit the brand dark |
 | Components | All behavior, structure, states, spacing | Colors only, through tokens |
 | Motion | All durations, easing, named animations | One optional variation of the signature moment |
