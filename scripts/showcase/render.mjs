@@ -63,9 +63,14 @@ export function createRenderer(ctx) {
     return null;
   };
   const logoImg = (brand, { height = 40, tone = "color", alt } = {}) => {
+    // "auto": the color logo on light grounds, the Birch reversed logo in dark mode (04, "Derived files").
+    if (tone === "auto") {
+      const light = logoImg(brand, { height, tone: "light", alt });
+      return light.startsWith("<img") ? `<span class="logo-on-light">${logoImg(brand, { height, alt })}</span><span class="logo-on-dark">${light}</span>` : logoImg(brand, { height, alt });
+    }
     const a =
       tone === "light"
-        ? asset(brand, "logo-horizontal-reversed", "logo-horizontal-mono-light", "mark-mono-light", "mark-reversed")
+        ? asset(brand, "logo-horizontal-reversed.svg", "logo-horizontal-reversed", "logo-horizontal-mono-light", "mark-reversed.svg", "mark-mono-light")
         : asset(brand, "logo-horizontal-color", "logo-stacked-color", "mark-color");
     if (!a) return `<span class="placeholder-logo" style="height:${height}px;padding:0 0.75rem" role="img" aria-label="${esc(brandName(brand))}">${esc(brandName(brand))}</span>`;
     return `<img src="${esc(a.path)}" alt="${esc(alt ?? brandName(brand))}" style="height:${height}px;width:auto">`;
@@ -136,7 +141,7 @@ export function createRenderer(ctx) {
       .map((r) => {
         const b = plain(r["data-brand"]);
         return `<article class="card ctx" data-brand="${esc(b)}" style="display:grid;gap:0.75rem;align-content:start">
-          <div style="min-height:56px;display:flex;align-items:center">${logoImg(b, { height: 48 })}</div>
+          <div style="min-height:56px;display:flex;align-items:center">${logoImg(b, { height: 48, tone: "auto" })}</div>
           <h4 style="margin:0">${esc(plain(r.brand))}</h4>
           <span class="chip chip--program">${esc(plain(r.brand))}</span>
           <p class="small" style="margin:0">${inline(r.role)}</p>
@@ -1076,7 +1081,7 @@ export function createRenderer(ctx) {
     const block = (re) => { const s = need(d, re, f, "Email"); return s ? render(s.blocks) : ""; };
     // One sample per brand, each in its own data-brand context. Dark header band only where a reversed logo exists.
     const mock = (b) => {
-      const light = asset(b, "logo-horizontal-reversed", "logo-horizontal-mono-light");
+      const light = asset(b, "logo-horizontal-reversed.png", "logo-horizontal-mono-light");
       const header = light
         ? `<div class="email-mock__header email-mock__header--dark">${logoImg(b, { height: 32, tone: "light" })}<span class="small">October 2026</span></div>`
         : `<div class="email-mock__header">${logoImg(b, { height: 32 })}<span class="small muted">October 2026</span></div>`;

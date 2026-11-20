@@ -56,7 +56,7 @@ p { margin: 0 0 1rem; }
 .topbar__title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; margin: 0; margin-right: auto; display: flex; align-items: center; gap: 0.75rem; }
 .topbar__title img { height: 36px; width: auto; }
 /* The interim Food Integrity Project logo is dark gray with no reversed file yet, so in dark mode it sits on a Birch plate. */
-.dark .topbar__title img, .dark .logo-plate { background: var(--birch); border-radius: var(--radius-sm); padding: 2px 4px; }
+.dark .logo-plate { background: var(--birch); border-radius: var(--radius-sm); padding: 2px 4px; }
 .layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); }
 .sidenav { position: sticky; top: 65px; align-self: start; height: calc(100vh - 65px); overflow: auto; padding: 1.5rem 1rem; border-right: 1px solid var(--border); }
 .sidenav ol { list-style: none; margin: 0; padding: 0; }
@@ -553,3 +553,9 @@ dialog.sheet--left[open] { animation: sheet-left-in var(--duration-moderate) var
 .email-mock[data-brand="collective"] .email-mock__masthead, .email-mock[data-brand="collective"] .email-mock__headline { font-family: var(--font-accent); font-weight: 600; }
 .email-mock__rule { border: 0; border-top: 1px solid var(--brand-support); margin: 1rem 0; }
 .email-mock__footer { padding: 0.75rem 1rem 1rem; border-top: 1px solid var(--border); }
+
+/* Logos follow the ground: color on light, the Birch reversed file in dark mode (04, "Derived files"). */
+.logo-on-dark { display: none; }
+.dark .logo-on-light { display: none; }
+.dark .logo-on-dark { display: contents; }
+.logo-on-light { display: contents; }

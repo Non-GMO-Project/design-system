@@ -17,6 +17,7 @@ import { dirname, join, extname, relative } from "node:path";
 import { parse, esc, plain, rowsOf, slug, setDocLinks } from "./lib/markdown.mjs";
 import { extractCss, resolver } from "./lib/tokens.mjs";
 import { emailCss } from "./lib/email.mjs";
+import { derivedLogos } from "./lib/derived-logos.mjs";
 import { createRenderer } from "./showcase/render.mjs";
 import { trademarkPage } from "./showcase/trademark.mjs";
 
@@ -59,6 +60,10 @@ function iconSvg(lucide, cls = "icon") {
   return svg;
 }
 
+function bufferSize(body) {
+  return Buffer.isBuffer(body) && body.readUInt32BE(0) === 0x89504e47 ? [body.readUInt32BE(16), body.readUInt32BE(20)] : null;
+}
+
 function imageSize(path) {
   try {
     const fd = openSync(path, "r");
@@ -84,18 +89,18 @@ function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(join(dir, e.name)) : [join(dir, e.name)]));
 }
 
-function readAssets(doc04, checks, allDocsText = "") {
+function readAssets(doc04, checks, allDocsText = "", derived = new Map()) {
   const rows = rowsOf(doc04?.section(/^Asset inventory$/)?.table("File", "Brand", "Asset"));
   if (!rows.length) checks.push({ level: "error", area: "Logos", message: "Asset inventory table not found", file: "04-logos-and-marks.md" });
   const listed = rows.map((r) => {
     const file = plain(r.file);
     const abs = join(root, "public/brand", file);
-    const exists = existsSync(abs);
+    const exists = existsSync(abs) || derived.has(file);
     if (!exists) checks.push({ level: "error", area: "Logos", message: `Listed asset \`${file}\` is missing from public/brand/`, file: "04-logos-and-marks.md" });
     const base = file.split("/").pop();
     if (!/^(fip|nongmo|nonupf|collective)-(logo|mark|seal)-[a-z]+-(color|reversed|mono-dark|mono-black|mono-light)\.(svg|png|jpg)$/.test(base) && !/^(fip|nongmo|nonupf|collective)-(logo|mark|seal)-(color|reversed|mono-dark|mono-black|mono-light)\.(svg|png|jpg)$/.test(base))
       checks.push({ level: "warn", area: "Logos", message: `\`${base}\` does not follow the naming scheme {brand}-{asset}-{lockup}-{tone}.{ext}`, file: "04-logos-and-marks.md" });
-    return { file, path: `public/brand/${file}`, brand: plain(r.brand), kind: plain(r.asset), tone: plain(r.tone), status: r.status ?? "", exists, listed: true, size: exists ? imageSize(abs) : null };
+    return { file, path: `public/brand/${file}`, brand: plain(r.brand), kind: plain(r.asset), tone: plain(r.tone), status: r.status ?? "", exists, listed: true, derived: derived.has(file), size: derived.has(file) ? bufferSize(derived.get(file)) : exists ? imageSize(abs) : null };
   });
   for (const abs of walk(join(root, "public/brand"))) {
     const rel = relative(join(root, "public/brand"), abs);
@@ -185,7 +190,8 @@ function build() {
   for (const m of semantic.matchAll(/var\((--[\w-]+)\)/g)) if (!defined.has(m[1])) checks.push({ level: "error", area: "Tokens", message: `\`${m[1]}\` is referenced but never defined`, file: "09-tokens.md" });
   for (const m of tailwind.matchAll(/var\((--[\w-]+)\)/g)) if (!defined.has(m[1]) && !/^--font-/.test(m[1])) checks.push({ level: "error", area: "Tokens", message: `Tailwind wiring references \`${m[1]}\`, which is not defined`, file: "09-tokens.md" });
 
-  const assets = readAssets(docs["04-logos-and-marks.md"], checks, Object.values(docs).map((d) => d.raw).join("\n"));
+  const derived = derivedLogos(docs["04-logos-and-marks.md"], root, Object.fromEntries(Object.entries(labelToName).map(([label, name]) => [label, official[name]])), checks);
+  const assets = readAssets(docs["04-logos-and-marks.md"], checks, Object.values(docs).map((d) => d.raw).join("\n"), new Map(derived.map(([p, body]) => [p.replace(/^public\/brand\//, ""), body])));
   const fontCss = fonts(checks);
   // In the showcase, inline code naming a doc file links to that doc's Source documents entry.
   setDocLinks(new Map(Object.keys(docs).map((f) => [f, `#doc-${slug(f)}`])));
@@ -236,7 +242,7 @@ function build() {
     .map(([f, d]) => {
       const path = plain(d.field("Page") ?? "");
       if (!/^trademark\/[a-z0-9-]+\.html$/.test(path)) { checks.push({ level: "error", area: "Trademark", message: "**Page:** must be trademark/<name>.html", file: f }); return null; }
-      return [path, trademarkPage({ file: f, doc: d, root, assets, brandName: r.brandName, fontCss, tokensCss, typeCss: r.typeCss(), showcaseCss, check: (level, area, message, file) => checks.push({ level, area, message, file }) })];
+      return [path, trademarkPage({ file: f, doc: d, root, assets, derived: new Map(derived.map(([p, body]) => [p.replace(/^public\/brand\//, ""), body])), brandName: r.brandName, fontCss, tokensCss, typeCss: r.typeCss(), showcaseCss, check: (level, area, message, file) => checks.push({ level, area, message, file }) })];
     })
     .filter(Boolean);
   setDocLinks(showcaseLinks);
@@ -269,7 +275,8 @@ function build() {
     })
     .join("");
 
-  const fipLogo = assets.find((a) => a.brand === "fip" && a.kind === "logo" && a.exists);
+  const fipLogo = assets.find((a) => a.brand === "fip" && a.kind === "logo" && a.tone === "color" && a.exists);
+  const fipLogoDark = assets.find((a) => a.brand === "fip" && a.kind === "logo" && a.tone === "reversed" && a.file.endsWith(".svg") && a.exists);
 
   const html = `<!doctype html>
 <!-- Generated by scripts/build-showcase.mjs from docs/design-system. Do not edit by hand: run npm run build. Source hash ${sourceHash} -->
@@ -290,7 +297,7 @@ ${showcaseCss}
 <body>
 <a class="btn btn--default skip" href="#main">Skip to main content</a>
 <header class="topbar">
-  <p class="topbar__title">${fipLogo ? `<img src="${esc(fipLogo.path)}" alt="Food Integrity Project">` : ""}<span>Digital design system <span class="muted small">v${esc(version.split(" ")[0])}</span></span></p>
+  <p class="topbar__title">${fipLogo ? `<span class="logo-on-light"><img src="${esc(fipLogo.path)}" alt="Food Integrity Project"></span>` : ""}${fipLogoDark ? `<span class="logo-on-dark"><img src="${esc(fipLogoDark.path)}" alt="Food Integrity Project"></span>` : ""}<span>Digital design system <span class="muted small">v${esc(version.split(" ")[0])}</span></span></p>
   <button class="btn btn--outline btn--sm nav-toggle" type="button" data-open="mobile-nav" aria-haspopup="dialog">${r.icon("nav.menu", "icon icon--sm")}Sections</button>
   <div class="topbar__toggles">
     <label class="switch"><input type="checkbox" role="switch" data-toggle-dark> Dark</label>
@@ -318,7 +325,7 @@ ${appJs}
 </body>
 </html>
 `;
-  return { html, outputs: [["index.html", html], ["styles/tokens.css", tokensCss], ["styles/tailwind.css", tailwindCss], ["styles/fonts.css", fontsCss], ["styles/email.css", emailStyles], ...pages], errors, warns };
+  return { html, outputs: [["index.html", html], ["styles/tokens.css", tokensCss], ["styles/tailwind.css", tailwindCss], ["styles/fonts.css", fontsCss], ["styles/email.css", emailStyles], ...pages, ...derived], errors, warns };
 }
 
 // ---------- outputs ----------
@@ -330,7 +337,7 @@ function writeOutputs() {
   for (const [p, body] of outputs) {
     const abs = join(root, p);
     mkdirSync(dirname(abs), { recursive: true });
-    if (!existsSync(abs) || readFileSync(abs, "utf8") !== body) { writeFileSync(abs, body); changed.push(p); }
+    if (!existsSync(abs) || !readFileSync(abs).equals(Buffer.from(body))) { writeFileSync(abs, body); changed.push(p); }
   }
   const status = `${errors.length} errors, ${warns.length} warnings`;
   console.log(`[showcase] ${changed.length ? "wrote " + changed.join(", ") : "no changes"} in ${Date.now() - t0}ms (${status})`);
@@ -340,7 +347,7 @@ function writeOutputs() {
 
 if (args.has("--check")) {
   const { outputs, errors } = build();
-  const stale = outputs.filter(([p, body]) => !existsSync(join(root, p)) || readFileSync(join(root, p), "utf8") !== body).map(([p]) => p);
+  const stale = outputs.filter(([p, body]) => !existsSync(join(root, p)) || !readFileSync(join(root, p)).equals(Buffer.from(body))).map(([p]) => p);
   if (stale.length) console.error(`Out of date: ${stale.join(", ")}. Run npm run build.`);
   for (const e of errors) console.error(`✗ ${e.area}: ${e.message.replace(/`/g, "")} (${e.file})`);
   process.exit(stale.length || errors.length ? 1 : 0);
