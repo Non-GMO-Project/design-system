@@ -96,7 +96,6 @@ export function createRenderer(ctx) {
   // ---------- Overview ----------
   function overview() {
     const readme = docs["README.md"];
-    const model = readme.section(/^The model in one paragraph$/);
     const rules = readme.section(/^Rules that apply everywhere$/);
     const ver = readme.field("Version");
     const src = readme.field("Brand source");
@@ -104,8 +103,7 @@ export function createRenderer(ctx) {
       <div class="hero">
         <p class="eyebrow">Digital design system${ver ? " · version " + esc(plain(ver)) : ""}</p>
         <h1 id="overview-h" class="t-display" style="margin:0">${esc(readme.title.replace(/\s+Digital Design System$/i, ""))}</h1>
-        <hr class="signature-rule">
-        <p class="prose" style="margin:0">${model ? inline(model.paragraphs()[0] ?? "") : ""}</p>
+        <hr class="signature-rule" style="margin-bottom:0">
       </div>
       ${source("README.md")}
       ${src ? `<p class="prose">${inline(src)}</p>` : ""}
