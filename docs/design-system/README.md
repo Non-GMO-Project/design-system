@@ -1,6 +1,6 @@
 # Food Integrity Project Digital Design System
 
-**Version:** 1.10 (draft for review)
+**Version:** 1.11 (draft for review)
 **Owner:** Food Integrity Project design team.
 **Applies to:** every interface built for the Food Integrity Project and its programs: Non-GMO Project, Non-UPF Verified and Food Integrity Collective.
 **Brand source:** *Food Integrity Project Style Guide* (draft for review). Where this system and the older per-program guides disagree, the Food Integrity Project Style Guide wins, and accessibility wins over both.
@@ -164,6 +164,7 @@ It should not invent new colors, fonts, icon styles or animation curves.
 
 | Version | Date | Change |
 |---|---|---|
+| 1.11 | 2026-11-21 | Icons and share images (#110). The build now makes every brand's favicon (SVG and 32px PNG), Apple touch icon, web app icons (192, 512 and a 512 maskable), 1024px app store icon, 400px social avatar and 1200 x 630 share image, from a new "Icons and share images" table in `04`, into `public/brand/<brand>/icons/`. Each places an official file on a transparent or Birch square, recoloring only one-color sources: the Food Integrity Project butterfly in Cacao, the Non-UPF Verified icon in Dragon Fruit, the Non-GMO Project outline Butterfly and its avatar as drawn, the Collective mark in Forest. At 16px every mark holds up except the Collective's thin lines; a simplified favicon is requested in #155. New Non-GMO Project vector seals from the program: the one-color bilingual Mark and the Mark for FSIS (`fsis` added to the naming table), also listed on the participant page. The showcase uses the generated Food Integrity Project favicon and touch icon |
 | 1.10 | 2026-11-21 | Showcase: each brand profile's header band now shows the brand's Birch reversed logo directly on the dark band, instead of the color logo on a Birch plate, following the rule that logos on dark grounds use the Birch `reversed` file |
 | 1.9 | 2026-11-20 | `--gradient-ground` (Food Integrity Project) is now Milkweed Leaf into Milkweed 50 (`#F3F9F1`) instead of into Seafoam, so the parent's gradient stays within its own palette and the Seafoam exception in `02` is gone |
 | 1.8 | 2026-11-20 | New brand gradients, chosen from a mockup. `--gradient-ground` (Food Integrity Project) is Milkweed Leaf into Seafoam, `--gradient-flight` (Non-GMO Project) Monarch into White and `--gradient-harvest` (Non-UPF Verified) Dragon Fruit into Almond; `--gradient-gather` (Collective) is unchanged. They are lighter and simpler than before (two stops, no brand dark) and serve both modes. `02` notes the two exceptions they bring: Seafoam, a Non-GMO Project tint, at the end of the parent's gradient, and White at the end of the Non-GMO Project's |
