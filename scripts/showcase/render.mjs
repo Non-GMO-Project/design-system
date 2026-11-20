@@ -54,6 +54,16 @@ export function createRenderer(ctx) {
   const readable = (hex) => (contrast(hex, palette.birch) >= contrast(hex, palette["stone-950"]) ? "var(--birch)" : "var(--stone-950)");
   const varForHex = (hex) => Object.entries(palette).find(([, v]) => v === hex.toUpperCase())?.[0];
 
+  // The parent butterfly in an endorsement line: Cacao on light grounds, Birch on dark (04, "Endorsement lockups").
+  // Decorative: the line's text already names the Food Integrity Project.
+  const parentMark = (ground = "auto") => {
+    const img = (a) => (a ? `<img class="endorse-mark" src="${esc(a.path)}" alt="">` : "");
+    const light = img(asset("fip", "mark-color.svg"));
+    const dark = img(asset("fip", "mark-reversed.svg"));
+    if (ground === "light") return light;
+    if (ground === "dark") return dark;
+    return `<span class="logo-on-light">${light}</span><span class="logo-on-dark">${dark}</span>`;
+  };
   const asset = (brand, ...prefer) => {
     for (const p of prefer) {
       // Skip restricted files (the Non-UPF icon is approved for favicons only).
@@ -165,7 +175,7 @@ export function createRenderer(ctx) {
         const style = tone === "light" ? "background:var(--brand-dark);color:var(--birch)" : "background:var(--background);color:var(--foreground);border:1px solid var(--border)";
         return `<div class="footer-demo ctx" data-brand="${b}" style="${style}">
           ${logoImg(b, { height: 40, tone })}
-          <div class="endorse"><span class="lockup__rule" aria-hidden="true"></span>${logoImg("fip", { height: 20, tone, alt: "" })}<span>${esc(line)}</span></div>
+          <div class="endorse"><span class="lockup__rule" aria-hidden="true"></span><span class="endorse-line">A program of the ${parentMark(tone === "light" ? "dark" : "light")}<span class="nowrap">Food Integrity Project</span></span></div>
         </div>`;
       })
       .join("");
@@ -210,12 +220,12 @@ export function createRenderer(ctx) {
     const horiz = `<div class="card lockup" data-brand="nongmo">
         ${ngpSeal ? `<img src="${esc(ngpSeal.path)}" alt="Non-GMO Project Verified" style="height:${sealH}px">` : ""}
         <span class="lockup__rule" aria-hidden="true"></span>
-        <div class="lockup__parent"><span class="eyebrow" style="margin:0">A program of</span>${fipLogo ? logoImg("fip", { height: Math.round(sealH * 0.65), tone: "auto" }) : ""}</div>
+        <p class="endorse-line">A program of the ${parentMark("auto")}<span class="nowrap">Food Integrity Project</span></p>
       </div>`;
     const stacked = `<div class="card lockup lockup--stacked" data-brand="nonupf">
         ${upfSeal ? `<img src="${esc(upfSeal.path)}" alt="Non-UPF Verified" style="height:${sealH}px">` : ""}
         <span class="lockup__rule" aria-hidden="true"></span>
-        <span class="eyebrow" style="margin:0">A program of the Food Integrity Project</span>
+        <div class="endorse-tier"><span class="eyebrow" style="margin:0">A program of</span><p class="endorse-name">${parentMark("auto")}<span>Food Integrity Project</span></p></div>
       </div>`;
     const sizes = d.section(/^Clear space and size$/);
     // Screen minimums come from the "Minimum sizes" table, so the demo follows the doc.

@@ -247,17 +247,19 @@ How a program shows it belongs to the Food Integrity Project.
 
 | Form | Layout | Use |
 |---|---|---|
-| Horizontal (preferred) | Program seal or logo, a hairline rule, then "A program of" above the parent mark and name | Site footers, decks, signage |
-| Stacked (narrow formats) | Program seal or logo, a hairline rule below, then "A program of the Food Integrity Project" in Quicksand caps | Mobile footers, narrow print |
+| Horizontal (preferred) | Program seal or logo, a hairline rule, then one line: "A program of the", the parent butterfly, "Food Integrity Project", all in Quicksand caps (the `eyebrow` style) | Site footers, decks, signage |
+| Stacked (narrow formats) | Program seal or logo, a hairline rule below, then two tiers: "A program of" in Quicksand caps, and below it the parent butterfly followed by "Food Integrity Project" in Quicksand Bold, sentence case, at 20px on screen | Mobile footers, narrow print |
 
 | Rule | Detail |
 |---|---|
-| Relative size | The parent mark is 60 to 70% of the height of the program seal or logo it sits beside, and never larger than it |
+| Relative size | The butterfly is 1.5 times the text size of the line it sits in. The endorsement never outweighs the program mark: its text is about 15% of the program mark's height (14px beside a 96px seal on screen) |
+| Wrapping | When the horizontal line wraps, it breaks after "the", so the butterfly always stays with the name |
+| Accessible name | The butterfly is decorative (`alt=""`): the text already reads "A program of the Food Integrity Project" |
 | Separation | A hairline rule or a full clear-space gap always sits between the two marks, so they never read as one lockup |
-| Color | In an endorsement, the parent mark is Cacao or reversed Birch only. It never adopts the program's accent |
+| Color | The butterfly is Cacao on light grounds and Birch on dark ones, never the program's colors. The text takes `--muted-foreground` |
 | On pack | Certification seals appear alone on packaging. Endorsement lockups are for owned channels: sites, decks, signage, print |
 
-There are no separate lockup files. The `EndorsementLockup` component builds each lockup from the two official files, with the rule between them, so a lockup always uses the current program and parent files. It never redraws either mark.
+There are no separate lockup files. The `EndorsementLockup` component builds each lockup from the program's official file and the parent butterfly (`fip-mark-color.svg`, or `fip-mark-reversed.svg` on dark grounds), with the rule between them and the words set in type, so a lockup always uses the current files. It never redraws either mark.
 
 ## Clear space and size
 
@@ -293,7 +295,7 @@ The seal URL (nongmoproject.org, nonultraprocessed.org) must stay readable at ev
 - Animate a seal. Logos may fade in with the page, nothing more.
 - Lock the parent to a seal: no shared container, no touching edges, no combined mark. Endorsement is adjacency, not fusion.
 - Rearrange lockup parts or build an endorsed lockup that reads as one mark.
-- Put a logo inside a sentence as a word.
+- Put a logo inside a sentence as a word. The one exception is the parent butterfly in the endorsement line (see "Endorsement lockups").
 - Put a color or white logo on a dark ground. Logos on dark grounds are the Birch `reversed` files.
 - Use a logo or seal as a watermark, or show one at any opacity other than 100%. Logos are not watermarks.
 - Use a program logo to represent a different program, or substitute one program's mark for another.
