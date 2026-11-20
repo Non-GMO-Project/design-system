@@ -32,7 +32,7 @@ Green is the one hue no program owns, and Milkweed Leaf sits opposite Monarch or
 
 ## Typography
 
-Documents and standards pairing by default (Lora + Avenir). Donor reports and the annual report use the editorial pairing (Lora + Quicksand).
+Documents and standards pairing by default (Lora + Montserrat). Donor reports and the annual report use the editorial pairing (Lora + Quicksand).
 
 ## Imagery
 

@@ -120,7 +120,7 @@ function readAssets(doc04, checks, allDocsText = "") {
 function fonts(checks) {
   const families = [
     ["lora", ["index.css", "wght-italic.css"]],
-    ["nunito-sans", ["index.css"]],
+    ["montserrat", ["index.css", "wght-italic.css"]],
     ["quicksand", ["index.css"]],
   ];
   const outDir = join(root, "public/fonts");
@@ -152,9 +152,9 @@ function fonts(checks) {
   if (!css && existsSync(outDir)) {
     // No node_modules: reuse the previously copied files.
     for (const f of readdirSync(outDir).filter((x) => x.endsWith(".woff2"))) {
-      const fam = f.startsWith("lora") ? "Lora" : f.startsWith("nunito") ? "Nunito Sans" : "Quicksand";
+      const fam = f.startsWith("lora") ? "Lora" : f.startsWith("montserrat") ? "Montserrat" : "Quicksand";
       const range = f.includes("latin-ext") ? "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF" : "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD";
-      css += `@font-face { font-family: '${fam}'; font-style: ${f.includes("italic") ? "italic" : "normal"}; font-display: swap; font-weight: ${fam === "Quicksand" ? "300 700" : fam === "Lora" ? "400 700" : "200 1000"}; src: url(public/fonts/${f}) format('woff2-variations'); unicode-range: ${range}; }\n`;
+      css += `@font-face { font-family: '${fam}'; font-style: ${f.includes("italic") ? "italic" : "normal"}; font-display: swap; font-weight: ${fam === "Quicksand" ? "300 700" : fam === "Lora" ? "400 700" : "100 900"}; src: url(public/fonts/${f}) format('woff2-variations'); unicode-range: ${range}; }\n`;
     }
   }
   return css;

@@ -8,7 +8,7 @@ The showcase build (`npm run build`) extracts the CSS blocks on this page into g
 |---|---|
 | `styles/tokens.css` | The palette, the static values from `@theme` as plain `:root` variables, and the semantic tokens for every brand and mode |
 | `styles/tailwind.css` | The Tailwind CSS v4 wiring below (`@custom-variant dark`, `@theme inline`, `@theme`), without the `tailwindcss` and `tw-animate-css` imports, followed by one `@utility` per type scale token (`text-h1`, `text-eyebrow` and the rest, from `03-typography.md`) |
-| `styles/fonts.css` | `@font-face` rules for the self-hosted Lora, Nunito Sans and Quicksand files in `public/fonts/`, with `font-display: swap` (see `03-typography.md`) |
+| `styles/fonts.css` | `@font-face` rules for the self-hosted Lora, Montserrat and Quicksand files in `public/fonts/`, with `font-display: swap` (see `03-typography.md`) |
 | `styles/email.css` | The semantic tokens resolved to hex values, light mode, one class per brand and role, for email templates (see `13-email.md`, "Color in email") |
 
 **Import the generated files instead of copying the blocks.** An app's global stylesheet becomes:
@@ -662,8 +662,8 @@ Tailwind v4 reads tokens from CSS with `@theme`. `inline` makes the utilities re
   --radius-lg: 0.75rem;   /* dialogs, sheets, large panels */
 
   --font-serif: "Lora", Charter, "Bitstream Charter", Cambria, Georgia, serif;
-  --font-sans: "Nunito Sans", "Avenir Next", Avenir, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-accent: "Quicksand", "Nunito Sans", system-ui, sans-serif;
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-accent: "Quicksand", "Montserrat", system-ui, sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
@@ -675,7 +675,7 @@ Tailwind v4 reads tokens from CSS with `@theme`. `inline` makes the utilities re
 
 Tailwind emits the `@theme` values as CSS variables too, so `--font-serif` and `--ease-standard` are available in plain CSS and in Motion code, under the names used in `03-typography.md` and `07-motion.md`.
 
-In Next.js, load Lora, Nunito Sans and Quicksand with `next/font/google` (self-hosted at build time) and put the `next/font` variable first in each stack, for example `--font-serif: var(--font-lora), "Lora", Charter, ...`. Apps that don't use `next/font` (and static or email pages) import `styles/fonts.css` instead, which self-hosts the same three families from `public/fonts/`, as the showcase does.
+In Next.js, load Lora, Montserrat and Quicksand with `next/font/google` (self-hosted at build time) and put the `next/font` variable first in each stack, for example `--font-serif: var(--font-lora), "Lora", Charter, ...`. Apps that don't use `next/font` (and static or email pages) import `styles/fonts.css` instead, which self-hosts the same three families from `public/fonts/`, as the showcase does.
 
 This produces utilities such as `bg-primary`, `text-brand-text`, `bg-brand-support`, `bg-status-warning-bg`, `border-status-danger-border`, `shadow-2`, `rounded-lg`, `font-serif`, `font-accent`, `ease-standard`.
 

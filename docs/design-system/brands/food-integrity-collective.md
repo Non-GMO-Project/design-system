@@ -34,7 +34,7 @@ The Collective shares Forest with Non-GMO Project but pairs it with two mid-tone
 
 ## Typography
 
-Campaign and member pairing (Quicksand + Avenir) for events and member communications; editorial pairing (Lora + Quicksand) for long-form stories.
+Campaign and member pairing (Quicksand + Montserrat) for events and member communications; editorial pairing (Lora + Quicksand) for long-form stories.
 
 ## Imagery
 

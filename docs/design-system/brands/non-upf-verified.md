@@ -34,7 +34,7 @@ The organizational logo and the circular secondary seal look alike: the logo rea
 
 ## Typography
 
-Shared system. Standards pages use the default Lora + Avenir pairing; consumer campaigns may use Quicksand + Avenir.
+Shared system. Standards pages use the default Lora + Montserrat pairing; consumer campaigns may use Quicksand + Montserrat.
 
 ## Imagery
 

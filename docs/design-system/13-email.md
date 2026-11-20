@@ -17,7 +17,7 @@ How the brand elements carry into email: newsletters, campaigns and service mess
 | Service | Documents needed, status change, confirmation | Header, one message block, one button, minimal footer | No hero image, no support band, no social row. Subject says the thing (`11-ux.md`) |
 | Newsletter | Industry News, Better With the Butterfly, New GMO Alert, The Fullist | Header, masthead, lead story, more stories, support band, full footer | A recurring name (masthead) set in Lora (Quicksand for the Collective). Two to five stories |
 | Campaign | Webinar invitation, appeal, launch | Header, hero, one story, one button (repeated once at the end), full footer | One goal. The button label is the same both times |
-| Member and community | Collective member updates | Header, letter-style body, image grid, full footer | Warmer tone (Quicksand + Avenir pairing), still one brand |
+| Member and community | Collective member updates | Header, letter-style body, image grid, full footer | Warmer tone (Quicksand + Montserrat pairing), still one brand |
 
 ## Anatomy
 
@@ -27,13 +27,13 @@ Top to bottom. Skip any part a type above does not list.
 |---|---|---|
 | Preheader | One line of preview text, hidden in the body | Adds to the subject, never repeats it. 40 to 90 characters |
 | Header | Brand logo, issue date or "View in browser" | Horizontal logo, PNG at 2x, 120px wide minimum, linked to the brand site, alt text = brand name. On White, or on the brand dark with a reversed logo |
-| Masthead | Newsletter name and a one-line description | Name at `h1` size in Lora (Quicksand for the Collective), description in Avenir `body` or `eyebrow`. Brand dark text on White. One masthead per email |
+| Masthead | Newsletter name and a one-line description | Name at `h1` size in Lora (Quicksand for the Collective), description in Montserrat `body` or `eyebrow`. Brand dark text on White. One masthead per email |
 | Hero | One photograph | Full column width. Calm subject, no text burned in, no seals or logos dropped on top. Meaningful alt text, or `alt=""` if purely mood |
-| Story block | Eyebrow (optional), headline, body, button | Headline in Lora `h2` or `h3` (Quicksand for the Collective), body in Avenir `body`, left-aligned. Image beside the text on wide screens, stacked above it on phones |
+| Story block | Eyebrow (optional), headline, body, button | Headline in Lora `h2` or `h3` (Quicksand for the Collective), body in Montserrat `body`, left-aligned. Image beside the text on wide screens, stacked above it on phones |
 | Divider | A hairline between stories | 1px in the brand's support color, or `border` from the tokens. Never the signature color |
 | Support band | One appeal: donate, sign up, share | Full-width panel on the brand's support color with its paired text color (see the table below), or the brand dark with Birch text. One per email, after the last story |
 | Social row | Links to the brand's social accounts | Each platform's official icon from its own brand resources, unaltered and used as its guidelines allow (Lucide has no platform logos), each with the platform name as alt text. Non-GMO Project: Facebook, Instagram, LinkedIn. Non-UPF Verified: Instagram, LinkedIn. Food Integrity Collective: Instagram, LinkedIn, YouTube. Food Integrity Project emails have no social row |
-| Footer | Logo or mark, brand name, mailing address, website, preferences, unsubscribe | Plain text on White, Avenir `body` (16px). The endorsement line "A program of the Food Integrity Project" for program emails |
+| Footer | Logo or mark, brand name, mailing address, website, preferences, unsubscribe | Plain text on White, Montserrat `body` (16px). The endorsement line "A program of the Food Integrity Project" for program emails |
 
 ## Color in email
 
@@ -53,17 +53,17 @@ Email clients do not reliably support CSS variables, so templates use the hex va
 
 ## Type in email
 
-Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. Every stack ends in a font that every client has, chosen to keep the same shape. Templates that use Lora load it with a `<link>` tag in the `<head>` and keep the full serif stack, so clients that support web fonts show Lora and the rest show Georgia.
+Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. Every stack ends in a font that every client has, chosen to keep the same shape. Templates that use Lora or Montserrat load them with a `<link>` tag in the `<head>` and keep the full stack, so clients that support web fonts show Lora and Montserrat and the rest show Georgia and Arial.
 
 | Role | Stack for email | Falls back to |
 |---|---|---|
 | Serif (masthead, headlines; not the Collective) | `Lora, Georgia, "Times New Roman", serif` | Georgia |
-| Sans (body, footer) | `"Nunito Sans", "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif` | Avenir on Apple devices, Segoe UI on Windows, Arial elsewhere |
-| Accent (eyebrows, button labels; Collective mastheads and headlines) | `Quicksand, "Nunito Sans", "Avenir Next", Avenir, Helvetica, Arial, sans-serif` | Same as sans |
+| Sans (body, footer) | `Montserrat, Verdana, Arial, sans-serif` | Verdana, the closest common match to Montserrat's width, then Arial |
+| Accent (eyebrows, button labels; Collective mastheads and headlines) | `Quicksand, Montserrat, Verdana, Arial, sans-serif` | Same as sans |
 
 - Sizes come from the web scale in `03-typography.md`. Body is 16px and never smaller, footer included.
 - Headlines and the masthead name are left-aligned, sentence case and no larger than `h1` (40px). Email never uses `display` sizes.
-- Food Integrity Collective emails follow its pairing in `03-typography.md`: Quicksand for the masthead and headlines, Avenir for body. Lora sits out.
+- Food Integrity Collective emails follow its pairing in `03-typography.md`: Quicksand for the masthead and headlines, Montserrat for body. Lora sits out.
 - Body paragraphs are left-aligned. Center only short lines: the masthead, a single button, a date line.
 
 ## Layout and images

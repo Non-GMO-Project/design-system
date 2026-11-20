@@ -32,7 +32,7 @@ Forest carries type and structure; Monarch is reserved for a single point of emp
 
 ## Typography
 
-Shared system. The older Lora + Quicksand + Copperplate stack becomes the house stack (Lora + Avenir + Quicksand); Copperplate is retired.
+Shared system. The older Lora + Quicksand + Copperplate stack becomes the house stack (Lora + Montserrat + Quicksand); Copperplate is retired.
 
 ## Imagery
 

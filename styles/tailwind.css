@@ -82,8 +82,8 @@
   --radius-lg: 0.75rem;   /* dialogs, sheets, large panels */
 
   --font-serif: "Lora", Charter, "Bitstream Charter", Cambria, Georgia, serif;
-  --font-sans: "Nunito Sans", "Avenir Next", Avenir, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-accent: "Quicksand", "Nunito Sans", system-ui, sans-serif;
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-accent: "Quicksand", "Montserrat", system-ui, sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);

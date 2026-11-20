@@ -7,30 +7,30 @@ One set of typefaces serves every brand. Color and logos tell the brands apart; 
 | Role | Token | Family | Job | Never |
 |---|---|---|---|---|
 | Serif | `--font-serif` | **Lora** | Headlines by default. May set running text wherever reading is sustained: donor reports, essays, standards documents. Italic for pull quotes | Labels, buttons, table cells |
-| Sans | `--font-sans` | **Avenir** (print and desktop), **Nunito Sans** (web and apps) | Running text, captions, tables and interface copy. May go large for statistics and pack callouts, with tracking tightened above 80px (print and slides; the web `display` size tops out at 72px) | |
+| Sans | `--font-sans` | **Montserrat** (web, apps, print and desktop) | Running text, captions, tables and interface copy. May go large for statistics and pack callouts, with tracking tightened above 80px (print and slides; the web `display` size tops out at 72px) | |
 | Accent | `--font-accent` | **Quicksand** | Eyebrows, labels, buttons and seal wordmarks. May carry the headline where a piece needs warmth over authority | Paragraphs |
 | Mono | `--font-mono` | System monospace | Code, API keys, record IDs where character-level accuracy matters | Prose |
 
-**Avenir on screens.** Avenir is a licensed desktop face. Nunito Sans is the approved substitute where it cannot be embedded, which includes every website and app until a web license exists. The sans stack puts Nunito Sans first so every device renders the same face.
+**One sans everywhere.** Montserrat replaces both Avenir and Nunito Sans, so print, slides, websites and apps all use the same sans. It is open-licensed, so no separate web license is needed. Montserrat sets wider than Avenir: check line lengths and tight layouts such as table columns, buttons and chips when moving work across.
 
 All three web families are open-licensed (SIL Open Font License) and self-hosted. In Next.js, load them with `next/font/google`, which self-hosts at build time and adjusts fallback metrics to avoid layout shift. Everywhere else, import the generated `styles/fonts.css`, which serves the same files from `public/fonts/` with `font-display: swap` (see `09-tokens.md`). Each stack keeps system fallbacks after the hosted face.
 
 | Token | Stack |
 |---|---|
 | `--font-serif` | `"Lora", Charter, "Bitstream Charter", Cambria, Georgia, serif` |
-| `--font-sans` | `"Nunito Sans", "Avenir Next", Avenir, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"` |
-| `--font-accent` | `"Quicksand", "Nunito Sans", system-ui, sans-serif` |
+| `--font-sans` | `"Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"` |
+| `--font-accent` | `"Quicksand", "Montserrat", system-ui, sans-serif` |
 | `--font-mono` | `ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace` |
 
 ## Pair by context, not by habit
 
 | Context | Pairing | How it works |
 |---|---|---|
-| Documents and standards | Lora + Avenir | **The default.** Authority first: Lora sets every headline, Avenir carries the argument |
-| Campaign and member work | Quicksand + Avenir | Warmth first. Quicksand takes the headline in sentence case above 60px; Lora sits out |
+| Documents and standards | Lora + Montserrat | **The default.** Authority first: Lora sets every headline, Montserrat carries the argument |
+| Campaign and member work | Quicksand + Montserrat | Warmth first. Quicksand takes the headline in sentence case above 60px; Lora sits out |
 | Donor and editorial | Lora + Quicksand | Lora sets both headline and body; Quicksand handles labels, captions and furniture |
 
-Typical fit: Food Integrity Project and Non-UPF Verified standards pages use the default; Food Integrity Collective member pages and campaigns lean on Quicksand + Avenir; the annual report and donor pieces use Lora + Quicksand.
+Typical fit: Food Integrity Project and Non-UPF Verified standards pages use the default; Food Integrity Collective member pages and campaigns lean on Quicksand + Montserrat; the annual report and donor pieces use Lora + Quicksand.
 
 ## Type scale (web)
 
@@ -63,8 +63,8 @@ Print minimums from the brand guide: 12pt body in print, 24px on a 1920 slide.
 
 | | Public and program surfaces | Operational apps (staff, TA portal, internal tools) |
 |---|---|---|
-| Headings h1 to h3 | Lora | Lora for page titles (h1, h2); Nunito Sans 700 for h3 and below in dense views |
-| Body | Nunito Sans; Lora allowed for long-form articles and standards documents | Nunito Sans |
+| Headings h1 to h3 | Lora | Lora for page titles (h1, h2); Montserrat 700 for h3 and below in dense views |
+| Body | Montserrat; Lora allowed for long-form articles and standards documents | Montserrat |
 | Labels and buttons | Quicksand | Quicksand |
 | Density | Generous. `body` 16px minimum | Compact allowed. Tables can use `body-sm` |
 | Display size | Allowed, once per page | Not used |
@@ -115,6 +115,6 @@ Every token in the type scale is a Tailwind utility: `text-` plus the token name
 ## Rules for Claude Code
 
 - Use the scale through its `text-*` utilities. No arbitrary font sizes outside the named tokens.
-- Lora for headings, Nunito Sans for reading and interface text, Quicksand for labels, buttons and eyebrows. Never Quicksand for paragraphs.
+- Lora for headings, Montserrat for reading and interface text, Quicksand for labels, buttons and eyebrows. Never Quicksand for paragraphs.
 - Prose containers always get a max width.
 - Never load a font family beyond these three without design sign-off. Ask in a `question` issue.
