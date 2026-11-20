@@ -17,7 +17,7 @@ import { dirname, join, extname, relative } from "node:path";
 import { parse, esc, plain, rowsOf, slug, setDocLinks } from "./lib/markdown.mjs";
 import { extractCss, resolver } from "./lib/tokens.mjs";
 import { emailCss } from "./lib/email.mjs";
-import { derivedLogos } from "./lib/derived-logos.mjs";
+import { derivedLogos, composedIcons } from "./lib/derived-logos.mjs";
 import { createRenderer } from "./showcase/render.mjs";
 import { trademarkPage } from "./showcase/trademark.mjs";
 
@@ -190,7 +190,10 @@ function build() {
   for (const m of semantic.matchAll(/var\((--[\w-]+)\)/g)) if (!defined.has(m[1])) checks.push({ level: "error", area: "Tokens", message: `\`${m[1]}\` is referenced but never defined`, file: "09-tokens.md" });
   for (const m of tailwind.matchAll(/var\((--[\w-]+)\)/g)) if (!defined.has(m[1]) && !/^--font-/.test(m[1])) checks.push({ level: "error", area: "Tokens", message: `Tailwind wiring references \`${m[1]}\`, which is not defined`, file: "09-tokens.md" });
 
-  const derived = derivedLogos(docs["04-logos-and-marks.md"], root, Object.fromEntries(Object.entries(labelToName).map(([label, name]) => [label, official[name]])), checks);
+  const brandColors = Object.fromEntries(Object.entries(labelToName).map(([label, name]) => [label, official[name]]));
+  const logoFiles = derivedLogos(docs["04-logos-and-marks.md"], root, brandColors, checks);
+  const iconFiles = composedIcons(docs["04-logos-and-marks.md"], root, brandColors, checks, new Map(logoFiles.map(([p, body]) => [p.replace(/^public\/brand\//, ""), body])));
+  const derived = [...logoFiles, ...iconFiles];
   const assets = readAssets(docs["04-logos-and-marks.md"], checks, Object.values(docs).map((d) => d.raw).join("\n"), new Map(derived.map(([p, body]) => [p.replace(/^public\/brand\//, ""), body])));
   const fontCss = fonts(checks);
   // In the showcase, inline code naming a doc file links to that doc's Source documents entry.
@@ -286,7 +289,9 @@ function build() {
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <title>Digital design system | Food Integrity Project</title>
-<link rel="icon" href="public/brand/fip/fip-mark-color.svg" type="image/svg+xml">
+<link rel="icon" href="public/brand/fip/icons/fip-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="public/brand/fip/icons/fip-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="public/brand/fip/icons/fip-apple-touch-icon-180.png">
 <style>
 ${fontCss}
 ${tokensCss}

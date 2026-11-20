@@ -35,6 +35,8 @@ How to use the Non-GMO Project Verified Mark and the other Non-GMO Project trade
 | `nongmo/nongmo-seal-verified-mono-light.png` | English, single color white | Participants with verified products | When full-color printing is not possible, on dark packaging |
 | `nongmo/nongmo-seal-bilingual-color.jpg` | Bilingual English and French, full color | Participants with verified products | Packages of verified products typically sold in Canada, plus marketing, websites and approved corporate materials |
 | `nongmo/nongmo-seal-bilingual-mono-dark.jpg` | Bilingual, single color black | Participants with verified products | As above, when full-color printing is not possible |
+| `nongmo/nongmo-seal-bilingual-mono-dark.svg` | Bilingual, single color black, vector | Participants with verified products | Same as the black file above. Scales to any size on screen and in print |
+| `nongmo/nongmo-seal-fsis-mono-dark.svg` | Mark for FSIS, single color black, vector | Participants with verified FSIS single-ingredient products | Only with the required FSIS text (see below) |
 
 Also available from the Client Experience Team:
 

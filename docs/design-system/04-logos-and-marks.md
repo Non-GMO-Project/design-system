@@ -60,6 +60,8 @@ What is in `public/brand/` today. The showcase build checks this table against t
 | `nongmo/nongmo-seal-verified-mono-light.png` | nongmo | seal | mono-light | Official single-color white Verification Mark, 2163 x 1593, transparent. Program trademark kit (`NGPV_single_color_white.png`) |
 | `nongmo/nongmo-seal-bilingual-color.jpg` | nongmo | seal | color | Official bilingual (English and French) Verification Mark, full color, 595 x 298. For products sold in Canada. Program trademark kit (`NGPV_Bilingual_full_color.jpg`) |
 | `nongmo/nongmo-seal-bilingual-mono-dark.jpg` | nongmo | seal | mono-dark | Official bilingual Verification Mark, single-color black, 595 x 298. Program trademark kit (`NGPV_Bilingual_single_color_black.jpg`) |
+| `nongmo/nongmo-seal-bilingual-mono-dark.svg` | nongmo | seal | mono-dark | Official bilingual Verification Mark, single-color black `#222222`, vector. Source file from the program, supplied 2026-11-21 |
+| `nongmo/nongmo-seal-fsis-mono-dark.svg` | nongmo | seal | mono-dark | Official Mark for FSIS ("NON-GMO PROJECT VERIFIED", vertical), single-color black `#231F20`, vector. Only on FSIS single-ingredient products, always with the required FSIS text. Source file from the program, supplied 2026-11-21 |
 | `nonupf/nonupf-logo-horizontal-color.svg` | nonupf | logo | color | Organizational logo (circle icon + NON UPF VERIFIED), Dragon Fruit, vector. Taken from nonultraprocessed.org, where it is labeled "Non-UPF Verified corporate logo" |
 | `nonupf/nonupf-logo-horizontal-mono-black.svg` | nonupf | logo | mono-black | Organizational logo, one-color black `#231F20`, vector. Supplied in #22 |
 | `nonupf/nonupf-logo-horizontal-reversed.svg` | nonupf | logo | reversed | Birch organizational logo, for dark grounds. Derived by the build from `nonupf-logo-horizontal-mono-black.svg` |
@@ -135,12 +137,57 @@ Other Collective artwork in `public/brand/collective/` (not logos, so not in the
 
 Photography in `public/brand/fip/`: `fip-photo-butterfly-wing.jpg`, a close-up of a butterfly wing used as the photography background example in the showcase. Its source, license and credit are not on record yet, as "Photography sourcing" in `01-brand-architecture.md` requires.
 
-"Program trademark kit" files came from the artwork folders each program sends licensees, received 2026-10-08. The kits also hold EPS, AI and full-size JPG files for print; those stay with the programs and are not stored here. The bilingual mark in white and the French and FSIS marks are not in the kit as web files.
+"Program trademark kit" files came from the artwork folders each program sends licensees, received 2026-10-08. The kits also hold EPS, AI and full-size JPG files for print; those stay with the programs and are not stored here. The bilingual mark in white and the French mark are not in the kit as web files; the one-color bilingual and FSIS marks were supplied as vectors on 2026-11-21.
 
 Program trademark guides (the rules for seal use on pack and in marketing). Each program also has a trademark usage page in this system, written for participants: `trademark/non-gmo-project.md` and `trademark/non-upf-verified.md`, published as standalone pages at `trademark/non-gmo-project.html` and `trademark/non-upf-verified.html`:
 
 - Non-GMO Project Trademark Use Guide v2.2: https://www.nongmoproject.org/wp-content/uploads/NGP-trademark-use-guide-v2.2.pdf
 - Non-UPF Verified Trademark Use Guide (December 2025): https://nonultraprocessed.org/wp-content/uploads/2026/06/non-upf-verified-trademark-use-guide-v1.pdf
+
+## Icons and share images
+
+The build makes every brand's favicon, app icons, social avatar and share image from the files above, so none are exported by hand. Each places an official file, centered, on a transparent or Birch square: that is layout, not redrawing. A one-color source may be recolored to a palette color, as in "Derived files"; anything else is used as drawn. Artwork is the share of the canvas the artwork's box takes, so the maskable icon keeps the mark inside the center safe zone and the avatar keeps it inside the circle platforms crop to. Never edit these files by hand.
+
+| File | Source | Color | Size | Ground | Artwork |
+|---|---|---|---|---|---|
+| `fip/icons/fip-favicon.svg` | `fip/fip-mark-color.svg` | Cacao | 32 | None | 100 |
+| `fip/icons/fip-favicon-32.png` | `fip/fip-mark-color.svg` | Cacao | 32 | None | 100 |
+| `fip/icons/fip-apple-touch-icon-180.png` | `fip/fip-mark-color.svg` | Cacao | 180 | Birch | 70 |
+| `fip/icons/fip-icon-192.png` | `fip/fip-mark-color.svg` | Cacao | 192 | Birch | 70 |
+| `fip/icons/fip-icon-512.png` | `fip/fip-mark-color.svg` | Cacao | 512 | Birch | 70 |
+| `fip/icons/fip-icon-512-maskable.png` | `fip/fip-mark-color.svg` | Cacao | 512 | Birch | 56 |
+| `fip/icons/fip-app-store-1024.png` | `fip/fip-mark-color.svg` | Cacao | 1024 | Birch | 70 |
+| `fip/icons/fip-avatar-400.png` | `fip/fip-mark-color.svg` | Cacao | 400 | Birch | 62 |
+| `fip/icons/fip-share-1200x630.png` | `fip/fip-logo-horizontal-color.svg` | Cacao | 1200 x 630 | Birch | 50 |
+| `nongmo/icons/nongmo-favicon.svg` | `nongmo/nongmo-mark-color.svg` | As drawn | 32 | None | 100 |
+| `nongmo/icons/nongmo-favicon-32.png` | `nongmo/nongmo-mark-color.svg` | As drawn | 32 | None | 100 |
+| `nongmo/icons/nongmo-apple-touch-icon-180.png` | `nongmo/nongmo-mark-color.svg` | As drawn | 180 | Birch | 70 |
+| `nongmo/icons/nongmo-icon-192.png` | `nongmo/nongmo-mark-color.svg` | As drawn | 192 | Birch | 70 |
+| `nongmo/icons/nongmo-icon-512.png` | `nongmo/nongmo-mark-color.svg` | As drawn | 512 | Birch | 70 |
+| `nongmo/icons/nongmo-icon-512-maskable.png` | `nongmo/nongmo-mark-color.svg` | As drawn | 512 | Birch | 56 |
+| `nongmo/icons/nongmo-app-store-1024.png` | `nongmo/nongmo-mark-color.svg` | As drawn | 1024 | Birch | 70 |
+| `nongmo/icons/nongmo-avatar-400.png` | `nongmo/nongmo-mark-avatar-color.svg` | As drawn | 400 | Birch | 100 |
+| `nongmo/icons/nongmo-share-1200x630.png` | `nongmo/nongmo-logo-horizontal-mono-dark.svg` | Monarch | 1200 x 630 | Birch | 50 |
+| `nonupf/icons/nonupf-favicon.svg` | `nonupf/nonupf-mark-mono-black.svg` | Dragon Fruit | 32 | None | 100 |
+| `nonupf/icons/nonupf-favicon-32.png` | `nonupf/nonupf-mark-mono-black.svg` | Dragon Fruit | 32 | None | 100 |
+| `nonupf/icons/nonupf-apple-touch-icon-180.png` | `nonupf/nonupf-mark-mono-black.svg` | Dragon Fruit | 180 | Birch | 70 |
+| `nonupf/icons/nonupf-icon-192.png` | `nonupf/nonupf-mark-mono-black.svg` | Dragon Fruit | 192 | Birch | 70 |
+| `nonupf/icons/nonupf-icon-512.png` | `nonupf/nonupf-mark-mono-black.svg` | Dragon Fruit | 512 | Birch | 70 |
+| `nonupf/icons/nonupf-icon-512-maskable.png` | `nonupf/nonupf-mark-mono-black.svg` | Dragon Fruit | 512 | Birch | 56 |
+| `nonupf/icons/nonupf-app-store-1024.png` | `nonupf/nonupf-mark-mono-black.svg` | Dragon Fruit | 1024 | Birch | 70 |
+| `nonupf/icons/nonupf-avatar-400.png` | `nonupf/nonupf-mark-mono-black.svg` | Dragon Fruit | 400 | Birch | 62 |
+| `nonupf/icons/nonupf-share-1200x630.png` | `nonupf/nonupf-logo-horizontal-color.svg` | As drawn | 1200 x 630 | Birch | 50 |
+| `collective/icons/collective-favicon.svg` | `collective/collective-mark-color.svg` | As drawn | 32 | None | 100 |
+| `collective/icons/collective-favicon-32.png` | `collective/collective-mark-color.svg` | As drawn | 32 | None | 100 |
+| `collective/icons/collective-apple-touch-icon-180.png` | `collective/collective-mark-color.svg` | As drawn | 180 | Birch | 70 |
+| `collective/icons/collective-icon-192.png` | `collective/collective-mark-color.svg` | As drawn | 192 | Birch | 70 |
+| `collective/icons/collective-icon-512.png` | `collective/collective-mark-color.svg` | As drawn | 512 | Birch | 70 |
+| `collective/icons/collective-icon-512-maskable.png` | `collective/collective-mark-color.svg` | As drawn | 512 | Birch | 56 |
+| `collective/icons/collective-app-store-1024.png` | `collective/collective-mark-color.svg` | As drawn | 1024 | Birch | 70 |
+| `collective/icons/collective-avatar-400.png` | `collective/collective-mark-color.svg` | As drawn | 400 | Birch | 62 |
+| `collective/icons/collective-share-1200x630.png` | `collective/collective-logo-horizontal-color.svg` | As drawn | 1200 x 630 | Birch | 50 |
+
+At 16px, the Food Integrity Project butterfly and the Non-UPF Verified icon stay clear. The Non-GMO Project outline Butterfly thins out but keeps its shape. The Food Integrity Collective mark's thin lines blur below 32px; it is used in full until a simplified favicon is supplied (tracked as a `question` issue).
 
 ## Naming
 
@@ -152,7 +199,7 @@ The lockup part is left out for a mark in its default form (`nongmo-mark-color.s
 |---|---|
 | brand | `fip`, `nongmo`, `nonupf`, `collective` |
 | asset | `logo` (with wordmark), `mark` (symbol only), `seal` |
-| lockup | `horizontal`, `stacked`, `endorsed`, `verified` (seals), `circular` (secondary seal), `bilingual` (English and French seal), `avatar` (mark in a circle for social profiles), `filled` (a mark drawn with solid fills rather than outline) |
+| lockup | `horizontal`, `stacked`, `endorsed`, `verified` (seals), `circular` (secondary seal), `bilingual` (English and French seal), `fsis` (Non-GMO Project Mark for FSIS-regulated products), `avatar` (mark in a circle for social profiles), `filled` (a mark drawn with solid fills rather than outline) |
 | tone | `color`, `reversed` (Birch one color, for dark or brand grounds), `mono-dark` (one color, dark: black, or the program's own one-color dark), `mono-black` (one color, black, for a program whose `mono-dark` files are not black), `mono-light` (one color, light) |
 
 SVG for everything on screen once supplied. PNG only where a platform requires it (touch icons, social images, email clients that block SVG).
@@ -196,7 +243,7 @@ Square icons and share images are made by placing the official file on a Birch o
 
 | Application | File |
 |---|---|
-| Favicon, touch and app icons, social avatar | `fip/fip-mark-color.svg` on Birch |
+| Favicon, touch and app icons, social avatar, share image | The files in `fip/icons/` (see "Icons and share images"): the butterfly in Cacao, on Birch |
 | Header, share image | `fip/fip-logo-horizontal-color.svg`; `fip/fip-mark-color.svg` in narrow headers |
 | Footer | `fip/fip-logo-horizontal-color.svg` on Birch, or `fip/fip-logo-horizontal-reversed.svg` on Cacao |
 | Square and narrow formats (mobile footers, share images, slides, signage) | `fip/fip-logo-stacked-color.svg` on Birch, or `fip/fip-logo-stacked-reversed.svg` on Cacao |
@@ -208,21 +255,19 @@ Square icons and share images are made by placing the official file on a Birch o
 
 | Application | File |
 |---|---|
-| Favicon, touch and app icons | `nongmo/nongmo-mark-color.svg` on Birch |
-| Social avatar | `nongmo/nongmo-mark-avatar-color.svg` |
+| Favicon, touch and app icons, social avatar, share image | The files in `nongmo/icons/`: the outline Butterfly on Birch; the avatar file for the social avatar |
 | Header, share image | `nongmo/nongmo-logo-horizontal-color.png` on Birch, or `nongmo/nongmo-logo-horizontal-reversed.svg` on Forest; `nongmo/nongmo-mark-color.svg` in narrow headers |
 | Footer | `nongmo/nongmo-logo-horizontal-reversed.svg` on Forest |
 | Email header | `nongmo/nongmo-logo-horizontal-color.png` on White (913px wide, sharp up to 456px displayed), or `nongmo/nongmo-logo-horizontal-reversed.png` on Forest |
 | One-color | `nongmo/nongmo-logo-horizontal-mono-dark.svg` or `nongmo/nongmo-mark-mono-dark.svg` |
-| Product page seal | `nongmo/nongmo-seal-verified-color.svg`; `nongmo/nongmo-seal-verified-mono-light.png` on dark grounds; `nongmo/nongmo-seal-bilingual-color.jpg` for products sold in Canada |
+| Product page seal | `nongmo/nongmo-seal-verified-color.svg`; `nongmo/nongmo-seal-verified-mono-light.png` on dark grounds; `nongmo/nongmo-seal-fsis-mono-dark.svg` for FSIS products, with the required text; `nongmo/nongmo-seal-bilingual-color.jpg` for products sold in Canada |
 | Dark grounds, photography | `nongmo/nongmo-logo-horizontal-reversed.svg`, or `nongmo/nongmo-mark-reversed.svg` in tight spaces |
 
 ### Non-UPF Verified
 
 | Application | File |
 |---|---|
-| Favicon, touch and app icons | `nonupf/nonupf-mark-color.png`, or `nonupf/nonupf-mark-mono-black.svg` for a one-color favicon. These and the social avatar are the only places the icon alone is approved |
-| Social avatar | `nonupf/nonupf-mark-color.png`; where the space allows a wider image, `nonupf/nonupf-logo-horizontal-color.svg` |
+| Favicon, touch and app icons, social avatar, share image | The files in `nonupf/icons/`: the icon in Dragon Fruit on Birch. These and the social avatar are the only places the icon alone is approved; where a wider avatar fits, `nonupf/nonupf-logo-horizontal-color.svg` |
 | Header, share image | `nonupf/nonupf-logo-horizontal-color.svg` on Birch. In narrow headers keep the logo at 120px or wider, since the icon alone needs approval |
 | Footer | `nonupf/nonupf-logo-horizontal-color.svg` on Birch, or `nonupf/nonupf-logo-horizontal-reversed.svg` on Dark Matter |
 | Email header | `nonupf/nonupf-logo-horizontal-color.png` on White, or `nonupf/nonupf-logo-horizontal-reversed.png` on Dark Matter |
@@ -234,7 +279,7 @@ Square icons and share images are made by placing the official file on a Birch o
 
 | Application | File |
 |---|---|
-| Favicon, touch and app icons, social avatar | `collective/collective-mark-color.svg` (PNG `collective/collective-mark-color.png`) on Birch, or `collective/collective-mark-reversed.svg` on Forest |
+| Favicon, touch and app icons, social avatar, share image | The files in `collective/icons/`: the mark in Forest on Birch |
 | Header, share image | `collective/collective-logo-horizontal-color.svg` on Birch, or `collective/collective-logo-horizontal-reversed.svg` on Forest; `collective/collective-mark-color.svg` in narrow headers |
 | Footer | `collective/collective-logo-horizontal-reversed.svg` on Forest |
 | Email header | `collective/collective-logo-horizontal-color.png` on White, or `collective/collective-logo-horizontal-reversed.png` on Forest |
