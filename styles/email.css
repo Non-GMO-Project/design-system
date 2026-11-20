@@ -6,7 +6,7 @@
 /* Food Integrity Project */
 .email-fip { background-color: #FFFFFF; color: #241A15; }
 .email-fip a { color: #241A15; text-decoration: underline; }
-/* Header and dark bands: only with a reversed logo (13-email.md). */
+/* Header and dark bands: with the brand's Birch reversed logo PNG (13-email.md). */
 .email-fip .email-band { background-color: #241A15; color: #FFFDEB; }
 .email-fip .email-band a { color: #FFFDEB; }
 .email-fip .email-support { background-color: #E3D8CF; color: #241A15; }
@@ -16,7 +16,7 @@
 /* Non-GMO Project */
 .email-nongmo { background-color: #FFFFFF; color: #053220; }
 .email-nongmo a { color: #053220; text-decoration: underline; }
-/* Header and dark bands: only with a reversed logo (13-email.md). */
+/* Header and dark bands: with the brand's Birch reversed logo PNG (13-email.md). */
 .email-nongmo .email-band { background-color: #053220; color: #FFFDEB; }
 .email-nongmo .email-band a { color: #FFFDEB; }
 .email-nongmo .email-support { background-color: #DDEED6; color: #053220; }
@@ -26,7 +26,7 @@
 /* Non-UPF Verified */
 .email-nonupf { background-color: #FFFFFF; color: #0A2041; }
 .email-nonupf a { color: #0A2041; text-decoration: underline; }
-/* Header and dark bands: only with a reversed logo (13-email.md). */
+/* Header and dark bands: with the brand's Birch reversed logo PNG (13-email.md). */
 .email-nonupf .email-band { background-color: #0A2041; color: #FFFDEB; }
 .email-nonupf .email-band a { color: #FFFDEB; }
 .email-nonupf .email-support { background-color: #F5DFCE; color: #0A2041; }
@@ -36,7 +36,7 @@
 /* Food Integrity Collective */
 .email-collective { background-color: #FFFFFF; color: #053220; }
 .email-collective a { color: #053220; text-decoration: underline; }
-/* Header and dark bands: only with a reversed logo (13-email.md). */
+/* Header and dark bands: with the brand's Birch reversed logo PNG (13-email.md). */
 .email-collective .email-band { background-color: #053220; color: #FFFDEB; }
 .email-collective .email-band a { color: #FFFDEB; }
 .email-collective .email-support { background-color: #9EB6DE; color: #053220; }

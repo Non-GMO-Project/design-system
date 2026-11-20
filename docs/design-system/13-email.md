@@ -41,10 +41,10 @@ Email clients do not reliably support CSS variables, so templates use the hex va
 
 | Brand | Body ground | Text and links | Header and dark bands | Support panels | Primary button |
 |---|---|---|---|---|---|
-| Food Integrity Project | White `#FFFFFF` | Cacao `#241A15` | Cacao, once a reversed logo exists; until then the header stays on White | Loam 200 `#E3D8CF` with Cacao text | Milkweed Leaf `#5F7A52`, Birch text |
+| Food Integrity Project | White `#FFFFFF` | Cacao `#241A15` | Cacao, with `fip-logo-horizontal-reversed.png` | Loam 200 `#E3D8CF` with Cacao text | Milkweed Leaf `#5F7A52`, Birch text |
 | Non-GMO Project | White `#FFFFFF` | Forest `#053220` | Forest, with `nongmo-logo-horizontal-reversed.png` | Seafoam `#DDEED6` with Forest text | Monarch `#F18A00`, Forest text |
-| Non-UPF Verified | White `#FFFFFF` | Dark Matter `#0A2041` | Dark Matter, once a reversed logo exists; until then the header stays on White | Almond `#F5DFCE` with Dark Matter text | Dragon Fruit `#CE1B6A`, Birch text |
-| Food Integrity Collective | White `#FFFFFF` | Forest `#053220` | Forest, with `collective-logo-horizontal-mono-light.png` | Corn Flower `#9EB6DE` with Forest text | Romanesco `#D3D95E`, Forest text |
+| Non-UPF Verified | White `#FFFFFF` | Dark Matter `#0A2041` | Dark Matter, with `nonupf-logo-horizontal-reversed.png` | Almond `#F5DFCE` with Dark Matter text | Dragon Fruit `#CE1B6A`, Birch text |
+| Food Integrity Collective | White `#FFFFFF` | Forest `#053220` | Forest, with `collective-logo-horizontal-reversed.png` | Corn Flower `#9EB6DE` with Forest text | Romanesco `#D3D95E`, Forest text |
 
 - Links are the brand dark and underlined. Never the signature color for running text: Monarch fails contrast on White.
 - The signature color appears in buttons and at most one accent rule per email, the same ratio as the brand profile.

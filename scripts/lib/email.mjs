@@ -35,7 +35,7 @@ export function emailCss(tokenCtx, brandName, d13, check) {
       `/* ${brandName(b)} */`,
       `${k} { background-color: ${ground}; color: ${text}; }`,
       `${k} a { color: ${text}; text-decoration: underline; }`,
-      `/* Header and dark bands: only with a reversed logo (13-email.md). */`,
+      `/* Header and dark bands: with the brand's Birch reversed logo PNG (13-email.md). */`,
       `${k} .email-band { background-color: ${dark}; color: ${birch}; }`,
       `${k} .email-band a { color: ${birch}; }`,
       `${k} .email-support { background-color: ${support}; color: ${supportText}; }`,

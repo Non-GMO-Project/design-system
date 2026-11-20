@@ -53,16 +53,18 @@ body { background: var(--background); color: var(--foreground); margin: 0; }
 }
 `;
 
-export function trademarkPage({ file, doc, root, assets, brandName, fontCss, tokensCss, typeCss, showcaseCss, check }) {
+export function trademarkPage({ file, doc, root, assets, derived = new Map(), brandName, fontCss, tokensCss, typeCss, showcaseCss, check }) {
   const brand = doc.field("Brand context")?.match(/data-brand="(\w+)"/)?.[1];
   if (!brand) check("error", "Trademark", "No **Brand context:** line with a data-brand value", file);
   const program = plain(doc.field("Program") ?? brandName(brand));
 
   const img = (rel, alt, cls = "") => {
     const abs = join(root, "public/brand", rel);
-    if (!existsSync(abs)) { check("error", "Trademark", `\`${rel}\` is listed but missing from public/brand/`, file); return ""; }
+    const body = derived.get(rel);
+    if (!body && !existsSync(abs)) { check("error", "Trademark", `\`${rel}\` is listed but missing from public/brand/`, file); return ""; }
     if (!assets.some((a) => a.file === rel)) check("warn", "Trademark", `\`${rel}\` is not in the asset inventory in 04-logos-and-marks.md`, file);
-    return `<img src="${dataUri(abs)}" alt="${esc(alt)}"${cls ? ` class="${cls}"` : ""}>`;
+    const src = body ? `data:${MIME[extname(rel)] ?? "application/octet-stream"};base64,${Buffer.from(body).toString("base64")}` : dataUri(abs);
+    return `<img src="${src}" alt="${esc(alt)}"${cls ? ` class="${cls}"` : ""}>`;
   };
 
   // Header logo: reversed or mono-light horizontal logo for the dark band, else the color logo on Birch.

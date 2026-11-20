@@ -30,7 +30,7 @@ The Collective shares Forest with Non-GMO Project but pairs it with two mid-tone
 
 ## Logos
 
-`collective-mark-*`: the hand, sprout and butterfly symbol in green, black and white. `collective-logo-horizontal-mono-light`: the full lockup with "Food Integrity Collective" set in serif, in cream, for dark grounds. No certification seal; the Collective does not verify products.
+`collective-mark-*`: the hand, sprout and butterfly symbol. `collective-logo-horizontal-*`: the full lockup with "Food Integrity Collective" set in serif. Both come from the design team's one-color vector files, and the build derives Forest (`color`) versions for Birch and White grounds, Birch (`reversed`) versions for dark grounds, and transparent PNGs (see `../04-logos-and-marks.md`, "Derived files"). No certification seal; the Collective does not verify products.
 
 ## Typography
 
