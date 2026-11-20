@@ -171,6 +171,7 @@ Always paired with a text label.
 | `status.disabled` | `CircleSlash` | Switched off; not in use |
 | `status.no-results` | `SearchX` | Nothing found; page not found |
 | `status.image-missing` | `ImageOff` | A picture couldn't be loaded |
+| `status.not-placed` | `MapPinOff` | An item that couldn't be placed on a map |
 | `status.idea` | `Lightbulb` | An idea, on a roadmap |
 | `status.building` | `Hammer` | Being built, on a roadmap |
 | `status.transition` | `MoveRight` | From one status to another, in a history |
@@ -293,6 +294,7 @@ For rich-text editors. Inserting a link uses `action.link`.
 | `view.board` | `Columns3` | A board (kanban) view |
 | `view.inbox` | `Inbox` | An inbox or queue |
 | `view.checklist` | `ListChecks` | "My items" lists |
+| `view.map` | `MapPinned` | A map view. Not `Map`, which is `domain.roadmap` |
 
 ## Usage rules
 

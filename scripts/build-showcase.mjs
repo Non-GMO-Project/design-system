@@ -93,7 +93,7 @@ function readAssets(doc04, checks, allDocsText = "") {
     const exists = existsSync(abs);
     if (!exists) checks.push({ level: "error", area: "Logos", message: `Listed asset \`${file}\` is missing from public/brand/`, file: "04-logos-and-marks.md" });
     const base = file.split("/").pop();
-    if (!/^(fip|nongmo|nonupf|collective)-(logo|mark|seal)-[a-z]+-(color|reversed|mono-dark|mono-light)\.(svg|png|jpg)$/.test(base) && !/^(fip|nongmo|nonupf|collective)-(logo|mark|seal)-(color|reversed|mono-dark|mono-light)\.(svg|png|jpg)$/.test(base))
+    if (!/^(fip|nongmo|nonupf|collective)-(logo|mark|seal)-[a-z]+-(color|reversed|mono-dark|mono-black|mono-light)\.(svg|png|jpg)$/.test(base) && !/^(fip|nongmo|nonupf|collective)-(logo|mark|seal)-(color|reversed|mono-dark|mono-black|mono-light)\.(svg|png|jpg)$/.test(base))
       checks.push({ level: "warn", area: "Logos", message: `\`${base}\` does not follow the naming scheme {brand}-{asset}-{lockup}-{tone}.{ext}`, file: "04-logos-and-marks.md" });
     return { file, path: `public/brand/${file}`, brand: plain(r.brand), kind: plain(r.asset), tone: plain(r.tone), status: r.status ?? "", exists, listed: true, size: exists ? imageSize(abs) : null };
   });

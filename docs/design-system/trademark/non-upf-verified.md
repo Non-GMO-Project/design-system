@@ -25,11 +25,11 @@ How to use the Non-UPF Verified mark on packaging, websites and marketing. The m
 | `nonupf/nonupf-seal-verified-color.svg` | Primary mark, Pantone 214 C, vector | Same as above. Scales to any size on screen |
 | `nonupf/nonupf-seal-verified-mono-dark.png` | Primary mark, Pantone 282 C | Same as above, in the program's dark color |
 | `nonupf/nonupf-seal-verified-mono-light.png` | Primary mark, white | Same as above, on dark packaging |
-| `nonupf/nonupf-seal-verified-mono-dark.svg` | Primary mark, black, vector | Same as above, in black. Scales to any size on screen |
+| `nonupf/nonupf-seal-verified-mono-black.svg` | Primary mark, black, vector | Same as above, in black. Scales to any size on screen |
 | `nonupf/nonupf-seal-circular-color.png` | Secondary mark (circular), Pantone 214 C | Only where the primary mark cannot fit: small packages, limited label space, or a row of several certifications |
 | `nonupf/nonupf-seal-circular-mono-dark.png` | Secondary mark, Pantone 282 C | Same as above, in the program's dark color |
 | `nonupf/nonupf-seal-circular-mono-light.png` | Secondary mark, white | Same as above, on dark packaging |
-| `nonupf/nonupf-seal-circular-mono-dark.svg` | Secondary mark, black, vector | Same as above, in black. Scales to any size on screen |
+| `nonupf/nonupf-seal-circular-mono-black.svg` | Secondary mark, black, vector | Same as above, in black. Scales to any size on screen |
 
 Both marks identify only products that have completed Non-UPF verification. Never create or use other logos, icons, lockups or artwork to represent verified products.
 

@@ -23,7 +23,7 @@ To show verification status inside an interface (a table, a search result), use 
 | Non-GMO Project | Organizational logo (butterfly + wordmark, Monarch) | Supplied colors only |
 | Non-GMO Project Verified | Certification seal | Artwork is fixed by the standard. Never recolored, cropped or redrawn. Full color or the supplied one-color file |
 | Non-UPF Verified logo | Organizational logo (circle icon + "NON UPF VERIFIED") | Dragon Fruit. Not a seal: it identifies the program, not a verified product |
-| Non-UPF Verified | Certification seal, rectangular (primary) and circular (secondary) | Dragon Fruit, or single-color Dark Matter for one-color printing. White reversed file for dark grounds |
+| Non-UPF Verified | Certification seal, rectangular (primary) and circular (secondary) | Dragon Fruit, or one color: Dark Matter (Pantone 282 C, the `mono-dark` PNGs from the kit) or black (the `mono-black` SVGs). White reversed file for dark grounds |
 | Food Integrity Collective | Mark (hand, sprout and butterfly) | Supplied green, black or white files |
 
 ## Asset inventory
@@ -45,29 +45,29 @@ What is in `public/brand/` today. The showcase build checks this table against t
 | `nongmo/nongmo-seal-verified-color.svg` | nongmo | seal | color | Official full-color Verification Mark, vector. Supplied in #24 |
 | `nongmo/nongmo-seal-verified-color.png` | nongmo | seal | color | Official full-color Verification Mark, 1205 x 882, lossless. Media library (`NGPV_full_color-1.png`) |
 | `nongmo/nongmo-seal-verified-mono-dark.svg` | nongmo | seal | mono-dark | Official single-color black Verification Mark with keyline, `#231F20`, vector. Supplied in #24 |
-| `nongmo/nongmo-seal-verified-mono-dark.jpg` | nongmo | seal | mono-dark | Official single-color black Verification Mark with keyline, 4706 x 3503. Program trademark kit (`NGPV_single_color_black.jpg`) |
+| `nongmo/nongmo-seal-verified-mono-dark.jpg` | nongmo | seal | mono-dark | Official single-color black Verification Mark with keyline, 4706 x 3503. Program trademark kit (`NGPV_single_color_black.jpg`). Kept for download and print; the SVG replaces it on screen and on the participant page |
 | `nongmo/nongmo-seal-verified-mono-light.png` | nongmo | seal | mono-light | Official single-color white Verification Mark, 2163 x 1593, transparent. Program trademark kit (`NGPV_single_color_white.png`) |
 | `nongmo/nongmo-seal-bilingual-color.jpg` | nongmo | seal | color | Official bilingual (English and French) Verification Mark, full color, 595 x 298. For products sold in Canada. Program trademark kit (`NGPV_Bilingual_full_color.jpg`) |
 | `nongmo/nongmo-seal-bilingual-mono-dark.jpg` | nongmo | seal | mono-dark | Official bilingual Verification Mark, single-color black, 595 x 298. Program trademark kit (`NGPV_Bilingual_single_color_black.jpg`) |
 | `nonupf/nonupf-logo-horizontal-color.svg` | nonupf | logo | color | Organizational logo (circle icon + NON UPF VERIFIED), Dragon Fruit, vector. Taken from nonultraprocessed.org, where it is labeled "Non-UPF Verified corporate logo" |
-| `nonupf/nonupf-logo-horizontal-mono-dark.svg` | nonupf | logo | mono-dark | Organizational logo, one-color black `#231F20`, vector. Supplied in #22 |
+| `nonupf/nonupf-logo-horizontal-mono-black.svg` | nonupf | logo | mono-black | Organizational logo, one-color black `#231F20`, vector. Supplied in #22 |
 | `nonupf/nonupf-seal-verified-color.svg` | nonupf | seal | color | Primary rectangular mark, Dragon Fruit, vector. nonultraprocessed.org media library (`non-upf-package-logo.svg`) |
-| `nonupf/nonupf-seal-verified-mono-dark.svg` | nonupf | seal | mono-dark | Primary rectangular mark, one-color black `#231F20`, vector. Supplied in #22 |
+| `nonupf/nonupf-seal-verified-mono-black.svg` | nonupf | seal | mono-black | Primary rectangular mark, one-color black `#231F20`, vector. Supplied in #22 |
 | `nonupf/nonupf-seal-verified-color.png` | nonupf | seal | color | Primary rectangular mark, pink (Pantone 214 C), 900 x 675, transparent. Program trademark kit (`Primary_Non-UPF_Verified_pink.png`). Use where SVG is not supported, such as email |
 | `nonupf/nonupf-seal-verified-mono-dark.png` | nonupf | seal | mono-dark | Primary mark, navy (Pantone 282 C), 900 x 675. Program trademark kit (`Primary_Non-UPF_Verified_navy.png`) |
 | `nonupf/nonupf-seal-verified-mono-light.png` | nonupf | seal | mono-light | Primary mark, white, for dark grounds, 900 x 675. Program trademark kit (`Primary_Non-UPF_Verified_white.png`) |
-| `nonupf/nonupf-seal-circular-mono-dark.svg` | nonupf | seal | mono-dark | Secondary circular mark, one-color black `#231F20`, vector. Only when the primary cannot fit. Supplied in #22 |
+| `nonupf/nonupf-seal-circular-mono-black.svg` | nonupf | seal | mono-black | Secondary circular mark, one-color black `#231F20`, vector. Only when the primary cannot fit. Supplied in #22 |
 | `nonupf/nonupf-seal-circular-color.png` | nonupf | seal | color | Secondary circular mark, pink, 900 x 900. Only when the primary cannot fit. Program trademark kit (`Secondary_Non-UPF_Verified_pink.png`) |
 | `nonupf/nonupf-seal-circular-mono-dark.png` | nonupf | seal | mono-dark | Secondary circular mark, navy, 900 x 900. Program trademark kit (`Secondary_Non-UPF_Verified_navy.png`) |
 | `nonupf/nonupf-seal-circular-mono-light.png` | nonupf | seal | mono-light | Secondary circular mark, white, 900 x 900. Program trademark kit (`Secondary_Non-UPF_Verified_white.png`) |
 | `nonupf/nonupf-mark-color.png` | nonupf | mark | color | Icon in circle. Favicon, app icon and social avatar only; the icon alone needs approval elsewhere |
-| `nonupf/nonupf-mark-mono-dark.svg` | nonupf | mark | mono-dark | Icon in circle, one-color black `#231F20`, vector. Favicon and app icon only; the icon alone needs approval elsewhere. Supplied in #22 |
+| `nonupf/nonupf-mark-mono-black.svg` | nonupf | mark | mono-black | Icon in circle, one-color black `#231F20`, vector. Favicon and app icon only; the icon alone needs approval elsewhere. Supplied in #22 |
 | `collective/collective-logo-horizontal-mono-light.png` | collective | logo | mono-light | Full lockup (mark + "Food Integrity Collective" in serif), cream `#FEFDF0` on transparent, 1501 x 509. foodintegritycollective.org header (`food_integrity_cream.png`) |
 | `collective/collective-mark-color.png` | collective | mark | color | Green mark |
 | `collective/collective-mark-mono-dark.png` | collective | mark | mono-dark | Black mark |
 | `collective/collective-mark-mono-light.png` | collective | mark | mono-light | White mark |
 
-Files still to come (reversed logos, vector versions of raster files, endorsement lockups) are tracked as `question` issues on GitHub.
+Files still to come (reversed logos, vector versions of raster files) are tracked as `question` issues on GitHub.
 
 Other Non-UPF Verified artwork in `public/brand/nonupf/graphics/` (not logos, so not in the inventory above), one-color black `#231F20` vectors supplied in #22, all built around the program URL: `nonupf-graphic-url-vertical.svg` ("nonultraprocessed.org" set vertically with a small NON UPF), `nonupf-graphic-url-badge.svg` (the icon in a circle under an arc of "nonultraprocessed.org") and `nonupf-graphic-url-wave.svg` ("NONULTRAPROCESSED.ORG" on a wave with NON UPF). They are submarks. Use them on social media, merchandise and campaign collateral, and as watermarks; they need no approval. Use them only once the corporate logo or the verification mark is already established in the piece, never in place of either.
 
@@ -93,7 +93,7 @@ The lockup part is left out for a mark in its default form (`nongmo-mark-color.s
 | brand | `fip`, `nongmo`, `nonupf`, `collective` |
 | asset | `logo` (with wordmark), `mark` (symbol only), `seal` |
 | lockup | `horizontal`, `stacked`, `endorsed`, `verified` (seals), `circular` (secondary seal), `bilingual` (English and French seal), `avatar` (mark in a circle for social profiles), `filled` (a mark drawn with solid fills rather than outline) |
-| tone | `color`, `reversed` (for dark or brand grounds), `mono-dark` (one color, dark), `mono-light` (one color, light) |
+| tone | `color`, `reversed` (for dark or brand grounds), `mono-dark` (one color, dark: black, or the program's own one-color dark), `mono-black` (one color, black, for a program whose `mono-dark` files are not black), `mono-light` (one color, light) |
 
 SVG for everything on screen once supplied. PNG only where a platform requires it (touch icons, social images, email clients that block SVG).
 
@@ -158,12 +158,12 @@ Square icons and share images are made by placing the official file on a Birch o
 
 | Application | File |
 |---|---|
-| Favicon, touch and app icons | `nonupf/nonupf-mark-color.png`, or `nonupf/nonupf-mark-mono-dark.svg` for a one-color favicon. These and the social avatar are the only places the icon alone is approved |
+| Favicon, touch and app icons | `nonupf/nonupf-mark-color.png`, or `nonupf/nonupf-mark-mono-black.svg` for a one-color favicon. These and the social avatar are the only places the icon alone is approved |
 | Social avatar | `nonupf/nonupf-mark-color.png`; where the space allows a wider image, `nonupf/nonupf-logo-horizontal-color.svg` |
 | Header, share image | `nonupf/nonupf-logo-horizontal-color.svg` on Birch. In narrow headers keep the logo at 120px or wider, since the icon alone needs approval |
 | Footer | `nonupf/nonupf-logo-horizontal-color.svg` on Birch, until a reversed logo exists |
 | Email header | No PNG of the logo yet for email clients that block SVG |
-| One-color | `nonupf/nonupf-logo-horizontal-mono-dark.svg` |
+| One-color | `nonupf/nonupf-logo-horizontal-mono-black.svg` |
 | Product page seal | `nonupf/nonupf-seal-verified-color.svg`; `nonupf/nonupf-seal-verified-mono-light.png` on dark grounds; `nonupf/nonupf-seal-circular-color.png` only where the primary cannot fit; `nonupf/nonupf-seal-verified-color.png` in email |
 | Dark grounds, photography | No reversed logo yet |
 
@@ -188,12 +188,12 @@ How a program shows it belongs to the Food Integrity Project.
 
 | Rule | Detail |
 |---|---|
-| Relative size | The parent mark is 40 to 50% of the program seal's height, and never larger than it |
+| Relative size | The parent mark is 40 to 50% of the height of the program seal or logo it sits beside, and never larger than it |
 | Separation | A hairline rule or a full clear-space gap always sits between the two marks, so they never read as one lockup |
 | Color | In an endorsement, the parent mark is Cacao or reversed Birch only. It never adopts the program's accent |
 | On pack | Certification seals appear alone on packaging. Endorsement lockups are for owned channels: sites, decks, signage, print |
 
-Until lockup files exist, the `EndorsementLockup` component places the two official files with the rule between them. It never redraws either mark.
+There are no separate lockup files. The `EndorsementLockup` component builds each lockup from the two official files, with the rule between them, so a lockup always uses the current program and parent files. It never redraws either mark.
 
 ## Clear space and size
 
@@ -246,7 +246,7 @@ The seal URL (nongmoproject.org, nonultraprocessed.org) must stay readable at ev
 
 ## The BrandLogo component
 
-All logos render through one component so the rules above are enforced in one place.
+All logos render through one component so the rules above are enforced in one place. This repository specifies the components but does not ship code: each app builds them in its own `components/brand/` from this spec, the same way it owns its shadcn/ui components (see `06-ui-framework.md`). When a second app needs them, they move into a shared package.
 
 ```tsx
 <BrandLogo brand="nongmo" variant="horizontal" tone="color" href="/" />

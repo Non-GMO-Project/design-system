@@ -194,6 +194,22 @@ Use `--brand-support` or `--brand-tint` fills for feature panels (Loam 200, Seaf
 - Selected rows use `bg-brand-subtle`.
 - Empty and error states inside the table body, not as a blank table.
 
+### Maps
+
+A map is another view of a list, next to the table or card view (`view.map`), never the only way to reach its items.
+
+| Part | Rule |
+|---|---|
+| Base tiles | A muted, low-saturation style: land close to Birch, pale water, gray roads and labels. A dark style of the same kind in dark mode, switched with the color scheme. The system names no tile provider; whichever one an app uses, its attribution stays visible |
+| Markers | Circles filled with `--primary`, with a 2px `--background` outline, drawn at 12px inside a 44px hit area on touch (24px in dense desktop tools). The selected marker is one size larger and takes the `--ring` focus outline. No status colors on markers unless the marker also carries the status icon and the popup and list show the label (rule 5) |
+| Clusters | A `--primary` circle with the count in `--primary-foreground`, in two or three sizes by count. Selecting a cluster zooms in to it |
+| Popups | Styled as `Popover`: `--popover` surface, `--border`, `rounded-md`, the usual type. The item name is a link, and there is a close button. Opened by click, tap or Enter, never by hover |
+| Items not placed | Items that couldn't be placed on the map (no address, or an address that wasn't found) are listed under a heading with `status.not-placed`, so none go missing |
+| Keyboard | Markers are reachable with the keyboard, in the same order as the list beside the map |
+| Motion | Panning and zooming to a selected item (fly-to) uses the `base` duration and standard easing, and jumps without animation under reduced motion (see `07-motion.md`) |
+
+On multi-program maps, markers stay in `--primary` for the page's brand. Programs are told apart in the popup and the list with program chips, not by marker color (rule 4).
+
 ### Inverted panels
 
 The brand dark (`bg-brand-dark`, Birch text) is the inverted surface: hero bands, footers, feature callouts. It is how a layout reaches its "25 dark" ratio without big blocks of body text. In dark mode `--brand-dark` steps up to the card shade, so inverted panels stay distinct from the page; give them a `--border` outline where they meet a card.
