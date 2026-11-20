@@ -352,7 +352,7 @@ Generated. Official values from the Food Integrity Project Style Guide are kept 
   --ring: var(--cacao-950);
   --chart-1: var(--milkweed-600);
   --gradient-hero: linear-gradient(135deg, var(--cacao-950), var(--loam-800));
-  --gradient-ground: linear-gradient(120deg, var(--milkweed-600), var(--seafoam-100));
+  --gradient-ground: linear-gradient(120deg, var(--milkweed-600), var(--milkweed-50));
 }
 .dark, .dark [data-brand="fip"], [data-brand="fip"].dark {
   --brand-dark: var(--cacao-900);
