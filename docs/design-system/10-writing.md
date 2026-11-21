@@ -1,6 +1,6 @@
 # Writing and copy
 
-How the Food Integrity Project and its programs sound, in interfaces, on public pages, in email and in print. One set of writing rules for everyone; each brand adds its own voice on top. Sources: the *Writer's Guide* (Sixth Edition, September 2025) for audiences, terms, grammar and formatting; the *Food Integrity Project Style Guide* (voice lines, written reference); and the earlier program guides (voice attributes, claims guidance). The Writer's Guide also lists fonts and colors per brand. For those, this system follows the Food Integrity Project Style Guide (see `02-color.md` and `03-typography.md`).
+How the Food Integrity Project and its programs sound, in interfaces, on public pages, in email and in print. One set of writing rules for everyone; each brand adds its own voice on top. Sources: the *Writer's Guide* (Sixth Edition, September 2025) for audiences, terms, grammar and formatting; the *Food Integrity Project Style Guide* (voice lines, written reference); and the earlier program guides (voice attributes, claims guidance). The Writer's Guide also lists fonts and colors per brand. For those, this system follows `02-color.md` and `03-typography.md`.
 
 ## Audiences
 

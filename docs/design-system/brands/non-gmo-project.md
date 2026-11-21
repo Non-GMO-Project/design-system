@@ -28,7 +28,7 @@ Forest carries type and structure; Monarch is reserved for a single point of emp
 
 ## Logos and seal
 
-`nongmo-logo-*`, `nongmo-seal-verified-*`, `nongmo-seal-bilingual-*` and `nongmo-mark-*`. Four distinct assets: the organizational logo (butterfly + wordmark), the Verification Mark (the seal), the butterfly avatar for social profiles, and the trademarked Butterfly, used sparingly. The seal follows `../04-logos-and-marks.md` and the Trademark Use Guide. In product lists use `StatusBadge status="verified"`; reserve the seal for verified product detail pages and seal education.
+`nongmo-logo-*`, `nongmo-seal-verified-*`, `nongmo-seal-bilingual-*`, `nongmo-seal-fsis-*` and `nongmo-mark-*`. On dark grounds the logo and Butterfly use the Birch `nongmo-logo-horizontal-reversed.svg` and `nongmo-mark-reversed.svg`. Four distinct assets: the organizational logo (butterfly + wordmark), the Verification Mark (the seal), the butterfly avatar for social profiles, and the trademarked Butterfly, used sparingly. The seal follows `../04-logos-and-marks.md` and the Trademark Use Guide. In product lists use `StatusBadge status="verified"`; reserve the seal for verified product detail pages and seal education.
 
 ## Typography
 
@@ -46,7 +46,7 @@ Direct and reassuring. Active voice, plain language, short sentences. Explains w
 
 ## Motion
 
-Shared system. The signature "Verified" moment may use a single Monarch flutter in the glow.
+Shared system. The signature moment, with a Monarch glow, may mark milestones such as a product turning Verified (see `../07-motion.md`).
 
 ## Typical surfaces
 

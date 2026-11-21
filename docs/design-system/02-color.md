@@ -34,9 +34,9 @@ Because components only use semantic tokens, a button written once renders as a 
 |---|---|---|---|---|
 | **Birch** | `#FFFDEB` | Ground | All (shared) | Default background everywhere |
 | **Frost** | `#F3F4F2` | Utility neutral | All (shared) | Fields, stripes, disabled, data panels |
-| **White** | `#FFFFFF` | Logo color, section cards | All (shared) | The color of the white (reversed) logo and seal files, such as the white Non-GMO Project Verified Mark, the fill of section cards (`--surface`, see `06-ui-framework.md`), the ground of email (`13-email.md`) and the light end of the Non-GMO Project gradient. Never a page background anywhere else: start on Birch. Not used for type or any other UI |
+| **White** | `#FFFFFF` | Logo color, section cards | All (shared) | The color of the programs' white seal files (`mono-light`), such as the white Non-GMO Project Verified Mark, the fill of section cards (`--surface`, see `06-ui-framework.md`), the ground of email (`13-email.md`) and the light end of the Non-GMO Project gradient. Never a page background anywhere else: start on Birch. Not used for type or any other UI |
 | **Black** | `#000000` | Logo color | All (shared) | The color of the one-color black logo and seal files (`*-mono-dark`, or `*-mono-black` where a program's `mono-dark` is not black), for one-color printing and partner materials. Never for type or UI: each brand's dark does that |
-| **Cacao** | `#241A15` | Dark | Food Integrity Project | From the logo. Warm near-black that matches Forest and Dark Matter in weight. Sets type. The guide says Cacao is never a fill, but also that each dark sets every inverted panel; this system allows it for inverted hero bands and footers only (see `brands/food-integrity-project.md`) |
+| **Cacao** | `#241A15` | Dark | Food Integrity Project | From the logo. Warm near-black that matches Forest and Dark Matter in weight. Sets type. The guide says Cacao is never a fill, but also that each dark sets every inverted panel; this system allows it for inverted surfaces only (hero bands, footers, feature callouts and email header bands), never as a fill for controls or small elements (see `brands/food-integrity-project.md`) |
 | **Loam** | `#6B5644` | Supporting tone | Food Integrity Project | Brown of turned soil, a lighter tone of Cacao |
 | **Milkweed Leaf** | `#5F7A52` | Signature | Food Integrity Project | Grey-green of the plant the monarch cannot breed without. Green is the one hue no program owns, and it sits opposite Monarch orange |
 | **Forest** | `#053220` | Dark | Non-GMO Project, Food Integrity Collective | Carries type and structure |
@@ -202,7 +202,7 @@ These are the only color names components use. The full mapping per brand and mo
 | `--brand-tint` | Section backgrounds |
 | `--brand-subtle` | Selected states, tags |
 | `--brand-border` | Borders on brand tints |
-| `--brand-support` / `-foreground` | The supporting color at full strength, for panels and cards |
+| `--brand-support` / `-foreground` | The supporting color as a panel fill (Loam 200 for the Food Integrity Project; Seafoam, Almond or Corn Flower for the programs), for panels and cards |
 | `--brand-signature` / `-foreground` | The signature color, for highlights, rules, illustration and large display |
 | `--ring` | Focus ring. The brand dark in light mode, Birch in dark mode, so it always reaches 3:1 |
 
@@ -333,11 +333,11 @@ Use these combinations and you will pass WCAG 2.2 AA without needing to check. A
 | `dark-matter-600` | `frost` | 4.2:1 | Large text (24px, or 19px bold) and UI shapes only |
 <!-- pairings:end -->
 
-The 600-on-Frost rows check input borders on fields. The last three rows are warnings: Monarch, Corn Flower and Romanesco all fail as text on Birch. Set labels and captions in the brand's dark and let those colors hold fills, rules and large display.
+The 600-on-Frost rows check input borders on fields. The three "Fills and decoration only" rows are warnings: Monarch, Corn Flower and Romanesco all fail as text on Birch. Set labels and captions in the brand's dark and let those colors hold fills, rules and large display.
 
 ## Gradients (decorative)
 
-The brand guide does not define gradients. These are interface additions, approved for hero bands and campaign art, built only from each brand's own colors.
+The brand guide does not define gradients. These are interface additions, approved for hero bands and campaign art, built from each brand's own colors (the one exception is White at the end of `--gradient-flight`, see below).
 
 Rules:
 1. At most one gradient surface per screen.

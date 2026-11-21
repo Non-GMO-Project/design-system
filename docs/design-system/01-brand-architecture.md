@@ -46,7 +46,7 @@ Program seals keep their own color, artwork and standards. The parent does not r
 | Typography | Lora, Montserrat, Quicksand; the scale; context pairings | Nothing |
 | Icons | Library, registry, sizes, stroke | Nothing. Icons inherit the brand dark |
 | Components | All behavior, structure, states, spacing | Colors only, through tokens |
-| Motion | All durations, easing, named animations | One optional variation of the signature moment |
+| Motion | All durations, easing, named animations | The glow color of the signature moment (each brand's signature) |
 | Accessibility | Everything | Nothing |
 | Imagery | Photography principles and sourcing rules (below) | Subjects, mood and photo libraries (see brand files) |
 | Voice | Plain language, UI writing rules | Personality (see brand files) |
@@ -113,8 +113,8 @@ Every program surface carries the endorsement once, usually in the footer:
 
 > A program of the Food Integrity Project
 
-- Set in Quicksand caps (`eyebrow` style) or `body-sm`, in `--muted-foreground`.
-- Written with the parent butterfly between "the" and the name, as in the horizontal endorsement lockup: "A program of the [butterfly] Food Integrity Project". The butterfly is Cacao (Birch on dark), 1.5 times the text size, and decorative to screen readers. A hairline rule separates the line from the program logo.
+- Set in Quicksand caps (the `eyebrow` style), in `--muted-foreground` on light grounds and Birch on the brand dark.
+- Written with the parent butterfly between "the" and the name, as in the horizontal endorsement lockup: "A program of the [butterfly] Food Integrity Project". The butterfly is Cacao (the interim `fip-mark-color.svg` is dark gray `#35363A` until the source file arrives; Birch on dark), 1.5 times the text size, and decorative to screen readers. A hairline rule separates the line from the program logo.
 - Links to the organization website.
 
 ### Endorsement lockup

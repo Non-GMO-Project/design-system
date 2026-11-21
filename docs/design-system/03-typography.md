@@ -114,7 +114,7 @@ Every token in the type scale is a Tailwind utility: `text-` plus the token name
 
 ## Rules for Claude Code
 
-- Use the scale through its `text-*` utilities. No arbitrary font sizes outside the named tokens.
+- Use the scale through its `text-*` utilities. No arbitrary font sizes outside the named tokens. The one exception is the name in the stacked endorsement lockup, Quicksand 700 at 20px (see `04-logos-and-marks.md`).
 - Lora for headings, Montserrat for reading and interface text, Quicksand for labels, buttons and eyebrows. Never Quicksand for paragraphs.
 - Prose containers always get a max width.
 - Never load a font family beyond these three without design sign-off. Ask in a `question` issue.

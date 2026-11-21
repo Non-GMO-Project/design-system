@@ -675,7 +675,7 @@ Tailwind v4 reads tokens from CSS with `@theme`. `inline` makes the utilities re
 
 Tailwind emits the `@theme` values as CSS variables too, so `--font-serif` and `--ease-standard` are available in plain CSS and in Motion code, under the names used in `03-typography.md` and `07-motion.md`.
 
-In Next.js, load Lora, Montserrat and Quicksand with `next/font/google` (self-hosted at build time) and put the `next/font` variable first in each stack, for example `--font-serif: var(--font-lora), "Lora", Charter, ...`. Apps that don't use `next/font` (and static or email pages) import `styles/fonts.css` instead, which self-hosts the same three families from `public/fonts/`, as the showcase does.
+In Next.js, load Lora, Montserrat and Quicksand with `next/font/google` (self-hosted at build time) and put the `next/font` variable first in each stack, for example `--font-serif: var(--font-lora), "Lora", Charter, ...`. Apps that don't use `next/font` (and static pages) import `styles/fonts.css` instead (email templates load fonts with a `<link>` tag, see `13-email.md`), which self-hosts the same three families from `public/fonts/`, as the showcase does.
 
 This produces utilities such as `bg-primary`, `text-brand-text`, `bg-brand-support`, `bg-status-warning-bg`, `border-status-danger-border`, `shadow-2`, `rounded-lg`, `font-serif`, `font-accent`, `ease-standard`.
 

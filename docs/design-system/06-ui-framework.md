@@ -55,6 +55,7 @@ This table is the core of the framework. Find the interaction, use the component
 | Long free text | `Textarea` | Show character limits before people hit them |
 | Pick one of 2 to 5 options, all visible | `RadioGroup` | |
 | Pick one of 6 to 15 options | `Select` | |
+| A number in a range, where the exact value matters less | `Slider` | Track and thumb in `--primary`, the usual `--ring` focus outline, and the current value shown as text beside the label. A 44px touch target |
 | Pick one of many, or searchable | `Combobox` (`Popover` + `Command`) | Use for brands, facilities, ingredients |
 | Pick several of a few | `Checkbox` group | |
 | Pick several of many | Multi-select combobox with chips | |
@@ -131,7 +132,7 @@ This table is the core of the framework. Find the interaction, use the component
 | `destructive` | `bg-destructive text-destructive-foreground` | Delete, remove, revoke |
 | `link` | `text-brand-text underline underline-offset-4` | Inline actions in text |
 
-Button text is the `label` style: Quicksand 600, sentence case.
+Button text is the `label` style: Quicksand 600, sentence case, at 15px (14px on `sm` buttons, 16px on `lg`).
 
 | Size | Height | Use |
 |---|---|---|
@@ -292,7 +293,7 @@ Page gutters: 16px mobile, 24px tablet, 32px desktop.
 
 **Multi-step flows.** `Stepper` with named steps, progress saved per step, Back never loses data, final review step before submit.
 
-**Program footer.** Program logo, the endorsement line "A program of the Food Integrity Project", links, legal. On the brand dark.
+**Program footer.** The program's Birch `reversed` logo and the endorsement line with the parent butterfly (`EndorsementLockup`, see `04-logos-and-marks.md`), links, legal. On the brand dark.
 
 ## Writing in the interface
 
