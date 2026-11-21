@@ -683,6 +683,11 @@ export function createRenderer(ctx) {
       "components", "06 · UI framework", "Components and patterns", f,
       `<h3 id="c-brands">Brand variations</h3><p class="prose">Components read semantic tokens, so the same markup takes each brand's colors: primary button, links, focus ring, field borders, checkboxes, switches, progress, program chip and support panel. Behavior, size and spacing never change, and status colors stay shared. The examples below use the Food Integrity Project; these cards show the others side by side. The Dark switch applies to them too.</p>
       <div class="grid" style="--min:260px">${brandVariations}</div>
+      <div class="brand-toggle" role="radiogroup" aria-label="Preview the components below in a brand">
+        <span class="brand-toggle__label">Preview in</span>
+        ${BRANDS.map((b, i) => `<label class="brand-toggle__opt" data-brand="${b}"><input type="radio" name="brand-preview" value="${b}"${i === 0 ? " checked" : ""}><span class="brand-toggle__dot" aria-hidden="true"></span>${esc(brandName(b))}</label>`).join("")}
+      </div>
+      <div class="ctx brand-preview" data-brand="${BRANDS[0]}" data-brand-preview>
       <h3 id="c-buttons">Buttons</h3>${buttonMatrix}
       <h4>Sizes</h4><div class="row">${sizeRow}</div>
       <h4>Loading</h4><div class="row"><button type="button" class="btn btn--default" data-demo="loading">${icon("action.upload")}Upload spec sheet</button><span class="small muted">Spinner replaces the icon and the label changes to “Uploading”. The button uses <code>aria-disabled</code> and <code>aria-busy</code>, so focus stays on it.</span></div>
@@ -772,7 +777,8 @@ export function createRenderer(ctx) {
       <h3>Containers</h3>${containers}
       <h3>Surface types</h3>${surfaces ? renderTable(surfaces) : ""}
       <h3>Standard patterns</h3><div class="prose">${patterns ? render(patterns.blocks) : ""}</div>
-      <h3>Writing in the interface</h3><div class="prose">${writing ? render(writing.blocks) : ""}</div>`
+      <h3>Writing in the interface</h3><div class="prose">${writing ? render(writing.blocks) : ""}</div>
+      </div>`
     );
   }
 
