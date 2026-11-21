@@ -126,6 +126,22 @@
     $$('[data-demo="menu"][aria-expanded="true"]').forEach((m) => { m.setAttribute("aria-expanded", "false"); m.nextElementSibling.hidden = true; m.focus(); });
   });
 
+  // ---------- Components brand preview ----------
+  // Sets data-brand on the components below the switch, so every component takes that brand's tokens.
+  (function () {
+    const wrap = document.querySelector("[data-brand-preview]");
+    if (!wrap) return;
+    const radios = [...document.querySelectorAll('input[name="brand-preview"]')];
+    const KEY = "ds-components-brand";
+    const apply = (b) => { wrap.setAttribute("data-brand", b); radios.forEach((r) => (r.checked = r.value === b)); };
+    try { const saved = localStorage.getItem(KEY); if (saved && radios.some((r) => r.value === saved)) apply(saved); } catch (e) {}
+    radios.forEach((r) => r.addEventListener("change", () => { if (!r.checked) return; apply(r.value); try { localStorage.setItem(KEY, r.value); } catch (e) {} }));
+    const bar = document.querySelector(".topbar");
+    const setOffset = () => document.documentElement.style.setProperty("--topbar-h", (bar && getComputedStyle(bar).position === "sticky" ? bar.offsetHeight : 0) + "px");
+    setOffset();
+    addEventListener("resize", setOffset);
+  })();
+
   // ---------- Button loading ----------
   document.addEventListener("click", (e) => {
     const b = e.target.closest('[data-demo="loading"]');

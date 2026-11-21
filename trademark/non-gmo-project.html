@@ -1138,6 +1138,16 @@ input[type="range"]:focus-visible { outline: 2px solid var(--ring); outline-offs
 /* A program chip and a status badge side by side: same height, aligned, wrapping as a pair. */
 .tag-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 0.25rem; }
 
+/* Components brand preview: a sticky switch that sets data-brand on everything below it in the Components section. */
+.brand-toggle { position: sticky; top: var(--topbar-h, 4rem); z-index: 30; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; padding: 0.625rem 0; margin: 1.5rem 0 0.5rem; background: var(--background); border-bottom: 1px solid var(--border); }
+.brand-toggle__label { font-family: var(--font-accent); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-foreground); margin-right: 0.25rem; }
+.brand-toggle__opt { position: relative; display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; padding: 0 1rem; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--foreground); font-family: var(--font-accent); font-weight: 600; font-size: 0.875rem; cursor: pointer; }
+.brand-toggle__opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.brand-toggle__dot { width: 12px; height: 12px; border-radius: 999px; background: var(--brand-signature); box-shadow: 0 0 0 1px var(--brand-dark); }
+.brand-toggle__opt:has(input:checked) { background: var(--foreground); color: var(--background); border-color: var(--foreground); }
+.brand-toggle__opt:has(input:focus-visible) { outline: 2px solid var(--ring); outline-offset: 2px; }
+.brand-preview { border-radius: var(--radius-lg); }
+
 
 body { background: var(--background); color: var(--foreground); margin: 0; }
 .tm-header { background: var(--brand-dark); color: var(--birch); }
