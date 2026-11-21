@@ -32,12 +32,14 @@ What is in `public/brand/` today. The showcase build checks this table against t
 
 | File | Brand | Asset | Tone | Status |
 |---|---|---|---|---|
-| `fip/fip-logo-horizontal-color.svg` | fip | logo | color | Interim vector with a transparent background, traced from the PNG below in its dark gray `#35363A`. The showcase uses it. Replace with the design team's source file in Cacao |
-| `fip/fip-mark-color.svg` | fip | mark | color | Interim butterfly mark alone, transparent, cut from the same trace. For favicons, avatars and tight spaces. Replace with the design team's source file |
-| `fip/fip-logo-horizontal-reversed.svg` | fip | logo | reversed | Birch, for dark grounds. Derived by the build from `fip-logo-horizontal-color.svg` |
+| `fip/fip-logo-horizontal-mono-dark.svg` | fip | logo | mono-dark | Interim vector, traced from the style guide raster in dark gray `#35363A`. The one-color source for the Cacao, Birch and PNG versions below. Replace with the design team's source file |
+| `fip/fip-mark-mono-dark.svg` | fip | mark | mono-dark | Interim butterfly mark alone, cut from the same trace, dark gray `#35363A`. The one-color source for the Cacao and Birch marks. Replace with the design team's source file |
+| `fip/fip-logo-horizontal-color.svg` | fip | logo | color | Cacao horizontal logo, transparent. Derived by the build from `fip-logo-horizontal-mono-dark.svg`. The showcase uses it |
+| `fip/fip-mark-color.svg` | fip | mark | color | Cacao butterfly mark alone, transparent. Derived by the build from `fip-mark-mono-dark.svg`. For favicons, avatars, tight spaces and the endorsement line |
+| `fip/fip-logo-horizontal-reversed.svg` | fip | logo | reversed | Birch, for dark grounds. Derived by the build from `fip-logo-horizontal-mono-dark.svg` |
 | `fip/fip-logo-horizontal-reversed.png` | fip | logo | reversed | Birch, transparent, 960px wide. Derived by the build. For email dark bands |
-| `fip/fip-mark-reversed.svg` | fip | mark | reversed | Birch mark alone, for dark grounds. Derived by the build from `fip-mark-color.svg` |
-| `fip/fip-logo-horizontal-color.png` | fip | logo | color | Transparent PNG, 960px wide, rendered by the build from `fip-logo-horizontal-color.svg` (see "Derived files"). For email and anywhere SVG is not supported. It replaces the raster pulled from the style guide PDF, which had a white background |
+| `fip/fip-mark-reversed.svg` | fip | mark | reversed | Birch mark alone, for dark grounds. Derived by the build from `fip-mark-mono-dark.svg` |
+| `fip/fip-logo-horizontal-color.png` | fip | logo | color | Transparent PNG, 960px wide, rendered by the build in Cacao from `fip-logo-horizontal-mono-dark.svg` (see "Derived files"). For email and anywhere SVG is not supported. It replaces the raster pulled from the style guide PDF, which had a white background |
 | `fip/fip-logo-stacked-mono-dark.svg` | fip | logo | mono-dark | Stacked logo (butterfly above "food integrity project"), one-color black `#231F20`, vector. Source file from the design team, supplied 2026-11-20 |
 | `fip/fip-logo-stacked-mono-dark.png` | fip | logo | mono-dark | Black stacked logo, transparent, 960px wide. Derived by the build |
 | `fip/fip-logo-stacked-color.svg` | fip | logo | color | Cacao stacked logo, for Birch and White grounds. Derived by the build |
@@ -100,10 +102,12 @@ Logos on dark grounds use a Birch one-color version, never the color logo and ne
 
 | File | Source | Color | Width |
 |---|---|---|---|
-| `fip/fip-logo-horizontal-reversed.svg` | `fip/fip-logo-horizontal-color.svg` | Birch | |
-| `fip/fip-logo-horizontal-reversed.png` | `fip/fip-logo-horizontal-color.svg` | Birch | 960 |
-| `fip/fip-logo-horizontal-color.png` | `fip/fip-logo-horizontal-color.svg` | As drawn | 960 |
-| `fip/fip-mark-reversed.svg` | `fip/fip-mark-color.svg` | Birch | |
+| `fip/fip-logo-horizontal-color.svg` | `fip/fip-logo-horizontal-mono-dark.svg` | Cacao | |
+| `fip/fip-mark-color.svg` | `fip/fip-mark-mono-dark.svg` | Cacao | |
+| `fip/fip-logo-horizontal-reversed.svg` | `fip/fip-logo-horizontal-mono-dark.svg` | Birch | |
+| `fip/fip-logo-horizontal-reversed.png` | `fip/fip-logo-horizontal-mono-dark.svg` | Birch | 960 |
+| `fip/fip-logo-horizontal-color.png` | `fip/fip-logo-horizontal-mono-dark.svg` | Cacao | 960 |
+| `fip/fip-mark-reversed.svg` | `fip/fip-mark-mono-dark.svg` | Birch | |
 | `fip/fip-logo-stacked-mono-dark.png` | `fip/fip-logo-stacked-mono-dark.svg` | As drawn | 960 |
 | `fip/fip-logo-stacked-color.svg` | `fip/fip-logo-stacked-mono-dark.svg` | Cacao | |
 | `fip/fip-logo-stacked-color.png` | `fip/fip-logo-stacked-mono-dark.svg` | Cacao | 960 |
@@ -150,15 +154,15 @@ The build makes every brand's favicon, app icons, social avatar and share image 
 
 | File | Source | Color | Size | Ground | Artwork |
 |---|---|---|---|---|---|
-| `fip/icons/fip-favicon.svg` | `fip/fip-mark-color.svg` | Cacao | 32 | None | 100 |
-| `fip/icons/fip-favicon-32.png` | `fip/fip-mark-color.svg` | Cacao | 32 | None | 100 |
-| `fip/icons/fip-apple-touch-icon-180.png` | `fip/fip-mark-color.svg` | Cacao | 180 | Birch | 70 |
-| `fip/icons/fip-icon-192.png` | `fip/fip-mark-color.svg` | Cacao | 192 | Birch | 70 |
-| `fip/icons/fip-icon-512.png` | `fip/fip-mark-color.svg` | Cacao | 512 | Birch | 70 |
-| `fip/icons/fip-icon-512-maskable.png` | `fip/fip-mark-color.svg` | Cacao | 512 | Birch | 56 |
-| `fip/icons/fip-app-store-1024.png` | `fip/fip-mark-color.svg` | Cacao | 1024 | Birch | 70 |
-| `fip/icons/fip-avatar-400.png` | `fip/fip-mark-color.svg` | Cacao | 400 | Birch | 62 |
-| `fip/icons/fip-share-1200x630.png` | `fip/fip-logo-horizontal-color.svg` | Cacao | 1200 x 630 | Birch | 50 |
+| `fip/icons/fip-favicon.svg` | `fip/fip-mark-color.svg` | As drawn | 32 | None | 100 |
+| `fip/icons/fip-favicon-32.png` | `fip/fip-mark-color.svg` | As drawn | 32 | None | 100 |
+| `fip/icons/fip-apple-touch-icon-180.png` | `fip/fip-mark-color.svg` | As drawn | 180 | Birch | 70 |
+| `fip/icons/fip-icon-192.png` | `fip/fip-mark-color.svg` | As drawn | 192 | Birch | 70 |
+| `fip/icons/fip-icon-512.png` | `fip/fip-mark-color.svg` | As drawn | 512 | Birch | 70 |
+| `fip/icons/fip-icon-512-maskable.png` | `fip/fip-mark-color.svg` | As drawn | 512 | Birch | 56 |
+| `fip/icons/fip-app-store-1024.png` | `fip/fip-mark-color.svg` | As drawn | 1024 | Birch | 70 |
+| `fip/icons/fip-avatar-400.png` | `fip/fip-mark-color.svg` | As drawn | 400 | Birch | 62 |
+| `fip/icons/fip-share-1200x630.png` | `fip/fip-logo-horizontal-color.svg` | As drawn | 1200 x 630 | Birch | 50 |
 | `nongmo/icons/nongmo-favicon.svg` | `nongmo/nongmo-mark-color.svg` | As drawn | 32 | None | 100 |
 | `nongmo/icons/nongmo-favicon-32.png` | `nongmo/nongmo-mark-color.svg` | As drawn | 32 | None | 100 |
 | `nongmo/icons/nongmo-apple-touch-icon-180.png` | `nongmo/nongmo-mark-color.svg` | As drawn | 180 | Birch | 70 |
@@ -301,7 +305,7 @@ How a program shows it belongs to the Food Integrity Project.
 | Wrapping | When the horizontal line wraps, it breaks after "the", so the butterfly always stays with the name |
 | Accessible name | The butterfly is decorative (`alt=""`): the text already reads "A program of the Food Integrity Project" |
 | Separation | A hairline rule or a full clear-space gap always sits between the two marks, so they never read as one lockup |
-| Color | The butterfly is Cacao on light grounds and Birch on dark ones, never the program's colors. The text takes `--muted-foreground` on light grounds and Birch on dark ones. The interim `fip-mark-color.svg` is dark gray `#35363A` until the Cacao source file arrives |
+| Color | The butterfly is Cacao on light grounds and Birch on dark ones, never the program's colors. The text takes `--muted-foreground` on light grounds and Birch on dark ones. |
 | On pack | Certification seals appear alone on packaging. Endorsement lockups are for owned channels: sites, decks, signage, print |
 
 There are no separate lockup files. The `EndorsementLockup` component builds each lockup from the program's official file and the parent butterfly (`fip-mark-color.svg`, or `fip-mark-reversed.svg` on dark grounds), with the rule between them and the words set in type, so a lockup always uses the current files. It never redraws either mark.

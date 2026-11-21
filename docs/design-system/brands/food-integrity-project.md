@@ -28,7 +28,7 @@ Green is the one hue no program owns, and Milkweed Leaf sits opposite Monarch or
 
 ## Logos
 
-`fip-logo-*` and `fip-mark-color.svg`. Parent mark in Cacao on Birch, or reversed to Birch on Cacao. The horizontal logo and the butterfly mark are interim traces in dark gray `#35363A`, not Cacao (source files are tracked as a `question` issue). The stacked logo (`fip-logo-stacked-*`, for square and narrow formats) comes from the design team's source file, with Cacao and Birch versions derived by the build. On dark grounds use the Birch `fip-logo-horizontal-reversed.svg`, `fip-logo-stacked-reversed.svg` and `fip-mark-reversed.svg`. In an endorsement the parent appears as its butterfly beside the words "Food Integrity Project", in Cacao or Birch (see the lockups in `04`). See `../04-logos-and-marks.md`.
+`fip-logo-*` and `fip-mark-*`. Parent mark in Cacao on Birch, or reversed to Birch on Cacao. The horizontal logo and the butterfly mark come from interim traces in dark gray `#35363A` (`*-mono-dark.svg`; source files are tracked as a `question` issue), and the build derives their Cacao (`color`) and Birch (`reversed`) versions. The stacked logo (`fip-logo-stacked-*`, for square and narrow formats) comes from the design team's source file, with Cacao and Birch versions derived by the build. On dark grounds use the Birch `fip-logo-horizontal-reversed.svg`, `fip-logo-stacked-reversed.svg` and `fip-mark-reversed.svg`. In an endorsement the parent appears as its butterfly beside the words "Food Integrity Project", in Cacao or Birch (see the lockups in `04`). See `../04-logos-and-marks.md`.
 
 ## Typography
 

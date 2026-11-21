@@ -114,7 +114,7 @@ Every program surface carries the endorsement once, usually in the footer:
 > A program of the Food Integrity Project
 
 - Set in Quicksand caps (the `eyebrow` style), in `--muted-foreground` on light grounds and Birch on the brand dark.
-- Written with the parent butterfly between "the" and the name, as in the horizontal endorsement lockup: "A program of the [butterfly] Food Integrity Project". The butterfly is Cacao (the interim `fip-mark-color.svg` is dark gray `#35363A` until the source file arrives; Birch on dark), 1.5 times the text size, and decorative to screen readers. A hairline rule separates the line from the program logo.
+- Written with the parent butterfly between "the" and the name, as in the horizontal endorsement lockup: "A program of the [butterfly] Food Integrity Project". The butterfly is Cacao (Birch on dark), 1.5 times the text size, and decorative to screen readers. A hairline rule separates the line from the program logo.
 - Links to the organization website.
 
 ### Endorsement lockup
