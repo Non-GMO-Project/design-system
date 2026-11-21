@@ -191,7 +191,7 @@ export function createRenderer(ctx) {
       ${written ? `<h4>Written reference</h4>${render(written.blocks)}` : ""}
       <h3>What is shared and what varies</h3>${shared ? render(shared.blocks.filter((b) => b.type !== "p" || !/^The principle/.test(b.text))) : ""}
       <h3>Choosing the brand context</h3>${choosing ? render(choosing.blocks) : ""}
-      <h3>Program chips</h3><p class="prose">Records in multi-program views carry a chip that sets its own <code>data-brand</code>. Each chip is filled with its program's signature color, with the matching foreground color for text, so programs are easy to tell apart at a glance. Program chips, and the buttons on program cards on house-level pages, are the only places two program signatures may share a layout.</p>
+      <h3>Program chips</h3><p class="prose">Records in multi-program views carry a chip that sets its own <code>data-brand</code>. Each chip is filled with its program's signature color, with the matching foreground color for text, so programs are easy to tell apart at a glance. Program chips, and the buttons on program cards on house-level pages, are the only places two program signatures may share a layout; status colors also use Monarch and Dragon Fruit hues (see <code>02-color.md</code>).</p>
       <div class="row">${chips}</div>
       <h3>Endorsement line</h3><p class="prose">Every program surface carries the endorsement once, usually in the footer: <strong>${esc(line)}</strong>.${esc(birchNote)}</p>
       <div class="stack">${footers}</div>`,
@@ -240,7 +240,7 @@ export function createRenderer(ctx) {
       return px || fallback;
     };
     const ngpMin = minPx(/^Non-GMO Project Verified Mark$/, 72);
-    const fipMin = minPx(/^Parent mark/, 96);
+    const fipMin = minPx(/^Parent (logo|mark)/, 96);
     const never = d.section(/^Never$/)?.lists()[0];
     const byApp = d.section(/^Logo by application$/);
     if (!byApp) check("warn", "Logos", 'No "Logo by application" section', f);
@@ -257,7 +257,7 @@ export function createRenderer(ctx) {
       <div class="row" style="gap:2rem;align-items:flex-end;margin-bottom:1.5rem">
         ${upfSeal ? `<div class="clearspace" style="--x:18px"><img src="${esc(upfSeal.path)}" alt="Non-UPF Verified seal with clear space" style="height:96px"><span style="top:0;left:4px">X</span></div>` : ""}
         ${ngpSeal ? `<figure style="margin:0"><img src="${esc(ngpSeal.path)}" alt="Non-GMO Project Verified seal at minimum screen size" style="width:${ngpMin}px"><figcaption class="small muted">Seal at ${ngpMin}px</figcaption></figure>` : ""}
-        ${fipLogo ? `<figure style="margin:0"><img class="logo-plate" src="${esc(fipLogo.path)}" alt="Food Integrity Project logo at minimum screen size" style="width:${fipMin}px"><figcaption class="small muted">Parent mark at ${fipMin}px</figcaption></figure>` : ""}
+        ${fipLogo ? `<figure style="margin:0"><span class="logo-on-light"><img src="${esc(fipLogo.path)}" alt="Food Integrity Project logo at minimum screen size" style="width:${fipMin}px"></span>${asset("fip", "logo-horizontal-reversed.svg") ? `<span class="logo-on-dark"><img src="${esc(asset("fip", "logo-horizontal-reversed.svg").path)}" alt="Food Integrity Project logo at minimum screen size" style="width:${fipMin}px"></span>` : ""}<figcaption class="small muted">Parent logo at ${fipMin}px</figcaption></figure>` : ""}
       </div>
       ${sizes ? render(sizes.blocks) : ""}
       ${never ? `<h3>Never</h3><div class="do-dont"><div class="dont"><h4>${icon("status.terminated", "icon")}Never</h4>${render([never])}</div></div>` : ""}`,
@@ -685,7 +685,7 @@ export function createRenderer(ctx) {
       <div class="grid" style="--min:260px">${brandVariations}</div>
       <h3 id="c-buttons">Buttons</h3>${buttonMatrix}
       <h4>Sizes</h4><div class="row">${sizeRow}</div>
-      <h4>Loading</h4><div class="row"><button type="button" class="btn btn--default" data-demo="loading">${icon("action.upload")}Upload spec sheet</button><span class="small muted">Spinner replaces the icon, the label stays, the button is disabled.</span></div>
+      <h4>Loading</h4><div class="row"><button type="button" class="btn btn--default" data-demo="loading">${icon("action.upload")}Upload spec sheet</button><span class="small muted">Spinner replaces the icon and the label changes to “Uploading”. The button uses <code>aria-disabled</code> and <code>aria-busy</code>, so focus stays on it.</span></div>
 
       <h3 id="c-forms">Forms</h3>
       <form class="split" novalidate data-demo="form">
@@ -1049,7 +1049,7 @@ export function createRenderer(ctx) {
     const cqTable = `<div class="table-wrap cq"><table class="stack-table data-table"><thead><tr><th scope="col">Product</th><th scope="col">Program</th><th scope="col">Status</th><th scope="col" class="num">Units</th></tr></thead><tbody>${products
       .map(([n, p, s], i) => `<tr><td data-label="Product"><strong>${esc(n)}</strong></td><td data-label="Program"><span class="chip chip--program" data-brand="${p}">${esc(brandName(p))}</span></td><td data-label="Status">${badge(cert(s))}</td><td class="num" data-label="Units">${(1200 + i * 317).toLocaleString("en-US")}</td></tr>`)
       .join("")}</tbody></table></div>`;
-    const cqCards = `<div class="cq"><div class="cq-cards">${products.map(([n, p, s]) => `<article class="card cq-card"><div class="cq-card__img" aria-hidden="true">${icon("domain.product", "icon")}</div><div><h4 style="margin:0 0 0.25rem">${esc(n)}</h4><span class="chip chip--program" data-brand="${p}">${esc(brandName(p))}</span> ${badge(cert(s))}</div></article>`).join("")}</div></div>`;
+    const cqCards = `<div class="cq"><div class="cq-cards">${products.map(([n, p, s]) => `<article class="card cq-card"><div class="cq-card__img" aria-hidden="true">${icon("domain.product", "icon")}</div><div><h4 style="margin:0 0 0.25rem">${esc(n)}</h4><div class="tag-row"><span class="chip chip--program" data-brand="${p}">${esc(brandName(p))}</span>${badge(cert(s))}</div></div></article>`).join("")}</div></div>`;
     const block = (re) => { const s = d.section(re); return s ? render(s.blocks) : ""; };
     return `<section class="ds-section" id="responsive" aria-labelledby="responsive-h" data-bps='${esc(JSON.stringify(bps))}'>
       <p class="eyebrow">12 · Responsive</p><h2 id="responsive-h">From 320px to wide screens</h2>${source(f)}
@@ -1081,16 +1081,16 @@ export function createRenderer(ctx) {
     const d = docs[f];
     if (!d) { check("error", "Email", "13-email.md not found", f); return ""; }
     const block = (re) => { const s = need(d, re, f, "Email"); return s ? render(s.blocks) : ""; };
-    // One sample per brand, each in its own data-brand context. Dark header band only where a reversed logo exists.
+    // One sample per brand, each in its own data-brand context: White body, brand-dark header band with the Birch reversed PNG (13, "Color in email").
     const mock = (b) => {
       const light = asset(b, "logo-horizontal-reversed.png", "logo-horizontal-mono-light");
       const header = light
-        ? `<div class="email-mock__header email-mock__header--dark">${logoImg(b, { height: 32, tone: "light" })}<span class="small">October 2026</span></div>`
+        ? `<div class="email-mock__header email-mock__header--dark">${light ? `<img src="${esc(light.path)}" alt="${esc(brandName(b))}" style="height:32px;width:auto">` : logoImg(b, { height: 32, tone: "light" })}<span class="small">October 2026</span></div>`
         : `<div class="email-mock__header">${logoImg(b, { height: 32 })}<span class="small muted">October 2026</span></div>`;
       return `<article class="email-mock" data-brand="${b}" aria-label="Sample ${esc(brandName(b))} email">${header}
         <div class="email-mock__body"><p class="email-mock__masthead">Newsletter name</p><p class="small muted" style="margin:0 0 1rem">Updates from ${esc(brandName(b))}</p>
         <div class="email-mock__hero" aria-hidden="true">${icon("domain.product", "icon")}</div>
-        <h4 class="email-mock__headline">A headline in ${b === "collective" ? "Quicksand" : "Lora"}, left-aligned</h4><p class="small">Body text in Montserrat at 16px, on Birch, in the brand dark. <a href="#email">Links say where they go</a>.</p>
+        <h4 class="email-mock__headline">A headline in ${b === "collective" ? "Quicksand" : "Lora"}, left-aligned</h4><p class="small">Body text in Montserrat at 16px, on White, in the brand dark. <a href="#email">Links say where they go</a>.</p>
         <p><span class="btn btn--default btn--sm">Register for the webinar</span></p><hr class="email-mock__rule">
         <div class="panel-support small" style="padding:1rem">One appeal per email, on the support tint.</div></div>
         <div class="email-mock__footer small"><strong>${esc(brandName(b))}</strong><br>P.O. Box 5606, Bellingham, WA 98227 · Website<br><a href="#email">Manage preferences</a> · <a href="#email">Unsubscribe</a></div></article>`;
@@ -1098,7 +1098,7 @@ export function createRenderer(ctx) {
     return section(
       "email", "13 · Email", "Brand in the inbox", f,
       `<h3>Principles</h3><div class="prose">${block(/^Principles$/)}</div>
-      <h3>One email per brand</h3><p class="prose small">Each sample renders in its own brand context with the official logo files. Bands use a reversed logo where one exists; otherwise the header stays on Birch.</p>
+      <h3>One email per brand</h3><p class="prose small">Each sample renders in its own brand context with the official logo files: a White body, and a brand-dark header band with the brand's Birch reversed logo PNG.</p>
       <div class="grid" style="--min:260px">${BRANDS.map(mock).join("")}</div>
       <h3>Email types</h3>${block(/^Email types$/)}
       <h3>Anatomy</h3>${block(/^Anatomy$/)}

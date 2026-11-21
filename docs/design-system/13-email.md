@@ -80,8 +80,8 @@ Web fonts load in Apple Mail and some phone apps; Gmail and Outlook fall back. E
 
 ## Logos and seals
 
-- **Header:** the brand's horizontal logo (`04-logos-and-marks.md`, "Email header"). Collective emails use the full lockup on a Forest band until a Forest-colored lockup exists.
-- **Footer:** the logo or mark again at a smaller size, plus the endorsement line in program emails. Use the text line ("A program of the Food Integrity Project") until endorsement lockup files exist.
+- **Header:** the brand's horizontal logo (`04-logos-and-marks.md`, "Email header"). Collective emails use `collective-logo-horizontal-color.png` (Forest) on White, or `collective-logo-horizontal-reversed.png` on a Forest band, like every brand.
+- **Footer:** the logo or mark again at a smaller size, plus the endorsement line in program emails. In email the line is text only, "A program of the Food Integrity Project": there are no lockup files, and the parent butterfly has no PNG for email.
 - **Seals:** only in a story about a verified product, next to that product, at or above its screen minimum in `04-logos-and-marks.md`. Never on a hero photo, never as a section ornament, never from another program.
 - Badges and campaign artwork (for example the Collective's "Food should nourish life" badge) belong to their brand and can sit in the footer or support band of that brand's email.
 
@@ -105,8 +105,9 @@ Required in every email:
 | Why you are getting this | One line: "You're receiving this because you signed up for Industry News" |
 | Manage preferences | Link to choose topics or frequency |
 | Unsubscribe | One click for marketing and newsletters. Service email can omit it only where the law allows |
+| Endorsement line | Program emails only: "A program of the Food Integrity Project" |
 
-Optional: social row, the endorsement line, a forward or share link, a "Did someone forward this? Subscribe" line.
+Optional: social row, a forward or share link, a "Did someone forward this? Subscribe" line.
 
 ## Accessibility
 
@@ -137,5 +138,5 @@ Optional: social row, the endorsement line, a forward or share link, a "Did some
 ## Rules for Claude Code
 
 - Build email templates from the tables above. Inline the hex values from "Color in email"; never pick colors by eye or copy them from an older template.
-- Use only official logo files. If the needed version (for example a reversed logo) does not exist, use the closest allowed variant from `04-logos-and-marks.md` and open a `question` issue for the missing file.
+- Use only official logo files. If the needed version (for example a PNG of the parent butterfly) does not exist, use the closest allowed variant from `04-logos-and-marks.md` and open a `question` issue for the missing file.
 - Write all email copy with `10-writing.md`. Service email timing and content follow `11-ux.md`, "Notifications and email".

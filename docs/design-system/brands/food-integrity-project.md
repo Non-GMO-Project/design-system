@@ -24,11 +24,11 @@ Rigorous, calm, connective. It sounds like an organization that checks its work 
 
 **Ratio:** 60 Birch, 24 Cacao type, 6 Loam, 10 Milkweed Leaf.
 
-Green is the one hue no program owns, and Milkweed Leaf sits opposite Monarch orange. Cacao is a warm near-black that matches Forest and Dark Matter in weight; it sets type. The guide says Cacao "is never a fill" but also that each brand's dark "sets every inverted panel"; this system allows Cacao for inverted hero bands and footers only.
+Green is the one hue no program owns, and Milkweed Leaf sits opposite Monarch orange. Cacao is a warm near-black that matches Forest and Dark Matter in weight; it sets type. The guide says Cacao "is never a fill" but also that each brand's dark "sets every inverted panel"; this system allows Cacao for inverted surfaces only (hero bands, footers, feature callouts and email header bands), never as a fill for controls or small elements.
 
 ## Logos
 
-`fip-logo-*` and `fip-mark-color.svg`. Parent mark in Cacao on Birch, or reversed to Birch on Cacao. The current files are interim traces in dark gray `#35363A`, not Cacao (source files are tracked as a `question` issue). On dark grounds use the Birch `fip-logo-horizontal-reversed.svg` and `fip-mark-reversed.svg`, which the build derives from them. In an endorsement the parent appears as its butterfly beside the words "Food Integrity Project", in Cacao or Birch (see the lockups in `04`). See `../04-logos-and-marks.md`.
+`fip-logo-*` and `fip-mark-color.svg`. Parent mark in Cacao on Birch, or reversed to Birch on Cacao. The horizontal logo and the butterfly mark are interim traces in dark gray `#35363A`, not Cacao (source files are tracked as a `question` issue). The stacked logo (`fip-logo-stacked-*`, for square and narrow formats) comes from the design team's source file, with Cacao and Birch versions derived by the build. On dark grounds use the Birch `fip-logo-horizontal-reversed.svg`, `fip-logo-stacked-reversed.svg` and `fip-mark-reversed.svg`. In an endorsement the parent appears as its butterfly beside the words "Food Integrity Project", in Cacao or Birch (see the lockups in `04`). See `../04-logos-and-marks.md`.
 
 ## Typography
 

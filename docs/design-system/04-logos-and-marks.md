@@ -23,7 +23,7 @@ To show verification status inside an interface (a table, a search result), use 
 | Non-GMO Project | Organizational logo (butterfly + wordmark, Monarch) | Supplied colors, or Birch one color on dark grounds |
 | Non-GMO Project Verified | Certification seal | Artwork is fixed by the standard. Never recolored, cropped or redrawn. Full color or the supplied one-color file |
 | Non-UPF Verified logo | Organizational logo (circle icon + "NON UPF VERIFIED") | Dragon Fruit, or Birch one color on dark grounds. Not a seal: it identifies the program, not a verified product |
-| Non-UPF Verified | Certification seal, rectangular (primary) and circular (secondary) | Dragon Fruit, or one color: Dark Matter (Pantone 282 C, the `mono-dark` PNGs from the kit) or black (the `mono-black` SVGs). White reversed file for dark grounds |
+| Non-UPF Verified | Certification seal, rectangular (primary) and circular (secondary) | Dragon Fruit, or one color: Dark Matter (Pantone 282 C, the `mono-dark` PNGs from the kit) or black (the `mono-black` SVGs). White `mono-light` file for dark grounds |
 | Food Integrity Collective | Mark (hand, sprout and butterfly) and lockup | Forest, black, or Birch one color on dark grounds |
 
 ## Asset inventory
@@ -77,7 +77,7 @@ What is in `public/brand/` today. The showcase build checks this table against t
 | `nonupf/nonupf-seal-circular-mono-dark.png` | nonupf | seal | mono-dark | Secondary circular mark, navy, 900 x 900. Program trademark kit (`Secondary_Non-UPF_Verified_navy.png`) |
 | `nonupf/nonupf-seal-circular-mono-light.png` | nonupf | seal | mono-light | Secondary circular mark, white, 900 x 900. Program trademark kit (`Secondary_Non-UPF_Verified_white.png`) |
 | `nonupf/nonupf-mark-color.png` | nonupf | mark | color | Icon in circle. Favicon, app icon and social avatar only; the icon alone needs approval elsewhere |
-| `nonupf/nonupf-mark-mono-black.svg` | nonupf | mark | mono-black | Icon in circle, one-color black `#231F20`, vector. Favicon and app icon only; the icon alone needs approval elsewhere. Supplied in #22 |
+| `nonupf/nonupf-mark-mono-black.svg` | nonupf | mark | mono-black | Icon in circle, one-color black `#231F20`, vector. Favicon, app icon and social avatar only; the icon alone needs approval elsewhere. Supplied in #22 |
 | `nonupf/nonupf-mark-reversed.svg` | nonupf | mark | reversed | Birch icon in circle, derived by the build from `nonupf-mark-mono-black.svg`. Favicon, app icon and social avatar only, like the color icon |
 | `collective/collective-logo-horizontal-mono-dark.svg` | collective | logo | mono-dark | Full lockup (mark + "Food Integrity Collective" in serif), one-color black `#231F20`, vector. Source file from the design team, supplied 2026-11-20 |
 | `collective/collective-logo-horizontal-mono-dark.png` | collective | logo | mono-dark | Black lockup, transparent, 960px wide. Derived by the build |
@@ -214,7 +214,7 @@ SVG for everything on screen once supplied. PNG only where a platform requires i
 | Program page where the parent must be visible | Endorsement lockup (below) |
 | On the brand dark, a hero gradient, dark mode or any dark ground | The Birch `reversed` logo or mark. Never the color logo, never white. Seals use their white files (see "Derived files") |
 | Single-color printing, embossing | Mono |
-| Favicon, app icon, social avatar | Mark, on Birch or the brand dark |
+| Favicon, app icon, social avatar | Mark, on Birch: the generated files in `<brand>/icons/` |
 | Email header | Horizontal logo, PNG at 2x, with alt text |
 | On photography | The Birch `reversed` mark or logo on a calm part of the image |
 
@@ -225,26 +225,26 @@ Which artwork and which file to use for each application, by program. Sizes are 
 | Application | Size and format | Artwork |
 |---|---|---|
 | Favicon | SVG, plus a 32 x 32px PNG fallback. Browsers draw it at 16 to 32px | Mark |
-| Apple touch icon | 180 x 180px PNG with no transparency | Mark centered on a Birch or brand-dark square |
-| Web app icon (manifest) | 192 x 192 and 512 x 512px PNG, plus a 512px maskable version with the mark inside the center 80% | Mark on a Birch or brand-dark square |
-| App store icon | 1024 x 1024px PNG, square, no transparency (the store rounds the corners) | Mark on a Birch or brand-dark square |
+| Apple touch icon | 180 x 180px PNG with no transparency | Mark centered on a Birch square |
+| Web app icon (manifest) | 192 x 192 and 512 x 512px PNG, plus a 512px maskable version with the mark inside the center 80% | Mark on a Birch square |
+| App store icon | 1024 x 1024px PNG, square, no transparency (the store rounds the corners) | Mark on a Birch square |
 | Social avatar (profile picture) | PNG, 400 x 400px or larger. Platforms crop it to a circle, so keep the artwork inside it | Mark, or the avatar file where one exists |
-| Social share image (Open Graph) | 1200 x 630px PNG or JPG | Horizontal logo on Birch or the brand dark. A seal only when the page is about one verified product |
+| Social share image (Open Graph) | 1200 x 630px PNG or JPG | Horizontal logo on Birch. A seal only when the page is about one verified product |
 | Site or app header | SVG, at least 120px wide | Horizontal logo; the mark alone under 400px of space |
 | Footer | SVG | Program logo plus the endorsement line |
 | Email header | PNG at twice the display size, with alt text | Horizontal logo |
-| Embossing, one-color use | SVG | Mono-dark, or mono-light on dark grounds |
+| Embossing, one-color use | SVG | Mono-dark (or `mono-black`); the Birch `reversed` file on dark grounds |
 | Product page seal | SVG, at least the seal's screen minimum | Certification seal, only on a currently verified product |
-| On photography | SVG | Light mark or logo on a calm part of the image, with a scrim if needed |
+| On photography | SVG | The Birch `reversed` mark or logo on a calm part of the image, with a scrim if needed |
 
-Square icons and share images are made by placing the official file on a Birch or brand-dark background. That is layout, not redrawing: never change the artwork itself.
+Square icons and share images are made by placing the official file on a Birch background (see "Icons and share images"). That is layout, not redrawing: never change the artwork itself.
 
 ### Food Integrity Project
 
 | Application | File |
 |---|---|
 | Favicon, touch and app icons, social avatar, share image | The files in `fip/icons/` (see "Icons and share images"): the butterfly in Cacao, on Birch |
-| Header, share image | `fip/fip-logo-horizontal-color.svg`; `fip/fip-mark-color.svg` in narrow headers |
+| Header | `fip/fip-logo-horizontal-color.svg`; `fip/fip-mark-color.svg` in narrow headers |
 | Footer | `fip/fip-logo-horizontal-color.svg` on Birch, or `fip/fip-logo-horizontal-reversed.svg` on Cacao |
 | Square and narrow formats (mobile footers, share images, slides, signage) | `fip/fip-logo-stacked-color.svg` on Birch, or `fip/fip-logo-stacked-reversed.svg` on Cacao |
 | One-color | `fip/fip-logo-stacked-mono-dark.svg` |
@@ -256,7 +256,7 @@ Square icons and share images are made by placing the official file on a Birch o
 | Application | File |
 |---|---|
 | Favicon, touch and app icons, social avatar, share image | The files in `nongmo/icons/`: the outline Butterfly on Birch; the avatar file for the social avatar |
-| Header, share image | `nongmo/nongmo-logo-horizontal-color.png` on Birch, or `nongmo/nongmo-logo-horizontal-reversed.svg` on Forest; `nongmo/nongmo-mark-color.svg` in narrow headers |
+| Header | `nongmo/nongmo-logo-horizontal-color.png` on Birch, or `nongmo/nongmo-logo-horizontal-reversed.svg` on Forest; `nongmo/nongmo-mark-color.svg` in narrow headers |
 | Footer | `nongmo/nongmo-logo-horizontal-reversed.svg` on Forest |
 | Email header | `nongmo/nongmo-logo-horizontal-color.png` on White (913px wide, sharp up to 456px displayed), or `nongmo/nongmo-logo-horizontal-reversed.png` on Forest |
 | One-color | `nongmo/nongmo-logo-horizontal-mono-dark.svg` or `nongmo/nongmo-mark-mono-dark.svg` |
@@ -268,7 +268,7 @@ Square icons and share images are made by placing the official file on a Birch o
 | Application | File |
 |---|---|
 | Favicon, touch and app icons, social avatar, share image | The files in `nonupf/icons/`: the icon in Dragon Fruit on Birch. These and the social avatar are the only places the icon alone is approved; where a wider avatar fits, `nonupf/nonupf-logo-horizontal-color.svg` |
-| Header, share image | `nonupf/nonupf-logo-horizontal-color.svg` on Birch. In narrow headers keep the logo at 120px or wider, since the icon alone needs approval |
+| Header | `nonupf/nonupf-logo-horizontal-color.svg` on Birch. In narrow headers keep the logo at 120px or wider, since the icon alone needs approval |
 | Footer | `nonupf/nonupf-logo-horizontal-color.svg` on Birch, or `nonupf/nonupf-logo-horizontal-reversed.svg` on Dark Matter |
 | Email header | `nonupf/nonupf-logo-horizontal-color.png` on White, or `nonupf/nonupf-logo-horizontal-reversed.png` on Dark Matter |
 | One-color | `nonupf/nonupf-logo-horizontal-mono-black.svg` |
@@ -280,7 +280,7 @@ Square icons and share images are made by placing the official file on a Birch o
 | Application | File |
 |---|---|
 | Favicon, touch and app icons, social avatar, share image | The files in `collective/icons/`: the mark in Forest on Birch |
-| Header, share image | `collective/collective-logo-horizontal-color.svg` on Birch, or `collective/collective-logo-horizontal-reversed.svg` on Forest; `collective/collective-mark-color.svg` in narrow headers |
+| Header | `collective/collective-logo-horizontal-color.svg` on Birch, or `collective/collective-logo-horizontal-reversed.svg` on Forest; `collective/collective-mark-color.svg` in narrow headers |
 | Footer | `collective/collective-logo-horizontal-reversed.svg` on Forest |
 | Email header | `collective/collective-logo-horizontal-color.png` on White, or `collective/collective-logo-horizontal-reversed.png` on Forest |
 | One-color | `collective/collective-logo-horizontal-mono-dark.svg` or `collective/collective-mark-mono-dark.svg` |
@@ -292,16 +292,16 @@ How a program shows it belongs to the Food Integrity Project.
 
 | Form | Layout | Use |
 |---|---|---|
-| Horizontal (preferred) | Program seal or logo, a hairline rule, then one line: "A program of the", the parent butterfly, "Food Integrity Project", all in Quicksand caps (the `eyebrow` style) | Site footers, decks, signage |
+| Horizontal (preferred) | Program seal or logo, a hairline rule, then one line: "A program of the", the parent butterfly, "Food Integrity Project", in Quicksand 600 caps, tracked like the `eyebrow` style | Site footers, decks, signage |
 | Stacked (narrow formats) | Program seal or logo, a hairline rule below, then two tiers: "A program of" in Quicksand caps, and below it the parent butterfly followed by "Food Integrity Project" in Quicksand Bold, sentence case, at 20px on screen | Mobile footers, narrow print |
 
 | Rule | Detail |
 |---|---|
-| Relative size | The butterfly is 1.5 times the text size of the line it sits in. The endorsement never outweighs the program mark: its text is about 15% of the program mark's height (14px beside a 96px seal on screen) |
+| Relative size | The line is 14px beside a 96px seal on screen (about 15% of the program mark's height), and 12px in compact footers. The butterfly is 1.5 times the text size: the one use of the parent mark below the 24px mark minimum. The endorsement never outweighs the program mark |
 | Wrapping | When the horizontal line wraps, it breaks after "the", so the butterfly always stays with the name |
 | Accessible name | The butterfly is decorative (`alt=""`): the text already reads "A program of the Food Integrity Project" |
 | Separation | A hairline rule or a full clear-space gap always sits between the two marks, so they never read as one lockup |
-| Color | The butterfly is Cacao on light grounds and Birch on dark ones, never the program's colors. The text takes `--muted-foreground` |
+| Color | The butterfly is Cacao on light grounds and Birch on dark ones, never the program's colors. The text takes `--muted-foreground` on light grounds and Birch on dark ones. The interim `fip-mark-color.svg` is dark gray `#35363A` until the Cacao source file arrives |
 | On pack | Certification seals appear alone on packaging. Endorsement lockups are for owned channels: sites, decks, signage, print |
 
 There are no separate lockup files. The `EndorsementLockup` component builds each lockup from the program's official file and the parent butterfly (`fip-mark-color.svg`, or `fip-mark-reversed.svg` on dark grounds), with the rule between them and the words set in type, so a lockup always uses the current files. It never redraws either mark.
@@ -317,7 +317,7 @@ There are no separate lockup files. The `EndorsementLockup` component builds eac
 | Non-GMO Project Verified Mark | 72px wide (the program sets print sizes only) | 3/8 in tall and 1/2 in wide |
 | Non-GMO Project bilingual Mark | 72px wide | 3/8 in tall and 3/4 in wide |
 | Non-UPF Verified primary (rectangular) seal | 72px wide, the same as the Non-GMO Project Verified Mark | 3/8 in tall and 1/2 in wide |
-| Parent mark (Food Integrity Project) | 96px wide | 0.75 in (19 mm) wide |
+| Parent logo (Food Integrity Project, horizontal) | 96px wide | 0.75 in (19 mm) wide |
 | Non-UPF Verified secondary (circular) seal | 60px wide | 0.375 in wide |
 | Program horizontal logo | 120px wide | 30 mm wide |
 | Mark only | 24px | 8 mm |
@@ -353,7 +353,7 @@ All logos render through one component so the rules above are enforced in one pl
 
 ```tsx
 <BrandLogo brand="nongmo" variant="horizontal" tone="color" href="/" />
-<BrandLogo brand="collective" variant="mark" tone="mono-light" size={24} decorative />
+<BrandLogo brand="collective" variant="mark" tone="reversed" size={24} decorative />
 <CertificationSeal program="nonupf" tone="color" size={96} />  // only renders inside a verified product context
 <EndorsementLockup program="nongmo" layout="horizontal" />
 ```
@@ -362,6 +362,7 @@ Behavior:
 - Picks the file from the naming scheme, so a missing asset fails loudly in development.
 - Enforces minimum sizes.
 - Sets alt text from the table above.
+- On a dark ground (brand dark, hero gradient, dark mode, photography) it uses the Birch `reversed` tone and never a color or white logo file. Seals keep their programs' white `mono-light` files.
 - If the asset file does not exist yet, renders a neutral placeholder box with the brand name and a console warning. It never generates artwork.
 
 ## Rules for Claude Code

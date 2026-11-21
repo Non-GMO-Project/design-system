@@ -129,13 +129,17 @@
   // ---------- Button loading ----------
   document.addEventListener("click", (e) => {
     const b = e.target.closest('[data-demo="loading"]');
-    if (!b || b.disabled) return;
+    if (!b || b.disabled || b.getAttribute("aria-disabled") === "true") return;
     const svg = b.querySelector("svg");
     const spinner = $("#tpl-spinner").content.firstElementChild.cloneNode(true);
+    // 06: the label changes to the action in progress, and aria-disabled (not disabled) keeps focus on the button.
+    const label = [...b.childNodes].reverse().find((n) => n.nodeType === 3 && n.textContent.trim());
+    const was = label ? label.textContent : "";
     svg.replaceWith(spinner);
-    b.disabled = true;
+    if (label) label.textContent = "Uploading";
+    b.setAttribute("aria-disabled", "true");
     b.setAttribute("aria-busy", "true");
-    setTimeout(() => { spinner.replaceWith(svg); b.disabled = false; b.removeAttribute("aria-busy"); toast("Spec sheet uploaded"); }, 1800);
+    setTimeout(() => { spinner.replaceWith(svg); if (label) label.textContent = was; b.removeAttribute("aria-disabled"); b.removeAttribute("aria-busy"); toast("Spec sheet uploaded"); }, 1800);
   });
 
   // ---------- Form validation (field-error) ----------

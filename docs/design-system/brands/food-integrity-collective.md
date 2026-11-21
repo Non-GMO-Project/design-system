@@ -4,8 +4,6 @@
 **Role:** Membership and advocacy. Speaks to industry and members rather than shoppers. Softer, editorial.
 **Voice:** Collegial, editorial, member-facing.
 
-> The older Food Integrity Collective guide described the Collective as the umbrella organization. The current style guide makes the Food Integrity Project the parent and the Collective a program.
-
 ## Who it speaks to
 
 Members, industry partners, advocates, event attendees, partner organizations.
